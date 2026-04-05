@@ -1,0 +1,1773 @@
+{
+  "case_id": "hard_003",
+  "difficulty": "hard",
+  "patient": {
+    "name": "Harold R. Mendelson",
+    "age": 82,
+    "sex": "male",
+    "dob": "1943-08-17",
+    "medical_history": [
+      "coronary artery disease (post-CABG 2017)",
+      "atrial fibrillation (persistent)",
+      "heart failure with preserved ejection fraction (HFpEF, EF 50%)",
+      "type 2 diabetes mellitus",
+      "chronic kidney disease stage 3",
+      "hypertension",
+      "benign prostatic hyperplasia",
+      "osteoarthritis (bilateral knees, lumbar spine)",
+      "insomnia",
+      "gastroesophageal reflux disease"
+    ],
+    "allergies": [
+      {
+        "substance": "enalapril",
+        "reaction": "persistent dry cough",
+        "severity": "moderate",
+        "noted_date": "2018-06-15",
+        "class_note": "ACE inhibitor class effect"
+      }
+    ],
+    "current_medications": [
+      {"drug": "warfarin", "dose": "3mg", "frequency": "daily", "indication": "atrial fibrillation"},
+      {"drug": "digoxin", "dose": "0.125mg", "frequency": "daily", "indication": "atrial fibrillation rate control"},
+      {"drug": "metoprolol succinate", "dose": "50mg", "frequency": "daily", "indication": "atrial fibrillation, heart failure"},
+      {"drug": "furosemide", "dose": "40mg", "frequency": "BID", "indication": "heart failure, edema"},
+      {"drug": "lisinopril", "dose": "10mg", "frequency": "daily", "indication": "heart failure, hypertension"},
+      {"drug": "spironolactone", "dose": "12.5mg", "frequency": "daily", "indication": "heart failure"},
+      {"drug": "metformin", "dose": "500mg", "frequency": "BID", "indication": "type 2 diabetes"},
+      {"drug": "glipizide", "dose": "5mg", "frequency": "BID", "indication": "type 2 diabetes"},
+      {"drug": "atorvastatin", "dose": "40mg", "frequency": "daily", "indication": "hyperlipidemia, CAD"},
+      {"drug": "aspirin", "dose": "81mg", "frequency": "daily", "indication": "post-CABG"},
+      {"drug": "tamsulosin", "dose": "0.4mg", "frequency": "daily", "indication": "benign prostatic hyperplasia"},
+      {"drug": "zolpidem", "dose": "5mg", "frequency": "at bedtime", "indication": "insomnia"},
+      {"drug": "gabapentin", "dose": "300mg", "frequency": "TID", "indication": "neuropathic pain"},
+      {"drug": "omeprazole", "dose": "20mg", "frequency": "daily", "indication": "GERD"},
+      {"drug": "acetaminophen", "dose": "500mg", "frequency": "TID PRN", "indication": "osteoarthritis pain"}
+    ]
+  },
+  "records": [
+    {
+      "id": 1,
+      "date": "2019-03-12",
+      "type": "visit_note",
+      "doctor": "Dr. Sarah Nguyen",
+      "department": "Primary Care",
+      "summary": "Annual wellness visit, medication reconciliation",
+      "content": "82M with extensive medical history presents for annual wellness. CABG in 2017, stable. AFib rate-controlled on metoprolol + digoxin. HFpEF stable, EF 50% on last echo. CKD stage 3, eGFR 55. DM2 on metformin and glipizide, A1c 7.2. On warfarin for AFib, INR therapeutic. Also takes aspirin 81mg daily (post-CABG). BPH controlled on tamsulosin. Insomnia managed with zolpidem 5mg. On gabapentin for neuropathic pain. Omeprazole for GERD. Reports mild chronic cough, attributed to seasonal allergies. All medications continued."
+    },
+    {
+      "id": 2,
+      "date": "2019-03-12",
+      "type": "lab_result",
+      "ordered_by": "Dr. Sarah Nguyen",
+      "summary": "Annual labs - baseline",
+      "tests": {
+        "eGFR": {"value": 55, "unit": "mL/min/1.73m2", "ref_range": ">60", "flag": "low"},
+        "creatinine": {"value": 1.4, "unit": "mg/dL", "ref_range": "0.7-1.3", "flag": "high"},
+        "BUN": {"value": 28, "unit": "mg/dL", "ref_range": "7-20", "flag": "high"},
+        "potassium": {"value": 4.0, "unit": "mEq/L", "ref_range": "3.5-5.0", "flag": "normal"},
+        "sodium": {"value": 139, "unit": "mEq/L", "ref_range": "136-145", "flag": "normal"},
+        "magnesium": {"value": 1.9, "unit": "mg/dL", "ref_range": "1.7-2.2", "flag": "normal"},
+        "glucose_fasting": {"value": 128, "unit": "mg/dL", "ref_range": "70-100", "flag": "high"},
+        "HbA1c": {"value": 7.2, "unit": "%", "ref_range": "<7.0", "flag": "high"},
+        "hemoglobin": {"value": 13.2, "unit": "g/dL", "ref_range": "13.5-17.5", "flag": "low"},
+        "B12": {"value": 410, "unit": "pg/mL", "ref_range": "200-900", "flag": "normal"},
+        "calcium": {"value": 9.2, "unit": "mg/dL", "ref_range": "8.5-10.5", "flag": "normal"}
+      }
+    },
+    {
+      "id": 3,
+      "date": "2019-03-12",
+      "type": "lab_result",
+      "ordered_by": "Dr. Sarah Nguyen",
+      "summary": "INR check",
+      "tests": {
+        "INR": {"value": 2.3, "unit": "", "ref_range": "2.0-3.0", "flag": "normal"}
+      }
+    },
+    {
+      "id": 4,
+      "date": "2019-03-12",
+      "type": "lab_result",
+      "ordered_by": "Dr. Sarah Nguyen",
+      "summary": "Digoxin level",
+      "tests": {
+        "digoxin_level": {"value": 1.0, "unit": "ng/mL", "ref_range": "0.5-2.0", "flag": "normal"}
+      }
+    },
+    {
+      "id": 5,
+      "date": "2019-04-10",
+      "type": "lab_result",
+      "ordered_by": "Dr. Sarah Nguyen",
+      "summary": "Monthly INR check",
+      "tests": {
+        "INR": {"value": 2.5, "unit": "", "ref_range": "2.0-3.0", "flag": "normal"}
+      }
+    },
+    {
+      "id": 6,
+      "date": "2019-04-10",
+      "type": "allergy_record",
+      "summary": "Allergy list reviewed during anticoagulation clinic visit",
+      "content": "Patient allergies reviewed. Documented allergy to enalapril — developed persistent dry cough. Switched to lisinopril. Current medication list includes lisinopril 10mg daily. No new allergies reported."
+    },
+    {
+      "id": 7,
+      "date": "2019-05-15",
+      "type": "lab_result",
+      "ordered_by": "Dr. Sarah Nguyen",
+      "summary": "Monthly INR check",
+      "tests": {
+        "INR": {"value": 2.4, "unit": "", "ref_range": "2.0-3.0", "flag": "normal"}
+      }
+    },
+    {
+      "id": 8,
+      "date": "2019-06-18",
+      "type": "visit_note",
+      "doctor": "Dr. James Crawford",
+      "department": "Cardiology",
+      "summary": "Follow-up for AFib and HFpEF",
+      "content": "82M with AFib and HFpEF follows up. Heart rate well-controlled at 68 bpm on metoprolol and digoxin. EF 50% on echo from last month. No decompensation. Continues warfarin with INR in range. Also on aspirin 81mg daily — has been on this since CABG in 2017. BNP 180 (stable). Continue current regimen. Will recheck digoxin level and electrolytes."
+    },
+    {
+      "id": 9,
+      "date": "2019-06-18",
+      "type": "lab_result",
+      "ordered_by": "Dr. James Crawford",
+      "summary": "Cardiac labs",
+      "tests": {
+        "INR": {"value": 2.2, "unit": "", "ref_range": "2.0-3.0", "flag": "normal"},
+        "digoxin_level": {"value": 1.0, "unit": "ng/mL", "ref_range": "0.5-2.0", "flag": "normal"},
+        "BNP": {"value": 180, "unit": "pg/mL", "ref_range": "<100", "flag": "high"},
+        "potassium": {"value": 3.8, "unit": "mEq/L", "ref_range": "3.5-5.0", "flag": "normal"},
+        "magnesium": {"value": 1.8, "unit": "mg/dL", "ref_range": "1.7-2.2", "flag": "normal"}
+      }
+    },
+    {
+      "id": 10,
+      "date": "2019-07-16",
+      "type": "lab_result",
+      "ordered_by": "Dr. Sarah Nguyen",
+      "summary": "Monthly INR",
+      "tests": {
+        "INR": {"value": 2.6, "unit": "", "ref_range": "2.0-3.0", "flag": "normal"}
+      }
+    },
+    {
+      "id": 11,
+      "date": "2019-08-20",
+      "type": "lab_result",
+      "ordered_by": "Dr. Sarah Nguyen",
+      "summary": "Monthly INR and BMP",
+      "tests": {
+        "INR": {"value": 2.3, "unit": "", "ref_range": "2.0-3.0", "flag": "normal"},
+        "potassium": {"value": 3.6, "unit": "mEq/L", "ref_range": "3.5-5.0", "flag": "normal"},
+        "creatinine": {"value": 1.5, "unit": "mg/dL", "ref_range": "0.7-1.3", "flag": "high"},
+        "eGFR": {"value": 52, "unit": "mL/min/1.73m2", "ref_range": ">60", "flag": "low"},
+        "glucose_fasting": {"value": 92, "unit": "mg/dL", "ref_range": "70-100", "flag": "normal"}
+      }
+    },
+    {
+      "id": 12,
+      "date": "2019-09-10",
+      "type": "visit_note",
+      "doctor": "Dr. Priya Kapoor",
+      "department": "Endocrinology",
+      "summary": "Diabetes management review",
+      "content": "82M with T2DM on metformin 500mg BID and glipizide 5mg BID. A1c 7.2, acceptable for his age. CKD stage 3 with eGFR 52, metformin still appropriate. Reports occasional lightheadedness before meals. Reviewed SMBG log — a few readings in the 70s. Advised to eat regular meals. Continue current regimen. Recheck A1c in 3 months."
+    },
+    {
+      "id": 13,
+      "date": "2019-09-10",
+      "type": "lab_result",
+      "ordered_by": "Dr. Priya Kapoor",
+      "summary": "Diabetes labs",
+      "tests": {
+        "HbA1c": {"value": 7.1, "unit": "%", "ref_range": "<7.0", "flag": "high"},
+        "glucose_fasting": {"value": 118, "unit": "mg/dL", "ref_range": "70-100", "flag": "high"}
+      }
+    },
+    {
+      "id": 14,
+      "date": "2019-10-08",
+      "type": "lab_result",
+      "ordered_by": "Dr. Sarah Nguyen",
+      "summary": "Monthly INR",
+      "tests": {
+        "INR": {"value": 2.7, "unit": "", "ref_range": "2.0-3.0", "flag": "normal"}
+      }
+    },
+    {
+      "id": 15,
+      "date": "2019-10-22",
+      "type": "visit_note",
+      "doctor": "Dr. Sarah Nguyen",
+      "department": "Primary Care",
+      "summary": "Persistent cough evaluation",
+      "content": "Patient complains of persistent dry cough for several months. Non-productive, worse at night. No fever, no sputum. Lungs clear on auscultation. CXR unremarkable. Has history of cough on enalapril — was switched to lisinopril. Current cough may be related to GERD or post-nasal drip. Increase omeprazole to 40mg daily trial. Add cetirizine for post-nasal drip. Follow up in 4 weeks."
+    },
+    {
+      "id": 16,
+      "date": "2019-11-05",
+      "type": "prescription",
+      "prescriber": "Dr. Sarah Nguyen",
+      "department": "Primary Care",
+      "summary": "Omeprazole dose increase for cough workup",
+      "drug": "omeprazole",
+      "dose": "40mg",
+      "frequency": "daily",
+      "duration": "4 weeks trial",
+      "indication": "GERD-related cough evaluation"
+    },
+    {
+      "id": 17,
+      "date": "2019-11-12",
+      "type": "lab_result",
+      "ordered_by": "Dr. Sarah Nguyen",
+      "summary": "Monthly INR",
+      "tests": {
+        "INR": {"value": 2.4, "unit": "", "ref_range": "2.0-3.0", "flag": "normal"}
+      }
+    },
+    {
+      "id": 18,
+      "date": "2019-11-20",
+      "type": "visit_note",
+      "doctor": "Dr. Sarah Nguyen",
+      "department": "Primary Care",
+      "summary": "Cough follow-up",
+      "content": "Cough persists despite omeprazole increase and cetirizine. No improvement. Not consistent with GERD pattern. Consider pulmonary referral. Continue current medications. Will reduce omeprazole back to 20mg as higher dose did not help cough."
+    },
+    {
+      "id": 19,
+      "date": "2019-12-10",
+      "type": "lab_result",
+      "ordered_by": "Dr. Sarah Nguyen",
+      "summary": "Monthly INR and comprehensive labs",
+      "tests": {
+        "INR": {"value": 2.5, "unit": "", "ref_range": "2.0-3.0", "flag": "normal"},
+        "creatinine": {"value": 1.5, "unit": "mg/dL", "ref_range": "0.7-1.3", "flag": "high"},
+        "eGFR": {"value": 50, "unit": "mL/min/1.73m2", "ref_range": ">60", "flag": "low"},
+        "potassium": {"value": 3.7, "unit": "mEq/L", "ref_range": "3.5-5.0", "flag": "normal"},
+        "magnesium": {"value": 1.8, "unit": "mg/dL", "ref_range": "1.7-2.2", "flag": "normal"},
+        "hemoglobin": {"value": 12.8, "unit": "g/dL", "ref_range": "13.5-17.5", "flag": "low"},
+        "B12": {"value": 380, "unit": "pg/mL", "ref_range": "200-900", "flag": "normal"}
+      }
+    },
+    {
+      "id": 20,
+      "date": "2020-01-14",
+      "type": "lab_result",
+      "ordered_by": "Dr. Sarah Nguyen",
+      "summary": "Monthly INR",
+      "tests": {
+        "INR": {"value": 2.8, "unit": "", "ref_range": "2.0-3.0", "flag": "normal"}
+      }
+    },
+    {
+      "id": 21,
+      "date": "2020-02-05",
+      "type": "visit_note",
+      "doctor": "Dr. Michael Torres",
+      "department": "Nephrology",
+      "summary": "CKD stage 3 follow-up",
+      "content": "82M with CKD stage 3, eGFR trending down from 55 to 50 over the past year. On lisinopril, furosemide, spironolactone. Potassium stable. Creatinine 1.5. Will monitor closely. Metformin appropriate at current eGFR. Continue current management. Recheck in 6 months."
+    },
+    {
+      "id": 22,
+      "date": "2020-02-18",
+      "type": "lab_result",
+      "ordered_by": "Dr. Sarah Nguyen",
+      "summary": "Monthly INR",
+      "tests": {
+        "INR": {"value": 2.3, "unit": "", "ref_range": "2.0-3.0", "flag": "normal"}
+      }
+    },
+    {
+      "id": 23,
+      "date": "2020-03-15",
+      "type": "visit_note",
+      "doctor": "Dr. Sarah Nguyen",
+      "department": "Primary Care",
+      "summary": "Annual wellness, medication review",
+      "content": "82M annual visit. Chronic cough continues — persistent, dry, non-productive. Pulmonology consult was unrevealing — PFTs normal, no asthma. Cough remains unexplained. All other conditions stable. Reviewed full medication list — 15 active medications. Polypharmacy noted but all deemed necessary. INR in range. Last A1c 7.1. eGFR 50, stable CKD 3. Continue all medications. Reports sleeping well with zolpidem."
+    },
+    {
+      "id": 24,
+      "date": "2020-03-15",
+      "type": "lab_result",
+      "ordered_by": "Dr. Sarah Nguyen",
+      "summary": "Annual labs",
+      "tests": {
+        "eGFR": {"value": 48, "unit": "mL/min/1.73m2", "ref_range": ">60", "flag": "low"},
+        "creatinine": {"value": 1.6, "unit": "mg/dL", "ref_range": "0.7-1.3", "flag": "high"},
+        "BUN": {"value": 32, "unit": "mg/dL", "ref_range": "7-20", "flag": "high"},
+        "potassium": {"value": 3.6, "unit": "mEq/L", "ref_range": "3.5-5.0", "flag": "normal"},
+        "sodium": {"value": 138, "unit": "mEq/L", "ref_range": "136-145", "flag": "normal"},
+        "magnesium": {"value": 1.7, "unit": "mg/dL", "ref_range": "1.7-2.2", "flag": "normal"},
+        "glucose_fasting": {"value": 105, "unit": "mg/dL", "ref_range": "70-100", "flag": "high"},
+        "HbA1c": {"value": 7.0, "unit": "%", "ref_range": "<7.0", "flag": "normal"},
+        "hemoglobin": {"value": 12.5, "unit": "g/dL", "ref_range": "13.5-17.5", "flag": "low"},
+        "B12": {"value": 350, "unit": "pg/mL", "ref_range": "200-900", "flag": "normal"},
+        "calcium": {"value": 9.0, "unit": "mg/dL", "ref_range": "8.5-10.5", "flag": "normal"},
+        "digoxin_level": {"value": 1.1, "unit": "ng/mL", "ref_range": "0.5-2.0", "flag": "normal"}
+      }
+    },
+    {
+      "id": 25,
+      "date": "2020-04-14",
+      "type": "lab_result",
+      "ordered_by": "Dr. Sarah Nguyen",
+      "summary": "Monthly INR",
+      "tests": {
+        "INR": {"value": 2.6, "unit": "", "ref_range": "2.0-3.0", "flag": "normal"}
+      }
+    },
+    {
+      "id": 26,
+      "date": "2020-05-12",
+      "type": "lab_result",
+      "ordered_by": "Dr. Sarah Nguyen",
+      "summary": "Monthly INR",
+      "tests": {
+        "INR": {"value": 2.4, "unit": "", "ref_range": "2.0-3.0", "flag": "normal"}
+      }
+    },
+    {
+      "id": 27,
+      "date": "2020-06-08",
+      "type": "visit_note",
+      "doctor": "Dr. Robert Kim",
+      "department": "Urology",
+      "summary": "BPH follow-up",
+      "content": "82M with BPH on tamsulosin 0.4mg daily. Symptoms improved. AUA symptom score 12. PSA 3.8, stable. Urinary flow adequate. Reports occasional dizziness on standing — likely orthostatic from tamsulosin combined with other antihypertensives. Continue tamsulosin. Recommend rising slowly from seated position."
+    },
+    {
+      "id": 28,
+      "date": "2020-06-16",
+      "type": "lab_result",
+      "ordered_by": "Dr. Sarah Nguyen",
+      "summary": "Monthly INR",
+      "tests": {
+        "INR": {"value": 2.5, "unit": "", "ref_range": "2.0-3.0", "flag": "normal"}
+      }
+    },
+    {
+      "id": 29,
+      "date": "2020-07-20",
+      "type": "lab_result",
+      "ordered_by": "Dr. Sarah Nguyen",
+      "summary": "Monthly INR and electrolytes",
+      "tests": {
+        "INR": {"value": 2.7, "unit": "", "ref_range": "2.0-3.0", "flag": "normal"},
+        "potassium": {"value": 3.5, "unit": "mEq/L", "ref_range": "3.5-5.0", "flag": "normal"},
+        "magnesium": {"value": 1.7, "unit": "mg/dL", "ref_range": "1.7-2.2", "flag": "normal"}
+      }
+    },
+    {
+      "id": 30,
+      "date": "2020-08-12",
+      "type": "visit_note",
+      "doctor": "Dr. James Crawford",
+      "department": "Cardiology",
+      "summary": "AFib and HF follow-up",
+      "content": "82M with AFib and HFpEF. Rate well-controlled, HR 72. Echo shows EF 48-50%, stable. BNP 210, mildly elevated. Digoxin level 1.1, therapeutic. Patient on warfarin and aspirin. Aspirin was started post-CABG in 2017. Continue both for now. No bleeding episodes reported. Continue furosemide, metoprolol, digoxin, warfarin, aspirin, lisinopril, spironolactone."
+    },
+    {
+      "id": 31,
+      "date": "2020-08-12",
+      "type": "lab_result",
+      "ordered_by": "Dr. James Crawford",
+      "summary": "Cardiac labs",
+      "tests": {
+        "INR": {"value": 2.4, "unit": "", "ref_range": "2.0-3.0", "flag": "normal"},
+        "digoxin_level": {"value": 1.1, "unit": "ng/mL", "ref_range": "0.5-2.0", "flag": "normal"},
+        "BNP": {"value": 210, "unit": "pg/mL", "ref_range": "<100", "flag": "high"},
+        "potassium": {"value": 3.5, "unit": "mEq/L", "ref_range": "3.5-5.0", "flag": "normal"}
+      }
+    },
+    {
+      "id": 32,
+      "date": "2020-09-15",
+      "type": "lab_result",
+      "ordered_by": "Dr. Sarah Nguyen",
+      "summary": "Monthly INR",
+      "tests": {
+        "INR": {"value": 2.3, "unit": "", "ref_range": "2.0-3.0", "flag": "normal"}
+      }
+    },
+    {
+      "id": 33,
+      "date": "2020-09-28",
+      "type": "visit_note",
+      "doctor": "Dr. Priya Kapoor",
+      "department": "Endocrinology",
+      "summary": "Diabetes follow-up",
+      "content": "82M with T2DM. A1c 7.0, at target. CKD progressing — eGFR now 48. Metformin 500mg BID still within range (can use down to eGFR 30). Glipizide 5mg BID continues. Patient reports one episode of feeling shaky and sweaty before lunch last week — checked glucose, was 68. Ate juice and crackers, resolved. Isolated event. Continue current regimen."
+    },
+    {
+      "id": 34,
+      "date": "2020-09-28",
+      "type": "lab_result",
+      "ordered_by": "Dr. Priya Kapoor",
+      "summary": "Diabetes labs",
+      "tests": {
+        "HbA1c": {"value": 7.0, "unit": "%", "ref_range": "<7.0", "flag": "normal"},
+        "glucose_fasting": {"value": 112, "unit": "mg/dL", "ref_range": "70-100", "flag": "high"},
+        "creatinine": {"value": 1.6, "unit": "mg/dL", "ref_range": "0.7-1.3", "flag": "high"},
+        "eGFR": {"value": 48, "unit": "mL/min/1.73m2", "ref_range": ">60", "flag": "low"}
+      }
+    },
+    {
+      "id": 35,
+      "date": "2020-10-13",
+      "type": "lab_result",
+      "ordered_by": "Dr. Sarah Nguyen",
+      "summary": "Monthly INR",
+      "tests": {
+        "INR": {"value": 2.9, "unit": "", "ref_range": "2.0-3.0", "flag": "normal"}
+      }
+    },
+    {
+      "id": 36,
+      "date": "2020-11-10",
+      "type": "lab_result",
+      "ordered_by": "Dr. Sarah Nguyen",
+      "summary": "Monthly INR",
+      "tests": {
+        "INR": {"value": 3.1, "unit": "", "ref_range": "2.0-3.0", "flag": "high"}
+      }
+    },
+    {
+      "id": 37,
+      "date": "2020-11-12",
+      "type": "prescription",
+      "prescriber": "Dr. Sarah Nguyen",
+      "department": "Primary Care",
+      "summary": "Warfarin dose adjustment for elevated INR",
+      "drug": "warfarin",
+      "dose": "2.5mg",
+      "frequency": "daily",
+      "duration": "1 week then recheck",
+      "indication": "INR above target range"
+    },
+    {
+      "id": 38,
+      "date": "2020-11-19",
+      "type": "lab_result",
+      "ordered_by": "Dr. Sarah Nguyen",
+      "summary": "INR recheck after dose adjustment",
+      "tests": {
+        "INR": {"value": 2.6, "unit": "", "ref_range": "2.0-3.0", "flag": "normal"}
+      }
+    },
+    {
+      "id": 39,
+      "date": "2020-11-20",
+      "type": "prescription",
+      "prescriber": "Dr. Sarah Nguyen",
+      "department": "Primary Care",
+      "summary": "Resume warfarin 3mg",
+      "drug": "warfarin",
+      "dose": "3mg",
+      "frequency": "daily",
+      "duration": "ongoing",
+      "indication": "atrial fibrillation"
+    },
+    {
+      "id": 40,
+      "date": "2020-12-15",
+      "type": "lab_result",
+      "ordered_by": "Dr. Sarah Nguyen",
+      "summary": "Monthly INR and year-end labs",
+      "tests": {
+        "INR": {"value": 2.5, "unit": "", "ref_range": "2.0-3.0", "flag": "normal"},
+        "creatinine": {"value": 1.7, "unit": "mg/dL", "ref_range": "0.7-1.3", "flag": "high"},
+        "eGFR": {"value": 45, "unit": "mL/min/1.73m2", "ref_range": ">60", "flag": "low"},
+        "potassium": {"value": 3.4, "unit": "mEq/L", "ref_range": "3.5-5.0", "flag": "low"},
+        "magnesium": {"value": 1.6, "unit": "mg/dL", "ref_range": "1.7-2.2", "flag": "low"},
+        "hemoglobin": {"value": 12.2, "unit": "g/dL", "ref_range": "13.5-17.5", "flag": "low"}
+      }
+    },
+    {
+      "id": 41,
+      "date": "2021-01-12",
+      "type": "lab_result",
+      "ordered_by": "Dr. Sarah Nguyen",
+      "summary": "Monthly INR",
+      "tests": {
+        "INR": {"value": 2.4, "unit": "", "ref_range": "2.0-3.0", "flag": "normal"}
+      }
+    },
+    {
+      "id": 42,
+      "date": "2021-01-28",
+      "type": "visit_note",
+      "doctor": "Dr. Sarah Nguyen",
+      "department": "Primary Care",
+      "summary": "Low potassium and magnesium follow-up",
+      "content": "Lab results from December show K 3.4 and Mg 1.6. Patient on furosemide 40mg BID, known to cause electrolyte wasting. Also on spironolactone which should help retain potassium. Will add oral potassium supplement 20mEq daily. Magnesium level borderline low — may be contributing to fatigue. Will monitor. Continue all other medications."
+    },
+    {
+      "id": 43,
+      "date": "2021-01-28",
+      "type": "prescription",
+      "prescriber": "Dr. Sarah Nguyen",
+      "department": "Primary Care",
+      "summary": "Potassium supplement for hypokalemia",
+      "drug": "potassium chloride",
+      "dose": "20mEq",
+      "frequency": "daily",
+      "duration": "ongoing",
+      "indication": "furosemide-induced hypokalemia"
+    },
+    {
+      "id": 44,
+      "date": "2021-02-16",
+      "type": "lab_result",
+      "ordered_by": "Dr. Sarah Nguyen",
+      "summary": "Monthly INR and electrolyte recheck",
+      "tests": {
+        "INR": {"value": 2.3, "unit": "", "ref_range": "2.0-3.0", "flag": "normal"},
+        "potassium": {"value": 3.6, "unit": "mEq/L", "ref_range": "3.5-5.0", "flag": "normal"},
+        "magnesium": {"value": 1.6, "unit": "mg/dL", "ref_range": "1.7-2.2", "flag": "low"}
+      }
+    },
+    {
+      "id": 45,
+      "date": "2021-03-08",
+      "type": "visit_note",
+      "doctor": "Dr. Sarah Nguyen",
+      "department": "Primary Care",
+      "summary": "Annual wellness visit",
+      "content": "82M presents for annual visit. Multiple chronic conditions stable. Chronic dry cough persists — tried omeprazole increase, antihistamines, pulmonology eval — all negative. Cough is bothersome but patient has adapted. On 15 medications plus potassium supplement. eGFR declining slowly (45). A1c 6.8, well-controlled. Continues zolpidem for sleep. Falls risk discussed — patient denies falls. Continue all medications."
+    },
+    {
+      "id": 46,
+      "date": "2021-03-08",
+      "type": "lab_result",
+      "ordered_by": "Dr. Sarah Nguyen",
+      "summary": "Annual comprehensive labs",
+      "tests": {
+        "eGFR": {"value": 44, "unit": "mL/min/1.73m2", "ref_range": ">60", "flag": "low"},
+        "creatinine": {"value": 1.7, "unit": "mg/dL", "ref_range": "0.7-1.3", "flag": "high"},
+        "BUN": {"value": 35, "unit": "mg/dL", "ref_range": "7-20", "flag": "high"},
+        "potassium": {"value": 3.6, "unit": "mEq/L", "ref_range": "3.5-5.0", "flag": "normal"},
+        "sodium": {"value": 137, "unit": "mEq/L", "ref_range": "136-145", "flag": "normal"},
+        "magnesium": {"value": 1.6, "unit": "mg/dL", "ref_range": "1.7-2.2", "flag": "low"},
+        "glucose_fasting": {"value": 98, "unit": "mg/dL", "ref_range": "70-100", "flag": "normal"},
+        "HbA1c": {"value": 6.8, "unit": "%", "ref_range": "<7.0", "flag": "normal"},
+        "hemoglobin": {"value": 12.0, "unit": "g/dL", "ref_range": "13.5-17.5", "flag": "low"},
+        "B12": {"value": 320, "unit": "pg/mL", "ref_range": "200-900", "flag": "normal"},
+        "calcium": {"value": 8.8, "unit": "mg/dL", "ref_range": "8.5-10.5", "flag": "normal"},
+        "digoxin_level": {"value": 1.2, "unit": "ng/mL", "ref_range": "0.5-2.0", "flag": "normal"}
+      }
+    },
+    {
+      "id": 47,
+      "date": "2021-04-13",
+      "type": "lab_result",
+      "ordered_by": "Dr. Sarah Nguyen",
+      "summary": "Monthly INR",
+      "tests": {
+        "INR": {"value": 2.5, "unit": "", "ref_range": "2.0-3.0", "flag": "normal"}
+      }
+    },
+    {
+      "id": 48,
+      "date": "2021-05-03",
+      "type": "visit_note",
+      "doctor": "Dr. James Crawford",
+      "department": "Cardiology",
+      "summary": "Routine cardiology follow-up",
+      "content": "82M AFib, HFpEF. Stable. HR 70, BP 128/72. Echo EF 48%. Digoxin level 1.2. eGFR declining to 44 — will need to watch digoxin clearance as renal function worsens. Magnesium low at 1.6 — this can increase sensitivity to digoxin. Recommend checking digoxin level more frequently. Continue warfarin + aspirin. No GI symptoms reported."
+    },
+    {
+      "id": 49,
+      "date": "2021-05-11",
+      "type": "lab_result",
+      "ordered_by": "Dr. Sarah Nguyen",
+      "summary": "Monthly INR",
+      "tests": {
+        "INR": {"value": 2.6, "unit": "", "ref_range": "2.0-3.0", "flag": "normal"}
+      }
+    },
+    {
+      "id": 50,
+      "date": "2021-06-15",
+      "type": "lab_result",
+      "ordered_by": "Dr. Sarah Nguyen",
+      "summary": "Monthly INR and digoxin level",
+      "tests": {
+        "INR": {"value": 2.4, "unit": "", "ref_range": "2.0-3.0", "flag": "normal"},
+        "digoxin_level": {"value": 1.4, "unit": "ng/mL", "ref_range": "0.5-2.0", "flag": "normal"}
+      }
+    },
+    {
+      "id": 51,
+      "date": "2021-07-08",
+      "type": "visit_note",
+      "doctor": "Dr. Elena Vasquez",
+      "department": "Emergency Department",
+      "summary": "Hypoglycemic episode",
+      "content": "82M brought in by wife for confusion and diaphoresis at home. Fingerstick glucose 45 mg/dL. Given D50 IV, glucose normalized to 142. Patient is on glipizide 5mg BID and metformin 500mg BID. Reports he ate a late breakfast and skipped lunch. CKD stage 3 with declining eGFR. Sulfonylureas can have prolonged action in renal impairment. Recommended follow-up with endocrinology to discuss medication adjustment. Discharged in stable condition."
+    },
+    {
+      "id": 52,
+      "date": "2021-07-08",
+      "type": "lab_result",
+      "ordered_by": "Dr. Elena Vasquez",
+      "summary": "ER labs for hypoglycemia",
+      "tests": {
+        "glucose": {"value": 45, "unit": "mg/dL", "ref_range": "70-100", "flag": "critical_low"},
+        "creatinine": {"value": 1.8, "unit": "mg/dL", "ref_range": "0.7-1.3", "flag": "high"},
+        "eGFR": {"value": 42, "unit": "mL/min/1.73m2", "ref_range": ">60", "flag": "low"},
+        "potassium": {"value": 3.4, "unit": "mEq/L", "ref_range": "3.5-5.0", "flag": "low"}
+      }
+    },
+    {
+      "id": 53,
+      "date": "2021-07-13",
+      "type": "lab_result",
+      "ordered_by": "Dr. Sarah Nguyen",
+      "summary": "Monthly INR",
+      "tests": {
+        "INR": {"value": 2.8, "unit": "", "ref_range": "2.0-3.0", "flag": "normal"}
+      }
+    },
+    {
+      "id": 54,
+      "date": "2021-07-22",
+      "type": "visit_note",
+      "doctor": "Dr. Priya Kapoor",
+      "department": "Endocrinology",
+      "summary": "Post-hypoglycemia follow-up",
+      "content": "82M with T2DM seen after ER visit for hypoglycemia (glucose 45). On glipizide 5mg BID and metformin 500mg BID. CKD worsening, eGFR 42. A1c 6.8 — may be over-controlled for an elderly patient with multiple comorbidities. ADA recommends A1c <8% for complex elderly patients. However, patient has been well-controlled. Advised reducing glipizide to 5mg once daily instead of BID. Patient concerned about sugars going up. After discussion, patient prefers to continue current regimen with closer monitoring. Instructed to check glucose before meals and carry glucose tablets."
+    },
+    {
+      "id": 55,
+      "date": "2021-08-10",
+      "type": "lab_result",
+      "ordered_by": "Dr. Sarah Nguyen",
+      "summary": "Monthly INR",
+      "tests": {
+        "INR": {"value": 2.3, "unit": "", "ref_range": "2.0-3.0", "flag": "normal"}
+      }
+    },
+    {
+      "id": 56,
+      "date": "2021-08-25",
+      "type": "visit_note",
+      "doctor": "Dr. Sarah Nguyen",
+      "department": "Primary Care",
+      "summary": "Follow-up, GI complaints",
+      "content": "Patient reports intermittent dark stools for the past 2 weeks. No frank blood. No abdominal pain. On warfarin (INR 2.3) and aspirin 81mg. Dual antithrombotic therapy increases GI bleeding risk. Check stool guaiac, CBC. If positive, will need GI referral. Continue medications pending workup."
+    },
+    {
+      "id": 57,
+      "date": "2021-08-25",
+      "type": "lab_result",
+      "ordered_by": "Dr. Sarah Nguyen",
+      "summary": "GI bleeding workup",
+      "tests": {
+        "hemoglobin": {"value": 11.4, "unit": "g/dL", "ref_range": "13.5-17.5", "flag": "low"},
+        "hematocrit": {"value": 34.2, "unit": "%", "ref_range": "38.3-48.6", "flag": "low"},
+        "stool_guaiac": {"value": "positive", "unit": "", "ref_range": "negative", "flag": "abnormal"},
+        "ferritin": {"value": 18, "unit": "ng/mL", "ref_range": "20-250", "flag": "low"}
+      }
+    },
+    {
+      "id": 58,
+      "date": "2021-09-02",
+      "type": "visit_note",
+      "doctor": "Dr. Lisa Park",
+      "department": "Gastroenterology",
+      "summary": "GI bleeding evaluation",
+      "content": "82M referred for guaiac-positive stools, declining hemoglobin. On warfarin for AFib and aspirin 81mg (originally post-CABG). This combination significantly increases GI bleeding risk. EGD scheduled. Colonoscopy was last performed in 2018, normal. Will evaluate for upper GI source given omeprazole use for GERD. Consider whether aspirin can be discontinued — CABG was in 2017, over 4 years ago."
+    },
+    {
+      "id": 59,
+      "date": "2021-09-10",
+      "type": "visit_note",
+      "doctor": "Dr. Lisa Park",
+      "department": "Gastroenterology",
+      "summary": "EGD results",
+      "content": "EGD performed. Findings: mild erosive gastritis, two small gastric erosions. No active bleeding. Likely related to aspirin use despite omeprazole. CLO test negative for H. pylori. Recommend continuing omeprazole. Discussed aspirin discontinuation with patient — patient states cardiologist wants him to continue it. Will defer to cardiology regarding aspirin. Iron supplementation started."
+    },
+    {
+      "id": 60,
+      "date": "2021-09-10",
+      "type": "prescription",
+      "prescriber": "Dr. Lisa Park",
+      "department": "Gastroenterology",
+      "summary": "Iron supplementation for GI blood loss anemia",
+      "drug": "ferrous sulfate",
+      "dose": "325mg",
+      "frequency": "daily",
+      "duration": "3 months",
+      "indication": "iron deficiency anemia from GI blood loss"
+    },
+    {
+      "id": 61,
+      "date": "2021-09-14",
+      "type": "lab_result",
+      "ordered_by": "Dr. Sarah Nguyen",
+      "summary": "Monthly INR",
+      "tests": {
+        "INR": {"value": 2.5, "unit": "", "ref_range": "2.0-3.0", "flag": "normal"}
+      }
+    },
+    {
+      "id": 62,
+      "date": "2021-10-05",
+      "type": "lab_result",
+      "ordered_by": "Dr. Sarah Nguyen",
+      "summary": "Monthly INR and follow-up labs",
+      "tests": {
+        "INR": {"value": 2.4, "unit": "", "ref_range": "2.0-3.0", "flag": "normal"},
+        "hemoglobin": {"value": 11.8, "unit": "g/dL", "ref_range": "13.5-17.5", "flag": "low"},
+        "digoxin_level": {"value": 1.4, "unit": "ng/mL", "ref_range": "0.5-2.0", "flag": "normal"},
+        "potassium": {"value": 3.4, "unit": "mEq/L", "ref_range": "3.5-5.0", "flag": "low"},
+        "magnesium": {"value": 1.5, "unit": "mg/dL", "ref_range": "1.7-2.2", "flag": "low"}
+      }
+    },
+    {
+      "id": 63,
+      "date": "2021-10-18",
+      "type": "visit_note",
+      "doctor": "Dr. Sarah Nguyen",
+      "department": "Primary Care",
+      "summary": "Electrolyte abnormalities follow-up",
+      "content": "Potassium 3.4 and magnesium 1.5 despite potassium supplement. Furosemide causing significant electrolyte wasting. Increase potassium chloride to 40mEq daily. Add magnesium oxide 400mg daily. Need to replete magnesium for potassium to correct properly. Note: patient is on digoxin — hypokalemia and hypomagnesemia increase digoxin toxicity risk. Monitor closely."
+    },
+    {
+      "id": 64,
+      "date": "2021-10-18",
+      "type": "prescription",
+      "prescriber": "Dr. Sarah Nguyen",
+      "department": "Primary Care",
+      "summary": "Magnesium supplement for hypomagnesemia",
+      "drug": "magnesium oxide",
+      "dose": "400mg",
+      "frequency": "daily",
+      "duration": "ongoing",
+      "indication": "hypomagnesemia, furosemide-induced"
+    },
+    {
+      "id": 65,
+      "date": "2021-11-09",
+      "type": "lab_result",
+      "ordered_by": "Dr. Sarah Nguyen",
+      "summary": "Monthly INR and electrolyte recheck",
+      "tests": {
+        "INR": {"value": 2.6, "unit": "", "ref_range": "2.0-3.0", "flag": "normal"},
+        "potassium": {"value": 3.5, "unit": "mEq/L", "ref_range": "3.5-5.0", "flag": "normal"},
+        "magnesium": {"value": 1.6, "unit": "mg/dL", "ref_range": "1.7-2.2", "flag": "low"}
+      }
+    },
+    {
+      "id": 66,
+      "date": "2021-12-07",
+      "type": "lab_result",
+      "ordered_by": "Dr. Sarah Nguyen",
+      "summary": "Monthly INR and year-end comprehensive",
+      "tests": {
+        "INR": {"value": 2.5, "unit": "", "ref_range": "2.0-3.0", "flag": "normal"},
+        "eGFR": {"value": 42, "unit": "mL/min/1.73m2", "ref_range": ">60", "flag": "low"},
+        "creatinine": {"value": 1.8, "unit": "mg/dL", "ref_range": "0.7-1.3", "flag": "high"},
+        "potassium": {"value": 3.5, "unit": "mEq/L", "ref_range": "3.5-5.0", "flag": "normal"},
+        "magnesium": {"value": 1.6, "unit": "mg/dL", "ref_range": "1.7-2.2", "flag": "low"},
+        "hemoglobin": {"value": 11.9, "unit": "g/dL", "ref_range": "13.5-17.5", "flag": "low"},
+        "B12": {"value": 280, "unit": "pg/mL", "ref_range": "200-900", "flag": "normal"},
+        "calcium": {"value": 8.6, "unit": "mg/dL", "ref_range": "8.5-10.5", "flag": "normal"},
+        "digoxin_level": {"value": 1.5, "unit": "ng/mL", "ref_range": "0.5-2.0", "flag": "normal"}
+      }
+    },
+    {
+      "id": 67,
+      "date": "2022-01-11",
+      "type": "lab_result",
+      "ordered_by": "Dr. Sarah Nguyen",
+      "summary": "Monthly INR",
+      "tests": {
+        "INR": {"value": 2.3, "unit": "", "ref_range": "2.0-3.0", "flag": "normal"}
+      }
+    },
+    {
+      "id": 68,
+      "date": "2022-01-25",
+      "type": "visit_note",
+      "doctor": "Dr. Elena Vasquez",
+      "department": "Emergency Department",
+      "summary": "Fall at home",
+      "content": "82M brought in after fall at home. Got up to use bathroom at 2 AM, felt dizzy and unsteady, fell striking right shoulder on doorframe. No head injury. No LOC. Right shoulder pain, ROM limited. X-ray: no fracture. Patient takes zolpidem 5mg at bedtime and gabapentin 300mg TID. Both can cause sedation and impair balance, especially in elderly. Also on tamsulosin (orthostatic hypotension). Discharged with sling. Advised to use nightlight, consider discontinuing zolpidem. Follow-up with PCP."
+    },
+    {
+      "id": 69,
+      "date": "2022-02-08",
+      "type": "visit_note",
+      "doctor": "Dr. Sarah Nguyen",
+      "department": "Primary Care",
+      "summary": "Post-fall follow-up",
+      "content": "Patient fell at home in January. ER recommended considering zolpidem discontinuation. Patient has been on zolpidem 5mg at bedtime for several years. States he cannot sleep without it. Tried melatonin in the past without success. Discussed risks of zolpidem in elderly — Beers Criteria lists it as potentially inappropriate. Patient insists on continuing. Will continue zolpidem with caution. Installed nightlight. Right shoulder improving."
+    },
+    {
+      "id": 70,
+      "date": "2022-02-15",
+      "type": "lab_result",
+      "ordered_by": "Dr. Sarah Nguyen",
+      "summary": "Monthly INR",
+      "tests": {
+        "INR": {"value": 2.7, "unit": "", "ref_range": "2.0-3.0", "flag": "normal"}
+      }
+    },
+    {
+      "id": 71,
+      "date": "2022-03-10",
+      "type": "visit_note",
+      "doctor": "Dr. Sarah Nguyen",
+      "department": "Primary Care",
+      "summary": "Annual wellness, comprehensive review",
+      "content": "82M annual visit. Multiple chronic conditions. CKD progressing, eGFR 42. A1c 6.8, maybe over-controlled. Hemoglobin 11.9, chronic anemia from GI blood loss and CKD. B12 280 — lower end of normal, declining trend over years. Cough persists. On 16+ medications. Polypharmacy is a significant concern. All medications reviewed — each individually justified but cumulative burden high. Discuss deprescribing at future visits."
+    },
+    {
+      "id": 72,
+      "date": "2022-03-10",
+      "type": "lab_result",
+      "ordered_by": "Dr. Sarah Nguyen",
+      "summary": "Annual comprehensive labs",
+      "tests": {
+        "eGFR": {"value": 40, "unit": "mL/min/1.73m2", "ref_range": ">60", "flag": "low"},
+        "creatinine": {"value": 1.9, "unit": "mg/dL", "ref_range": "0.7-1.3", "flag": "high"},
+        "BUN": {"value": 38, "unit": "mg/dL", "ref_range": "7-20", "flag": "high"},
+        "potassium": {"value": 3.5, "unit": "mEq/L", "ref_range": "3.5-5.0", "flag": "normal"},
+        "sodium": {"value": 137, "unit": "mEq/L", "ref_range": "136-145", "flag": "normal"},
+        "magnesium": {"value": 1.5, "unit": "mg/dL", "ref_range": "1.7-2.2", "flag": "low"},
+        "glucose_fasting": {"value": 88, "unit": "mg/dL", "ref_range": "70-100", "flag": "normal"},
+        "HbA1c": {"value": 6.6, "unit": "%", "ref_range": "<7.0", "flag": "normal"},
+        "hemoglobin": {"value": 11.6, "unit": "g/dL", "ref_range": "13.5-17.5", "flag": "low"},
+        "B12": {"value": 265, "unit": "pg/mL", "ref_range": "200-900", "flag": "normal"},
+        "calcium": {"value": 8.5, "unit": "mg/dL", "ref_range": "8.5-10.5", "flag": "normal"},
+        "vitamin_D_25OH": {"value": 22, "unit": "ng/mL", "ref_range": "30-100", "flag": "low"},
+        "digoxin_level": {"value": 1.5, "unit": "ng/mL", "ref_range": "0.5-2.0", "flag": "normal"}
+      }
+    },
+    {
+      "id": 73,
+      "date": "2022-04-12",
+      "type": "lab_result",
+      "ordered_by": "Dr. Sarah Nguyen",
+      "summary": "Monthly INR",
+      "tests": {
+        "INR": {"value": 2.4, "unit": "", "ref_range": "2.0-3.0", "flag": "normal"}
+      }
+    },
+    {
+      "id": 74,
+      "date": "2022-05-02",
+      "type": "visit_note",
+      "doctor": "Dr. Michael Torres",
+      "department": "Nephrology",
+      "summary": "CKD progression review",
+      "content": "82M CKD stage 3b, eGFR 40. Declining from 55 over 3 years. On lisinopril, furosemide, spironolactone. Proteinuria mild. Metformin should be reduced or discontinued if eGFR drops below 30. Glipizide — note that sulfonylureas have prolonged duration of action in CKD, increasing hypoglycemia risk. Had ER visit for hypoglycemia in July 2021. Recommend endocrinology reconsider sulfonylurea. Digoxin clearance also reduced — monitor levels closely."
+    },
+    {
+      "id": 75,
+      "date": "2022-05-10",
+      "type": "lab_result",
+      "ordered_by": "Dr. Sarah Nguyen",
+      "summary": "Monthly INR",
+      "tests": {
+        "INR": {"value": 2.5, "unit": "", "ref_range": "2.0-3.0", "flag": "normal"}
+      }
+    },
+    {
+      "id": 76,
+      "date": "2022-06-14",
+      "type": "lab_result",
+      "ordered_by": "Dr. Sarah Nguyen",
+      "summary": "Monthly INR and digoxin",
+      "tests": {
+        "INR": {"value": 2.6, "unit": "", "ref_range": "2.0-3.0", "flag": "normal"},
+        "digoxin_level": {"value": 1.6, "unit": "ng/mL", "ref_range": "0.5-2.0", "flag": "normal"}
+      }
+    },
+    {
+      "id": 77,
+      "date": "2022-06-28",
+      "type": "visit_note",
+      "doctor": "Dr. James Crawford",
+      "department": "Cardiology",
+      "summary": "Cardiology follow-up, digoxin level rising",
+      "content": "82M AFib, HFpEF. Digoxin level 1.6, was 1.0 two years ago. eGFR declining to 40 — digoxin is renally cleared so levels will rise as kidney function worsens. Level still within therapeutic range but trending up. Magnesium 1.5, low — this potentiates digoxin toxicity even at therapeutic levels. Continue current dose but monitor level every 3 months. Continue warfarin and aspirin."
+    },
+    {
+      "id": 78,
+      "date": "2022-07-12",
+      "type": "lab_result",
+      "ordered_by": "Dr. Sarah Nguyen",
+      "summary": "Monthly INR",
+      "tests": {
+        "INR": {"value": 2.3, "unit": "", "ref_range": "2.0-3.0", "flag": "normal"}
+      }
+    },
+    {
+      "id": 79,
+      "date": "2022-07-30",
+      "type": "visit_note",
+      "doctor": "Dr. Elena Vasquez",
+      "department": "Emergency Department",
+      "summary": "Second hypoglycemic episode",
+      "content": "82M brought in by EMS after wife found him confused and lethargic on couch. Fingerstick glucose 52 mg/dL. Given oral glucose gel then D50 IV. Glucose rose to 156. Patient on glipizide 5mg BID and metformin 500mg BID. eGFR 40. This is second ER visit for hypoglycemia in one year. Sulfonylurea in elderly with declining renal function is high risk. Strongly recommend outpatient medication adjustment. Discharged stable."
+    },
+    {
+      "id": 80,
+      "date": "2022-07-30",
+      "type": "lab_result",
+      "ordered_by": "Dr. Elena Vasquez",
+      "summary": "ER labs - second hypoglycemia event",
+      "tests": {
+        "glucose": {"value": 52, "unit": "mg/dL", "ref_range": "70-100", "flag": "critical_low"},
+        "creatinine": {"value": 1.9, "unit": "mg/dL", "ref_range": "0.7-1.3", "flag": "high"},
+        "eGFR": {"value": 39, "unit": "mL/min/1.73m2", "ref_range": ">60", "flag": "low"},
+        "hemoglobin": {"value": 11.3, "unit": "g/dL", "ref_range": "13.5-17.5", "flag": "low"}
+      }
+    },
+    {
+      "id": 81,
+      "date": "2022-08-09",
+      "type": "lab_result",
+      "ordered_by": "Dr. Sarah Nguyen",
+      "summary": "Monthly INR",
+      "tests": {
+        "INR": {"value": 2.5, "unit": "", "ref_range": "2.0-3.0", "flag": "normal"}
+      }
+    },
+    {
+      "id": 82,
+      "date": "2022-08-15",
+      "type": "visit_note",
+      "doctor": "Dr. Priya Kapoor",
+      "department": "Endocrinology",
+      "summary": "Recurrent hypoglycemia discussion",
+      "content": "82M with T2DM, second ER visit for hypoglycemia. On glipizide 5mg BID. eGFR now 39. A1c 6.6, likely over-controlled. At this A1c and age, glipizide should be reduced. Reduced glipizide to 5mg once daily (morning only). Continue metformin 500mg BID. If another hypoglycemic episode occurs, will discontinue glipizide entirely and consider linagliptin (DPP-4 inhibitor safe in CKD)."
+    },
+    {
+      "id": 83,
+      "date": "2022-08-15",
+      "type": "prescription",
+      "prescriber": "Dr. Priya Kapoor",
+      "department": "Endocrinology",
+      "summary": "Glipizide dose reduction",
+      "drug": "glipizide",
+      "dose": "5mg",
+      "frequency": "once daily (morning)",
+      "duration": "ongoing",
+      "indication": "type 2 diabetes, dose reduced due to recurrent hypoglycemia"
+    },
+    {
+      "id": 84,
+      "date": "2022-09-13",
+      "type": "lab_result",
+      "ordered_by": "Dr. Sarah Nguyen",
+      "summary": "Monthly INR and comprehensive",
+      "tests": {
+        "INR": {"value": 2.4, "unit": "", "ref_range": "2.0-3.0", "flag": "normal"},
+        "eGFR": {"value": 38, "unit": "mL/min/1.73m2", "ref_range": ">60", "flag": "low"},
+        "creatinine": {"value": 2.0, "unit": "mg/dL", "ref_range": "0.7-1.3", "flag": "high"},
+        "potassium": {"value": 3.4, "unit": "mEq/L", "ref_range": "3.5-5.0", "flag": "low"},
+        "magnesium": {"value": 1.4, "unit": "mg/dL", "ref_range": "1.7-2.2", "flag": "low"},
+        "hemoglobin": {"value": 11.2, "unit": "g/dL", "ref_range": "13.5-17.5", "flag": "low"}
+      }
+    },
+    {
+      "id": 85,
+      "date": "2022-10-04",
+      "type": "visit_note",
+      "doctor": "Dr. Sarah Nguyen",
+      "department": "Primary Care",
+      "summary": "Nausea and appetite changes",
+      "content": "Patient reports intermittent nausea over the past 2-3 weeks. No vomiting. Appetite decreased. No abdominal pain. No change in bowel habits. Labs show worsening kidney function (eGFR 38) which could cause nausea. Magnesium still low at 1.4 despite supplementation. Potassium low at 3.4. Will increase magnesium oxide to 400mg BID. Recheck labs in 2 weeks. Nausea may be uremic. Consider GI evaluation if persists."
+    },
+    {
+      "id": 86,
+      "date": "2022-10-11",
+      "type": "lab_result",
+      "ordered_by": "Dr. Sarah Nguyen",
+      "summary": "Monthly INR",
+      "tests": {
+        "INR": {"value": 2.7, "unit": "", "ref_range": "2.0-3.0", "flag": "normal"}
+      }
+    },
+    {
+      "id": 87,
+      "date": "2022-10-18",
+      "type": "lab_result",
+      "ordered_by": "Dr. Sarah Nguyen",
+      "summary": "Electrolyte and digoxin recheck",
+      "tests": {
+        "potassium": {"value": 3.3, "unit": "mEq/L", "ref_range": "3.5-5.0", "flag": "low"},
+        "magnesium": {"value": 1.4, "unit": "mg/dL", "ref_range": "1.7-2.2", "flag": "low"},
+        "digoxin_level": {"value": 1.8, "unit": "ng/mL", "ref_range": "0.5-2.0", "flag": "normal"}
+      }
+    },
+    {
+      "id": 88,
+      "date": "2022-11-01",
+      "type": "visit_note",
+      "doctor": "Dr. James Crawford",
+      "department": "Cardiology",
+      "summary": "Digoxin level approaching upper limit",
+      "content": "82M. Digoxin level 1.8, near upper limit. eGFR 38. Potassium 3.3 and magnesium 1.4 — both low, both potentiate digoxin toxicity. Patient reporting nausea — could be early digoxin toxicity or uremia. Recommend reducing digoxin to 0.0625mg daily. However, patient's rate control has been good and he is reluctant to change. Will continue 0.125mg but MUST correct electrolytes. If nausea persists or digoxin level rises above 2.0, will reduce dose. Recheck level in 6 weeks."
+    },
+    {
+      "id": 89,
+      "date": "2022-11-08",
+      "type": "lab_result",
+      "ordered_by": "Dr. Sarah Nguyen",
+      "summary": "Monthly INR",
+      "tests": {
+        "INR": {"value": 2.5, "unit": "", "ref_range": "2.0-3.0", "flag": "normal"}
+      }
+    },
+    {
+      "id": 90,
+      "date": "2022-12-06",
+      "type": "lab_result",
+      "ordered_by": "Dr. Sarah Nguyen",
+      "summary": "Year-end comprehensive labs",
+      "tests": {
+        "INR": {"value": 2.4, "unit": "", "ref_range": "2.0-3.0", "flag": "normal"},
+        "eGFR": {"value": 37, "unit": "mL/min/1.73m2", "ref_range": ">60", "flag": "low"},
+        "creatinine": {"value": 2.0, "unit": "mg/dL", "ref_range": "0.7-1.3", "flag": "high"},
+        "BUN": {"value": 42, "unit": "mg/dL", "ref_range": "7-20", "flag": "high"},
+        "potassium": {"value": 3.4, "unit": "mEq/L", "ref_range": "3.5-5.0", "flag": "low"},
+        "magnesium": {"value": 1.4, "unit": "mg/dL", "ref_range": "1.7-2.2", "flag": "low"},
+        "hemoglobin": {"value": 11.0, "unit": "g/dL", "ref_range": "13.5-17.5", "flag": "low"},
+        "B12": {"value": 240, "unit": "pg/mL", "ref_range": "200-900", "flag": "normal"},
+        "calcium": {"value": 8.4, "unit": "mg/dL", "ref_range": "8.5-10.5", "flag": "low"},
+        "HbA1c": {"value": 6.9, "unit": "%", "ref_range": "<7.0", "flag": "normal"},
+        "digoxin_level": {"value": 1.8, "unit": "ng/mL", "ref_range": "0.5-2.0", "flag": "normal"}
+      }
+    },
+    {
+      "id": 91,
+      "date": "2023-01-10",
+      "type": "lab_result",
+      "ordered_by": "Dr. Sarah Nguyen",
+      "summary": "Monthly INR",
+      "tests": {
+        "INR": {"value": 2.6, "unit": "", "ref_range": "2.0-3.0", "flag": "normal"}
+      }
+    },
+    {
+      "id": 92,
+      "date": "2023-01-24",
+      "type": "visit_note",
+      "doctor": "Dr. Elena Vasquez",
+      "department": "Emergency Department",
+      "summary": "Third hypoglycemic episode — severe",
+      "content": "82M brought by ambulance, found unresponsive at home by wife. Fingerstick glucose 38 mg/dL. GCS 10. Given D50 IV x2. Glucose normalized to 165. Regained consciousness. Patient on glipizide 5mg daily (reduced from BID in August) and metformin 500mg BID. eGFR 37. This is the THIRD ER visit for hypoglycemia. Glipizide should be discontinued. Admitted for observation given severity and prolonged unresponsiveness. Endocrinology consult placed."
+    },
+    {
+      "id": 93,
+      "date": "2023-01-24",
+      "type": "lab_result",
+      "ordered_by": "Dr. Elena Vasquez",
+      "summary": "ER labs - third hypoglycemia, severe",
+      "tests": {
+        "glucose": {"value": 38, "unit": "mg/dL", "ref_range": "70-100", "flag": "critical_low"},
+        "creatinine": {"value": 2.1, "unit": "mg/dL", "ref_range": "0.7-1.3", "flag": "high"},
+        "eGFR": {"value": 35, "unit": "mL/min/1.73m2", "ref_range": ">60", "flag": "low"},
+        "potassium": {"value": 3.3, "unit": "mEq/L", "ref_range": "3.5-5.0", "flag": "low"},
+        "magnesium": {"value": 1.3, "unit": "mg/dL", "ref_range": "1.7-2.2", "flag": "low"}
+      }
+    },
+    {
+      "id": 94,
+      "date": "2023-01-26",
+      "type": "visit_note",
+      "doctor": "Dr. Priya Kapoor",
+      "department": "Endocrinology",
+      "summary": "Inpatient consult - recurrent severe hypoglycemia",
+      "content": "82M with T2DM admitted after third hypoglycemic episode (glucose 38, unresponsive). On glipizide 5mg daily and metformin 500mg BID. eGFR 35, continuing to decline. Sulfonylureas are contraindicated at this level of renal impairment given repeated severe hypoglycemia. DISCONTINUE glipizide. Continue metformin 500mg BID (still acceptable at eGFR 35 but will need to stop below 30). Start linagliptin 5mg daily — DPP-4 inhibitor, no renal dose adjustment needed, low hypoglycemia risk. Target A1c <8% for this complex elderly patient."
+    },
+    {
+      "id": 95,
+      "date": "2023-01-26",
+      "type": "prescription",
+      "prescriber": "Dr. Priya Kapoor",
+      "department": "Endocrinology",
+      "summary": "Discontinue glipizide, start linagliptin",
+      "drug": "linagliptin",
+      "dose": "5mg",
+      "frequency": "daily",
+      "duration": "ongoing",
+      "indication": "type 2 diabetes, replacing glipizide due to recurrent hypoglycemia in CKD"
+    },
+    {
+      "id": 96,
+      "date": "2023-02-07",
+      "type": "pharmacy_note",
+      "summary": "Medication reconciliation post-hospitalization",
+      "content": "Patient discharged 2023-01-27. Medication changes: DISCONTINUED glipizide 5mg daily. ADDED linagliptin 5mg daily. All other medications unchanged: warfarin 3mg daily, digoxin 0.125mg daily, metoprolol succinate 50mg daily, furosemide 40mg BID, lisinopril 10mg daily, spironolactone 12.5mg daily, metformin 500mg BID, atorvastatin 40mg daily, aspirin 81mg daily, tamsulosin 0.4mg daily, zolpidem 5mg HS, gabapentin 300mg TID, omeprazole 20mg daily, acetaminophen 500mg TID PRN, potassium chloride 40mEq daily, magnesium oxide 400mg BID, ferrous sulfate 325mg daily. Total: 17 scheduled medications + 1 PRN."
+    },
+    {
+      "id": 97,
+      "date": "2023-02-14",
+      "type": "lab_result",
+      "ordered_by": "Dr. Sarah Nguyen",
+      "summary": "Monthly INR",
+      "tests": {
+        "INR": {"value": 2.3, "unit": "", "ref_range": "2.0-3.0", "flag": "normal"}
+      }
+    },
+    {
+      "id": 98,
+      "date": "2023-03-07",
+      "type": "visit_note",
+      "doctor": "Dr. Sarah Nguyen",
+      "department": "Primary Care",
+      "summary": "Annual visit, post-hospitalization follow-up",
+      "content": "82M, recently hospitalized for severe hypoglycemia. Glipizide discontinued, started linagliptin. Glucose logs improved, no further hypoglycemia. eGFR 35, declining. Chronic cough persists. Still on aspirin + warfarin. Hemoglobin 11.0, chronic anemia. Magnesium and calcium low. B12 declining (240) — may need supplementation soon if drops further. On omeprazole long-term which can impair B12 and magnesium absorption. Continue monitoring."
+    },
+    {
+      "id": 99,
+      "date": "2023-03-07",
+      "type": "lab_result",
+      "ordered_by": "Dr. Sarah Nguyen",
+      "summary": "Annual comprehensive labs",
+      "tests": {
+        "eGFR": {"value": 35, "unit": "mL/min/1.73m2", "ref_range": ">60", "flag": "low"},
+        "creatinine": {"value": 2.1, "unit": "mg/dL", "ref_range": "0.7-1.3", "flag": "high"},
+        "potassium": {"value": 3.5, "unit": "mEq/L", "ref_range": "3.5-5.0", "flag": "normal"},
+        "magnesium": {"value": 1.4, "unit": "mg/dL", "ref_range": "1.7-2.2", "flag": "low"},
+        "hemoglobin": {"value": 11.0, "unit": "g/dL", "ref_range": "13.5-17.5", "flag": "low"},
+        "B12": {"value": 235, "unit": "pg/mL", "ref_range": "200-900", "flag": "normal"},
+        "calcium": {"value": 8.3, "unit": "mg/dL", "ref_range": "8.5-10.5", "flag": "low"},
+        "vitamin_D_25OH": {"value": 18, "unit": "ng/mL", "ref_range": "30-100", "flag": "low"},
+        "HbA1c": {"value": 7.2, "unit": "%", "ref_range": "<7.0", "flag": "high"},
+        "digoxin_level": {"value": 1.9, "unit": "ng/mL", "ref_range": "0.5-2.0", "flag": "normal"}
+      }
+    },
+    {
+      "id": 100,
+      "date": "2023-03-20",
+      "type": "visit_note",
+      "doctor": "Dr. James Crawford",
+      "department": "Cardiology",
+      "summary": "Digoxin level near upper limit, patient symptomatic",
+      "content": "82M. Digoxin level 1.9, essentially at upper limit. eGFR 35. Potassium borderline low, magnesium low. Patient reports persistent nausea and has noticed things look yellowish at times. These are classic symptoms of digoxin toxicity — nausea and xanthopsia (yellow vision). Given electrolyte derangements (low K, low Mg), patient is at high risk even at 'therapeutic' levels. Recommend reducing digoxin to 0.0625mg daily or every other day dosing. Patient agrees. Will recheck level in 4 weeks."
+    },
+    {
+      "id": 101,
+      "date": "2023-03-20",
+      "type": "prescription",
+      "prescriber": "Dr. James Crawford",
+      "department": "Cardiology",
+      "summary": "Digoxin dose reduction for near-toxicity",
+      "drug": "digoxin",
+      "dose": "0.0625mg",
+      "frequency": "daily",
+      "duration": "ongoing",
+      "indication": "AFib rate control, dose reduced due to rising levels with CKD, symptoms of possible toxicity"
+    },
+    {
+      "id": 102,
+      "date": "2023-04-11",
+      "type": "lab_result",
+      "ordered_by": "Dr. Sarah Nguyen",
+      "summary": "Monthly INR",
+      "tests": {
+        "INR": {"value": 2.4, "unit": "", "ref_range": "2.0-3.0", "flag": "normal"}
+      }
+    },
+    {
+      "id": 103,
+      "date": "2023-04-18",
+      "type": "lab_result",
+      "ordered_by": "Dr. James Crawford",
+      "summary": "Digoxin recheck after dose reduction",
+      "tests": {
+        "digoxin_level": {"value": 1.4, "unit": "ng/mL", "ref_range": "0.5-2.0", "flag": "normal"},
+        "potassium": {"value": 3.5, "unit": "mEq/L", "ref_range": "3.5-5.0", "flag": "normal"},
+        "magnesium": {"value": 1.5, "unit": "mg/dL", "ref_range": "1.7-2.2", "flag": "low"}
+      }
+    },
+    {
+      "id": 104,
+      "date": "2023-05-09",
+      "type": "lab_result",
+      "ordered_by": "Dr. Sarah Nguyen",
+      "summary": "Monthly INR",
+      "tests": {
+        "INR": {"value": 2.5, "unit": "", "ref_range": "2.0-3.0", "flag": "normal"}
+      }
+    },
+    {
+      "id": 105,
+      "date": "2023-05-22",
+      "type": "visit_note",
+      "doctor": "Dr. Michael Torres",
+      "department": "Nephrology",
+      "summary": "CKD stage 3b, approaching stage 4",
+      "content": "82M with CKD, eGFR 35 and declining. Creatinine 2.1. Currently on lisinopril and furosemide. Metformin still being used at 500mg BID — approaching threshold for discontinuation (eGFR <30). Will need to stop if further decline. DEXA scan recommended given vitamin D deficiency, calcium borderline low, and long-term omeprazole use — all risk factors for osteoporosis. Age and sex also risk factors. Refer to endocrinology."
+    },
+    {
+      "id": 106,
+      "date": "2023-06-06",
+      "type": "lab_result",
+      "ordered_by": "Dr. Sarah Nguyen",
+      "summary": "Monthly INR",
+      "tests": {
+        "INR": {"value": 2.6, "unit": "", "ref_range": "2.0-3.0", "flag": "normal"}
+      }
+    },
+    {
+      "id": 107,
+      "date": "2023-06-20",
+      "type": "visit_note",
+      "doctor": "Dr. Alan Richardson",
+      "department": "Orthopedics",
+      "summary": "Knee osteoarthritis follow-up",
+      "content": "82M with bilateral knee OA, managed with acetaminophen and gabapentin. Reports worsening right knee pain. Cannot use NSAIDs due to CKD and anticoagulation. Physical therapy ongoing. DEXA scan ordered per nephrology recommendation. Continue conservative management."
+    },
+    {
+      "id": 108,
+      "date": "2023-07-05",
+      "type": "lab_result",
+      "ordered_by": "Dr. Sarah Nguyen",
+      "summary": "Monthly INR and mid-year labs",
+      "tests": {
+        "INR": {"value": 2.3, "unit": "", "ref_range": "2.0-3.0", "flag": "normal"},
+        "eGFR": {"value": 34, "unit": "mL/min/1.73m2", "ref_range": ">60", "flag": "low"},
+        "creatinine": {"value": 2.2, "unit": "mg/dL", "ref_range": "0.7-1.3", "flag": "high"},
+        "potassium": {"value": 3.4, "unit": "mEq/L", "ref_range": "3.5-5.0", "flag": "low"},
+        "magnesium": {"value": 1.3, "unit": "mg/dL", "ref_range": "1.7-2.2", "flag": "low"},
+        "digoxin_level": {"value": 1.5, "unit": "ng/mL", "ref_range": "0.5-2.0", "flag": "normal"}
+      }
+    },
+    {
+      "id": 109,
+      "date": "2023-07-18",
+      "type": "visit_note",
+      "doctor": "Dr. Sarah Nguyen",
+      "department": "Primary Care",
+      "summary": "DEXA results, ongoing issues",
+      "content": "DEXA scan results: T-score lumbar spine -2.8, femoral neck -2.6. Meets criteria for osteoporosis. Risk factors: age 82, male, vitamin D deficiency, calcium low, long-term omeprazole use (inhibits calcium absorption), declining renal function. Omeprazole has been taken continuously since at least 2019. Long-term PPI use associated with osteoporosis, hypomagnesemia, B12 deficiency — patient has all three developing. Start vitamin D 2000 IU daily. Calcium supplementation. Consider bisphosphonate but CKD limits options."
+    },
+    {
+      "id": 110,
+      "date": "2023-07-18",
+      "type": "prescription",
+      "prescriber": "Dr. Sarah Nguyen",
+      "department": "Primary Care",
+      "summary": "Vitamin D supplementation for deficiency and osteoporosis",
+      "drug": "cholecalciferol (vitamin D3)",
+      "dose": "2000 IU",
+      "frequency": "daily",
+      "duration": "ongoing",
+      "indication": "vitamin D deficiency, osteoporosis"
+    },
+    {
+      "id": 111,
+      "date": "2023-07-18",
+      "type": "prescription",
+      "prescriber": "Dr. Sarah Nguyen",
+      "department": "Primary Care",
+      "summary": "Calcium supplementation",
+      "drug": "calcium citrate",
+      "dose": "600mg",
+      "frequency": "BID",
+      "duration": "ongoing",
+      "indication": "hypocalcemia, osteoporosis"
+    },
+    {
+      "id": 112,
+      "date": "2023-08-08",
+      "type": "lab_result",
+      "ordered_by": "Dr. Sarah Nguyen",
+      "summary": "Monthly INR",
+      "tests": {
+        "INR": {"value": 2.8, "unit": "", "ref_range": "2.0-3.0", "flag": "normal"}
+      }
+    },
+    {
+      "id": 113,
+      "date": "2023-08-28",
+      "type": "visit_note",
+      "doctor": "Dr. Elena Vasquez",
+      "department": "Emergency Department",
+      "summary": "GI bleeding episode",
+      "content": "82M presents with melena and lightheadedness. On warfarin (INR 2.8) AND aspirin 81mg daily. Hemoglobin 9.4, dropped from 11.0. Hemodynamically stable. IV fluids started. GI consulted. INR in therapeutic range but dual antithrombotic therapy (warfarin + aspirin) is major bleeding risk. Previous EGD in 2021 showed erosive gastritis. Hold warfarin and aspirin. Admit for observation and repeat EGD."
+    },
+    {
+      "id": 114,
+      "date": "2023-08-28",
+      "type": "lab_result",
+      "ordered_by": "Dr. Elena Vasquez",
+      "summary": "ER labs - GI bleeding",
+      "tests": {
+        "hemoglobin": {"value": 9.4, "unit": "g/dL", "ref_range": "13.5-17.5", "flag": "critical_low"},
+        "hematocrit": {"value": 28.2, "unit": "%", "ref_range": "38.3-48.6", "flag": "critical_low"},
+        "INR": {"value": 2.8, "unit": "", "ref_range": "2.0-3.0", "flag": "normal"},
+        "creatinine": {"value": 2.3, "unit": "mg/dL", "ref_range": "0.7-1.3", "flag": "high"},
+        "BUN": {"value": 52, "unit": "mg/dL", "ref_range": "7-20", "flag": "high"}
+      }
+    },
+    {
+      "id": 115,
+      "date": "2023-08-30",
+      "type": "visit_note",
+      "doctor": "Dr. Lisa Park",
+      "department": "Gastroenterology",
+      "summary": "Repeat EGD for GI bleeding",
+      "content": "EGD performed. Findings: multiple gastric erosions with one actively oozing, treated with electrocautery. Diffuse erosive gastritis worse than 2021. On long-term omeprazole yet still developing gastric erosions — the aspirin is likely the culprit despite PPI protection. Patient is on both warfarin and aspirin. The CABG was in 2017 — over 6 years ago. There is no clear ongoing indication for aspirin in addition to warfarin for AFib. STRONGLY recommend discontinuing aspirin. This is the second significant GI bleeding event. Communicated to cardiology and PCP."
+    },
+    {
+      "id": 116,
+      "date": "2023-09-04",
+      "type": "visit_note",
+      "doctor": "Dr. James Crawford",
+      "department": "Cardiology",
+      "summary": "Post-GI bleeding follow-up, aspirin discussion",
+      "content": "82M admitted for GI bleeding, second episode. On warfarin for AFib and aspirin 81mg (started post-CABG 2017). GI strongly recommends stopping aspirin. CABG was over 6 years ago — ACC/AHA guidelines suggest aspirin can be discontinued after 1 year post-CABG if on adequate anticoagulation for another indication. I agree aspirin should be stopped given the bleeding risk. However, patient and family are concerned about stopping any heart medication. Discussed risks and benefits. Will discontinue aspirin."
+    },
+    {
+      "id": 117,
+      "date": "2023-09-04",
+      "type": "prescription",
+      "prescriber": "Dr. James Crawford",
+      "department": "Cardiology",
+      "summary": "Discontinue aspirin — bleeding risk exceeds benefit",
+      "drug": "aspirin",
+      "dose": "81mg",
+      "frequency": "DISCONTINUED",
+      "duration": "N/A",
+      "indication": "Discontinued — no ongoing indication post-CABG (>6 years), recurrent GI bleeding on dual antithrombotic therapy"
+    },
+    {
+      "id": 118,
+      "date": "2023-09-12",
+      "type": "lab_result",
+      "ordered_by": "Dr. Sarah Nguyen",
+      "summary": "Monthly INR and post-bleed labs",
+      "tests": {
+        "INR": {"value": 2.2, "unit": "", "ref_range": "2.0-3.0", "flag": "normal"},
+        "hemoglobin": {"value": 9.8, "unit": "g/dL", "ref_range": "13.5-17.5", "flag": "low"},
+        "ferritin": {"value": 12, "unit": "ng/mL", "ref_range": "20-250", "flag": "low"}
+      }
+    },
+    {
+      "id": 119,
+      "date": "2023-10-10",
+      "type": "lab_result",
+      "ordered_by": "Dr. Sarah Nguyen",
+      "summary": "Monthly INR",
+      "tests": {
+        "INR": {"value": 2.4, "unit": "", "ref_range": "2.0-3.0", "flag": "normal"}
+      }
+    },
+    {
+      "id": 120,
+      "date": "2023-10-25",
+      "type": "visit_note",
+      "doctor": "Dr. Sarah Nguyen",
+      "department": "Primary Care",
+      "summary": "Recovery from GI bleed, medication review",
+      "content": "Patient recovering. Aspirin discontinued by cardiology. Hemoglobin slowly recovering (9.8→10.2). Continue iron supplementation. Chronic cough continues — now 4+ years of documented persistent dry cough. On lisinopril 10mg daily. Allergy record shows cough on enalapril. Lisinopril is also an ACE inhibitor — ACE inhibitor cough is a class effect. This persistent cough may have been ACE inhibitor-related all along. Consider switching to an ARB. Will discuss with patient at next visit."
+    },
+    {
+      "id": 121,
+      "date": "2023-11-07",
+      "type": "lab_result",
+      "ordered_by": "Dr. Sarah Nguyen",
+      "summary": "Monthly INR and digoxin",
+      "tests": {
+        "INR": {"value": 2.5, "unit": "", "ref_range": "2.0-3.0", "flag": "normal"},
+        "digoxin_level": {"value": 1.6, "unit": "ng/mL", "ref_range": "0.5-2.0", "flag": "normal"},
+        "hemoglobin": {"value": 10.2, "unit": "g/dL", "ref_range": "13.5-17.5", "flag": "low"}
+      }
+    },
+    {
+      "id": 122,
+      "date": "2023-11-28",
+      "type": "visit_note",
+      "doctor": "Dr. Elena Vasquez",
+      "department": "Emergency Department",
+      "summary": "Fall with hip fracture",
+      "content": "82M fell at home at approximately 11 PM. Had taken zolpidem 5mg at bedtime at 10 PM. Got up to use bathroom, tripped and fell. Unable to bear weight on left leg. X-ray confirms left femoral neck fracture. This is the second documented fall — first was in January 2022, also nocturnal, also after zolpidem. Patient is on zolpidem 5mg HS AND gabapentin 300mg TID — both sedating. AGS Beers Criteria lists zolpidem as potentially inappropriate in patients >65 years. Orthopedic surgery consulted. Admit for surgical repair."
+    },
+    {
+      "id": 123,
+      "date": "2023-11-30",
+      "type": "visit_note",
+      "doctor": "Dr. Alan Richardson",
+      "department": "Orthopedics",
+      "summary": "Left hip hemiarthroplasty",
+      "content": "82M underwent left hip hemiarthroplasty for femoral neck fracture sustained in fall. Surgery uncomplicated. Warfarin held perioperatively, bridged with heparin. DEXA from July showed osteoporosis (T-score -2.6 femoral neck) which contributed to fracture from low-energy fall. Contributing factors to fall: zolpidem (sedation), gabapentin (sedation), tamsulosin (orthostatic hypotension), polypharmacy. STRONGLY recommend discontinuing zolpidem. Post-op PT/OT initiated."
+    },
+    {
+      "id": 124,
+      "date": "2023-12-05",
+      "type": "pharmacy_note",
+      "summary": "Post-surgical medication reconciliation",
+      "content": "Inpatient to discharge reconciliation. Warfarin resumed at 3mg daily. All pre-admission medications resumed. Physical therapy recommended zolpidem discontinuation — documented in chart. However, discharge medication list still includes zolpidem 5mg at bedtime. Patient requesting sleep aid for hospital discharge. Zolpidem continued per patient request with plan for outpatient taper discussion."
+    },
+    {
+      "id": 125,
+      "date": "2023-12-12",
+      "type": "lab_result",
+      "ordered_by": "Dr. Sarah Nguyen",
+      "summary": "Post-discharge labs",
+      "tests": {
+        "INR": {"value": 2.1, "unit": "", "ref_range": "2.0-3.0", "flag": "normal"},
+        "hemoglobin": {"value": 9.6, "unit": "g/dL", "ref_range": "13.5-17.5", "flag": "low"},
+        "creatinine": {"value": 2.3, "unit": "mg/dL", "ref_range": "0.7-1.3", "flag": "high"},
+        "eGFR": {"value": 32, "unit": "mL/min/1.73m2", "ref_range": ">60", "flag": "low"},
+        "potassium": {"value": 3.4, "unit": "mEq/L", "ref_range": "3.5-5.0", "flag": "low"},
+        "magnesium": {"value": 1.3, "unit": "mg/dL", "ref_range": "1.7-2.2", "flag": "low"}
+      }
+    },
+    {
+      "id": 126,
+      "date": "2024-01-09",
+      "type": "lab_result",
+      "ordered_by": "Dr. Sarah Nguyen",
+      "summary": "Monthly INR",
+      "tests": {
+        "INR": {"value": 2.4, "unit": "", "ref_range": "2.0-3.0", "flag": "normal"}
+      }
+    },
+    {
+      "id": 127,
+      "date": "2024-01-22",
+      "type": "visit_note",
+      "doctor": "Dr. Sarah Nguyen",
+      "department": "Primary Care",
+      "summary": "Post-hip surgery follow-up, medication concerns",
+      "content": "82M, 8 weeks post left hip hemiarthroplasty. Healing well, using walker. PT ongoing. Zolpidem still being taken despite multiple recommendations to discontinue. Gabapentin 300mg TID ongoing — contributes to sedation and fall risk. eGFR 32, approaching stage 4 CKD. Magnesium persistently low at 1.3 despite supplementation — likely omeprazole-induced malabsorption. B12 last checked at 235, declining trend. Long-term PPI use contributing to multiple deficiencies. Plan: trial discontinuation of omeprazole with step-down to famotidine if reflux recurs. Patient reluctant — fears heartburn return."
+    },
+    {
+      "id": 128,
+      "date": "2024-02-06",
+      "type": "lab_result",
+      "ordered_by": "Dr. Sarah Nguyen",
+      "summary": "Monthly INR and comprehensive labs",
+      "tests": {
+        "INR": {"value": 2.5, "unit": "", "ref_range": "2.0-3.0", "flag": "normal"},
+        "eGFR": {"value": 31, "unit": "mL/min/1.73m2", "ref_range": ">60", "flag": "low"},
+        "creatinine": {"value": 2.4, "unit": "mg/dL", "ref_range": "0.7-1.3", "flag": "high"},
+        "potassium": {"value": 3.5, "unit": "mEq/L", "ref_range": "3.5-5.0", "flag": "normal"},
+        "magnesium": {"value": 1.3, "unit": "mg/dL", "ref_range": "1.7-2.2", "flag": "low"},
+        "B12": {"value": 210, "unit": "pg/mL", "ref_range": "200-900", "flag": "normal"},
+        "calcium": {"value": 8.2, "unit": "mg/dL", "ref_range": "8.5-10.5", "flag": "low"},
+        "hemoglobin": {"value": 10.0, "unit": "g/dL", "ref_range": "13.5-17.5", "flag": "low"},
+        "digoxin_level": {"value": 1.7, "unit": "ng/mL", "ref_range": "0.5-2.0", "flag": "normal"}
+      }
+    },
+    {
+      "id": 129,
+      "date": "2024-03-05",
+      "type": "lab_result",
+      "ordered_by": "Dr. Sarah Nguyen",
+      "summary": "Monthly INR",
+      "tests": {
+        "INR": {"value": 2.3, "unit": "", "ref_range": "2.0-3.0", "flag": "normal"}
+      }
+    },
+    {
+      "id": 130,
+      "date": "2024-03-12",
+      "type": "visit_note",
+      "doctor": "Dr. Sarah Nguyen",
+      "department": "Primary Care",
+      "summary": "Annual wellness, comprehensive review",
+      "content": "82M annual visit. Complex medical history with multiple ongoing issues. Post hip surgery, walking with cane now. CKD progressing to stage 3b/4 border (eGFR 31). Metformin needs to be reduced — will decrease to 500mg once daily given eGFR approaching 30. Chronic cough PERSISTS. Still on lisinopril. Reviewed allergy history — cough on enalapril, switched to lisinopril. Both are ACE inhibitors. Class effect means cough would persist with any ACE inhibitor. This should have been caught years ago. Switching to losartan 50mg daily. Discontinue lisinopril."
+    },
+    {
+      "id": 131,
+      "date": "2024-03-12",
+      "type": "prescription",
+      "prescriber": "Dr. Sarah Nguyen",
+      "department": "Primary Care",
+      "summary": "Switch from lisinopril to losartan (ACE cough)",
+      "drug": "losartan",
+      "dose": "50mg",
+      "frequency": "daily",
+      "duration": "ongoing",
+      "indication": "hypertension, heart failure — switching from ACE inhibitor due to class-effect cough"
+    },
+    {
+      "id": 132,
+      "date": "2024-03-12",
+      "type": "prescription",
+      "prescriber": "Dr. Sarah Nguyen",
+      "department": "Primary Care",
+      "summary": "Discontinue lisinopril",
+      "drug": "lisinopril",
+      "dose": "10mg",
+      "frequency": "DISCONTINUED",
+      "duration": "N/A",
+      "indication": "Discontinued — ACE inhibitor class-effect cough, replacing with losartan"
+    },
+    {
+      "id": 133,
+      "date": "2024-03-12",
+      "type": "prescription",
+      "prescriber": "Dr. Sarah Nguyen",
+      "department": "Primary Care",
+      "summary": "Reduce metformin for declining eGFR",
+      "drug": "metformin",
+      "dose": "500mg",
+      "frequency": "once daily",
+      "duration": "ongoing",
+      "indication": "type 2 diabetes, dose reduced for eGFR approaching 30"
+    },
+    {
+      "id": 134,
+      "date": "2024-04-09",
+      "type": "lab_result",
+      "ordered_by": "Dr. Sarah Nguyen",
+      "summary": "Monthly INR and post-medication change labs",
+      "tests": {
+        "INR": {"value": 2.6, "unit": "", "ref_range": "2.0-3.0", "flag": "normal"},
+        "potassium": {"value": 4.2, "unit": "mEq/L", "ref_range": "3.5-5.0", "flag": "normal"},
+        "creatinine": {"value": 2.4, "unit": "mg/dL", "ref_range": "0.7-1.3", "flag": "high"}
+      }
+    },
+    {
+      "id": 135,
+      "date": "2024-04-23",
+      "type": "visit_note",
+      "doctor": "Dr. Sarah Nguyen",
+      "department": "Primary Care",
+      "summary": "Cough improvement after ACE switch",
+      "content": "Patient reports cough is SIGNIFICANTLY improved since switching from lisinopril to losartan 6 weeks ago. Cough that persisted for 5+ years is now nearly gone. This confirms the cough was ACE inhibitor class-effect all along. Enalapril caused it, lisinopril continued it. Should have been recognized earlier given the documented allergy to enalapril for cough. Potassium improved to 4.2 on losartan. Patient pleased."
+    },
+    {
+      "id": 136,
+      "date": "2024-05-07",
+      "type": "lab_result",
+      "ordered_by": "Dr. Sarah Nguyen",
+      "summary": "Monthly INR",
+      "tests": {
+        "INR": {"value": 2.4, "unit": "", "ref_range": "2.0-3.0", "flag": "normal"}
+      }
+    },
+    {
+      "id": 137,
+      "date": "2024-06-04",
+      "type": "lab_result",
+      "ordered_by": "Dr. Sarah Nguyen",
+      "summary": "Monthly INR and digoxin",
+      "tests": {
+        "INR": {"value": 2.5, "unit": "", "ref_range": "2.0-3.0", "flag": "normal"},
+        "digoxin_level": {"value": 1.8, "unit": "ng/mL", "ref_range": "0.5-2.0", "flag": "normal"},
+        "magnesium": {"value": 1.4, "unit": "mg/dL", "ref_range": "1.7-2.2", "flag": "low"}
+      }
+    },
+    {
+      "id": 138,
+      "date": "2024-06-18",
+      "type": "visit_note",
+      "doctor": "Dr. James Crawford",
+      "department": "Cardiology",
+      "summary": "Digoxin rising again after dose reduction",
+      "content": "82M. Digoxin level back up to 1.8 despite dose reduction to 0.0625mg in March 2023. eGFR now 31, continuing to decline. Level was down to 1.4 in April 2023 but has crept back up as kidney function worsened. Magnesium still low at 1.4 despite supplementation. Nausea returned intermittently. Consider further dose reduction or discontinuation. May need to rely solely on metoprolol for rate control. Will trial every-other-day digoxin dosing."
+    },
+    {
+      "id": 139,
+      "date": "2024-07-09",
+      "type": "lab_result",
+      "ordered_by": "Dr. Sarah Nguyen",
+      "summary": "Monthly INR",
+      "tests": {
+        "INR": {"value": 2.3, "unit": "", "ref_range": "2.0-3.0", "flag": "normal"}
+      }
+    },
+    {
+      "id": 140,
+      "date": "2024-08-06",
+      "type": "lab_result",
+      "ordered_by": "Dr. Sarah Nguyen",
+      "summary": "Monthly INR and comprehensive",
+      "tests": {
+        "INR": {"value": 2.5, "unit": "", "ref_range": "2.0-3.0", "flag": "normal"},
+        "eGFR": {"value": 30, "unit": "mL/min/1.73m2", "ref_range": ">60", "flag": "low"},
+        "creatinine": {"value": 2.5, "unit": "mg/dL", "ref_range": "0.7-1.3", "flag": "high"},
+        "potassium": {"value": 4.0, "unit": "mEq/L", "ref_range": "3.5-5.0", "flag": "normal"},
+        "magnesium": {"value": 1.3, "unit": "mg/dL", "ref_range": "1.7-2.2", "flag": "low"},
+        "hemoglobin": {"value": 10.1, "unit": "g/dL", "ref_range": "13.5-17.5", "flag": "low"},
+        "B12": {"value": 198, "unit": "pg/mL", "ref_range": "200-900", "flag": "low"},
+        "calcium": {"value": 8.2, "unit": "mg/dL", "ref_range": "8.5-10.5", "flag": "low"},
+        "HbA1c": {"value": 7.4, "unit": "%", "ref_range": "<7.0", "flag": "high"}
+      }
+    },
+    {
+      "id": 141,
+      "date": "2024-08-20",
+      "type": "visit_note",
+      "doctor": "Dr. Sarah Nguyen",
+      "department": "Primary Care",
+      "summary": "B12 now deficient, nutritional cascade",
+      "content": "B12 has dropped to 198 — now below normal range. Has been declining: 410 (2019) -> 380 -> 350 -> 320 -> 280 -> 265 -> 240 -> 235 -> 210 -> 198. On omeprazole continuously for 7+ years. Long-term PPI use inhibits B12 absorption and magnesium absorption. Magnesium persistently low (1.3) contributing to digoxin toxicity risk. Calcium low contributing to osteoporosis (hip fracture occurred). Start B12 supplementation 1000mcg daily. Strongly recommend PPI step-down but patient refuses — states heartburn was severe."
+    },
+    {
+      "id": 142,
+      "date": "2024-08-20",
+      "type": "prescription",
+      "prescriber": "Dr. Sarah Nguyen",
+      "department": "Primary Care",
+      "summary": "B12 supplementation for PPI-induced deficiency",
+      "drug": "cyanocobalamin (B12)",
+      "dose": "1000mcg",
+      "frequency": "daily",
+      "duration": "ongoing",
+      "indication": "vitamin B12 deficiency, likely PPI-induced malabsorption"
+    },
+    {
+      "id": 143,
+      "date": "2024-09-10",
+      "type": "lab_result",
+      "ordered_by": "Dr. Sarah Nguyen",
+      "summary": "Monthly INR",
+      "tests": {
+        "INR": {"value": 2.4, "unit": "", "ref_range": "2.0-3.0", "flag": "normal"}
+      }
+    },
+    {
+      "id": 144,
+      "date": "2024-10-08",
+      "type": "lab_result",
+      "ordered_by": "Dr. Sarah Nguyen",
+      "summary": "Monthly INR and digoxin",
+      "tests": {
+        "INR": {"value": 2.6, "unit": "", "ref_range": "2.0-3.0", "flag": "normal"},
+        "digoxin_level": {"value": 2.0, "unit": "ng/mL", "ref_range": "0.5-2.0", "flag": "high"},
+        "potassium": {"value": 3.6, "unit": "mEq/L", "ref_range": "3.5-5.0", "flag": "normal"},
+        "magnesium": {"value": 1.3, "unit": "mg/dL", "ref_range": "1.7-2.2", "flag": "low"}
+      }
+    },
+    {
+      "id": 145,
+      "date": "2024-11-05",
+      "type": "visit_note",
+      "doctor": "Dr. James Crawford",
+      "department": "Cardiology",
+      "summary": "Digoxin at upper limit, nausea and visual symptoms",
+      "content": "82M. Digoxin level 2.0 on every-other-day dosing of 0.0625mg. eGFR 30. Reports nausea, anorexia, and intermittent yellow-green halos around lights. These are classic digoxin toxicity symptoms. Magnesium 1.3, persistently low. Even at 'therapeutic' digoxin level, hypomagnesemia dramatically increases toxicity risk. Discontinuing digoxin entirely. Will rely on metoprolol alone for rate control. Increase metoprolol to 75mg daily if needed. Check ECG — no significant conduction abnormalities currently."
+    },
+    {
+      "id": 146,
+      "date": "2024-11-05",
+      "type": "prescription",
+      "prescriber": "Dr. James Crawford",
+      "department": "Cardiology",
+      "summary": "Discontinue digoxin due to toxicity",
+      "drug": "digoxin",
+      "dose": "0.0625mg",
+      "frequency": "DISCONTINUED",
+      "duration": "N/A",
+      "indication": "Discontinued — digoxin toxicity with nausea, visual changes, impaired renal clearance, hypomagnesemia"
+    },
+    {
+      "id": 147,
+      "date": "2024-12-10",
+      "type": "lab_result",
+      "ordered_by": "Dr. Sarah Nguyen",
+      "summary": "Year-end comprehensive labs",
+      "tests": {
+        "INR": {"value": 2.4, "unit": "", "ref_range": "2.0-3.0", "flag": "normal"},
+        "eGFR": {"value": 29, "unit": "mL/min/1.73m2", "ref_range": ">60", "flag": "low"},
+        "creatinine": {"value": 2.6, "unit": "mg/dL", "ref_range": "0.7-1.3", "flag": "high"},
+        "potassium": {"value": 4.1, "unit": "mEq/L", "ref_range": "3.5-5.0", "flag": "normal"},
+        "magnesium": {"value": 1.4, "unit": "mg/dL", "ref_range": "1.7-2.2", "flag": "low"},
+        "hemoglobin": {"value": 10.3, "unit": "g/dL", "ref_range": "13.5-17.5", "flag": "low"},
+        "B12": {"value": 310, "unit": "pg/mL", "ref_range": "200-900", "flag": "normal"},
+        "calcium": {"value": 8.4, "unit": "mg/dL", "ref_range": "8.5-10.5", "flag": "low"},
+        "HbA1c": {"value": 7.6, "unit": "%", "ref_range": "<7.0", "flag": "high"}
+      }
+    },
+    {
+      "id": 148,
+      "date": "2025-01-14",
+      "type": "lab_result",
+      "ordered_by": "Dr. Sarah Nguyen",
+      "summary": "Monthly INR",
+      "tests": {
+        "INR": {"value": 2.5, "unit": "", "ref_range": "2.0-3.0", "flag": "normal"}
+      }
+    },
+    {
+      "id": 149,
+      "date": "2025-02-04",
+      "type": "visit_note",
+      "doctor": "Dr. Sarah Nguyen",
+      "department": "Primary Care",
+      "summary": "Comprehensive review, deprescribing discussion",
+      "content": "82M complex patient. eGFR 29, now CKD stage 4. Metformin must be discontinued per guidelines (eGFR <30). Will rely on linagliptin alone for DM. Cough resolved since switching to losartan. Digoxin discontinued. B12 improving with supplementation (310, up from 198). Magnesium still low despite supplementation — omeprazole continues to impair absorption. Zolpidem continues despite two falls (one resulting in hip fracture). Patient insists on taking it. Gabapentin continues for neuropathic pain. Discussed comprehensive deprescribing plan."
+    },
+    {
+      "id": 150,
+      "date": "2026-02-10",
+      "type": "visit_note",
+      "doctor": "Dr. Sarah Nguyen",
+      "department": "Primary Care",
+      "summary": "Annual visit, status update",
+      "content": "82M annual visit. CKD stage 4 stable (eGFR 28). On losartan, metoprolol, furosemide, spironolactone for cardiac. Linagliptin for DM. Warfarin for AFib. Aspirin stopped 2023. Digoxin stopped 2024. Lisinopril switched to losartan 2024. Metformin stopped 2025. Omeprazole continues. Zolpidem continues despite Beers criteria concerns and fall history. Still on gabapentin. Overall medication burden reduced from 15+ to 12 active medications. Multiple cascading issues over the years from drug interactions and inappropriate prescribing."
+    }
+  ],
+  "ground_truth_issues": [
+    {
+      "type": "drug_interaction",
+      "severity": "critical",
+      "description": "Aspirin 81mg continued with warfarin without clear indication for dual antithrombotic therapy. Aspirin was started post-CABG in 2017 but continued for over 6 years despite the patient being on warfarin for atrial fibrillation. ACC/AHA guidelines recommend aspirin can be stopped 1 year after CABG if the patient is adequately anticoagulated. Dual therapy significantly increased bleeding risk, resulting in two GI bleeding episodes (guaiac-positive stools with anemia in 2021, and melena with hemoglobin drop to 9.4 requiring hospitalization in 2023). Aspirin was not discontinued until September 2023 after the second major GI bleed, despite GI recommending discontinuation after the first event.",
+      "evidence_records": [1, 8, 30, 56, 57, 58, 59, 113, 114, 115, 116, 117],
+      "clinical_reference": "ACC/AHA 2016 Guideline on Duration of Dual Antiplatelet Therapy: aspirin may be discontinued after 1 year post-CABG in patients on therapeutic anticoagulation for another indication. AHA/ACC 2019: avoid combination of anticoagulant + antiplatelet when possible due to bleeding risk.",
+      "what_should_have_happened": "Aspirin should have been discontinued within 1 year of CABG (by 2018) given the patient was already on warfarin for AFib. At minimum, it should have been stopped after the first GI bleeding event in 2021 when GI noted the dual therapy as a major bleeding risk factor."
+    },
+    {
+      "type": "declining_trend",
+      "severity": "critical",
+      "description": "Digoxin toxicity developed due to declining renal function (eGFR 55->42->35->30), furosemide-induced hypokalemia (K trending to 3.3-3.4), and hypomagnesemia (Mg declining to 1.3-1.4). Digoxin is renally cleared and levels rose from 1.0 to 1.4 to 1.8 to 2.0 ng/mL over several years. Hypokalemia and hypomagnesemia potentiate digoxin toxicity even at 'therapeutic' levels. Patient developed classic toxicity symptoms (nausea, xanthopsia/yellow vision, anorexia) which were initially attributed to other causes (uremia, GERD). Dose was eventually reduced in March 2023 but levels crept back up. Digoxin was not discontinued until November 2024 after prolonged symptomatic toxicity.",
+      "evidence_records": [4, 9, 24, 40, 46, 48, 50, 62, 66, 76, 77, 84, 85, 87, 88, 99, 100, 101, 103, 108, 121, 128, 137, 138, 144, 145, 146],
+      "clinical_reference": "AHA/ACC Guidelines: Digoxin levels should be maintained 0.5-0.9 ng/mL in heart failure. Digoxin clearance is proportional to GFR — dose must be reduced as renal function declines. Hypokalemia and hypomagnesemia increase myocardial sensitivity to digoxin and can cause toxicity even at 'therapeutic' serum levels.",
+      "what_should_have_happened": "Digoxin dose should have been proactively reduced when eGFR dropped below 45 and levels exceeded 1.2 ng/mL. Electrolyte derangements (low K, low Mg) should have triggered urgent digoxin dose reduction or discontinuation. When nausea and visual changes appeared, digoxin toxicity should have been immediately recognized and the drug stopped, not attributed to other causes."
+    },
+    {
+      "type": "drug_contraindication",
+      "severity": "critical",
+      "description": "Glipizide (sulfonylurea) continued in an elderly patient with progressive CKD despite recurrent severe hypoglycemic episodes. Sulfonylureas have prolonged duration of action in renal impairment. Patient experienced three ER visits for hypoglycemia: glucose 45 (July 2021), glucose 52 (July 2022), and glucose 38 with unresponsiveness (January 2023). Despite the first ER visit noting sulfonylurea risk with CKD, and endocrinology recommending dose reduction, glipizide was only reduced (not discontinued) after the second episode. It took a third life-threatening episode before glipizide was finally discontinued.",
+      "evidence_records": [12, 33, 34, 51, 52, 54, 74, 79, 80, 82, 83, 92, 93, 94, 95],
+      "clinical_reference": "ADA Standards of Medical Care in Diabetes: Sulfonylureas should be used with caution in CKD due to increased risk of hypoglycemia from reduced clearance. In elderly patients (>75 years) with eGFR <45, sulfonylureas should generally be avoided. A1c target should be <8% in complex elderly patients.",
+      "what_should_have_happened": "Glipizide should have been discontinued after the first severe hypoglycemic episode (glucose 45, ER visit July 2021), especially given eGFR was already 42 and declining. A DPP-4 inhibitor (linagliptin) or other renally-safe agent should have been substituted immediately. The A1c target should have been relaxed to <8% for this complex elderly patient."
+    },
+    {
+      "type": "drug_contraindication",
+      "severity": "moderate",
+      "description": "Zolpidem 5mg prescribed and continued in an 82-year-old patient despite being listed on the AGS Beers Criteria as potentially inappropriate in patients >65 years. Patient was also on gabapentin 300mg TID (additional sedation) and tamsulosin (orthostatic hypotension). This combination in an elderly patient with polypharmacy resulted in two documented falls: the first (January 2022) causing a shoulder injury, and the second (November 2023) causing a left femoral neck fracture requiring hemiarthroplasty. Despite multiple provider recommendations to discontinue, zolpidem was continued due to patient preference.",
+      "evidence_records": [23, 45, 68, 69, 96, 122, 123, 124, 127, 149, 150],
+      "clinical_reference": "AGS Beers Criteria 2023: Zolpidem and other nonbenzodiazepine hypnotics should be avoided in patients >65 years due to increased risk of falls, fractures, ER visits, and hospitalizations. Risk is compounded by concomitant CNS depressants (gabapentin) and medications causing orthostatic hypotension (tamsulosin).",
+      "what_should_have_happened": "Zolpidem should never have been continued in an 82-year-old on gabapentin and tamsulosin. After the first fall (January 2022), zolpidem should have been mandatorily discontinued with transition to non-pharmacologic sleep interventions (CBT-I) or lower-risk alternatives. After the hip fracture, it should have been absolutely discontinued regardless of patient preference."
+    },
+    {
+      "type": "contradiction",
+      "severity": "moderate",
+      "description": "Patient had documented ACE inhibitor cough on enalapril and was 'switched' to lisinopril — which is also an ACE inhibitor. ACE inhibitor-induced cough is a class effect caused by bradykinin accumulation, not specific to any individual ACE inhibitor. The patient had persistent dry cough for over 5 years (2019-2024) that was attributed to GERD, post-nasal drip, and allergies. Extensive workup including omeprazole dose increase, antihistamines, pulmonology referral, and PFTs were all performed — all unnecessary if the ACE inhibitor class effect had been recognized. The cough resolved within 6 weeks of switching to losartan (ARB) in March 2024.",
+      "evidence_records": [1, 6, 15, 16, 18, 23, 45, 71, 98, 120, 130, 131, 132, 135],
+      "clinical_reference": "ACE inhibitor-induced cough occurs in 5-35% of patients and is a CLASS EFFECT mediated by bradykinin and substance P accumulation. Switching between ACE inhibitors does not resolve the cough. Patients who develop cough on one ACE inhibitor should be switched to an ARB. UpToDate: 'ACE inhibitor cough — switch to ARB, do not switch to another ACE inhibitor.'",
+      "what_should_have_happened": "When the patient developed cough on enalapril, they should have been switched to an ARB (e.g., losartan, valsartan) — not to another ACE inhibitor (lisinopril). This would have prevented 5+ years of persistent cough, unnecessary diagnostic workups, and the temporary omeprazole dose increase."
+    },
+    {
+      "type": "declining_trend",
+      "severity": "moderate",
+      "description": "Omeprazole taken continuously for 7+ years causing cascading nutritional deficiencies. Magnesium declined from 1.9 to 1.3 mg/dL despite supplementation (PPI-induced malabsorption). B12 declined from 410 to 198 pg/mL over 5 years (PPI inhibits B12 absorption). Calcium declined from 9.2 to 8.2 mg/dL (PPI impairs calcium absorption). These deficiencies created interconnected cascading problems: hypomagnesemia potentiated digoxin toxicity, hypocalcemia and vitamin D deficiency contributed to osteoporosis (T-score -2.8) leading to hip fracture from a low-energy fall, and B12 deficiency contributed to anemia. The omeprazole was never discontinued despite being identified as the root cause.",
+      "evidence_records": [2, 16, 19, 24, 40, 46, 62, 66, 72, 84, 87, 90, 99, 105, 108, 109, 127, 128, 140, 141, 142, 147, 149],
+      "clinical_reference": "FDA Safety Communication (2011): Long-term PPI use (>1 year) associated with hypomagnesemia. ACG Guidelines: PPIs should be prescribed at the lowest effective dose for the shortest duration. Long-term PPI use associated with increased risk of osteoporosis and fractures, vitamin B12 deficiency, and hypomagnesemia. Annual monitoring of magnesium, B12, and bone density recommended for long-term PPI users.",
+      "what_should_have_happened": "Omeprazole should have been reviewed for continued necessity annually. Given declining magnesium, B12, and calcium levels, a trial of PPI discontinuation or step-down to H2 blocker (famotidine) should have been initiated by 2021 at the latest. Magnesium levels should have prompted PPI discontinuation per FDA guidance. The connection between omeprazole, nutritional deficiencies, digoxin toxicity risk, and osteoporosis should have been recognized as a cascading drug-induced syndrome."
+    }
+  ]
+}

@@ -1,0 +1,1715 @@
+{
+  "case_id": "hard_002",
+  "difficulty": "hard",
+  "patient": {
+    "name": "Maria Esperanza Delgado",
+    "age": 55,
+    "sex": "female",
+    "date_of_birth": "1970-08-22",
+    "diagnoses": [
+      "systemic lupus erythematosus (SLE)",
+      "lupus nephritis (Class IV)",
+      "secondary hypertension",
+      "anemia of chronic disease",
+      "antiphospholipid syndrome (history of DVT)",
+      "osteoporosis (steroid-induced)",
+      "major depressive disorder"
+    ],
+    "allergies": [
+      {
+        "substance": "sulfa drugs",
+        "reaction": "rash"
+      }
+    ],
+    "current_medications": [
+      "hydroxychloroquine 200mg BID",
+      "mycophenolate mofetil 1000mg BID",
+      "prednisone 15mg daily",
+      "warfarin 5mg daily",
+      "lisinopril 20mg daily",
+      "amlodipine 10mg daily",
+      "atorvastatin 20mg daily",
+      "calcium carbonate 600mg BID",
+      "vitamin D3 2000 IU daily",
+      "sertraline 50mg daily",
+      "omeprazole 20mg daily"
+    ]
+  },
+  "records": [
+    {
+      "id": 1,
+      "date": "2019-06-10",
+      "type": "visit_note",
+      "doctor": "Dr. Sandra Reyes",
+      "department": "Rheumatology",
+      "summary": "Established care for SLE management",
+      "content": "55 yo female transferring care. Diagnosed SLE 2012. History of class IV lupus nephritis confirmed by renal biopsy 2017. Antiphospholipid syndrome with DVT in left leg 2016, on warfarin. Steroid-induced osteoporosis with T-score -2.2 at lumbar spine on last DEXA (2018). Currently on hydroxychloroquine 200mg BID, mycophenolate 1000mg BID, prednisone 15mg daily (unable to taper below without flare), warfarin 5mg daily, lisinopril 20mg, amlodipine 10mg, atorvastatin 20mg, calcium carbonate 600mg BID, vitamin D3 2000 IU, sertraline 50mg, omeprazole 20mg. Allergy: sulfa drugs (rash). Exam: mild malar rash, no synovitis, no edema. Plan: continue current regimen, labs today, follow up 3 months."
+    },
+    {
+      "id": 2,
+      "date": "2019-06-10",
+      "type": "allergy_record",
+      "doctor": "Dr. Sandra Reyes",
+      "department": "Rheumatology",
+      "summary": "Allergy documentation",
+      "content": "Allergy verified: Sulfonamides/sulfa drugs - reaction: diffuse maculopapular rash. Severity: moderate. Verified with patient. No other known drug allergies."
+    },
+    {
+      "id": 3,
+      "date": "2019-06-10",
+      "type": "lab_result",
+      "ordered_by": "Dr. Sandra Reyes",
+      "summary": "Baseline labs at rheumatology intake",
+      "tests": {
+        "creatinine": { "value": 1.2, "unit": "mg/dL", "ref_range": "0.6-1.1", "flag": "high" },
+        "eGFR": { "value": 65, "unit": "mL/min/1.73m2", "ref_range": ">60", "flag": "normal" },
+        "BUN": { "value": 22, "unit": "mg/dL", "ref_range": "7-20", "flag": "high" },
+        "C3": { "value": 72, "unit": "mg/dL", "ref_range": "90-180", "flag": "low" },
+        "C4": { "value": 12, "unit": "mg/dL", "ref_range": "10-40", "flag": "normal" },
+        "anti-dsDNA": { "value": 85, "unit": "IU/mL", "ref_range": "<30", "flag": "high" },
+        "ESR": { "value": 42, "unit": "mm/hr", "ref_range": "0-20", "flag": "high" },
+        "hemoglobin": { "value": 10.8, "unit": "g/dL", "ref_range": "12.0-16.0", "flag": "low" },
+        "WBC": { "value": 4.2, "unit": "x10^3/uL", "ref_range": "4.5-11.0", "flag": "low" },
+        "platelets": { "value": 165, "unit": "x10^3/uL", "ref_range": "150-400", "flag": "normal" }
+      }
+    },
+    {
+      "id": 4,
+      "date": "2019-06-10",
+      "type": "lab_result",
+      "ordered_by": "Dr. Sandra Reyes",
+      "summary": "Urinalysis and urine protein",
+      "tests": {
+        "urine_protein_creatinine_ratio": { "value": 0.8, "unit": "mg/mg", "ref_range": "<0.2", "flag": "high" },
+        "urine_RBC": { "value": 8, "unit": "/HPF", "ref_range": "0-3", "flag": "high" },
+        "urine_WBC": { "value": 3, "unit": "/HPF", "ref_range": "0-5", "flag": "normal" }
+      }
+    },
+    {
+      "id": 5,
+      "date": "2019-06-15",
+      "type": "lab_result",
+      "ordered_by": "Dr. Thomas Park",
+      "summary": "INR monitoring",
+      "tests": {
+        "INR": { "value": 2.4, "unit": "", "ref_range": "2.0-3.0", "flag": "normal" },
+        "PT": { "value": 28.2, "unit": "seconds", "ref_range": "11-13.5", "flag": "high" }
+      }
+    },
+    {
+      "id": 6,
+      "date": "2019-07-01",
+      "type": "visit_note",
+      "doctor": "Dr. Thomas Park",
+      "department": "Primary Care",
+      "summary": "Annual primary care visit",
+      "content": "Patient seen for annual wellness visit. Known SLE with multiple complications. BP 142/88, controlled on dual antihypertensives. Depression stable on sertraline. Reviewed medication list. Discussed importance of bone health given chronic prednisone use -- patient on calcium, vitamin D, and alendronate 70mg weekly (filled at outside pharmacy). Last DEXA 2018 showed T-score -2.2 lumbar spine. Will plan repeat DEXA in future. Routine labs ordered. Referral to ophthalmology discussed for general eye health -- patient declined, states vision is fine."
+    },
+    {
+      "id": 7,
+      "date": "2019-07-01",
+      "type": "lab_result",
+      "ordered_by": "Dr. Thomas Park",
+      "summary": "Annual wellness labs",
+      "tests": {
+        "glucose_fasting": { "value": 98, "unit": "mg/dL", "ref_range": "70-100", "flag": "normal" },
+        "HbA1c": { "value": 5.6, "unit": "%", "ref_range": "<5.7", "flag": "normal" },
+        "total_cholesterol": { "value": 198, "unit": "mg/dL", "ref_range": "<200", "flag": "normal" },
+        "LDL": { "value": 112, "unit": "mg/dL", "ref_range": "<100", "flag": "high" },
+        "TSH": { "value": 2.8, "unit": "mIU/L", "ref_range": "0.4-4.0", "flag": "normal" },
+        "vitamin_D_25OH": { "value": 32, "unit": "ng/mL", "ref_range": "30-100", "flag": "normal" }
+      }
+    },
+    {
+      "id": 8,
+      "date": "2019-07-15",
+      "type": "lab_result",
+      "ordered_by": "Dr. Thomas Park",
+      "summary": "Monthly INR check",
+      "tests": {
+        "INR": { "value": 2.6, "unit": "", "ref_range": "2.0-3.0", "flag": "normal" }
+      }
+    },
+    {
+      "id": 9,
+      "date": "2019-08-12",
+      "type": "lab_result",
+      "ordered_by": "Dr. Thomas Park",
+      "summary": "Monthly INR check",
+      "tests": {
+        "INR": { "value": 2.3, "unit": "", "ref_range": "2.0-3.0", "flag": "normal" }
+      }
+    },
+    {
+      "id": 10,
+      "date": "2019-09-09",
+      "type": "visit_note",
+      "doctor": "Dr. Sandra Reyes",
+      "department": "Rheumatology",
+      "summary": "Routine rheumatology follow-up",
+      "content": "Patient reports mild joint stiffness in mornings, lasting ~30 min. No new rash, oral ulcers, or alopecia. Denies chest pain or SOB. Labs from June show mildly active serologies. Current regimen stable. Continue hydroxychloroquine, mycophenolate, prednisone 15mg. Attempted taper to 12.5mg caused arthralgias and fatigue -- patient returned to 15mg. Will recheck labs. Follow up 3 months."
+    },
+    {
+      "id": 11,
+      "date": "2019-09-09",
+      "type": "lab_result",
+      "ordered_by": "Dr. Sandra Reyes",
+      "summary": "Rheumatology follow-up labs",
+      "tests": {
+        "creatinine": { "value": 1.2, "unit": "mg/dL", "ref_range": "0.6-1.1", "flag": "high" },
+        "eGFR": { "value": 64, "unit": "mL/min/1.73m2", "ref_range": ">60", "flag": "normal" },
+        "C3": { "value": 75, "unit": "mg/dL", "ref_range": "90-180", "flag": "low" },
+        "C4": { "value": 13, "unit": "mg/dL", "ref_range": "10-40", "flag": "normal" },
+        "anti-dsDNA": { "value": 78, "unit": "IU/mL", "ref_range": "<30", "flag": "high" },
+        "CBC_hemoglobin": { "value": 10.6, "unit": "g/dL", "ref_range": "12.0-16.0", "flag": "low" },
+        "CBC_WBC": { "value": 4.5, "unit": "x10^3/uL", "ref_range": "4.5-11.0", "flag": "normal" }
+      }
+    },
+    {
+      "id": 12,
+      "date": "2019-09-15",
+      "type": "lab_result",
+      "ordered_by": "Dr. Thomas Park",
+      "summary": "Monthly INR check",
+      "tests": {
+        "INR": { "value": 2.5, "unit": "", "ref_range": "2.0-3.0", "flag": "normal" }
+      }
+    },
+    {
+      "id": 13,
+      "date": "2019-10-14",
+      "type": "lab_result",
+      "ordered_by": "Dr. Thomas Park",
+      "summary": "Monthly INR check",
+      "tests": {
+        "INR": { "value": 2.2, "unit": "", "ref_range": "2.0-3.0", "flag": "normal" }
+      }
+    },
+    {
+      "id": 14,
+      "date": "2019-11-11",
+      "type": "lab_result",
+      "ordered_by": "Dr. Thomas Park",
+      "summary": "Monthly INR check",
+      "tests": {
+        "INR": { "value": 2.7, "unit": "", "ref_range": "2.0-3.0", "flag": "normal" }
+      }
+    },
+    {
+      "id": 15,
+      "date": "2019-12-02",
+      "type": "visit_note",
+      "doctor": "Dr. Sandra Reyes",
+      "department": "Rheumatology",
+      "summary": "Routine follow-up, disease stable",
+      "content": "SLE stable on current regimen. No flare symptoms. Mild chronic fatigue and joint stiffness persists. Complements mildly low but stable. Anti-dsDNA mildly elevated but not trending up. Renal function stable with eGFR ~64. Continue all medications. Prednisone remains at 15mg daily -- patient understands risks of chronic steroids. Follow up 3 months."
+    },
+    {
+      "id": 16,
+      "date": "2019-12-02",
+      "type": "lab_result",
+      "ordered_by": "Dr. Sandra Reyes",
+      "summary": "Quarterly rheumatology labs",
+      "tests": {
+        "creatinine": { "value": 1.25, "unit": "mg/dL", "ref_range": "0.6-1.1", "flag": "high" },
+        "eGFR": { "value": 62, "unit": "mL/min/1.73m2", "ref_range": ">60", "flag": "normal" },
+        "urine_protein_creatinine_ratio": { "value": 0.9, "unit": "mg/mg", "ref_range": "<0.2", "flag": "high" },
+        "C3": { "value": 70, "unit": "mg/dL", "ref_range": "90-180", "flag": "low" },
+        "anti-dsDNA": { "value": 82, "unit": "IU/mL", "ref_range": "<30", "flag": "high" },
+        "hemoglobin": { "value": 10.5, "unit": "g/dL", "ref_range": "12.0-16.0", "flag": "low" }
+      }
+    },
+    {
+      "id": 17,
+      "date": "2019-12-09",
+      "type": "lab_result",
+      "ordered_by": "Dr. Thomas Park",
+      "summary": "Monthly INR check",
+      "tests": {
+        "INR": { "value": 2.4, "unit": "", "ref_range": "2.0-3.0", "flag": "normal" }
+      }
+    },
+    {
+      "id": 18,
+      "date": "2020-01-06",
+      "type": "lab_result",
+      "ordered_by": "Dr. Thomas Park",
+      "summary": "Monthly INR check",
+      "tests": {
+        "INR": { "value": 2.3, "unit": "", "ref_range": "2.0-3.0", "flag": "normal" }
+      }
+    },
+    {
+      "id": 19,
+      "date": "2020-01-20",
+      "type": "visit_note",
+      "doctor": "Dr. Leila Hassan",
+      "department": "Nephrology",
+      "summary": "Nephrology consultation for lupus nephritis monitoring",
+      "content": "Referred by rheumatology for ongoing lupus nephritis monitoring. History of class IV LN confirmed by biopsy 2017. Currently on mycophenolate 1000mg BID and prednisone 15mg daily. eGFR 62, protein/creatinine ratio 0.9 -- persistent proteinuria. BP 138/86 on lisinopril 20mg + amlodipine 10mg. Recommend continuing current immunosuppression. BP target <130/80 for renal protection -- may need to uptitrate lisinopril. Recheck labs in 3 months. Will follow every 6 months."
+    },
+    {
+      "id": 20,
+      "date": "2020-02-10",
+      "type": "lab_result",
+      "ordered_by": "Dr. Thomas Park",
+      "summary": "Monthly INR check",
+      "tests": {
+        "INR": { "value": 2.5, "unit": "", "ref_range": "2.0-3.0", "flag": "normal" }
+      }
+    },
+    {
+      "id": 21,
+      "date": "2020-03-02",
+      "type": "visit_note",
+      "doctor": "Dr. Sandra Reyes",
+      "department": "Rheumatology",
+      "summary": "Quarterly follow-up, SLE stable",
+      "content": "Patient reports stable symptoms. Mild fatigue, no new joint complaints. No rash, ulcers, or alopecia. Labs stable. eGFR 61, proteinuria persistent at ~0.9. Complements low but stable. Continue current regimen. Discussed hydroxychloroquine importance for long-term outcomes. Patient compliant with all medications. Follow up 3 months."
+    },
+    {
+      "id": 22,
+      "date": "2020-03-02",
+      "type": "lab_result",
+      "ordered_by": "Dr. Sandra Reyes",
+      "summary": "Quarterly rheumatology labs",
+      "tests": {
+        "creatinine": { "value": 1.3, "unit": "mg/dL", "ref_range": "0.6-1.1", "flag": "high" },
+        "eGFR": { "value": 61, "unit": "mL/min/1.73m2", "ref_range": ">60", "flag": "normal" },
+        "C3": { "value": 68, "unit": "mg/dL", "ref_range": "90-180", "flag": "low" },
+        "C4": { "value": 11, "unit": "mg/dL", "ref_range": "10-40", "flag": "normal" },
+        "anti-dsDNA": { "value": 90, "unit": "IU/mL", "ref_range": "<30", "flag": "high" },
+        "hemoglobin": { "value": 10.4, "unit": "g/dL", "ref_range": "12.0-16.0", "flag": "low" }
+      }
+    },
+    {
+      "id": 23,
+      "date": "2020-03-09",
+      "type": "lab_result",
+      "ordered_by": "Dr. Thomas Park",
+      "summary": "Monthly INR check",
+      "tests": {
+        "INR": { "value": 2.1, "unit": "", "ref_range": "2.0-3.0", "flag": "normal" }
+      }
+    },
+    {
+      "id": 24,
+      "date": "2020-04-06",
+      "type": "lab_result",
+      "ordered_by": "Dr. Thomas Park",
+      "summary": "Monthly INR check",
+      "tests": {
+        "INR": { "value": 2.6, "unit": "", "ref_range": "2.0-3.0", "flag": "normal" }
+      }
+    },
+    {
+      "id": 25,
+      "date": "2020-05-04",
+      "type": "visit_note",
+      "doctor": "Dr. Rebecca Liu",
+      "department": "Psychiatry",
+      "summary": "Psychiatric follow-up for depression",
+      "content": "Patient with MDD on sertraline 50mg daily. Reports mood is fair, sleep adequate, appetite decreased. PHQ-9 score 8 (mild). Chronic illness burden contributing to mood. No suicidal ideation. Continue sertraline 50mg. Follow up 6 months or sooner if worsening."
+    },
+    {
+      "id": 26,
+      "date": "2020-05-11",
+      "type": "lab_result",
+      "ordered_by": "Dr. Thomas Park",
+      "summary": "Monthly INR check",
+      "tests": {
+        "INR": { "value": 2.3, "unit": "", "ref_range": "2.0-3.0", "flag": "normal" }
+      }
+    },
+    {
+      "id": 27,
+      "date": "2020-06-01",
+      "type": "visit_note",
+      "doctor": "Dr. Sandra Reyes",
+      "department": "Rheumatology",
+      "summary": "Quarterly follow-up, mild disease activity",
+      "content": "Patient notes increased fatigue and mild arthralgias over last 2 weeks. No fever, rash stable. Labs show dsDNA rising and complements dropping slightly. eGFR 60. Urine protein/creatinine ratio 1.0 -- slight increase. Monitoring closely. Continue current medications. Attempted prednisone taper to 12.5mg -- if symptoms worsen, return to 15mg. Follow up 2 months."
+    },
+    {
+      "id": 28,
+      "date": "2020-06-01",
+      "type": "lab_result",
+      "ordered_by": "Dr. Sandra Reyes",
+      "summary": "Rheumatology labs showing mild activity increase",
+      "tests": {
+        "creatinine": { "value": 1.3, "unit": "mg/dL", "ref_range": "0.6-1.1", "flag": "high" },
+        "eGFR": { "value": 60, "unit": "mL/min/1.73m2", "ref_range": ">60", "flag": "normal" },
+        "urine_protein_creatinine_ratio": { "value": 1.0, "unit": "mg/mg", "ref_range": "<0.2", "flag": "high" },
+        "C3": { "value": 62, "unit": "mg/dL", "ref_range": "90-180", "flag": "low" },
+        "C4": { "value": 9, "unit": "mg/dL", "ref_range": "10-40", "flag": "low" },
+        "anti-dsDNA": { "value": 110, "unit": "IU/mL", "ref_range": "<30", "flag": "high" },
+        "hemoglobin": { "value": 10.2, "unit": "g/dL", "ref_range": "12.0-16.0", "flag": "low" },
+        "ESR": { "value": 55, "unit": "mm/hr", "ref_range": "0-20", "flag": "high" }
+      }
+    },
+    {
+      "id": 29,
+      "date": "2020-06-08",
+      "type": "lab_result",
+      "ordered_by": "Dr. Thomas Park",
+      "summary": "Monthly INR check",
+      "tests": {
+        "INR": { "value": 2.4, "unit": "", "ref_range": "2.0-3.0", "flag": "normal" }
+      }
+    },
+    {
+      "id": 30,
+      "date": "2020-07-13",
+      "type": "lab_result",
+      "ordered_by": "Dr. Thomas Park",
+      "summary": "Monthly INR check",
+      "tests": {
+        "INR": { "value": 2.2, "unit": "", "ref_range": "2.0-3.0", "flag": "normal" }
+      }
+    },
+    {
+      "id": 31,
+      "date": "2020-07-20",
+      "type": "visit_note",
+      "doctor": "Dr. Leila Hassan",
+      "department": "Nephrology",
+      "summary": "Nephrology follow-up -- proteinuria worsening",
+      "content": "Lupus nephritis monitoring. eGFR 60, proteinuria 1.0. Compared to 6 months ago (eGFR 62, proteinuria 0.9) -- mild but concerning trend. BP 140/86 -- above target. Increase lisinopril to 40mg daily. Continue mycophenolate. Will recheck in 3 months. If proteinuria continues to rise, may consider intensifying immunosuppression."
+    },
+    {
+      "id": 32,
+      "date": "2020-07-20",
+      "type": "prescription",
+      "prescriber": "Dr. Leila Hassan",
+      "department": "Nephrology",
+      "summary": "Increase lisinopril for BP and renal protection",
+      "drug": "lisinopril",
+      "dose": "40mg",
+      "frequency": "once daily",
+      "duration": "ongoing",
+      "indication": "hypertension, renal protection in lupus nephritis"
+    },
+    {
+      "id": 33,
+      "date": "2020-08-03",
+      "type": "visit_note",
+      "doctor": "Dr. Sandra Reyes",
+      "department": "Rheumatology",
+      "summary": "Follow-up after prednisone taper attempt",
+      "content": "Patient unable to tolerate prednisone reduction to 12.5mg. Developed arthralgias, fatigue, and mild rash after 3 weeks. Returned to 15mg with symptom improvement. Disease remains mildly active. Continue current regimen. Will monitor closely."
+    },
+    {
+      "id": 34,
+      "date": "2020-08-10",
+      "type": "lab_result",
+      "ordered_by": "Dr. Thomas Park",
+      "summary": "Monthly INR check",
+      "tests": {
+        "INR": { "value": 2.5, "unit": "", "ref_range": "2.0-3.0", "flag": "normal" }
+      }
+    },
+    {
+      "id": 35,
+      "date": "2020-09-14",
+      "type": "lab_result",
+      "ordered_by": "Dr. Thomas Park",
+      "summary": "Monthly INR check",
+      "tests": {
+        "INR": { "value": 2.3, "unit": "", "ref_range": "2.0-3.0", "flag": "normal" }
+      }
+    },
+    {
+      "id": 36,
+      "date": "2020-10-05",
+      "type": "visit_note",
+      "doctor": "Dr. Sandra Reyes",
+      "department": "Rheumatology",
+      "summary": "Lupus flare -- increased disease activity",
+      "content": "Patient presents with worsening fatigue, diffuse arthralgias, new malar rash, and low-grade fever (100.4F) for 5 days. Labs show significant serological activity. eGFR dropped to 58. Proteinuria increased. Starting pulse prednisone 40mg daily x 2 weeks then taper to 20mg, then back to 15mg. Added azithromycin for concurrent upper respiratory symptoms. Hold INR monitoring -- patient too unwell to come in regularly. Will see in 2 weeks."
+    },
+    {
+      "id": 37,
+      "date": "2020-10-05",
+      "type": "lab_result",
+      "ordered_by": "Dr. Sandra Reyes",
+      "summary": "Labs during lupus flare",
+      "tests": {
+        "creatinine": { "value": 1.4, "unit": "mg/dL", "ref_range": "0.6-1.1", "flag": "high" },
+        "eGFR": { "value": 58, "unit": "mL/min/1.73m2", "ref_range": ">60", "flag": "low" },
+        "urine_protein_creatinine_ratio": { "value": 1.5, "unit": "mg/mg", "ref_range": "<0.2", "flag": "high" },
+        "C3": { "value": 48, "unit": "mg/dL", "ref_range": "90-180", "flag": "low" },
+        "C4": { "value": 6, "unit": "mg/dL", "ref_range": "10-40", "flag": "low" },
+        "anti-dsDNA": { "value": 180, "unit": "IU/mL", "ref_range": "<30", "flag": "high" },
+        "hemoglobin": { "value": 9.8, "unit": "g/dL", "ref_range": "12.0-16.0", "flag": "low" },
+        "WBC": { "value": 3.8, "unit": "x10^3/uL", "ref_range": "4.5-11.0", "flag": "low" },
+        "ESR": { "value": 72, "unit": "mm/hr", "ref_range": "0-20", "flag": "high" },
+        "CRP": { "value": 18, "unit": "mg/L", "ref_range": "<5", "flag": "high" }
+      }
+    },
+    {
+      "id": 38,
+      "date": "2020-10-05",
+      "type": "prescription",
+      "prescriber": "Dr. Sandra Reyes",
+      "department": "Rheumatology",
+      "summary": "Pulse prednisone for lupus flare",
+      "drug": "prednisone",
+      "dose": "40mg",
+      "frequency": "once daily",
+      "duration": "2 weeks then taper to 20mg for 2 weeks then 15mg",
+      "indication": "SLE flare"
+    },
+    {
+      "id": 39,
+      "date": "2020-10-05",
+      "type": "prescription",
+      "prescriber": "Dr. Sandra Reyes",
+      "department": "Rheumatology",
+      "summary": "Azithromycin for URI symptoms during flare",
+      "drug": "azithromycin",
+      "dose": "250mg",
+      "frequency": "daily after 500mg loading dose",
+      "duration": "5 days",
+      "indication": "upper respiratory infection"
+    },
+    {
+      "id": 40,
+      "date": "2020-10-19",
+      "type": "visit_note",
+      "doctor": "Dr. Sandra Reyes",
+      "department": "Rheumatology",
+      "summary": "Flare follow-up -- improving",
+      "content": "Patient improving on prednisone 40mg. Rash fading, arthralgias less severe. Completed azithromycin. URI resolved. Will taper prednisone to 20mg starting tomorrow. No INR check since early September -- patient was acutely ill. Note: warfarin interactions with prednisone dose change and azithromycin -- should recheck INR soon. Advised patient to schedule INR check with PCP this week."
+    },
+    {
+      "id": 41,
+      "date": "2020-11-02",
+      "type": "visit_note",
+      "doctor": "Dr. Sandra Reyes",
+      "department": "Rheumatology",
+      "summary": "Flare follow-up -- tapering prednisone",
+      "content": "Continuing to improve. Prednisone now at 20mg. Plan to taper to 15mg next week. Labs improving. Complement levels recovering. eGFR 56 -- still below baseline. Proteinuria 1.3. Will continue close monitoring. Patient has not yet gotten INR rechecked -- reminded to do so."
+    },
+    {
+      "id": 42,
+      "date": "2020-11-02",
+      "type": "lab_result",
+      "ordered_by": "Dr. Sandra Reyes",
+      "summary": "Post-flare labs",
+      "tests": {
+        "creatinine": { "value": 1.45, "unit": "mg/dL", "ref_range": "0.6-1.1", "flag": "high" },
+        "eGFR": { "value": 56, "unit": "mL/min/1.73m2", "ref_range": ">60", "flag": "low" },
+        "urine_protein_creatinine_ratio": { "value": 1.3, "unit": "mg/mg", "ref_range": "<0.2", "flag": "high" },
+        "C3": { "value": 55, "unit": "mg/dL", "ref_range": "90-180", "flag": "low" },
+        "C4": { "value": 8, "unit": "mg/dL", "ref_range": "10-40", "flag": "low" },
+        "anti-dsDNA": { "value": 145, "unit": "IU/mL", "ref_range": "<30", "flag": "high" }
+      }
+    },
+    {
+      "id": 43,
+      "date": "2020-12-07",
+      "type": "lab_result",
+      "ordered_by": "Dr. Thomas Park",
+      "summary": "INR check after 3-month gap during flare",
+      "tests": {
+        "INR": { "value": 4.8, "unit": "", "ref_range": "2.0-3.0", "flag": "critical_high" }
+      }
+    },
+    {
+      "id": 44,
+      "date": "2020-12-07",
+      "type": "visit_note",
+      "doctor": "Dr. Thomas Park",
+      "department": "Primary Care",
+      "summary": "Urgent visit for critically elevated INR",
+      "content": "Patient finally came for INR check -- last INR was September 14 (2.3). Now INR 4.8, critically elevated. Patient on warfarin 5mg daily. During interval had prednisone pulse (40mg then taper), azithromycin course -- both known to potentiate warfarin. No active bleeding but reports easy bruising on arms. Hold warfarin x 2 days, recheck INR in 3 days. Resume at reduced dose 3mg daily. This is a significant monitoring gap -- INR should have been checked within 1 week of prednisone dose change and antibiotic initiation."
+    },
+    {
+      "id": 45,
+      "date": "2020-12-07",
+      "type": "prescription",
+      "prescriber": "Dr. Thomas Park",
+      "department": "Primary Care",
+      "summary": "Warfarin dose reduction after supratherapeutic INR",
+      "drug": "warfarin",
+      "dose": "3mg",
+      "frequency": "once daily",
+      "duration": "ongoing, pending INR stabilization",
+      "indication": "antiphospholipid syndrome; dose reduced from 5mg due to INR 4.8"
+    },
+    {
+      "id": 46,
+      "date": "2020-12-10",
+      "type": "lab_result",
+      "ordered_by": "Dr. Thomas Park",
+      "summary": "INR recheck after hold",
+      "tests": {
+        "INR": { "value": 3.2, "unit": "", "ref_range": "2.0-3.0", "flag": "high" }
+      }
+    },
+    {
+      "id": 47,
+      "date": "2020-12-21",
+      "type": "lab_result",
+      "ordered_by": "Dr. Thomas Park",
+      "summary": "INR recheck on new dose",
+      "tests": {
+        "INR": { "value": 2.8, "unit": "", "ref_range": "2.0-3.0", "flag": "normal" }
+      }
+    },
+    {
+      "id": 48,
+      "date": "2021-01-04",
+      "type": "visit_note",
+      "doctor": "Dr. Sandra Reyes",
+      "department": "Rheumatology",
+      "summary": "Post-flare follow-up, back on maintenance prednisone",
+      "content": "Flare has resolved. Back on prednisone 15mg daily. Disease activity mild. eGFR 55 -- has not recovered to pre-flare baseline of 60-62. Proteinuria still elevated at 1.2. Discussed with nephrology -- will continue monitoring. Mycophenolate dose may need increase if trend continues. Continue hydroxychloroquine. No eye exam on record for retinopathy screening -- however, patient has been on HCQ since 2012 (8+ years). Should have baseline eye exam and annual screening. Note to discuss at next visit."
+    },
+    {
+      "id": 49,
+      "date": "2021-01-04",
+      "type": "lab_result",
+      "ordered_by": "Dr. Sandra Reyes",
+      "summary": "Post-flare labs",
+      "tests": {
+        "creatinine": { "value": 1.5, "unit": "mg/dL", "ref_range": "0.6-1.1", "flag": "high" },
+        "eGFR": { "value": 55, "unit": "mL/min/1.73m2", "ref_range": ">60", "flag": "low" },
+        "urine_protein_creatinine_ratio": { "value": 1.2, "unit": "mg/mg", "ref_range": "<0.2", "flag": "high" },
+        "C3": { "value": 65, "unit": "mg/dL", "ref_range": "90-180", "flag": "low" },
+        "C4": { "value": 10, "unit": "mg/dL", "ref_range": "10-40", "flag": "normal" },
+        "anti-dsDNA": { "value": 95, "unit": "IU/mL", "ref_range": "<30", "flag": "high" },
+        "hemoglobin": { "value": 10.0, "unit": "g/dL", "ref_range": "12.0-16.0", "flag": "low" }
+      }
+    },
+    {
+      "id": 50,
+      "date": "2021-01-11",
+      "type": "lab_result",
+      "ordered_by": "Dr. Thomas Park",
+      "summary": "Monthly INR on adjusted dose",
+      "tests": {
+        "INR": { "value": 2.5, "unit": "", "ref_range": "2.0-3.0", "flag": "normal" }
+      }
+    },
+    {
+      "id": 51,
+      "date": "2021-02-08",
+      "type": "lab_result",
+      "ordered_by": "Dr. Thomas Park",
+      "summary": "Monthly INR check",
+      "tests": {
+        "INR": { "value": 2.4, "unit": "", "ref_range": "2.0-3.0", "flag": "normal" }
+      }
+    },
+    {
+      "id": 52,
+      "date": "2021-03-01",
+      "type": "visit_note",
+      "doctor": "Dr. Thomas Park",
+      "department": "Primary Care",
+      "summary": "Primary care follow-up, new symptoms of fatigue and weight gain",
+      "content": "Patient reports increased fatigue beyond baseline, weight gain 8 lbs over 3 months, constipation, dry skin, and feeling cold. On examination: mild periorbital puffiness, delayed DTRs. Suspect hypothyroidism -- common in SLE patients (autoimmune thyroiditis). TSH ordered. Continue current medications. Warfarin stable on 3mg (INR 2.4 last month). Note: DEXA scan overdue -- last done 2018. Will order when hypothyroid workup complete."
+    },
+    {
+      "id": 53,
+      "date": "2021-03-01",
+      "type": "lab_result",
+      "ordered_by": "Dr. Thomas Park",
+      "summary": "Thyroid workup for new symptoms",
+      "tests": {
+        "TSH": { "value": 12.4, "unit": "mIU/L", "ref_range": "0.4-4.0", "flag": "high" },
+        "free_T4": { "value": 0.6, "unit": "ng/dL", "ref_range": "0.8-1.8", "flag": "low" },
+        "anti-TPO_antibodies": { "value": 285, "unit": "IU/mL", "ref_range": "<35", "flag": "high" }
+      }
+    },
+    {
+      "id": 54,
+      "date": "2021-03-08",
+      "type": "visit_note",
+      "doctor": "Dr. Thomas Park",
+      "department": "Primary Care",
+      "summary": "Diagnosis of Hashimoto's thyroiditis, starting levothyroxine",
+      "content": "TSH 12.4, free T4 0.6, anti-TPO 285. Diagnosis: autoimmune thyroiditis (Hashimoto's) with overt hypothyroidism. Common autoimmune comorbidity in SLE. Starting levothyroxine 50mcg daily. Counseled patient to take on empty stomach in the morning, 30-60 min before eating. Recheck TSH in 6-8 weeks. Added to problem list."
+    },
+    {
+      "id": 55,
+      "date": "2021-03-08",
+      "type": "prescription",
+      "prescriber": "Dr. Thomas Park",
+      "department": "Primary Care",
+      "summary": "Start levothyroxine for hypothyroidism",
+      "drug": "levothyroxine",
+      "dose": "50mcg",
+      "frequency": "once daily in the morning",
+      "duration": "ongoing",
+      "indication": "hypothyroidism (Hashimoto's thyroiditis)"
+    },
+    {
+      "id": 56,
+      "date": "2021-03-15",
+      "type": "lab_result",
+      "ordered_by": "Dr. Thomas Park",
+      "summary": "Monthly INR check",
+      "tests": {
+        "INR": { "value": 2.6, "unit": "", "ref_range": "2.0-3.0", "flag": "normal" }
+      }
+    },
+    {
+      "id": 57,
+      "date": "2021-04-05",
+      "type": "visit_note",
+      "doctor": "Dr. Sandra Reyes",
+      "department": "Rheumatology",
+      "summary": "Quarterly rheumatology follow-up",
+      "content": "SLE stable post-flare. New diagnosis of Hashimoto's thyroiditis, started levothyroxine. eGFR 54 -- continuing slow decline. Proteinuria persistent. Discussed with nephrology about possibly increasing mycophenolate. Complement levels still low. Anti-dsDNA still elevated. Continue all SLE medications. Patient still has not had ophthalmology screening for hydroxychloroquine retinopathy despite being on HCQ for 9 years. Stressed importance -- patient will try to schedule."
+    },
+    {
+      "id": 58,
+      "date": "2021-04-05",
+      "type": "lab_result",
+      "ordered_by": "Dr. Sandra Reyes",
+      "summary": "Quarterly rheumatology labs",
+      "tests": {
+        "creatinine": { "value": 1.55, "unit": "mg/dL", "ref_range": "0.6-1.1", "flag": "high" },
+        "eGFR": { "value": 54, "unit": "mL/min/1.73m2", "ref_range": ">60", "flag": "low" },
+        "urine_protein_creatinine_ratio": { "value": 1.4, "unit": "mg/mg", "ref_range": "<0.2", "flag": "high" },
+        "C3": { "value": 60, "unit": "mg/dL", "ref_range": "90-180", "flag": "low" },
+        "anti-dsDNA": { "value": 100, "unit": "IU/mL", "ref_range": "<30", "flag": "high" },
+        "hemoglobin": { "value": 9.9, "unit": "g/dL", "ref_range": "12.0-16.0", "flag": "low" }
+      }
+    },
+    {
+      "id": 59,
+      "date": "2021-04-12",
+      "type": "lab_result",
+      "ordered_by": "Dr. Thomas Park",
+      "summary": "Monthly INR check",
+      "tests": {
+        "INR": { "value": 2.3, "unit": "", "ref_range": "2.0-3.0", "flag": "normal" }
+      }
+    },
+    {
+      "id": 60,
+      "date": "2021-04-26",
+      "type": "lab_result",
+      "ordered_by": "Dr. Thomas Park",
+      "summary": "TSH recheck 7 weeks after starting levothyroxine",
+      "tests": {
+        "TSH": { "value": 9.8, "unit": "mIU/L", "ref_range": "0.4-4.0", "flag": "high" },
+        "free_T4": { "value": 0.7, "unit": "ng/dL", "ref_range": "0.8-1.8", "flag": "low" }
+      }
+    },
+    {
+      "id": 61,
+      "date": "2021-04-28",
+      "type": "visit_note",
+      "doctor": "Dr. Thomas Park",
+      "department": "Primary Care",
+      "summary": "Levothyroxine dose increase -- TSH still elevated",
+      "content": "TSH 9.8 on levothyroxine 50mcg daily. Insufficient response. Patient confirms taking medication every morning. Increase to 75mcg daily. Recheck in 6 weeks. Patient taking morning medications together -- counseled again to take levothyroxine separately on empty stomach. Patient states she takes all morning pills together with breakfast including calcium supplement."
+    },
+    {
+      "id": 62,
+      "date": "2021-04-28",
+      "type": "prescription",
+      "prescriber": "Dr. Thomas Park",
+      "department": "Primary Care",
+      "summary": "Increase levothyroxine dose",
+      "drug": "levothyroxine",
+      "dose": "75mcg",
+      "frequency": "once daily in the morning",
+      "duration": "ongoing",
+      "indication": "hypothyroidism -- dose increase due to persistently elevated TSH"
+    },
+    {
+      "id": 63,
+      "date": "2021-05-10",
+      "type": "lab_result",
+      "ordered_by": "Dr. Thomas Park",
+      "summary": "Monthly INR check",
+      "tests": {
+        "INR": { "value": 2.1, "unit": "", "ref_range": "2.0-3.0", "flag": "normal" }
+      }
+    },
+    {
+      "id": 64,
+      "date": "2021-06-07",
+      "type": "lab_result",
+      "ordered_by": "Dr. Thomas Park",
+      "summary": "Monthly INR check",
+      "tests": {
+        "INR": { "value": 2.4, "unit": "", "ref_range": "2.0-3.0", "flag": "normal" }
+      }
+    },
+    {
+      "id": 65,
+      "date": "2021-06-14",
+      "type": "lab_result",
+      "ordered_by": "Dr. Thomas Park",
+      "summary": "TSH recheck after dose increase to 75mcg",
+      "tests": {
+        "TSH": { "value": 8.2, "unit": "mIU/L", "ref_range": "0.4-4.0", "flag": "high" },
+        "free_T4": { "value": 0.8, "unit": "ng/dL", "ref_range": "0.8-1.8", "flag": "normal" }
+      }
+    },
+    {
+      "id": 66,
+      "date": "2021-06-18",
+      "type": "visit_note",
+      "doctor": "Dr. Thomas Park",
+      "department": "Primary Care",
+      "summary": "Levothyroxine still not adequately dosed",
+      "content": "TSH 8.2 on levothyroxine 75mcg. Improved from 9.8 but still significantly elevated. Patient still symptomatic with fatigue and constipation. Increase to 100mcg daily. Again counseled on empty stomach dosing. Patient reports she takes her levothyroxine first thing in the morning but admits she also takes her calcium carbonate and other pills at the same time. Did not specifically address calcium-levothyroxine interaction. Recheck TSH in 6 weeks."
+    },
+    {
+      "id": 67,
+      "date": "2021-06-18",
+      "type": "prescription",
+      "prescriber": "Dr. Thomas Park",
+      "department": "Primary Care",
+      "summary": "Increase levothyroxine dose again",
+      "drug": "levothyroxine",
+      "dose": "100mcg",
+      "frequency": "once daily in the morning",
+      "duration": "ongoing",
+      "indication": "hypothyroidism -- dose increase due to persistently elevated TSH despite 75mcg"
+    },
+    {
+      "id": 68,
+      "date": "2021-07-05",
+      "type": "visit_note",
+      "doctor": "Dr. Sandra Reyes",
+      "department": "Rheumatology",
+      "summary": "Quarterly rheumatology follow-up",
+      "content": "SLE relatively stable but renal function continues slow decline. eGFR now 52. Proteinuria 1.5. Discussed with Dr. Hassan (nephrology) -- plan to increase mycophenolate to 1500mg BID if next labs show further decline. Patient fatigued but likely multifactorial (SLE, anemia, hypothyroidism still being treated). Continue HCQ, prednisone 15mg. Still no ophthalmology screening completed. Patient reports difficulty scheduling."
+    },
+    {
+      "id": 69,
+      "date": "2021-07-05",
+      "type": "lab_result",
+      "ordered_by": "Dr. Sandra Reyes",
+      "summary": "Quarterly labs showing continued renal decline",
+      "tests": {
+        "creatinine": { "value": 1.6, "unit": "mg/dL", "ref_range": "0.6-1.1", "flag": "high" },
+        "eGFR": { "value": 52, "unit": "mL/min/1.73m2", "ref_range": ">60", "flag": "low" },
+        "urine_protein_creatinine_ratio": { "value": 1.5, "unit": "mg/mg", "ref_range": "<0.2", "flag": "high" },
+        "C3": { "value": 58, "unit": "mg/dL", "ref_range": "90-180", "flag": "low" },
+        "C4": { "value": 9, "unit": "mg/dL", "ref_range": "10-40", "flag": "low" },
+        "anti-dsDNA": { "value": 105, "unit": "IU/mL", "ref_range": "<30", "flag": "high" },
+        "hemoglobin": { "value": 9.7, "unit": "g/dL", "ref_range": "12.0-16.0", "flag": "low" }
+      }
+    },
+    {
+      "id": 70,
+      "date": "2021-07-12",
+      "type": "lab_result",
+      "ordered_by": "Dr. Thomas Park",
+      "summary": "Monthly INR check",
+      "tests": {
+        "INR": { "value": 2.5, "unit": "", "ref_range": "2.0-3.0", "flag": "normal" }
+      }
+    },
+    {
+      "id": 71,
+      "date": "2021-08-02",
+      "type": "lab_result",
+      "ordered_by": "Dr. Thomas Park",
+      "summary": "TSH recheck after levothyroxine increase to 100mcg",
+      "tests": {
+        "TSH": { "value": 7.1, "unit": "mIU/L", "ref_range": "0.4-4.0", "flag": "high" },
+        "free_T4": { "value": 0.9, "unit": "ng/dL", "ref_range": "0.8-1.8", "flag": "normal" }
+      }
+    },
+    {
+      "id": 72,
+      "date": "2021-08-05",
+      "type": "pharmacy_note",
+      "doctor": "Pharmacist James Chen",
+      "department": "Pharmacy",
+      "summary": "Medication review note",
+      "content": "Reviewed medication profile for Maria Delgado. Note: Patient is taking calcium carbonate 600mg BID and levothyroxine 100mcg. Calcium supplements are known to significantly reduce levothyroxine absorption if taken concurrently. Recommend separating these medications by at least 4 hours. Attempted to contact prescriber Dr. Park -- left message. Patient also on warfarin 3mg -- no current drug interactions identified with other medications at current doses."
+    },
+    {
+      "id": 73,
+      "date": "2021-08-09",
+      "type": "lab_result",
+      "ordered_by": "Dr. Thomas Park",
+      "summary": "Monthly INR check",
+      "tests": {
+        "INR": { "value": 2.2, "unit": "", "ref_range": "2.0-3.0", "flag": "normal" }
+      }
+    },
+    {
+      "id": 74,
+      "date": "2021-09-13",
+      "type": "lab_result",
+      "ordered_by": "Dr. Thomas Park",
+      "summary": "Monthly INR check",
+      "tests": {
+        "INR": { "value": 2.6, "unit": "", "ref_range": "2.0-3.0", "flag": "normal" }
+      }
+    },
+    {
+      "id": 75,
+      "date": "2021-10-04",
+      "type": "visit_note",
+      "doctor": "Dr. Sandra Reyes",
+      "department": "Rheumatology",
+      "summary": "Quarterly follow-up, renal function worsening",
+      "content": "Continuing slow decline in renal function. eGFR 50. Proteinuria 1.6. Anti-dsDNA remains elevated. Mycophenolate has been at 1000mg BID for over 2 years without adequate renal response. Recommending increase to 1500mg BID. Discussed with patient -- agrees to try. Continue prednisone 15mg, HCQ 200mg BID. Nephrology follow-up in 1 month."
+    },
+    {
+      "id": 76,
+      "date": "2021-10-04",
+      "type": "lab_result",
+      "ordered_by": "Dr. Sandra Reyes",
+      "summary": "Quarterly labs -- continued renal decline",
+      "tests": {
+        "creatinine": { "value": 1.65, "unit": "mg/dL", "ref_range": "0.6-1.1", "flag": "high" },
+        "eGFR": { "value": 50, "unit": "mL/min/1.73m2", "ref_range": ">60", "flag": "low" },
+        "urine_protein_creatinine_ratio": { "value": 1.6, "unit": "mg/mg", "ref_range": "<0.2", "flag": "high" },
+        "C3": { "value": 55, "unit": "mg/dL", "ref_range": "90-180", "flag": "low" },
+        "anti-dsDNA": { "value": 115, "unit": "IU/mL", "ref_range": "<30", "flag": "high" },
+        "hemoglobin": { "value": 9.5, "unit": "g/dL", "ref_range": "12.0-16.0", "flag": "low" }
+      }
+    },
+    {
+      "id": 77,
+      "date": "2021-10-04",
+      "type": "prescription",
+      "prescriber": "Dr. Sandra Reyes",
+      "department": "Rheumatology",
+      "summary": "Increase mycophenolate for worsening nephritis",
+      "drug": "mycophenolate mofetil",
+      "dose": "1500mg",
+      "frequency": "BID",
+      "duration": "ongoing",
+      "indication": "lupus nephritis -- dose increase due to progressive proteinuria and declining eGFR"
+    },
+    {
+      "id": 78,
+      "date": "2021-10-11",
+      "type": "lab_result",
+      "ordered_by": "Dr. Thomas Park",
+      "summary": "Monthly INR check",
+      "tests": {
+        "INR": { "value": 2.3, "unit": "", "ref_range": "2.0-3.0", "flag": "normal" }
+      }
+    },
+    {
+      "id": 79,
+      "date": "2021-11-01",
+      "type": "visit_note",
+      "doctor": "Dr. Leila Hassan",
+      "department": "Nephrology",
+      "summary": "Nephrology follow-up -- progressive lupus nephritis",
+      "content": "eGFR declining: 65 (6/2019) -> 62 (12/2019) -> 60 (6/2020) -> 58 (10/2020) -> 55 (1/2021) -> 52 (7/2021) -> 50 (10/2021). Proteinuria rising from 0.8 to 1.6 over 2.5 years. This is a concerning progressive trend. Mycophenolate increased to 1500mg BID last month. If insufficient response in 3 months, will consider rituximab or repeat biopsy. BP 136/82 on lisinopril 40mg + amlodipine 10mg -- close to target. Continue renal protective measures."
+    },
+    {
+      "id": 80,
+      "date": "2021-11-08",
+      "type": "lab_result",
+      "ordered_by": "Dr. Thomas Park",
+      "summary": "Monthly INR check",
+      "tests": {
+        "INR": { "value": 2.4, "unit": "", "ref_range": "2.0-3.0", "flag": "normal" }
+      }
+    },
+    {
+      "id": 81,
+      "date": "2021-11-15",
+      "type": "visit_note",
+      "doctor": "Dr. Rebecca Liu",
+      "department": "Psychiatry",
+      "summary": "Depression follow-up",
+      "content": "Patient with worsening depression symptoms in setting of progressive kidney disease and multiple chronic conditions. PHQ-9 score 14 (moderate). Sleep disrupted. Appetite poor. No SI. Increase sertraline to 100mg daily. Discussed therapy referral -- patient will consider. Follow up 2 months."
+    },
+    {
+      "id": 82,
+      "date": "2021-11-15",
+      "type": "prescription",
+      "prescriber": "Dr. Rebecca Liu",
+      "department": "Psychiatry",
+      "summary": "Increase sertraline for worsening depression",
+      "drug": "sertraline",
+      "dose": "100mg",
+      "frequency": "once daily",
+      "duration": "ongoing",
+      "indication": "major depressive disorder -- dose increase"
+    },
+    {
+      "id": 83,
+      "date": "2021-12-06",
+      "type": "lab_result",
+      "ordered_by": "Dr. Thomas Park",
+      "summary": "Monthly INR check",
+      "tests": {
+        "INR": { "value": 2.5, "unit": "", "ref_range": "2.0-3.0", "flag": "normal" }
+      }
+    },
+    {
+      "id": 84,
+      "date": "2021-12-20",
+      "type": "lab_result",
+      "ordered_by": "Dr. Thomas Park",
+      "summary": "TSH recheck -- still elevated despite levothyroxine 100mcg",
+      "tests": {
+        "TSH": { "value": 6.5, "unit": "mIU/L", "ref_range": "0.4-4.0", "flag": "high" },
+        "free_T4": { "value": 0.9, "unit": "ng/dL", "ref_range": "0.8-1.8", "flag": "normal" }
+      }
+    },
+    {
+      "id": 85,
+      "date": "2021-12-22",
+      "type": "visit_note",
+      "doctor": "Dr. Thomas Park",
+      "department": "Primary Care",
+      "summary": "TSH persistently elevated -- increase levothyroxine again",
+      "content": "TSH 6.5 despite levothyroxine 100mcg. Patient has required unusually high doses. Reviewed compliance -- patient states she takes it every morning. Increase to 125mcg. Pharmacy note from August mentioned calcium interaction but I don't see documentation of follow-up. Will discuss medication timing at next visit. Recheck TSH 6 weeks."
+    },
+    {
+      "id": 86,
+      "date": "2021-12-22",
+      "type": "prescription",
+      "prescriber": "Dr. Thomas Park",
+      "department": "Primary Care",
+      "summary": "Increase levothyroxine again",
+      "drug": "levothyroxine",
+      "dose": "125mcg",
+      "frequency": "once daily in the morning",
+      "duration": "ongoing",
+      "indication": "hypothyroidism -- dose increase, TSH persistently elevated"
+    },
+    {
+      "id": 87,
+      "date": "2022-01-10",
+      "type": "visit_note",
+      "doctor": "Dr. Sandra Reyes",
+      "department": "Rheumatology",
+      "summary": "Quarterly follow-up, renal stabilizing on higher mycophenolate",
+      "content": "eGFR 48 -- continued slow decline but rate may be slowing after mycophenolate increase. Proteinuria 1.5. Will continue current doses. Hypothyroidism difficult to control. HCQ continued. No ophthalmology visit yet for retinopathy screening. Patient on HCQ ~10 years. Strongly recommended eye exam. Patient agrees to schedule within next month."
+    },
+    {
+      "id": 88,
+      "date": "2022-01-10",
+      "type": "lab_result",
+      "ordered_by": "Dr. Sandra Reyes",
+      "summary": "Quarterly rheumatology labs",
+      "tests": {
+        "creatinine": { "value": 1.7, "unit": "mg/dL", "ref_range": "0.6-1.1", "flag": "high" },
+        "eGFR": { "value": 48, "unit": "mL/min/1.73m2", "ref_range": ">60", "flag": "low" },
+        "urine_protein_creatinine_ratio": { "value": 1.5, "unit": "mg/mg", "ref_range": "<0.2", "flag": "high" },
+        "C3": { "value": 58, "unit": "mg/dL", "ref_range": "90-180", "flag": "low" },
+        "C4": { "value": 10, "unit": "mg/dL", "ref_range": "10-40", "flag": "normal" },
+        "anti-dsDNA": { "value": 95, "unit": "IU/mL", "ref_range": "<30", "flag": "high" },
+        "hemoglobin": { "value": 9.4, "unit": "g/dL", "ref_range": "12.0-16.0", "flag": "low" }
+      }
+    },
+    {
+      "id": 89,
+      "date": "2022-01-17",
+      "type": "lab_result",
+      "ordered_by": "Dr. Thomas Park",
+      "summary": "Monthly INR check",
+      "tests": {
+        "INR": { "value": 2.2, "unit": "", "ref_range": "2.0-3.0", "flag": "normal" }
+      }
+    },
+    {
+      "id": 90,
+      "date": "2022-02-07",
+      "type": "lab_result",
+      "ordered_by": "Dr. Thomas Park",
+      "summary": "TSH recheck on levothyroxine 125mcg",
+      "tests": {
+        "TSH": { "value": 5.8, "unit": "mIU/L", "ref_range": "0.4-4.0", "flag": "high" }
+      }
+    },
+    {
+      "id": 91,
+      "date": "2022-02-14",
+      "type": "lab_result",
+      "ordered_by": "Dr. Thomas Park",
+      "summary": "Monthly INR check",
+      "tests": {
+        "INR": { "value": 2.6, "unit": "", "ref_range": "2.0-3.0", "flag": "normal" }
+      }
+    },
+    {
+      "id": 92,
+      "date": "2022-03-07",
+      "type": "visit_note",
+      "doctor": "Dr. Thomas Park",
+      "department": "Primary Care",
+      "summary": "Annual visit -- multiple issues",
+      "content": "Complex patient with SLE, lupus nephritis (eGFR declining), antiphospholipid syndrome on warfarin, hypothyroidism poorly controlled (TSH 5.8 on levothyroxine 125mcg), steroid-induced osteoporosis, depression. TSH still elevated -- considering endocrinology referral. DEXA scan overdue -- last 2018, now 4 years ago. Patient on chronic prednisone 15mg. Will order DEXA. HbA1c 5.9 -- prediabetes range, likely steroid effect. Weight up 12 lbs since last year. BP 134/82."
+    },
+    {
+      "id": 93,
+      "date": "2022-03-07",
+      "type": "lab_result",
+      "ordered_by": "Dr. Thomas Park",
+      "summary": "Annual wellness labs",
+      "tests": {
+        "HbA1c": { "value": 5.9, "unit": "%", "ref_range": "<5.7", "flag": "high" },
+        "glucose_fasting": { "value": 108, "unit": "mg/dL", "ref_range": "70-100", "flag": "high" },
+        "total_cholesterol": { "value": 218, "unit": "mg/dL", "ref_range": "<200", "flag": "high" },
+        "LDL": { "value": 128, "unit": "mg/dL", "ref_range": "<100", "flag": "high" },
+        "vitamin_D_25OH": { "value": 28, "unit": "ng/mL", "ref_range": "30-100", "flag": "low" }
+      }
+    },
+    {
+      "id": 94,
+      "date": "2022-03-14",
+      "type": "lab_result",
+      "ordered_by": "Dr. Thomas Park",
+      "summary": "Monthly INR check",
+      "tests": {
+        "INR": { "value": 2.3, "unit": "", "ref_range": "2.0-3.0", "flag": "normal" }
+      }
+    },
+    {
+      "id": 95,
+      "date": "2022-04-04",
+      "type": "visit_note",
+      "doctor": "Dr. Sandra Reyes",
+      "department": "Rheumatology",
+      "summary": "Quarterly follow-up",
+      "content": "SLE maintained on mycophenolate 1500mg BID, prednisone 15mg, HCQ 200mg BID. eGFR 45 -- continues to decline. Proteinuria 1.7. Discussing with nephrology about rituximab. Patient increasingly fatigued -- multifactorial. Still no ophthalmology appointment made despite repeated reminders. Patient states she will call this week."
+    },
+    {
+      "id": 96,
+      "date": "2022-04-04",
+      "type": "lab_result",
+      "ordered_by": "Dr. Sandra Reyes",
+      "summary": "Quarterly labs -- further renal decline",
+      "tests": {
+        "creatinine": { "value": 1.8, "unit": "mg/dL", "ref_range": "0.6-1.1", "flag": "high" },
+        "eGFR": { "value": 45, "unit": "mL/min/1.73m2", "ref_range": ">60", "flag": "low" },
+        "urine_protein_creatinine_ratio": { "value": 1.7, "unit": "mg/mg", "ref_range": "<0.2", "flag": "high" },
+        "C3": { "value": 52, "unit": "mg/dL", "ref_range": "90-180", "flag": "low" },
+        "C4": { "value": 8, "unit": "mg/dL", "ref_range": "10-40", "flag": "low" },
+        "anti-dsDNA": { "value": 120, "unit": "IU/mL", "ref_range": "<30", "flag": "high" },
+        "hemoglobin": { "value": 9.2, "unit": "g/dL", "ref_range": "12.0-16.0", "flag": "low" }
+      }
+    },
+    {
+      "id": 97,
+      "date": "2022-04-11",
+      "type": "lab_result",
+      "ordered_by": "Dr. Thomas Park",
+      "summary": "Monthly INR check",
+      "tests": {
+        "INR": { "value": 2.4, "unit": "", "ref_range": "2.0-3.0", "flag": "normal" }
+      }
+    },
+    {
+      "id": 98,
+      "date": "2022-05-02",
+      "type": "visit_note",
+      "doctor": "Dr. Leila Hassan",
+      "department": "Nephrology",
+      "summary": "Nephrology follow-up -- considering rituximab",
+      "content": "Progressive lupus nephritis despite mycophenolate 1500mg BID and prednisone 15mg. eGFR now 45, down from 65 at initial visit (2019). Proteinuria 1.7. This trajectory is concerning for end-stage renal disease within 3-5 years if not arrested. Recommend rituximab infusion. Will coordinate with rheumatology. Also recommending repeat renal biopsy to assess chronicity index. Patient counseled on risks/benefits."
+    },
+    {
+      "id": 99,
+      "date": "2022-05-09",
+      "type": "lab_result",
+      "ordered_by": "Dr. Thomas Park",
+      "summary": "Monthly INR check",
+      "tests": {
+        "INR": { "value": 2.5, "unit": "", "ref_range": "2.0-3.0", "flag": "normal" }
+      }
+    },
+    {
+      "id": 100,
+      "date": "2022-06-06",
+      "type": "visit_note",
+      "doctor": "Dr. Sandra Reyes",
+      "department": "Rheumatology",
+      "summary": "Initiating rituximab for refractory lupus nephritis",
+      "content": "In coordination with nephrology, starting rituximab for progressive lupus nephritis refractory to mycophenolate + prednisone. Biopsy showed active class IV with moderate chronicity. First infusion scheduled 6/20. Will continue mycophenolate at current dose during transition. Continue HCQ. Continue prednisone 15mg. Pre-infusion labs ordered."
+    },
+    {
+      "id": 101,
+      "date": "2022-06-06",
+      "type": "prescription",
+      "prescriber": "Dr. Sandra Reyes",
+      "department": "Rheumatology",
+      "summary": "Rituximab for lupus nephritis",
+      "drug": "rituximab",
+      "dose": "1000mg IV",
+      "frequency": "2 doses separated by 2 weeks",
+      "duration": "2 infusions, reassess in 6 months",
+      "indication": "refractory class IV lupus nephritis"
+    },
+    {
+      "id": 102,
+      "date": "2022-06-13",
+      "type": "lab_result",
+      "ordered_by": "Dr. Thomas Park",
+      "summary": "Monthly INR check",
+      "tests": {
+        "INR": { "value": 2.3, "unit": "", "ref_range": "2.0-3.0", "flag": "normal" }
+      }
+    },
+    {
+      "id": 103,
+      "date": "2022-06-20",
+      "type": "visit_note",
+      "doctor": "Dr. Sandra Reyes",
+      "department": "Rheumatology",
+      "summary": "First rituximab infusion",
+      "content": "Rituximab 1000mg IV administered. Premedicated with methylprednisolone 100mg IV, acetaminophen, diphenhydramine. Infusion tolerated well. Mild throat tightness at 30 min -- rate slowed, symptoms resolved. Completed infusion over 5 hours. Second dose scheduled July 4. Monitor for infections."
+    },
+    {
+      "id": 104,
+      "date": "2022-07-04",
+      "type": "visit_note",
+      "doctor": "Dr. Sandra Reyes",
+      "department": "Rheumatology",
+      "summary": "Second rituximab infusion",
+      "content": "Second rituximab 1000mg IV infusion administered. Tolerated without reaction. B-cell depletion confirmed on flow cytometry. Will monitor renal function closely over next 3-6 months for response. Continue all other medications."
+    },
+    {
+      "id": 105,
+      "date": "2022-07-11",
+      "type": "lab_result",
+      "ordered_by": "Dr. Thomas Park",
+      "summary": "Monthly INR check",
+      "tests": {
+        "INR": { "value": 2.7, "unit": "", "ref_range": "2.0-3.0", "flag": "normal" }
+      }
+    },
+    {
+      "id": 106,
+      "date": "2022-08-01",
+      "type": "visit_note",
+      "doctor": "Dr. Karen Wright",
+      "department": "Endocrinology",
+      "summary": "Endocrinology consultation for refractory hypothyroidism",
+      "content": "Referred for hypothyroidism poorly responsive to levothyroxine. Currently on 125mcg, TSH persistently 5-7. Reviewed medication list: patient taking levothyroxine with calcium carbonate and other morning medications. CRITICAL: Calcium carbonate significantly impairs levothyroxine absorption. Must separate by at least 4 hours. Recommend patient take levothyroxine alone on empty stomach, wait 1 hour before other medications, and take calcium carbonate at lunch and dinner instead of morning. May be able to reduce levothyroxine dose once absorption issue corrected. Recheck TSH in 6 weeks after medication timing change."
+    },
+    {
+      "id": 107,
+      "date": "2022-08-08",
+      "type": "lab_result",
+      "ordered_by": "Dr. Thomas Park",
+      "summary": "Monthly INR check",
+      "tests": {
+        "INR": { "value": 2.4, "unit": "", "ref_range": "2.0-3.0", "flag": "normal" }
+      }
+    },
+    {
+      "id": 108,
+      "date": "2022-09-05",
+      "type": "lab_result",
+      "ordered_by": "Dr. Thomas Park",
+      "summary": "Monthly INR check",
+      "tests": {
+        "INR": { "value": 2.2, "unit": "", "ref_range": "2.0-3.0", "flag": "normal" }
+      }
+    },
+    {
+      "id": 109,
+      "date": "2022-09-12",
+      "type": "lab_result",
+      "ordered_by": "Dr. Karen Wright",
+      "summary": "TSH recheck after correcting calcium-levothyroxine timing",
+      "tests": {
+        "TSH": { "value": 3.2, "unit": "mIU/L", "ref_range": "0.4-4.0", "flag": "normal" },
+        "free_T4": { "value": 1.2, "unit": "ng/dL", "ref_range": "0.8-1.8", "flag": "normal" }
+      }
+    },
+    {
+      "id": 110,
+      "date": "2022-09-15",
+      "type": "visit_note",
+      "doctor": "Dr. Karen Wright",
+      "department": "Endocrinology",
+      "summary": "Hypothyroidism resolved with medication timing correction",
+      "content": "TSH normalized to 3.2 after separating calcium carbonate from levothyroxine. This confirms the calcium-levothyroxine interaction was the cause of apparent treatment resistance. Patient feeling improved -- less fatigue, constipation resolving. Continue levothyroxine 125mcg with proper timing. May reduce to 100mcg at next check if TSH drops further. Follow up 3 months."
+    },
+    {
+      "id": 111,
+      "date": "2022-10-03",
+      "type": "visit_note",
+      "doctor": "Dr. Sandra Reyes",
+      "department": "Rheumatology",
+      "summary": "Post-rituximab assessment -- early response",
+      "content": "3 months post rituximab. eGFR 43 -- still declining but rate may be slowing. Proteinuria 1.5 -- slight improvement. Complements stabilizing. Will reassess at 6 months. Patient reports some improvement in energy (hypothyroidism now controlled). Continue all medications. Still no ophthalmology screening. Patient now on HCQ for 10 years. With renal impairment, risk of HCQ retinopathy is increased. Placing direct referral to ophthalmology."
+    },
+    {
+      "id": 112,
+      "date": "2022-10-03",
+      "type": "lab_result",
+      "ordered_by": "Dr. Sandra Reyes",
+      "summary": "Post-rituximab labs -- 3 month check",
+      "tests": {
+        "creatinine": { "value": 1.85, "unit": "mg/dL", "ref_range": "0.6-1.1", "flag": "high" },
+        "eGFR": { "value": 43, "unit": "mL/min/1.73m2", "ref_range": ">60", "flag": "low" },
+        "urine_protein_creatinine_ratio": { "value": 1.5, "unit": "mg/mg", "ref_range": "<0.2", "flag": "high" },
+        "C3": { "value": 62, "unit": "mg/dL", "ref_range": "90-180", "flag": "low" },
+        "C4": { "value": 11, "unit": "mg/dL", "ref_range": "10-40", "flag": "normal" },
+        "anti-dsDNA": { "value": 80, "unit": "IU/mL", "ref_range": "<30", "flag": "high" },
+        "hemoglobin": { "value": 9.3, "unit": "g/dL", "ref_range": "12.0-16.0", "flag": "low" },
+        "CD19_B_cells": { "value": 0.5, "unit": "%", "ref_range": "5-20", "flag": "low" }
+      }
+    },
+    {
+      "id": 113,
+      "date": "2022-10-10",
+      "type": "lab_result",
+      "ordered_by": "Dr. Thomas Park",
+      "summary": "Monthly INR check",
+      "tests": {
+        "INR": { "value": 2.5, "unit": "", "ref_range": "2.0-3.0", "flag": "normal" }
+      }
+    },
+    {
+      "id": 114,
+      "date": "2022-11-07",
+      "type": "lab_result",
+      "ordered_by": "Dr. Thomas Park",
+      "summary": "Monthly INR check",
+      "tests": {
+        "INR": { "value": 2.3, "unit": "", "ref_range": "2.0-3.0", "flag": "normal" }
+      }
+    },
+    {
+      "id": 115,
+      "date": "2022-11-14",
+      "type": "visit_note",
+      "doctor": "Dr. Michael Torres",
+      "department": "Hematology",
+      "summary": "Hematology consultation for progressive anemia",
+      "content": "Referred for evaluation of progressive anemia. Hemoglobin trending 10.8 -> 9.2 over 3 years. Iron studies: ferritin 180 (adequate), TIBC low, iron normal -- pattern consistent with anemia of chronic disease (SLE, CKD). Reticulocyte count adequate. No B12/folate deficiency. Consider erythropoietin-stimulating agent if Hgb drops below 9.0 and CKD progresses. Continue monitoring."
+    },
+    {
+      "id": 116,
+      "date": "2022-11-14",
+      "type": "lab_result",
+      "ordered_by": "Dr. Michael Torres",
+      "summary": "Anemia workup",
+      "tests": {
+        "hemoglobin": { "value": 9.1, "unit": "g/dL", "ref_range": "12.0-16.0", "flag": "low" },
+        "ferritin": { "value": 180, "unit": "ng/mL", "ref_range": "12-150", "flag": "high" },
+        "iron": { "value": 55, "unit": "mcg/dL", "ref_range": "60-170", "flag": "low" },
+        "TIBC": { "value": 210, "unit": "mcg/dL", "ref_range": "250-370", "flag": "low" },
+        "reticulocyte_count": { "value": 1.2, "unit": "%", "ref_range": "0.5-2.5", "flag": "normal" },
+        "vitamin_B12": { "value": 450, "unit": "pg/mL", "ref_range": "200-900", "flag": "normal" },
+        "folate": { "value": 12, "unit": "ng/mL", "ref_range": ">3", "flag": "normal" }
+      }
+    },
+    {
+      "id": 117,
+      "date": "2022-12-05",
+      "type": "lab_result",
+      "ordered_by": "Dr. Thomas Park",
+      "summary": "Monthly INR check",
+      "tests": {
+        "INR": { "value": 2.6, "unit": "", "ref_range": "2.0-3.0", "flag": "normal" }
+      }
+    },
+    {
+      "id": 118,
+      "date": "2023-01-09",
+      "type": "visit_note",
+      "doctor": "Dr. Sandra Reyes",
+      "department": "Rheumatology",
+      "summary": "Quarterly follow-up, 6 months post rituximab",
+      "content": "6 months post rituximab. eGFR 40 -- still declining but proteinuria improved to 1.3. Serologies improved. May need second cycle of rituximab in 6 months. Continue HCQ, mycophenolate, prednisone. Ophthalmology referral placed in October -- patient says she received call but hasn't scheduled yet. Renal impairment (eGFR 40) significantly increases HCQ retinopathy risk."
+    },
+    {
+      "id": 119,
+      "date": "2023-01-09",
+      "type": "lab_result",
+      "ordered_by": "Dr. Sandra Reyes",
+      "summary": "6-month post-rituximab labs",
+      "tests": {
+        "creatinine": { "value": 1.95, "unit": "mg/dL", "ref_range": "0.6-1.1", "flag": "high" },
+        "eGFR": { "value": 40, "unit": "mL/min/1.73m2", "ref_range": ">60", "flag": "low" },
+        "urine_protein_creatinine_ratio": { "value": 1.3, "unit": "mg/mg", "ref_range": "<0.2", "flag": "high" },
+        "C3": { "value": 68, "unit": "mg/dL", "ref_range": "90-180", "flag": "low" },
+        "anti-dsDNA": { "value": 65, "unit": "IU/mL", "ref_range": "<30", "flag": "high" },
+        "hemoglobin": { "value": 9.0, "unit": "g/dL", "ref_range": "12.0-16.0", "flag": "low" }
+      }
+    },
+    {
+      "id": 120,
+      "date": "2023-01-16",
+      "type": "lab_result",
+      "ordered_by": "Dr. Thomas Park",
+      "summary": "Monthly INR check",
+      "tests": {
+        "INR": { "value": 2.4, "unit": "", "ref_range": "2.0-3.0", "flag": "normal" }
+      }
+    },
+    {
+      "id": 121,
+      "date": "2023-02-13",
+      "type": "lab_result",
+      "ordered_by": "Dr. Thomas Park",
+      "summary": "Monthly INR check",
+      "tests": {
+        "INR": { "value": 2.2, "unit": "", "ref_range": "2.0-3.0", "flag": "normal" }
+      }
+    },
+    {
+      "id": 122,
+      "date": "2023-03-06",
+      "type": "visit_note",
+      "doctor": "Dr. Thomas Park",
+      "department": "Primary Care",
+      "summary": "Annual primary care visit",
+      "content": "Complex patient with multiple comorbidities. Hypothyroidism now controlled (TSH 3.2 last check) after correcting calcium timing. Depression managed with sertraline 100mg. DEXA scan still not completed -- will re-order. Last DEXA was 2018 (5 years ago). Patient on continuous prednisone 15mg since at least 2019 (likely longer). On alendronate, calcium, vitamin D but DEXA reassessment is overdue. HbA1c 6.0 -- borderline. Continue current management."
+    },
+    {
+      "id": 123,
+      "date": "2023-03-06",
+      "type": "lab_result",
+      "ordered_by": "Dr. Thomas Park",
+      "summary": "Annual labs",
+      "tests": {
+        "HbA1c": { "value": 6.0, "unit": "%", "ref_range": "<5.7", "flag": "high" },
+        "TSH": { "value": 2.8, "unit": "mIU/L", "ref_range": "0.4-4.0", "flag": "normal" },
+        "creatinine": { "value": 2.0, "unit": "mg/dL", "ref_range": "0.6-1.1", "flag": "high" },
+        "eGFR": { "value": 38, "unit": "mL/min/1.73m2", "ref_range": ">60", "flag": "low" }
+      }
+    },
+    {
+      "id": 124,
+      "date": "2023-03-13",
+      "type": "lab_result",
+      "ordered_by": "Dr. Thomas Park",
+      "summary": "Monthly INR check",
+      "tests": {
+        "INR": { "value": 2.5, "unit": "", "ref_range": "2.0-3.0", "flag": "normal" }
+      }
+    },
+    {
+      "id": 125,
+      "date": "2023-04-10",
+      "type": "visit_note",
+      "doctor": "Dr. Sandra Reyes",
+      "department": "Rheumatology",
+      "summary": "SLE follow-up, lupus flare developing",
+      "content": "Patient presents with increasing fatigue, new oral ulcers, worsening joint pain, low-grade fevers. Labs show rising anti-dsDNA and falling complements. eGFR 38, proteinuria increasing again to 1.8. Flare likely. Increase prednisone to 30mg daily. Add levofloxacin for concurrent UTI (urine culture positive). Will need close monitoring. NOTE: levofloxacin interacts with warfarin. INR should be monitored closely."
+    },
+    {
+      "id": 126,
+      "date": "2023-04-10",
+      "type": "lab_result",
+      "ordered_by": "Dr. Sandra Reyes",
+      "summary": "Labs showing lupus flare",
+      "tests": {
+        "creatinine": { "value": 2.1, "unit": "mg/dL", "ref_range": "0.6-1.1", "flag": "high" },
+        "eGFR": { "value": 36, "unit": "mL/min/1.73m2", "ref_range": ">60", "flag": "low" },
+        "urine_protein_creatinine_ratio": { "value": 1.8, "unit": "mg/mg", "ref_range": "<0.2", "flag": "high" },
+        "C3": { "value": 42, "unit": "mg/dL", "ref_range": "90-180", "flag": "low" },
+        "C4": { "value": 5, "unit": "mg/dL", "ref_range": "10-40", "flag": "low" },
+        "anti-dsDNA": { "value": 195, "unit": "IU/mL", "ref_range": "<30", "flag": "high" },
+        "hemoglobin": { "value": 8.8, "unit": "g/dL", "ref_range": "12.0-16.0", "flag": "low" },
+        "ESR": { "value": 78, "unit": "mm/hr", "ref_range": "0-20", "flag": "high" }
+      }
+    },
+    {
+      "id": 127,
+      "date": "2023-04-10",
+      "type": "prescription",
+      "prescriber": "Dr. Sandra Reyes",
+      "department": "Rheumatology",
+      "summary": "Prednisone increase for lupus flare",
+      "drug": "prednisone",
+      "dose": "30mg",
+      "frequency": "once daily",
+      "duration": "2 weeks then taper to 20mg for 2 weeks then 15mg",
+      "indication": "SLE flare with renal involvement"
+    },
+    {
+      "id": 128,
+      "date": "2023-04-10",
+      "type": "prescription",
+      "prescriber": "Dr. Sandra Reyes",
+      "department": "Rheumatology",
+      "summary": "Levofloxacin for UTI during flare",
+      "drug": "levofloxacin",
+      "dose": "500mg",
+      "frequency": "once daily",
+      "duration": "7 days",
+      "indication": "urinary tract infection"
+    },
+    {
+      "id": 129,
+      "date": "2023-04-24",
+      "type": "visit_note",
+      "doctor": "Dr. Sandra Reyes",
+      "department": "Rheumatology",
+      "summary": "Flare follow-up",
+      "content": "Oral ulcers resolving. Joint pain improved on prednisone 30mg. UTI treated. Tapering prednisone to 20mg. Patient has not had INR checked since March 13 despite prednisone increase and levofloxacin. Advised to check INR this week."
+    },
+    {
+      "id": 130,
+      "date": "2023-05-08",
+      "type": "visit_note",
+      "doctor": "Dr. Sandra Reyes",
+      "department": "Rheumatology",
+      "summary": "Continued flare management",
+      "content": "Prednisone tapered to 20mg. Symptoms improving but not fully resolved. eGFR 35. Considering second rituximab cycle. Patient mentions she has noticed some blurring of vision when reading -- attributes to fatigue. Note: patient on HCQ 11+ years with NO retinal screening ever performed and now has renal impairment (major risk factor). Urgent ophthalmology referral placed."
+    },
+    {
+      "id": 131,
+      "date": "2023-05-22",
+      "type": "visit_note",
+      "doctor": "Dr. Anita Patel",
+      "department": "Ophthalmology",
+      "summary": "Urgent HCQ retinopathy screening -- abnormal findings",
+      "content": "Patient referred urgently for hydroxychloroquine retinopathy screening. On HCQ 200mg BID since 2012 (11 years). NEVER had retinal screening. Risk factors: prolonged use (>5 years), renal impairment (eGFR 35), cumulative dose >1000g. OCT: subtle parafoveal thinning of outer retinal layers bilaterally. Multifocal ERG: decreased parafoveal response. Visual field 10-2: subtle pericentral scotomas. Findings consistent with early hydroxychloroquine maculopathy. Recommend immediate discontinuation of hydroxychloroquine and close follow-up. Damage may be irreversible and can progress even after drug cessation. If screening had been performed annually per guidelines, this would have been detected at a subclinical stage."
+    },
+    {
+      "id": 132,
+      "date": "2023-05-22",
+      "type": "prescription",
+      "prescriber": "Dr. Sandra Reyes",
+      "department": "Rheumatology",
+      "summary": "Discontinue hydroxychloroquine due to retinopathy",
+      "drug": "hydroxychloroquine",
+      "dose": "200mg",
+      "frequency": "DISCONTINUED",
+      "duration": "N/A",
+      "indication": "retinal toxicity detected on screening"
+    },
+    {
+      "id": 133,
+      "date": "2023-06-05",
+      "type": "lab_result",
+      "ordered_by": "Dr. Thomas Park",
+      "summary": "INR check after 3-month gap during second flare",
+      "tests": {
+        "INR": { "value": 1.4, "unit": "", "ref_range": "2.0-3.0", "flag": "low" }
+      }
+    },
+    {
+      "id": 134,
+      "date": "2023-06-05",
+      "type": "visit_note",
+      "doctor": "Dr. Thomas Park",
+      "department": "Primary Care",
+      "summary": "Subtherapeutic INR -- dangerous in antiphospholipid syndrome",
+      "content": "INR 1.4 -- subtherapeutic. Last check was March 13 (2.5) -- nearly 3-month gap. During this time patient had prednisone increase and levofloxacin. Patient with antiphospholipid syndrome -- subtherapeutic anticoagulation puts her at high risk for thrombotic event. No DVT/PE symptoms currently but significant risk. Increase warfarin from 3mg to 4mg daily. Recheck INR in 5 days. This is the second time INR monitoring has lapsed during a flare -- systemic issue."
+    },
+    {
+      "id": 135,
+      "date": "2023-06-05",
+      "type": "prescription",
+      "prescriber": "Dr. Thomas Park",
+      "department": "Primary Care",
+      "summary": "Increase warfarin after subtherapeutic INR",
+      "drug": "warfarin",
+      "dose": "4mg",
+      "frequency": "once daily",
+      "duration": "ongoing",
+      "indication": "antiphospholipid syndrome, dose increase for subtherapeutic INR"
+    },
+    {
+      "id": 136,
+      "date": "2023-06-10",
+      "type": "lab_result",
+      "ordered_by": "Dr. Thomas Park",
+      "summary": "INR recheck after warfarin dose increase",
+      "tests": {
+        "INR": { "value": 1.8, "unit": "", "ref_range": "2.0-3.0", "flag": "low" }
+      }
+    },
+    {
+      "id": 137,
+      "date": "2023-06-19",
+      "type": "lab_result",
+      "ordered_by": "Dr. Thomas Park",
+      "summary": "INR trending up on warfarin 4mg",
+      "tests": {
+        "INR": { "value": 2.2, "unit": "", "ref_range": "2.0-3.0", "flag": "normal" }
+      }
+    },
+    {
+      "id": 138,
+      "date": "2023-07-10",
+      "type": "visit_note",
+      "doctor": "Dr. Sandra Reyes",
+      "department": "Rheumatology",
+      "summary": "Post-flare follow-up, HCQ discontinued",
+      "content": "Second flare resolving. Back on prednisone 15mg. HCQ discontinued due to retinopathy. Loss of HCQ is significant -- it reduces flare frequency and has mortality benefit in SLE. eGFR 34. Planning second rituximab cycle. Discussed transition of bone health management -- patient on chronic high-dose prednisone and DEXA overdue."
+    },
+    {
+      "id": 139,
+      "date": "2023-07-10",
+      "type": "lab_result",
+      "ordered_by": "Dr. Sandra Reyes",
+      "summary": "Post-flare labs",
+      "tests": {
+        "creatinine": { "value": 2.15, "unit": "mg/dL", "ref_range": "0.6-1.1", "flag": "high" },
+        "eGFR": { "value": 34, "unit": "mL/min/1.73m2", "ref_range": ">60", "flag": "low" },
+        "urine_protein_creatinine_ratio": { "value": 1.6, "unit": "mg/mg", "ref_range": "<0.2", "flag": "high" },
+        "C3": { "value": 55, "unit": "mg/dL", "ref_range": "90-180", "flag": "low" },
+        "anti-dsDNA": { "value": 130, "unit": "IU/mL", "ref_range": "<30", "flag": "high" },
+        "hemoglobin": { "value": 8.9, "unit": "g/dL", "ref_range": "12.0-16.0", "flag": "low" }
+      }
+    },
+    {
+      "id": 140,
+      "date": "2023-07-17",
+      "type": "lab_result",
+      "ordered_by": "Dr. Thomas Park",
+      "summary": "Monthly INR check",
+      "tests": {
+        "INR": { "value": 2.5, "unit": "", "ref_range": "2.0-3.0", "flag": "normal" }
+      }
+    },
+    {
+      "id": 141,
+      "date": "2023-08-14",
+      "type": "lab_result",
+      "ordered_by": "Dr. Thomas Park",
+      "summary": "Monthly INR check",
+      "tests": {
+        "INR": { "value": 2.3, "unit": "", "ref_range": "2.0-3.0", "flag": "normal" }
+      }
+    },
+    {
+      "id": 142,
+      "date": "2023-09-11",
+      "type": "visit_note",
+      "doctor": "Dr. Thomas Park",
+      "department": "Primary Care",
+      "summary": "DEXA scan results -- severe osteoporosis with fracture",
+      "content": "DEXA finally completed. Results: T-score lumbar spine -3.0 (was -2.2 in 2018). T-score femoral neck -2.6 (was -1.8 in 2018). Significant progression despite alendronate, calcium, vitamin D. Lateral VFA shows T12 vertebral compression fracture -- patient reports chronic low back pain she attributed to SLE. This is severe steroid-induced osteoporosis. The 5-year gap between DEXA scans on chronic high-dose prednisone is a monitoring failure. Consider switching to IV zoledronic acid or teriparatide. Refer to endocrinology for bone health management."
+    },
+    {
+      "id": 143,
+      "date": "2023-10-02",
+      "type": "visit_note",
+      "doctor": "Dr. Karen Wright",
+      "department": "Endocrinology",
+      "summary": "Endocrinology for severe steroid-induced osteoporosis",
+      "content": "Severe osteoporosis (T-score -3.0 lumbar, -2.6 femoral neck) with vertebral compression fracture in setting of chronic prednisone 15mg daily for 4+ years. Patient was on alendronate, calcium, vitamin D but DEXA not repeated for 5 years. Oral bisphosphonate may have been insufficient for this level of glucocorticoid exposure. Transitioning to teriparatide (anabolic agent) for 2 years, then reassess. Continue calcium and vitamin D. Ideally prednisone should be reduced but rheumatology unable to taper."
+    },
+    {
+      "id": 144,
+      "date": "2023-10-02",
+      "type": "prescription",
+      "prescriber": "Dr. Karen Wright",
+      "department": "Endocrinology",
+      "summary": "Teriparatide for severe steroid-induced osteoporosis",
+      "drug": "teriparatide",
+      "dose": "20mcg",
+      "frequency": "subcutaneous injection once daily",
+      "duration": "2 years",
+      "indication": "severe steroid-induced osteoporosis with vertebral compression fracture"
+    },
+    {
+      "id": 145,
+      "date": "2023-11-06",
+      "type": "lab_result",
+      "ordered_by": "Dr. Thomas Park",
+      "summary": "Monthly INR check",
+      "tests": {
+        "INR": { "value": 2.4, "unit": "", "ref_range": "2.0-3.0", "flag": "normal" }
+      }
+    },
+    {
+      "id": 146,
+      "date": "2024-02-05",
+      "type": "visit_note",
+      "doctor": "Dr. Sandra Reyes",
+      "department": "Rheumatology",
+      "summary": "Quarterly follow-up, second rituximab cycle completed",
+      "content": "Second rituximab cycle completed December 2023. eGFR 32 -- stable to slightly improved. Proteinuria 1.2. Disease activity lower without HCQ but rituximab providing benefit. Continue mycophenolate 1500mg BID, prednisone 15mg. Monitoring for late effects of HCQ retinopathy with ophthalmology every 6 months."
+    },
+    {
+      "id": 147,
+      "date": "2024-02-05",
+      "type": "lab_result",
+      "ordered_by": "Dr. Sandra Reyes",
+      "summary": "Quarterly labs post second rituximab",
+      "tests": {
+        "creatinine": { "value": 2.2, "unit": "mg/dL", "ref_range": "0.6-1.1", "flag": "high" },
+        "eGFR": { "value": 32, "unit": "mL/min/1.73m2", "ref_range": ">60", "flag": "low" },
+        "urine_protein_creatinine_ratio": { "value": 1.2, "unit": "mg/mg", "ref_range": "<0.2", "flag": "high" },
+        "C3": { "value": 70, "unit": "mg/dL", "ref_range": "90-180", "flag": "low" },
+        "anti-dsDNA": { "value": 55, "unit": "IU/mL", "ref_range": "<30", "flag": "high" },
+        "hemoglobin": { "value": 9.0, "unit": "g/dL", "ref_range": "12.0-16.0", "flag": "low" }
+      }
+    },
+    {
+      "id": 148,
+      "date": "2024-06-10",
+      "type": "visit_note",
+      "doctor": "Dr. Anita Patel",
+      "department": "Ophthalmology",
+      "summary": "6-month follow-up for HCQ maculopathy",
+      "content": "Follow-up for hydroxychloroquine maculopathy diagnosed May 2023. HCQ discontinued 13 months ago. OCT shows stable parafoveal thinning -- no progression since discontinuation. Visual acuity 20/25 OU, decreased from 20/20 at baseline. Patient notes mild difficulty reading small print. Maculopathy appears stable. Continue monitoring every 6 months. Prognosis: unlikely to worsen further now that HCQ stopped, but damage is irreversible."
+    },
+    {
+      "id": 149,
+      "date": "2025-06-15",
+      "type": "visit_note",
+      "doctor": "Dr. Leila Hassan",
+      "department": "Nephrology",
+      "summary": "Nephrology follow-up -- CKD stage 3b stabilized",
+      "content": "eGFR has stabilized at 32-34 range over past year on rituximab + mycophenolate. Proteinuria 1.0 -- best in years. Avoiding further renal decline is the goal. If eGFR drops below 30, will need CKD stage 4 planning. Continue current immunosuppression. BP 132/78 -- acceptable. Continue renal-dose adjustments as needed."
+    },
+    {
+      "id": 150,
+      "date": "2026-01-15",
+      "type": "visit_note",
+      "doctor": "Dr. Sandra Reyes",
+      "department": "Rheumatology",
+      "summary": "Comprehensive rheumatology review",
+      "content": "Annual comprehensive review. SLE managed with rituximab (every 6 months), mycophenolate 1500mg BID, prednisone 15mg daily. HCQ discontinued 2023 due to retinopathy. eGFR 32 -- stable. Anemia stable (Hgb 9.0). On teriparatide for severe osteoporosis. Warfarin stable on 4mg (INR therapeutic). Depression managed with sertraline 100mg. Hypothyroidism controlled with levothyroxine 125mcg (calcium separated). Complex patient requiring coordinated multidisciplinary care. Key ongoing concerns: renal function, bone health on chronic steroids, vision monitoring post-HCQ."
+    }
+  ],
+  "ground_truth_issues": [
+    {
+      "type": "missed_monitoring",
+      "severity": "critical",
+      "description": "Hydroxychloroquine retinopathy screening was never performed despite the patient being on HCQ for 11+ years (since 2012). Guidelines recommend baseline eye exam and annual screening after 5 years of use, or sooner with risk factors such as renal impairment. This patient had both prolonged use AND declining renal function (eGFR from 65 to 35), dramatically increasing retinopathy risk. Multiple rheumatology notes mentioned the need for screening (records 48, 57, 68, 87, 111) but no ophthalmology referral was completed until the patient reported visual symptoms. By the time screening was finally performed (record 131), early maculopathy with parafoveal thinning and pericentral scotomas was detected, requiring HCQ discontinuation. Earlier screening would have detected subclinical changes, allowing timely drug cessation before irreversible retinal damage occurred.",
+      "evidence_records": [1, 6, 48, 57, 68, 87, 111, 118, 130, 131, 132, 148],
+      "clinical_reference": "AAO 2016 Revised Recommendations on Screening for Chloroquine and Hydroxychloroquine Retinopathy: baseline exam within first year, annual screening starting after 5 years (or sooner with risk factors including renal impairment, high dose >5mg/kg/day, concomitant tamoxifen use)",
+      "what_should_have_happened": "Baseline ophthalmology screening should have been performed when the patient established care in 2019 (already 7 years on HCQ). Annual OCT and visual field testing should have been performed every year thereafter. With declining renal function (a major risk factor), screening should have been prioritized even more urgently. Screening at the appropriate time would have detected changes at a subclinical stage, potentially preserving vision."
+    },
+    {
+      "type": "drug_interaction",
+      "severity": "moderate",
+      "description": "Calcium carbonate significantly impairs levothyroxine absorption when taken concurrently. After the patient was diagnosed with hypothyroidism (TSH 12.4, record 53) and started on levothyroxine 50mcg (record 55), she took it together with her calcium carbonate 600mg BID each morning. Despite escalating levothyroxine doses from 50mcg to 75mcg to 100mcg to 125mcg over 9 months (records 55, 62, 67, 86), TSH remained persistently elevated (9.8, 8.2, 7.1, 6.5, 5.8). A pharmacy note (record 72) identified the interaction and attempted to contact the prescriber, but the issue was not addressed until endocrinology consultation 14 months later (record 106). Once calcium was separated from levothyroxine, TSH normalized to 3.2 (record 109) without any dose change.",
+      "evidence_records": [53, 54, 55, 60, 61, 62, 65, 66, 67, 71, 72, 84, 85, 86, 90, 106, 109, 110],
+      "clinical_reference": "ATA Guidelines for the Treatment of Hypothyroidism: calcium supplements, iron supplements, and proton pump inhibitors can significantly reduce levothyroxine absorption. Levothyroxine should be taken on an empty stomach, at least 4 hours apart from calcium-containing products.",
+      "what_should_have_happened": "When starting levothyroxine, the prescriber should have reviewed the medication list and identified the calcium carbonate interaction. The patient should have been counseled to take levothyroxine alone on an empty stomach and separate calcium by at least 4 hours. When the pharmacy note flagged the interaction (record 72), it should have been acted upon immediately rather than going unaddressed for over a year."
+    },
+    {
+      "type": "missed_monitoring",
+      "severity": "critical",
+      "description": "Warfarin INR monitoring lapsed twice during lupus flares, each time for approximately 3 months, with dangerous consequences. First gap: last INR Sept 14, 2020 (2.3, record 35) to Dec 7, 2020 (4.8, record 43) -- a 3-month gap during which the patient received pulse prednisone 40mg and azithromycin, both known to potentiate warfarin. INR found critically elevated at 4.8 with bruising. Second gap: last INR March 13, 2023 (2.5, record 124) to June 5, 2023 (1.4, record 133) -- another 3-month gap during prednisone increase and levofloxacin course. INR found dangerously subtherapeutic at 1.4, putting the patient with antiphospholipid syndrome at high risk for thrombosis. Both gaps occurred during medication changes known to affect warfarin metabolism.",
+      "evidence_records": [35, 36, 38, 39, 40, 41, 43, 44, 45, 46, 47, 124, 125, 127, 128, 129, 133, 134, 135, 136, 137],
+      "clinical_reference": "ACCP Guidelines on Antithrombotic Therapy: INR should be monitored at least weekly when initiating or changing interacting medications (including antibiotics, corticosteroids). For antiphospholipid syndrome, maintaining therapeutic INR (2.0-3.0) is critical to prevent life-threatening thrombotic events.",
+      "what_should_have_happened": "During both lupus flares, INR should have been checked within 3-5 days of starting interacting medications (prednisone dose change, azithromycin, levofloxacin). Weekly INR monitoring should have continued until stable. A protocol should exist for maintaining anticoagulation monitoring during acute illness and medication changes, especially in a patient with antiphospholipid syndrome where both supra- and sub-therapeutic INR carry serious risks."
+    },
+    {
+      "type": "declining_trend",
+      "severity": "moderate",
+      "description": "Progressive lupus nephritis manifested as a steady decline in eGFR and rising proteinuria over 3+ years before immunosuppression was escalated. eGFR trajectory: 65 (6/2019) -> 62 (12/2019) -> 60 (6/2020) -> 58 (10/2020) -> 55 (1/2021) -> 52 (7/2021) -> 50 (10/2021) -> 48 (1/2022) -> 45 (4/2022) -> 40 (1/2023) -> 38 (3/2023) -> 36 (4/2023) -> 34 (7/2023) -> 32 (2/2024). Proteinuria rose from 0.8 to 1.8 over the same period. Despite this clear downward trend being documented across multiple labs and visits, mycophenolate was not increased until October 2021 (record 77, eGFR already 50), and rituximab was not initiated until June 2022 (record 101, eGFR 45). By the time aggressive treatment began, significant irreversible nephron loss had occurred.",
+      "evidence_records": [3, 4, 16, 22, 28, 37, 42, 49, 58, 69, 76, 79, 88, 96, 98, 112, 119, 123, 126, 139, 147],
+      "clinical_reference": "ACR/EULAR Guidelines for Lupus Nephritis (2020): failure to achieve at least 25% reduction in proteinuria by 3 months and 50% by 6 months should prompt consideration of treatment intensification. Persistent active serologies (elevated anti-dsDNA, low complements) with declining renal function warrant escalation.",
+      "what_should_have_happened": "The declining eGFR and rising proteinuria trend should have triggered earlier immunosuppression escalation. By mid-2020, when eGFR had declined from 65 to 58-60 and proteinuria rose from 0.8 to 1.5, mycophenolate dose increase or addition of rituximab should have been considered. The 2+ year delay in intensifying treatment allowed progression from CKD stage 3a to 3b with significant chronic damage documented on repeat biopsy."
+    },
+    {
+      "type": "missed_monitoring",
+      "severity": "moderate",
+      "description": "Patient on chronic high-dose prednisone (15mg daily for 4+ years continuously, with intermittent higher doses during flares) had a 5-year gap in DEXA scanning (2018 to 2023). Initial T-score was -2.2 (osteoporosis) in 2018. Despite being on alendronate, calcium, and vitamin D, chronic glucocorticoid exposure at this dose overwhelmed the protective therapy. When DEXA was finally repeated in September 2023 (record 142), T-score had worsened to -3.0 at lumbar spine and -2.6 at femoral neck, with an incidental T12 vertebral compression fracture discovered. Multiple visit notes mentioned DEXA being overdue (records 6, 52, 92, 122) but the scan was repeatedly deferred.",
+      "evidence_records": [1, 6, 33, 38, 52, 92, 122, 142, 143, 144],
+      "clinical_reference": "ACR 2017 Guidelines for Prevention and Treatment of Glucocorticoid-Induced Osteoporosis: for patients on prednisone >=7.5mg daily, DEXA should be repeated every 1-2 years. Treatment should be optimized based on fracture risk assessment, and bisphosphonate adequacy should be reassessed if BMD declines.",
+      "what_should_have_happened": "DEXA scanning should have been repeated every 1-2 years given the high glucocorticoid dose (prednisone 15mg daily). A repeat DEXA in 2020 would have shown progressive bone loss, prompting earlier transition from oral alendronate to a more potent agent (IV zoledronic acid or teriparatide). The vertebral compression fracture might have been prevented with timely treatment optimization. Regular bone density monitoring is essential for patients on chronic high-dose glucocorticoids."
+    }
+  ]
+}

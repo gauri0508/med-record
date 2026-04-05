@@ -1,0 +1,1890 @@
+{
+  "case_id": "hard_001",
+  "difficulty": "hard",
+  "patient": {
+    "name": "Robert M. Dalton",
+    "age": 74,
+    "sex": "male",
+    "dob": "1951-03-22",
+    "mrn": "MRN-7741920",
+    "allergies": [],
+    "problem_list": [
+      "Heart failure with reduced ejection fraction (HFrEF, EF 25%)",
+      "Atrial fibrillation (persistent)",
+      "Chronic kidney disease (progressive)",
+      "Type 2 diabetes mellitus",
+      "Chronic obstructive pulmonary disease (COPD, GOLD stage II-III)",
+      "Gout",
+      "Major depressive disorder"
+    ],
+    "baseline_medications": [
+      "metoprolol succinate 100mg daily",
+      "lisinopril 20mg daily",
+      "furosemide 80mg daily",
+      "metformin 1000mg BID",
+      "atorvastatin 40mg daily",
+      "albuterol inhaler PRN",
+      "tiotropium inhaler daily",
+      "allopurinol 300mg daily",
+      "sertraline 100mg daily",
+      "omeprazole 20mg daily",
+      "gabapentin 300mg TID"
+    ]
+  },
+  "records": [
+    {
+      "id": 1,
+      "date": "2019-01-15",
+      "type": "visit_note",
+      "doctor": "Dr. Karen Whitfield",
+      "department": "Primary Care",
+      "summary": "Annual comprehensive visit, stable chronic conditions",
+      "content": "74 y/o male presenting for annual exam. PMH significant for HFrEF (EF 25% on last echo 2018-11), a-fib on rate control, CKD stage IIIa, T2DM, COPD, gout, MDD. Patient reports stable dyspnea on exertion, no chest pain. Mood 'okay, some down days.' Tolerating medications. Weight 198 lbs. BP 128/78. HR 72 irregular. Lungs with mild bilateral basilar crackles. Extremities: trace pedal edema. Plan: Continue current regimen. Recheck labs in 3 months. Cardiology follow-up scheduled."
+    },
+    {
+      "id": 2,
+      "date": "2019-01-15",
+      "type": "lab_result",
+      "ordered_by": "Dr. Karen Whitfield",
+      "summary": "Baseline comprehensive labs",
+      "tests": {
+        "BUN": {"value": 28, "unit": "mg/dL", "ref_range": "7-20", "flag": "high"},
+        "creatinine": {"value": 1.5, "unit": "mg/dL", "ref_range": "0.7-1.3", "flag": "high"},
+        "eGFR": {"value": 52, "unit": "mL/min/1.73m2", "ref_range": ">60", "flag": "low"},
+        "potassium": {"value": 4.8, "unit": "mEq/L", "ref_range": "3.5-5.0", "flag": "normal"},
+        "sodium": {"value": 138, "unit": "mEq/L", "ref_range": "136-145", "flag": "normal"},
+        "glucose": {"value": 142, "unit": "mg/dL", "ref_range": "70-100", "flag": "high"},
+        "HbA1c": {"value": 7.2, "unit": "%", "ref_range": "<7.0", "flag": "high"},
+        "magnesium": {"value": 2.0, "unit": "mg/dL", "ref_range": "1.7-2.2", "flag": "normal"},
+        "B12": {"value": 350, "unit": "pg/mL", "ref_range": "200-900", "flag": "normal"},
+        "BNP": {"value": 620, "unit": "pg/mL", "ref_range": "<100", "flag": "high"},
+        "calcium": {"value": 9.2, "unit": "mg/dL", "ref_range": "8.5-10.5", "flag": "normal"},
+        "albumin": {"value": 3.6, "unit": "g/dL", "ref_range": "3.5-5.5", "flag": "normal"}
+      }
+    },
+    {
+      "id": 3,
+      "date": "2019-02-10",
+      "type": "visit_note",
+      "doctor": "Dr. Amit Patel",
+      "department": "Cardiology",
+      "summary": "Heart failure management, stable symptoms",
+      "content": "Follow-up for HFrEF. EF 25% on last echo. Patient on metoprolol 100mg, lisinopril 20mg, furosemide 80mg. NYHA Class II-III. Tolerating meds well. BP 124/76. A-fib with controlled rate at 68 bpm. No decompensation. Discussed adding spironolactone for mortality benefit. Starting spironolactone 25mg daily. Will need potassium monitoring. Continue current HF regimen."
+    },
+    {
+      "id": 4,
+      "date": "2019-02-10",
+      "type": "prescription",
+      "prescriber": "Dr. Amit Patel",
+      "department": "Cardiology",
+      "summary": "New prescription for HFrEF management",
+      "drug": "spironolactone",
+      "dose": "25mg",
+      "frequency": "daily",
+      "duration": "ongoing",
+      "indication": "Heart failure with reduced ejection fraction"
+    },
+    {
+      "id": 5,
+      "date": "2019-03-05",
+      "type": "lab_result",
+      "ordered_by": "Dr. Amit Patel",
+      "summary": "Potassium check after starting spironolactone",
+      "tests": {
+        "potassium": {"value": 5.0, "unit": "mEq/L", "ref_range": "3.5-5.0", "flag": "normal"},
+        "creatinine": {"value": 1.5, "unit": "mg/dL", "ref_range": "0.7-1.3", "flag": "high"},
+        "eGFR": {"value": 51, "unit": "mL/min/1.73m2", "ref_range": ">60", "flag": "low"}
+      }
+    },
+    {
+      "id": 6,
+      "date": "2019-04-02",
+      "type": "visit_note",
+      "doctor": "Dr. Susan Ramirez",
+      "department": "Pulmonology",
+      "summary": "COPD management, stable",
+      "content": "COPD GOLD stage II. FEV1 58% predicted on last PFT. Using tiotropium daily, albuterol PRN 2-3x/week. No exacerbations since last visit. O2 sat 94% on RA. Lungs: diffuse expiratory wheezes bilaterally. Continue current regimen. Influenza and pneumococcal vaccines up to date. Follow-up in 6 months or sooner if exacerbation."
+    },
+    {
+      "id": 7,
+      "date": "2019-04-15",
+      "type": "lab_result",
+      "ordered_by": "Dr. Karen Whitfield",
+      "summary": "Quarterly labs",
+      "tests": {
+        "BUN": {"value": 30, "unit": "mg/dL", "ref_range": "7-20", "flag": "high"},
+        "creatinine": {"value": 1.6, "unit": "mg/dL", "ref_range": "0.7-1.3", "flag": "high"},
+        "eGFR": {"value": 48, "unit": "mL/min/1.73m2", "ref_range": ">60", "flag": "low"},
+        "potassium": {"value": 5.0, "unit": "mEq/L", "ref_range": "3.5-5.0", "flag": "normal"},
+        "sodium": {"value": 137, "unit": "mEq/L", "ref_range": "136-145", "flag": "normal"},
+        "glucose": {"value": 138, "unit": "mg/dL", "ref_range": "70-100", "flag": "high"},
+        "CBC_WBC": {"value": 7.2, "unit": "K/uL", "ref_range": "4.5-11.0", "flag": "normal"},
+        "CBC_Hgb": {"value": 12.8, "unit": "g/dL", "ref_range": "13.5-17.5", "flag": "low"},
+        "CBC_Plt": {"value": 210, "unit": "K/uL", "ref_range": "150-400", "flag": "normal"}
+      }
+    },
+    {
+      "id": 8,
+      "date": "2019-05-20",
+      "type": "visit_note",
+      "doctor": "Dr. Linda Chen",
+      "department": "Psychiatry",
+      "summary": "MDD follow-up, stable on sertraline",
+      "content": "Patient on sertraline 100mg daily for MDD. PHQ-9 score 8 (mild). Reports occasional low mood, poor sleep, some fatigue. Appetite fair. Denies SI/HI. Tolerating medication without significant side effects. Continue sertraline 100mg. Follow-up in 3 months."
+    },
+    {
+      "id": 9,
+      "date": "2019-06-10",
+      "type": "visit_note",
+      "doctor": "Dr. James Foster",
+      "department": "Endocrinology",
+      "summary": "Diabetes management, HbA1c above target",
+      "content": "T2DM. On metformin 1000mg BID. HbA1c 7.2% — slightly above goal of <7%. Renal function: eGFR 48, which is acceptable for metformin per current guidelines (safe above 30). Reviewed diet and exercise. Patient reports difficulty with dietary adherence. Will continue metformin. Recheck HbA1c in 3 months."
+    },
+    {
+      "id": 10,
+      "date": "2019-07-08",
+      "type": "lab_result",
+      "ordered_by": "Dr. Karen Whitfield",
+      "summary": "Quarterly labs with thyroid panel",
+      "tests": {
+        "BUN": {"value": 31, "unit": "mg/dL", "ref_range": "7-20", "flag": "high"},
+        "creatinine": {"value": 1.6, "unit": "mg/dL", "ref_range": "0.7-1.3", "flag": "high"},
+        "eGFR": {"value": 47, "unit": "mL/min/1.73m2", "ref_range": ">60", "flag": "low"},
+        "potassium": {"value": 5.1, "unit": "mEq/L", "ref_range": "3.5-5.0", "flag": "high"},
+        "sodium": {"value": 137, "unit": "mEq/L", "ref_range": "136-145", "flag": "normal"},
+        "TSH": {"value": 2.4, "unit": "mIU/L", "ref_range": "0.4-4.0", "flag": "normal"},
+        "magnesium": {"value": 1.9, "unit": "mg/dL", "ref_range": "1.7-2.2", "flag": "normal"},
+        "HbA1c": {"value": 7.1, "unit": "%", "ref_range": "<7.0", "flag": "high"}
+      }
+    },
+    {
+      "id": 11,
+      "date": "2019-08-12",
+      "type": "visit_note",
+      "doctor": "Dr. Amit Patel",
+      "department": "Cardiology",
+      "summary": "A-fib with increasing episodes, considering rhythm control",
+      "content": "Patient with persistent a-fib, rate controlled on metoprolol. However, reports worsening palpitations and exercise intolerance. HR 78 irregular. ECG confirms a-fib with moderate ventricular response. Given worsening symptoms and HFrEF, considering amiodarone for rhythm control. Will discuss risks/benefits at next visit. Continue metoprolol 100mg. No changes today."
+    },
+    {
+      "id": 12,
+      "date": "2019-09-02",
+      "type": "visit_note",
+      "doctor": "Dr. Karen Whitfield",
+      "department": "Primary Care",
+      "summary": "Routine follow-up, multiple chronic conditions",
+      "content": "Routine visit. Chronic conditions stable overall. COPD no exacerbation. Gout: no flares on allopurinol. Depression: stable. Mild fatigue reported — likely multifactorial (HF, CKD, depression). Weight 196 lbs. BP 130/80. Continue all current medications. Potassium 5.1 last check — will monitor. Consider dietary potassium restriction counseling."
+    },
+    {
+      "id": 13,
+      "date": "2019-09-15",
+      "type": "visit_note",
+      "doctor": "Dr. Ravi Mehta",
+      "department": "Nephrology",
+      "summary": "CKD stage IIIb monitoring",
+      "content": "CKD stage IIIb, eGFR 47. Etiology likely hypertensive/diabetic nephropathy. Proteinuria: UACR 180 mg/g (moderately increased). On lisinopril for renoprotection. Potassium 5.1 — borderline but acceptable. On spironolactone for HF — need careful monitoring. Continue lisinopril. Recommend low potassium diet. Recheck labs in 3 months. If eGFR continues declining, will need to reassess medications."
+    },
+    {
+      "id": 14,
+      "date": "2019-10-01",
+      "type": "lab_result",
+      "ordered_by": "Dr. Karen Whitfield",
+      "summary": "Quarterly labs",
+      "tests": {
+        "BUN": {"value": 32, "unit": "mg/dL", "ref_range": "7-20", "flag": "high"},
+        "creatinine": {"value": 1.7, "unit": "mg/dL", "ref_range": "0.7-1.3", "flag": "high"},
+        "eGFR": {"value": 45, "unit": "mL/min/1.73m2", "ref_range": ">60", "flag": "low"},
+        "potassium": {"value": 5.1, "unit": "mEq/L", "ref_range": "3.5-5.0", "flag": "high"},
+        "sodium": {"value": 136, "unit": "mEq/L", "ref_range": "136-145", "flag": "normal"},
+        "glucose": {"value": 148, "unit": "mg/dL", "ref_range": "70-100", "flag": "high"},
+        "CBC_WBC": {"value": 6.8, "unit": "K/uL", "ref_range": "4.5-11.0", "flag": "normal"},
+        "CBC_Hgb": {"value": 12.5, "unit": "g/dL", "ref_range": "13.5-17.5", "flag": "low"},
+        "CBC_Plt": {"value": 205, "unit": "K/uL", "ref_range": "150-400", "flag": "normal"},
+        "B12": {"value": 330, "unit": "pg/mL", "ref_range": "200-900", "flag": "normal"},
+        "LFTs_ALT": {"value": 22, "unit": "U/L", "ref_range": "7-56", "flag": "normal"},
+        "LFTs_AST": {"value": 25, "unit": "U/L", "ref_range": "10-40", "flag": "normal"}
+      }
+    },
+    {
+      "id": 15,
+      "date": "2019-10-21",
+      "type": "visit_note",
+      "doctor": "Dr. Amit Patel",
+      "department": "Cardiology",
+      "summary": "Starting amiodarone for atrial fibrillation rhythm control",
+      "content": "Patient returns with continued palpitations and reduced exercise tolerance despite rate control. Decision to initiate amiodarone for rhythm control given HFrEF (amiodarone preferred in HF). Starting amiodarone 400mg BID loading x 1 week, then 200mg daily maintenance. Baseline thyroid, LFTs, CXR, and PFTs ordered. Will need regular monitoring. Continue metoprolol 100mg. Note: patient also on warfarin — will need close INR monitoring."
+    },
+    {
+      "id": 16,
+      "date": "2019-10-21",
+      "type": "prescription",
+      "prescriber": "Dr. Amit Patel",
+      "department": "Cardiology",
+      "summary": "Starting amiodarone for rhythm control",
+      "drug": "amiodarone",
+      "dose": "400mg BID x 7 days then 200mg daily",
+      "frequency": "see dose",
+      "duration": "ongoing",
+      "indication": "Atrial fibrillation with symptomatic episodes in setting of HFrEF"
+    },
+    {
+      "id": 17,
+      "date": "2019-10-21",
+      "type": "prescription",
+      "prescriber": "Dr. Amit Patel",
+      "department": "Cardiology",
+      "summary": "Initiating warfarin for stroke prevention in a-fib",
+      "drug": "warfarin",
+      "dose": "4mg",
+      "frequency": "daily",
+      "duration": "ongoing",
+      "indication": "Stroke prevention in atrial fibrillation, CHA2DS2-VASc 5"
+    },
+    {
+      "id": 18,
+      "date": "2019-10-28",
+      "type": "lab_result",
+      "ordered_by": "Dr. Amit Patel",
+      "summary": "INR check 1 week after starting warfarin and amiodarone",
+      "tests": {
+        "INR": {"value": 1.8, "unit": "", "ref_range": "2.0-3.0", "flag": "low"},
+        "PT": {"value": 20.2, "unit": "seconds", "ref_range": "11-13.5", "flag": "high"}
+      }
+    },
+    {
+      "id": 19,
+      "date": "2019-11-04",
+      "type": "lab_result",
+      "ordered_by": "Dr. Amit Patel",
+      "summary": "INR check week 2",
+      "tests": {
+        "INR": {"value": 2.4, "unit": "", "ref_range": "2.0-3.0", "flag": "normal"}
+      }
+    },
+    {
+      "id": 20,
+      "date": "2019-11-11",
+      "type": "pharmacy_note",
+      "pharmacist": "RPh. David Kim",
+      "summary": "Warfarin dispensing note",
+      "content": "Dispensed warfarin 4mg daily. Patient also on amiodarone 200mg daily (loading completed). Note: amiodarone is a potent CYP2C9 and CYP3A4 inhibitor, known to increase warfarin effect significantly. Typical recommendation is to empirically reduce warfarin dose by 30-50% when initiating amiodarone. Prescriber not contacted at this time as INR currently in range at 2.4. Will monitor closely."
+    },
+    {
+      "id": 21,
+      "date": "2019-11-18",
+      "type": "lab_result",
+      "ordered_by": "Dr. Karen Whitfield",
+      "summary": "INR check week 4 after amiodarone start",
+      "tests": {
+        "INR": {"value": 3.1, "unit": "", "ref_range": "2.0-3.0", "flag": "high"}
+      }
+    },
+    {
+      "id": 22,
+      "date": "2019-12-02",
+      "type": "lab_result",
+      "ordered_by": "Dr. Karen Whitfield",
+      "summary": "INR check — rising",
+      "tests": {
+        "INR": {"value": 3.6, "unit": "", "ref_range": "2.0-3.0", "flag": "high"}
+      }
+    },
+    {
+      "id": 23,
+      "date": "2019-12-16",
+      "type": "lab_result",
+      "ordered_by": "Dr. Karen Whitfield",
+      "summary": "INR check — supratherapeutic, rising further",
+      "tests": {
+        "INR": {"value": 4.2, "unit": "", "ref_range": "2.0-3.0", "flag": "critical_high"}
+      }
+    },
+    {
+      "id": 24,
+      "date": "2019-12-17",
+      "type": "visit_note",
+      "doctor": "Dr. Karen Whitfield",
+      "department": "Primary Care",
+      "summary": "Urgent visit for supratherapeutic INR and gingival bleeding",
+      "content": "Patient called reporting bleeding gums when brushing and a nosebleed this morning. INR 4.2 (yesterday's lab). On warfarin 4mg daily and amiodarone 200mg daily. Amiodarone was started 2 months ago — this interaction should have been anticipated. Amiodarone inhibits warfarin metabolism and typically requires 30-50% warfarin dose reduction. Held warfarin today. Will reduce to warfarin 2mg daily once INR falls below 3.0. No signs of major hemorrhage. No melena, hematuria, or hemoptysis. Vitals stable. Advised to avoid NSAIDs and trauma."
+    },
+    {
+      "id": 25,
+      "date": "2019-12-23",
+      "type": "lab_result",
+      "ordered_by": "Dr. Karen Whitfield",
+      "summary": "INR recheck after holding warfarin",
+      "tests": {
+        "INR": {"value": 3.4, "unit": "", "ref_range": "2.0-3.0", "flag": "high"}
+      }
+    },
+    {
+      "id": 26,
+      "date": "2019-12-30",
+      "type": "prescription",
+      "prescriber": "Dr. Karen Whitfield",
+      "department": "Primary Care",
+      "summary": "Warfarin dose reduction due to amiodarone interaction",
+      "drug": "warfarin",
+      "dose": "2mg",
+      "frequency": "daily",
+      "duration": "ongoing",
+      "indication": "A-fib stroke prevention — dose reduced due to amiodarone interaction"
+    },
+    {
+      "id": 27,
+      "date": "2020-01-06",
+      "type": "lab_result",
+      "ordered_by": "Dr. Karen Whitfield",
+      "summary": "INR on reduced warfarin dose",
+      "tests": {
+        "INR": {"value": 2.6, "unit": "", "ref_range": "2.0-3.0", "flag": "normal"}
+      }
+    },
+    {
+      "id": 28,
+      "date": "2020-01-15",
+      "type": "lab_result",
+      "ordered_by": "Dr. Karen Whitfield",
+      "summary": "Comprehensive quarterly labs",
+      "tests": {
+        "BUN": {"value": 33, "unit": "mg/dL", "ref_range": "7-20", "flag": "high"},
+        "creatinine": {"value": 1.7, "unit": "mg/dL", "ref_range": "0.7-1.3", "flag": "high"},
+        "eGFR": {"value": 44, "unit": "mL/min/1.73m2", "ref_range": ">60", "flag": "low"},
+        "potassium": {"value": 5.1, "unit": "mEq/L", "ref_range": "3.5-5.0", "flag": "high"},
+        "sodium": {"value": 136, "unit": "mEq/L", "ref_range": "136-145", "flag": "normal"},
+        "glucose": {"value": 152, "unit": "mg/dL", "ref_range": "70-100", "flag": "high"},
+        "HbA1c": {"value": 7.3, "unit": "%", "ref_range": "<7.0", "flag": "high"},
+        "magnesium": {"value": 1.9, "unit": "mg/dL", "ref_range": "1.7-2.2", "flag": "normal"},
+        "CBC_WBC": {"value": 7.0, "unit": "K/uL", "ref_range": "4.5-11.0", "flag": "normal"},
+        "CBC_Hgb": {"value": 12.3, "unit": "g/dL", "ref_range": "13.5-17.5", "flag": "low"},
+        "CBC_Plt": {"value": 198, "unit": "K/uL", "ref_range": "150-400", "flag": "normal"}
+      }
+    },
+    {
+      "id": 29,
+      "date": "2020-02-03",
+      "type": "lab_result",
+      "ordered_by": "Dr. Karen Whitfield",
+      "summary": "INR monthly check",
+      "tests": {
+        "INR": {"value": 2.5, "unit": "", "ref_range": "2.0-3.0", "flag": "normal"}
+      }
+    },
+    {
+      "id": 30,
+      "date": "2020-02-18",
+      "type": "visit_note",
+      "doctor": "Dr. Amit Patel",
+      "department": "Cardiology",
+      "summary": "Heart failure and a-fib follow-up, amiodarone tolerating well",
+      "content": "HFrEF stable. EF 25%. Amiodarone now at maintenance 200mg daily. INR stabilized on reduced warfarin 2mg. Thyroid function normal (TSH 2.1). LFTs normal. No pulmonary toxicity symptoms. Rhythm: appears to be in sinus rhythm on amiodarone — good response. Continue current regimen. Echo in 6 months. Spironolactone continued at 25mg."
+    },
+    {
+      "id": 31,
+      "date": "2020-03-10",
+      "type": "visit_note",
+      "doctor": "Dr. Susan Ramirez",
+      "department": "Pulmonology",
+      "summary": "COPD exacerbation — first prednisone course",
+      "content": "Patient presents with 3-day history of increased dyspnea, productive cough with yellow sputum, and wheezing. O2 sat 90% on RA. COPD exacerbation, likely infectious trigger. Starting prednisone 40mg daily x 10 days, azithromycin 250mg daily x 5 days, increased albuterol frequency. Patient on amiodarone — noted, no significant interaction concern with prednisone. Follow-up in 1 week."
+    },
+    {
+      "id": 32,
+      "date": "2020-03-10",
+      "type": "prescription",
+      "prescriber": "Dr. Susan Ramirez",
+      "department": "Pulmonology",
+      "summary": "Prednisone for COPD exacerbation",
+      "drug": "prednisone",
+      "dose": "40mg",
+      "frequency": "daily",
+      "duration": "10 days",
+      "indication": "Acute COPD exacerbation"
+    },
+    {
+      "id": 33,
+      "date": "2020-03-18",
+      "type": "lab_result",
+      "ordered_by": "Dr. Susan Ramirez",
+      "summary": "Labs during prednisone course",
+      "tests": {
+        "glucose": {"value": 218, "unit": "mg/dL", "ref_range": "70-100", "flag": "high"},
+        "CBC_WBC": {"value": 12.1, "unit": "K/uL", "ref_range": "4.5-11.0", "flag": "high"}
+      }
+    },
+    {
+      "id": 34,
+      "date": "2020-03-25",
+      "type": "visit_note",
+      "doctor": "Dr. Susan Ramirez",
+      "department": "Pulmonology",
+      "summary": "COPD exacerbation follow-up, improving",
+      "content": "Patient improving. Cough decreased, sputum now clear. O2 sat 93% on RA. Prednisone course completing today. Glucose was 218 during course — will notify PCP. Likely steroid-induced hyperglycemia. Return to baseline inhalers. Follow-up in 3 months."
+    },
+    {
+      "id": 35,
+      "date": "2020-04-01",
+      "type": "lab_result",
+      "ordered_by": "Dr. Karen Whitfield",
+      "summary": "INR and BMP after prednisone course",
+      "tests": {
+        "INR": {"value": 2.3, "unit": "", "ref_range": "2.0-3.0", "flag": "normal"},
+        "potassium": {"value": 5.0, "unit": "mEq/L", "ref_range": "3.5-5.0", "flag": "normal"},
+        "sodium": {"value": 136, "unit": "mEq/L", "ref_range": "136-145", "flag": "normal"},
+        "glucose": {"value": 155, "unit": "mg/dL", "ref_range": "70-100", "flag": "high"}
+      }
+    },
+    {
+      "id": 36,
+      "date": "2020-04-15",
+      "type": "lab_result",
+      "ordered_by": "Dr. Karen Whitfield",
+      "summary": "Quarterly comprehensive labs",
+      "tests": {
+        "BUN": {"value": 34, "unit": "mg/dL", "ref_range": "7-20", "flag": "high"},
+        "creatinine": {"value": 1.8, "unit": "mg/dL", "ref_range": "0.7-1.3", "flag": "high"},
+        "eGFR": {"value": 42, "unit": "mL/min/1.73m2", "ref_range": ">60", "flag": "low"},
+        "potassium": {"value": 5.1, "unit": "mEq/L", "ref_range": "3.5-5.0", "flag": "high"},
+        "sodium": {"value": 136, "unit": "mEq/L", "ref_range": "136-145", "flag": "normal"},
+        "HbA1c": {"value": 7.4, "unit": "%", "ref_range": "<7.0", "flag": "high"},
+        "magnesium": {"value": 1.8, "unit": "mg/dL", "ref_range": "1.7-2.2", "flag": "normal"},
+        "LFTs_ALT": {"value": 24, "unit": "U/L", "ref_range": "7-56", "flag": "normal"},
+        "LFTs_AST": {"value": 28, "unit": "U/L", "ref_range": "10-40", "flag": "normal"},
+        "TSH": {"value": 2.8, "unit": "mIU/L", "ref_range": "0.4-4.0", "flag": "normal"}
+      }
+    },
+    {
+      "id": 37,
+      "date": "2020-05-12",
+      "type": "visit_note",
+      "doctor": "Dr. Linda Chen",
+      "department": "Psychiatry",
+      "summary": "MDD follow-up, some worsening",
+      "content": "PHQ-9 score 11 (moderate). Patient reports increased fatigue, difficulty concentrating, low motivation. Sleep disrupted. Attributes fatigue to 'all my health problems.' Sertraline 100mg continued. Discussed therapy referral. Patient declines at this time. Will reassess in 3 months. No SI."
+    },
+    {
+      "id": 38,
+      "date": "2020-05-20",
+      "type": "lab_result",
+      "ordered_by": "Dr. Karen Whitfield",
+      "summary": "INR monthly",
+      "tests": {
+        "INR": {"value": 2.7, "unit": "", "ref_range": "2.0-3.0", "flag": "normal"}
+      }
+    },
+    {
+      "id": 39,
+      "date": "2020-06-15",
+      "type": "visit_note",
+      "doctor": "Dr. James Foster",
+      "department": "Endocrinology",
+      "summary": "Diabetes follow-up, HbA1c worsening",
+      "content": "HbA1c 7.4%, up from 7.2%. Patient had prednisone course in March for COPD exacerbation. Glucose spiked to 218 during that period. This likely contributed to HbA1c rise. Continue metformin 1000mg BID. Counsel on diet. eGFR 42, still acceptable for metformin. If further exacerbations requiring steroids, may need short-term insulin coverage."
+    },
+    {
+      "id": 40,
+      "date": "2020-07-01",
+      "type": "lab_result",
+      "ordered_by": "Dr. Karen Whitfield",
+      "summary": "INR and basic labs",
+      "tests": {
+        "INR": {"value": 2.4, "unit": "", "ref_range": "2.0-3.0", "flag": "normal"},
+        "potassium": {"value": 5.2, "unit": "mEq/L", "ref_range": "3.5-5.0", "flag": "high"},
+        "sodium": {"value": 135, "unit": "mEq/L", "ref_range": "136-145", "flag": "low"},
+        "creatinine": {"value": 1.8, "unit": "mg/dL", "ref_range": "0.7-1.3", "flag": "high"}
+      }
+    },
+    {
+      "id": 41,
+      "date": "2020-07-15",
+      "type": "lab_result",
+      "ordered_by": "Dr. Karen Whitfield",
+      "summary": "Quarterly comprehensive labs",
+      "tests": {
+        "BUN": {"value": 36, "unit": "mg/dL", "ref_range": "7-20", "flag": "high"},
+        "creatinine": {"value": 1.9, "unit": "mg/dL", "ref_range": "0.7-1.3", "flag": "high"},
+        "eGFR": {"value": 40, "unit": "mL/min/1.73m2", "ref_range": ">60", "flag": "low"},
+        "potassium": {"value": 5.2, "unit": "mEq/L", "ref_range": "3.5-5.0", "flag": "high"},
+        "sodium": {"value": 135, "unit": "mEq/L", "ref_range": "136-145", "flag": "low"},
+        "glucose": {"value": 146, "unit": "mg/dL", "ref_range": "70-100", "flag": "high"},
+        "HbA1c": {"value": 7.3, "unit": "%", "ref_range": "<7.0", "flag": "high"},
+        "CBC_WBC": {"value": 6.9, "unit": "K/uL", "ref_range": "4.5-11.0", "flag": "normal"},
+        "CBC_Hgb": {"value": 12.0, "unit": "g/dL", "ref_range": "13.5-17.5", "flag": "low"},
+        "CBC_Plt": {"value": 195, "unit": "K/uL", "ref_range": "150-400", "flag": "normal"},
+        "B12": {"value": 310, "unit": "pg/mL", "ref_range": "200-900", "flag": "normal"}
+      }
+    },
+    {
+      "id": 42,
+      "date": "2020-08-05",
+      "type": "visit_note",
+      "doctor": "Dr. Karen Whitfield",
+      "department": "Primary Care",
+      "summary": "Routine visit, noting mild hyponatremia and hyperkalemia trends",
+      "content": "74 y/o male routine visit. Weight 194 lbs. BP 126/76. Multiple comorbidities. Labs reviewed: K+ 5.2 (persistent mild elevation), Na 135 (low normal). eGFR 40, down from 52 last year. Discussed dietary potassium restriction. Patient on lisinopril and spironolactone — both can raise potassium. However, both have mortality benefit in HF. Cardiology to weigh in. Sodium 135 — mild, likely dilutional in HF setting. Continue monitoring."
+    },
+    {
+      "id": 43,
+      "date": "2020-08-20",
+      "type": "lab_result",
+      "ordered_by": "Dr. Karen Whitfield",
+      "summary": "INR monthly",
+      "tests": {
+        "INR": {"value": 2.5, "unit": "", "ref_range": "2.0-3.0", "flag": "normal"}
+      }
+    },
+    {
+      "id": 44,
+      "date": "2020-09-14",
+      "type": "visit_note",
+      "doctor": "Dr. Ravi Mehta",
+      "department": "Nephrology",
+      "summary": "CKD progression noted",
+      "content": "eGFR now 40, down from 52 at initial evaluation. CKD stage IIIb, progressing. UACR 220 mg/g. Likely diabetic and hypertensive nephropathy. Potassium 5.2 — mildly elevated, likely from RAAS blockade + spironolactone + declining renal function. For now, continue lisinopril for renoprotection. Recommend dietary K restriction. Metformin currently acceptable with eGFR 40. If eGFR drops below 30, will need to stop metformin. Follow-up in 4 months."
+    },
+    {
+      "id": 45,
+      "date": "2020-10-05",
+      "type": "lab_result",
+      "ordered_by": "Dr. Karen Whitfield",
+      "summary": "Quarterly labs",
+      "tests": {
+        "BUN": {"value": 37, "unit": "mg/dL", "ref_range": "7-20", "flag": "high"},
+        "creatinine": {"value": 1.9, "unit": "mg/dL", "ref_range": "0.7-1.3", "flag": "high"},
+        "eGFR": {"value": 39, "unit": "mL/min/1.73m2", "ref_range": ">60", "flag": "low"},
+        "potassium": {"value": 5.2, "unit": "mEq/L", "ref_range": "3.5-5.0", "flag": "high"},
+        "sodium": {"value": 135, "unit": "mEq/L", "ref_range": "136-145", "flag": "low"},
+        "magnesium": {"value": 1.8, "unit": "mg/dL", "ref_range": "1.7-2.2", "flag": "normal"},
+        "INR": {"value": 2.6, "unit": "", "ref_range": "2.0-3.0", "flag": "normal"}
+      }
+    },
+    {
+      "id": 46,
+      "date": "2020-11-02",
+      "type": "visit_note",
+      "doctor": "Dr. Susan Ramirez",
+      "department": "Pulmonology",
+      "summary": "COPD stable, second exacerbation — prednisone course",
+      "content": "Patient presents with worsening cough x 5 days, increased sputum production, mild fever 100.2F. O2 sat 91%. Second COPD exacerbation this year. Prescribing prednisone 40mg daily x 7 days, levofloxacin 750mg x 5 days. Alert: patient is diabetic — will need glucose monitoring. Consider short-acting insulin if glucose >250. Continue inhalers."
+    },
+    {
+      "id": 47,
+      "date": "2020-11-02",
+      "type": "prescription",
+      "prescriber": "Dr. Susan Ramirez",
+      "department": "Pulmonology",
+      "summary": "Prednisone for second COPD exacerbation of 2020",
+      "drug": "prednisone",
+      "dose": "40mg",
+      "frequency": "daily",
+      "duration": "7 days",
+      "indication": "Acute COPD exacerbation"
+    },
+    {
+      "id": 48,
+      "date": "2020-11-06",
+      "type": "lab_result",
+      "ordered_by": "Dr. Karen Whitfield",
+      "summary": "Labs during second prednisone course",
+      "tests": {
+        "glucose": {"value": 232, "unit": "mg/dL", "ref_range": "70-100", "flag": "high"},
+        "potassium": {"value": 4.8, "unit": "mEq/L", "ref_range": "3.5-5.0", "flag": "normal"}
+      }
+    },
+    {
+      "id": 49,
+      "date": "2020-11-30",
+      "type": "lab_result",
+      "ordered_by": "Dr. Karen Whitfield",
+      "summary": "INR monthly and follow-up labs after exacerbation",
+      "tests": {
+        "INR": {"value": 2.3, "unit": "", "ref_range": "2.0-3.0", "flag": "normal"},
+        "glucose": {"value": 158, "unit": "mg/dL", "ref_range": "70-100", "flag": "high"}
+      }
+    },
+    {
+      "id": 50,
+      "date": "2020-12-15",
+      "type": "visit_note",
+      "doctor": "Dr. Karen Whitfield",
+      "department": "Primary Care",
+      "summary": "Year-end visit, reviewing trends",
+      "content": "Annual review. eGFR declined from 52 to 39 over this year. K+ persistently 5.0-5.2. Na trending 135-136. HbA1c 7.3-7.4, worsened slightly — two prednisone courses likely contributed. COPD with 2 exacerbations this year. Depression moderate. Mild anemia (Hgb 12.0). Warfarin stable on 2mg after the amiodarone interaction episode. Weight 194. Plan: continue all meds, close monitoring. Consider nephrology guidance if eGFR continues to decline."
+    },
+    {
+      "id": 51,
+      "date": "2021-01-12",
+      "type": "lab_result",
+      "ordered_by": "Dr. Karen Whitfield",
+      "summary": "Comprehensive labs start of year",
+      "tests": {
+        "BUN": {"value": 38, "unit": "mg/dL", "ref_range": "7-20", "flag": "high"},
+        "creatinine": {"value": 2.0, "unit": "mg/dL", "ref_range": "0.7-1.3", "flag": "high"},
+        "eGFR": {"value": 37, "unit": "mL/min/1.73m2", "ref_range": ">60", "flag": "low"},
+        "potassium": {"value": 5.2, "unit": "mEq/L", "ref_range": "3.5-5.0", "flag": "high"},
+        "sodium": {"value": 134, "unit": "mEq/L", "ref_range": "136-145", "flag": "low"},
+        "glucose": {"value": 150, "unit": "mg/dL", "ref_range": "70-100", "flag": "high"},
+        "HbA1c": {"value": 7.5, "unit": "%", "ref_range": "<7.0", "flag": "high"},
+        "magnesium": {"value": 1.7, "unit": "mg/dL", "ref_range": "1.7-2.2", "flag": "normal"},
+        "B12": {"value": 280, "unit": "pg/mL", "ref_range": "200-900", "flag": "normal"},
+        "BNP": {"value": 710, "unit": "pg/mL", "ref_range": "<100", "flag": "high"},
+        "INR": {"value": 2.4, "unit": "", "ref_range": "2.0-3.0", "flag": "normal"},
+        "CBC_WBC": {"value": 7.1, "unit": "K/uL", "ref_range": "4.5-11.0", "flag": "normal"},
+        "CBC_Hgb": {"value": 11.8, "unit": "g/dL", "ref_range": "13.5-17.5", "flag": "low"},
+        "CBC_Plt": {"value": 190, "unit": "K/uL", "ref_range": "150-400", "flag": "normal"}
+      }
+    },
+    {
+      "id": 52,
+      "date": "2021-02-08",
+      "type": "visit_note",
+      "doctor": "Dr. Amit Patel",
+      "department": "Cardiology",
+      "summary": "HF follow-up, considering digoxin addition",
+      "content": "HFrEF, EF 25%. BNP 710, slightly worse. NYHA class III symptoms worsening. Currently on metoprolol, lisinopril, spironolactone, furosemide, amiodarone. Sinus rhythm maintained on amiodarone. Considering adding digoxin for symptomatic benefit. Will start low dose (0.125mg daily) given renal impairment (eGFR 37). Need to monitor digoxin levels closely with CKD. Also note: patient on spironolactone — both can affect potassium. Continue close electrolyte monitoring."
+    },
+    {
+      "id": 53,
+      "date": "2021-02-08",
+      "type": "prescription",
+      "prescriber": "Dr. Amit Patel",
+      "department": "Cardiology",
+      "summary": "Adding digoxin for HFrEF symptomatic benefit",
+      "drug": "digoxin",
+      "dose": "0.125mg",
+      "frequency": "daily",
+      "duration": "ongoing",
+      "indication": "Heart failure symptomatic management"
+    },
+    {
+      "id": 54,
+      "date": "2021-02-22",
+      "type": "lab_result",
+      "ordered_by": "Dr. Amit Patel",
+      "summary": "Digoxin level and electrolytes check",
+      "tests": {
+        "digoxin_level": {"value": 0.9, "unit": "ng/mL", "ref_range": "0.5-2.0", "flag": "normal"},
+        "potassium": {"value": 5.3, "unit": "mEq/L", "ref_range": "3.5-5.0", "flag": "high"},
+        "creatinine": {"value": 2.0, "unit": "mg/dL", "ref_range": "0.7-1.3", "flag": "high"},
+        "magnesium": {"value": 1.7, "unit": "mg/dL", "ref_range": "1.7-2.2", "flag": "normal"}
+      }
+    },
+    {
+      "id": 55,
+      "date": "2021-03-15",
+      "type": "lab_result",
+      "ordered_by": "Dr. Karen Whitfield",
+      "summary": "INR monthly",
+      "tests": {
+        "INR": {"value": 2.5, "unit": "", "ref_range": "2.0-3.0", "flag": "normal"}
+      }
+    },
+    {
+      "id": 56,
+      "date": "2021-03-29",
+      "type": "visit_note",
+      "doctor": "Dr. Linda Chen",
+      "department": "Psychiatry",
+      "summary": "MDD follow-up, patient reporting more fatigue and confusion",
+      "content": "PHQ-9 score 13 (moderate). Patient reports worsening fatigue, 'brain fog', mild confusion at times. These symptoms are common in elderly patients with multiple comorbidities — HF, CKD, depression. Sertraline continued at 100mg. Discussed cognitive symptoms — likely related to depression and deconditioning. Consider neurology referral if worsens. Continue sertraline."
+    },
+    {
+      "id": 57,
+      "date": "2021-04-12",
+      "type": "lab_result",
+      "ordered_by": "Dr. Karen Whitfield",
+      "summary": "Quarterly labs",
+      "tests": {
+        "BUN": {"value": 40, "unit": "mg/dL", "ref_range": "7-20", "flag": "high"},
+        "creatinine": {"value": 2.1, "unit": "mg/dL", "ref_range": "0.7-1.3", "flag": "high"},
+        "eGFR": {"value": 35, "unit": "mL/min/1.73m2", "ref_range": ">60", "flag": "low"},
+        "potassium": {"value": 5.3, "unit": "mEq/L", "ref_range": "3.5-5.0", "flag": "high"},
+        "sodium": {"value": 134, "unit": "mEq/L", "ref_range": "136-145", "flag": "low"},
+        "glucose": {"value": 155, "unit": "mg/dL", "ref_range": "70-100", "flag": "high"},
+        "INR": {"value": 2.6, "unit": "", "ref_range": "2.0-3.0", "flag": "normal"},
+        "digoxin_level": {"value": 1.0, "unit": "ng/mL", "ref_range": "0.5-2.0", "flag": "normal"}
+      }
+    },
+    {
+      "id": 58,
+      "date": "2021-05-03",
+      "type": "visit_note",
+      "doctor": "Dr. Michael Torres",
+      "department": "Rheumatology",
+      "summary": "Gout follow-up, stable on allopurinol",
+      "content": "Gout well-controlled on allopurinol 300mg daily. Uric acid 5.8 (target <6.0). No flares in 8 months. Continue current dose. eGFR 35 — may need to reduce allopurinol if renal function worsens further. No joint complaints today."
+    },
+    {
+      "id": 59,
+      "date": "2021-05-20",
+      "type": "lab_result",
+      "ordered_by": "Dr. Karen Whitfield",
+      "summary": "INR monthly",
+      "tests": {
+        "INR": {"value": 2.3, "unit": "", "ref_range": "2.0-3.0", "flag": "normal"}
+      }
+    },
+    {
+      "id": 60,
+      "date": "2021-06-14",
+      "type": "visit_note",
+      "doctor": "Dr. Susan Ramirez",
+      "department": "Pulmonology",
+      "summary": "COPD — third exacerbation, another prednisone course",
+      "content": "Third exacerbation in 15 months. Presents with increased SOB, purulent sputum, low-grade fever. O2 sat 89% on RA. More severe than prior episodes. Prednisone 40mg x 10 days, doxycycline 100mg BID x 7 days. Nebulized albuterol/ipratropium in office. Consider pulm rehab referral. Patient has multiple prednisone courses — note: diabetic, will likely have glucose spikes again. Continue inhalers."
+    },
+    {
+      "id": 61,
+      "date": "2021-06-14",
+      "type": "prescription",
+      "prescriber": "Dr. Susan Ramirez",
+      "department": "Pulmonology",
+      "summary": "Prednisone for third COPD exacerbation",
+      "drug": "prednisone",
+      "dose": "40mg",
+      "frequency": "daily",
+      "duration": "10 days",
+      "indication": "Acute COPD exacerbation"
+    },
+    {
+      "id": 62,
+      "date": "2021-06-20",
+      "type": "lab_result",
+      "ordered_by": "Dr. Susan Ramirez",
+      "summary": "Labs during third prednisone course",
+      "tests": {
+        "glucose": {"value": 245, "unit": "mg/dL", "ref_range": "70-100", "flag": "high"},
+        "CBC_WBC": {"value": 13.2, "unit": "K/uL", "ref_range": "4.5-11.0", "flag": "high"}
+      }
+    },
+    {
+      "id": 63,
+      "date": "2021-07-05",
+      "type": "visit_note",
+      "doctor": "Dr. Karen Whitfield",
+      "department": "Primary Care",
+      "summary": "Post-exacerbation follow-up",
+      "content": "COPD exacerbation resolving. Third in 15 months. Glucose spiked to 245 on prednisone — again. Each steroid course is worsening glycemic control. HbA1c was 7.5 last check. Will recheck. No one has addressed cumulative steroid effect on diabetes or bone health. Patient had 3 courses of prednisone 40mg in ~15 months. Should consider DEXA scan and endocrine consult about steroid impact. Weight 192 lbs. BP 130/78."
+    },
+    {
+      "id": 64,
+      "date": "2021-07-15",
+      "type": "lab_result",
+      "ordered_by": "Dr. Karen Whitfield",
+      "summary": "Quarterly comprehensive labs",
+      "tests": {
+        "BUN": {"value": 41, "unit": "mg/dL", "ref_range": "7-20", "flag": "high"},
+        "creatinine": {"value": 2.1, "unit": "mg/dL", "ref_range": "0.7-1.3", "flag": "high"},
+        "eGFR": {"value": 34, "unit": "mL/min/1.73m2", "ref_range": ">60", "flag": "low"},
+        "potassium": {"value": 5.3, "unit": "mEq/L", "ref_range": "3.5-5.0", "flag": "high"},
+        "sodium": {"value": 134, "unit": "mEq/L", "ref_range": "136-145", "flag": "low"},
+        "glucose": {"value": 165, "unit": "mg/dL", "ref_range": "70-100", "flag": "high"},
+        "HbA1c": {"value": 7.7, "unit": "%", "ref_range": "<7.0", "flag": "high"},
+        "magnesium": {"value": 1.7, "unit": "mg/dL", "ref_range": "1.7-2.2", "flag": "normal"},
+        "CBC_WBC": {"value": 7.3, "unit": "K/uL", "ref_range": "4.5-11.0", "flag": "normal"},
+        "CBC_Hgb": {"value": 11.5, "unit": "g/dL", "ref_range": "13.5-17.5", "flag": "low"},
+        "CBC_Plt": {"value": 188, "unit": "K/uL", "ref_range": "150-400", "flag": "normal"},
+        "TSH": {"value": 3.1, "unit": "mIU/L", "ref_range": "0.4-4.0", "flag": "normal"}
+      }
+    },
+    {
+      "id": 65,
+      "date": "2021-08-09",
+      "type": "visit_note",
+      "doctor": "Dr. James Foster",
+      "department": "Endocrinology",
+      "summary": "Diabetes worsening, HbA1c 7.7%",
+      "content": "HbA1c now 7.7%, up from 7.2% two years ago. Patient has had 3 courses of prednisone 40mg for COPD exacerbations. Each course causes significant hyperglycemia (glucose 218-245). Cumulative effect on HbA1c evident. Continue metformin 1000mg BID — eGFR 34, borderline but still above 30 threshold. May need to add DPP-4 inhibitor or low-dose sulfonylurea. Will optimize diet. If another prednisone course, will order sliding scale insulin. Note: repeated steroids also increase osteoporosis risk — suggest DEXA scan — will leave to PCP to order."
+    },
+    {
+      "id": 66,
+      "date": "2021-09-01",
+      "type": "lab_result",
+      "ordered_by": "Dr. Karen Whitfield",
+      "summary": "INR and basic labs",
+      "tests": {
+        "INR": {"value": 2.4, "unit": "", "ref_range": "2.0-3.0", "flag": "normal"},
+        "sodium": {"value": 133, "unit": "mEq/L", "ref_range": "136-145", "flag": "low"},
+        "potassium": {"value": 5.3, "unit": "mEq/L", "ref_range": "3.5-5.0", "flag": "high"}
+      }
+    },
+    {
+      "id": 67,
+      "date": "2021-09-20",
+      "type": "visit_note",
+      "doctor": "Dr. Karen Whitfield",
+      "department": "Primary Care",
+      "summary": "Routine visit, sodium trending down",
+      "content": "Reviewing trends. Sodium has been 136→135→134→134→133 over the past 2 years. Mild hyponatremia. Patient on furosemide, lisinopril, sertraline — all can contribute. Most likely dilutional in HF setting. Patient reports ongoing fatigue and occasional confusion — attributes to depression and 'getting old.' Will continue monitoring. Consider fluid restriction if drops further."
+    },
+    {
+      "id": 68,
+      "date": "2021-10-04",
+      "type": "lab_result",
+      "ordered_by": "Dr. Karen Whitfield",
+      "summary": "Quarterly labs",
+      "tests": {
+        "BUN": {"value": 42, "unit": "mg/dL", "ref_range": "7-20", "flag": "high"},
+        "creatinine": {"value": 2.2, "unit": "mg/dL", "ref_range": "0.7-1.3", "flag": "high"},
+        "eGFR": {"value": 33, "unit": "mL/min/1.73m2", "ref_range": ">60", "flag": "low"},
+        "potassium": {"value": 5.4, "unit": "mEq/L", "ref_range": "3.5-5.0", "flag": "high"},
+        "sodium": {"value": 133, "unit": "mEq/L", "ref_range": "136-145", "flag": "low"},
+        "magnesium": {"value": 1.6, "unit": "mg/dL", "ref_range": "1.7-2.2", "flag": "low"},
+        "B12": {"value": 250, "unit": "pg/mL", "ref_range": "200-900", "flag": "normal"},
+        "LFTs_ALT": {"value": 26, "unit": "U/L", "ref_range": "7-56", "flag": "normal"},
+        "LFTs_AST": {"value": 30, "unit": "U/L", "ref_range": "10-40", "flag": "normal"}
+      }
+    },
+    {
+      "id": 69,
+      "date": "2021-10-25",
+      "type": "visit_note",
+      "doctor": "Dr. Ravi Mehta",
+      "department": "Nephrology",
+      "summary": "CKD progression, eGFR 33",
+      "content": "eGFR 33, down from 52 two years ago. Significant progression. CKD stage IIIb, approaching stage IV. Potassium 5.4 — concerning in setting of digoxin use. Hypokalemia and hyperkalemia both increase digoxin toxicity risk. Recommend cardiology aware. Metformin: eGFR 33, still technically above 30 cutoff but getting close. Would recommend reducing metformin to 500mg BID if eGFR drops to 30-35 range, and stopping below 30. UACR 280 mg/g. Continue lisinopril. Spironolactone: may need to reduce or stop if K+ continues rising."
+    },
+    {
+      "id": 70,
+      "date": "2021-11-08",
+      "type": "lab_result",
+      "ordered_by": "Dr. Karen Whitfield",
+      "summary": "INR monthly and potassium recheck",
+      "tests": {
+        "INR": {"value": 2.5, "unit": "", "ref_range": "2.0-3.0", "flag": "normal"},
+        "potassium": {"value": 5.4, "unit": "mEq/L", "ref_range": "3.5-5.0", "flag": "high"},
+        "digoxin_level": {"value": 1.1, "unit": "ng/mL", "ref_range": "0.5-2.0", "flag": "normal"}
+      }
+    },
+    {
+      "id": 71,
+      "date": "2021-11-22",
+      "type": "visit_note",
+      "doctor": "Dr. Amit Patel",
+      "department": "Cardiology",
+      "summary": "HF management, aware of hyperkalemia concern",
+      "content": "Reviewed nephrology note. K+ 5.4 persistent. Digoxin level 1.1 — therapeutic but hyperkalemia increases toxicity risk. Spironolactone has clear mortality benefit in HFrEF. Reluctant to stop. Will continue spironolactone 25mg but close K+ monitoring. If K+ >5.5, will need to reconsider. Patient denies palpitations or digoxin toxicity symptoms (nausea, visual changes). EF stable at ~25%. Continue amiodarone, metoprolol, lisinopril, furosemide."
+    },
+    {
+      "id": 72,
+      "date": "2021-12-06",
+      "type": "visit_note",
+      "doctor": "Dr. Linda Chen",
+      "department": "Psychiatry",
+      "summary": "MDD, worsening cognitive symptoms on sertraline",
+      "content": "PHQ-9 score 14 (moderate). Patient reports persistent fatigue, concentration difficulties, intermittent confusion. Falls asleep during day. Gait slightly unsteady. These symptoms overlap with many of his conditions. Sertraline 100mg continues. Could increase to 150mg but concerned about side effects in this elderly patient with CKD. Note: sodium 133 on last check — SSRIs can cause SIADH/hyponatremia, especially in elderly. However, mild hyponatremia is common in HF. Will defer to PCP for sodium workup. Continue sertraline 100mg."
+    },
+    {
+      "id": 73,
+      "date": "2022-01-10",
+      "type": "lab_result",
+      "ordered_by": "Dr. Karen Whitfield",
+      "summary": "Comprehensive annual labs",
+      "tests": {
+        "BUN": {"value": 44, "unit": "mg/dL", "ref_range": "7-20", "flag": "high"},
+        "creatinine": {"value": 2.3, "unit": "mg/dL", "ref_range": "0.7-1.3", "flag": "high"},
+        "eGFR": {"value": 31, "unit": "mL/min/1.73m2", "ref_range": ">60", "flag": "low"},
+        "potassium": {"value": 5.4, "unit": "mEq/L", "ref_range": "3.5-5.0", "flag": "high"},
+        "sodium": {"value": 132, "unit": "mEq/L", "ref_range": "136-145", "flag": "low"},
+        "glucose": {"value": 162, "unit": "mg/dL", "ref_range": "70-100", "flag": "high"},
+        "HbA1c": {"value": 7.6, "unit": "%", "ref_range": "<7.0", "flag": "high"},
+        "magnesium": {"value": 1.6, "unit": "mg/dL", "ref_range": "1.7-2.2", "flag": "low"},
+        "B12": {"value": 235, "unit": "pg/mL", "ref_range": "200-900", "flag": "normal"},
+        "BNP": {"value": 780, "unit": "pg/mL", "ref_range": "<100", "flag": "high"},
+        "CBC_WBC": {"value": 6.8, "unit": "K/uL", "ref_range": "4.5-11.0", "flag": "normal"},
+        "CBC_Hgb": {"value": 11.2, "unit": "g/dL", "ref_range": "13.5-17.5", "flag": "low"},
+        "CBC_Plt": {"value": 182, "unit": "K/uL", "ref_range": "150-400", "flag": "normal"},
+        "INR": {"value": 2.6, "unit": "", "ref_range": "2.0-3.0", "flag": "normal"},
+        "calcium": {"value": 9.0, "unit": "mg/dL", "ref_range": "8.5-10.5", "flag": "normal"},
+        "albumin": {"value": 3.3, "unit": "g/dL", "ref_range": "3.5-5.5", "flag": "low"}
+      }
+    },
+    {
+      "id": 74,
+      "date": "2022-01-24",
+      "type": "visit_note",
+      "doctor": "Dr. Karen Whitfield",
+      "department": "Primary Care",
+      "summary": "Annual comprehensive review, multiple concerning trends",
+      "content": "74 y/o male, annual review. Concerning trends: eGFR 31 (approaching stage IV CKD), K+ 5.4 persistent, Na 132 declining, Mg 1.6 low, B12 235 low-normal, HbA1c 7.6 worsening, Hgb 11.2 (CKD anemia). BNP 780 (worsening HF). Weight 190 lbs. BP 132/80. This patient is complex. Multiple specialists managing different aspects. Sodium decline concerning — differential includes HF volume overload, SIADH from sertraline, CKD. Will order serum and urine osmolality next visit. Magnesium low — patient on omeprazole chronically, which can cause hypomagnesemia. Will monitor. B12 trending down — also associated with long-term PPI use. Continue all medications for now. Need coordinated specialty care."
+    },
+    {
+      "id": 75,
+      "date": "2022-02-14",
+      "type": "lab_result",
+      "ordered_by": "Dr. Karen Whitfield",
+      "summary": "INR monthly",
+      "tests": {
+        "INR": {"value": 2.4, "unit": "", "ref_range": "2.0-3.0", "flag": "normal"}
+      }
+    },
+    {
+      "id": 76,
+      "date": "2022-03-07",
+      "type": "visit_note",
+      "doctor": "Dr. Amit Patel",
+      "department": "Cardiology",
+      "summary": "HF worsening, BNP 780",
+      "content": "HFrEF progressing. BNP 780. Patient more dyspneic. NYHA class III. Weight stable. Lungs: bilateral crackles. 1+ pedal edema. Consider increasing furosemide to 120mg daily. Continuing spironolactone despite K+ 5.4 — benefit outweighs risk for now. Digoxin level 1.1 — acceptable. Echo ordered. Amiodarone continued. EF likely unchanged or worse."
+    },
+    {
+      "id": 77,
+      "date": "2022-03-21",
+      "type": "visit_note",
+      "doctor": "Dr. Amit Patel",
+      "department": "Cardiology",
+      "summary": "Echocardiogram results",
+      "content": "Echo results: EF 22% (down from 25%). Severe LV systolic dysfunction. Moderate MR. LA dilated. RV function borderline reduced. Discussed with patient. Optimizing medical therapy. Increased furosemide to 120mg daily. Continue all other HF meds. Consider ICD/CRT evaluation if further decline."
+    },
+    {
+      "id": 78,
+      "date": "2022-03-21",
+      "type": "prescription",
+      "prescriber": "Dr. Amit Patel",
+      "department": "Cardiology",
+      "summary": "Furosemide dose increase for worsening HF",
+      "drug": "furosemide",
+      "dose": "120mg",
+      "frequency": "daily",
+      "duration": "ongoing",
+      "indication": "Worsening heart failure with volume overload"
+    },
+    {
+      "id": 79,
+      "date": "2022-04-04",
+      "type": "lab_result",
+      "ordered_by": "Dr. Karen Whitfield",
+      "summary": "Labs after furosemide increase",
+      "tests": {
+        "BUN": {"value": 46, "unit": "mg/dL", "ref_range": "7-20", "flag": "high"},
+        "creatinine": {"value": 2.4, "unit": "mg/dL", "ref_range": "0.7-1.3", "flag": "high"},
+        "eGFR": {"value": 30, "unit": "mL/min/1.73m2", "ref_range": ">60", "flag": "low"},
+        "potassium": {"value": 5.4, "unit": "mEq/L", "ref_range": "3.5-5.0", "flag": "high"},
+        "sodium": {"value": 132, "unit": "mEq/L", "ref_range": "136-145", "flag": "low"},
+        "magnesium": {"value": 1.5, "unit": "mg/dL", "ref_range": "1.7-2.2", "flag": "low"}
+      }
+    },
+    {
+      "id": 80,
+      "date": "2022-04-18",
+      "type": "visit_note",
+      "doctor": "Dr. Karen Whitfield",
+      "department": "Primary Care",
+      "summary": "Lab review, eGFR now 30",
+      "content": "eGFR has dropped to 30. CKD stage IV. K+ 5.4 persistent. Mg 1.5 — now clearly low. Na 132 — persistent mild hyponatremia. Patient reports muscle cramps (likely from low Mg), continued fatigue and occasional confusion. Cramps may also relate to gabapentin. Magnesium low: patient on omeprazole for over 5 years — known to cause hypomagnesemia. Will continue monitoring but may need supplementation. B12 was 235 last check — trending down, also PPI-related. Need nephrology follow-up urgently for eGFR 30."
+    },
+    {
+      "id": 81,
+      "date": "2022-05-02",
+      "type": "lab_result",
+      "ordered_by": "Dr. Karen Whitfield",
+      "summary": "INR and digoxin level",
+      "tests": {
+        "INR": {"value": 2.7, "unit": "", "ref_range": "2.0-3.0", "flag": "normal"},
+        "digoxin_level": {"value": 1.2, "unit": "ng/mL", "ref_range": "0.5-2.0", "flag": "normal"}
+      }
+    },
+    {
+      "id": 82,
+      "date": "2022-05-16",
+      "type": "visit_note",
+      "doctor": "Dr. Susan Ramirez",
+      "department": "Pulmonology",
+      "summary": "COPD management, discussing exacerbation prevention",
+      "content": "3 exacerbations in 2 years requiring systemic steroids. FEV1 now 48% (was 58%). Progressive decline. Adding ICS/LABA combination inhaler (fluticasone/salmeterol). Continue tiotropium. Albuterol PRN. Goal: reduce exacerbation frequency and need for oral steroids. Patient is diabetic and repeated prednisone courses are problematic. No DEXA scan has been ordered despite multiple steroid courses. PFTs ordered."
+    },
+    {
+      "id": 83,
+      "date": "2022-05-16",
+      "type": "prescription",
+      "prescriber": "Dr. Susan Ramirez",
+      "department": "Pulmonology",
+      "summary": "Adding ICS/LABA for COPD exacerbation prevention",
+      "drug": "fluticasone/salmeterol 250/50",
+      "dose": "1 puff",
+      "frequency": "BID",
+      "duration": "ongoing",
+      "indication": "COPD with frequent exacerbations"
+    },
+    {
+      "id": 84,
+      "date": "2022-06-06",
+      "type": "lab_result",
+      "ordered_by": "Dr. Karen Whitfield",
+      "summary": "INR monthly",
+      "tests": {
+        "INR": {"value": 2.5, "unit": "", "ref_range": "2.0-3.0", "flag": "normal"}
+      }
+    },
+    {
+      "id": 85,
+      "date": "2022-06-20",
+      "type": "visit_note",
+      "doctor": "Dr. Ravi Mehta",
+      "department": "Nephrology",
+      "summary": "CKD stage IV, eGFR 30 — medication review needed",
+      "content": "eGFR 30. CKD stage IV. Progressive decline. UACR 340 mg/g. Anemia of CKD (Hgb 11.2). Potassium 5.4 persistent — very concerning given combination of lisinopril, spironolactone, and declining renal function. Digoxin adds toxicity risk in hyperkalemia. Strongly recommend stopping or reducing spironolactone. Metformin: eGFR now 30 — FDA guidance says stop at eGFR <30. Currently right at the line. MUST stop metformin if eGFR drops further. Will communicate to endocrinology. Consider erythropoiesis-stimulating agent for anemia if Hgb <10. Continue lisinopril at reduced dose (10mg) if K+ managed. Follow-up in 3 months."
+    },
+    {
+      "id": 86,
+      "date": "2022-07-11",
+      "type": "lab_result",
+      "ordered_by": "Dr. Karen Whitfield",
+      "summary": "Quarterly comprehensive labs",
+      "tests": {
+        "BUN": {"value": 48, "unit": "mg/dL", "ref_range": "7-20", "flag": "high"},
+        "creatinine": {"value": 2.5, "unit": "mg/dL", "ref_range": "0.7-1.3", "flag": "high"},
+        "eGFR": {"value": 28, "unit": "mL/min/1.73m2", "ref_range": ">60", "flag": "low"},
+        "potassium": {"value": 5.5, "unit": "mEq/L", "ref_range": "3.5-5.0", "flag": "high"},
+        "sodium": {"value": 131, "unit": "mEq/L", "ref_range": "136-145", "flag": "low"},
+        "glucose": {"value": 160, "unit": "mg/dL", "ref_range": "70-100", "flag": "high"},
+        "HbA1c": {"value": 7.8, "unit": "%", "ref_range": "<7.0", "flag": "high"},
+        "magnesium": {"value": 1.5, "unit": "mg/dL", "ref_range": "1.7-2.2", "flag": "low"},
+        "B12": {"value": 220, "unit": "pg/mL", "ref_range": "200-900", "flag": "normal"},
+        "CBC_WBC": {"value": 7.0, "unit": "K/uL", "ref_range": "4.5-11.0", "flag": "normal"},
+        "CBC_Hgb": {"value": 10.8, "unit": "g/dL", "ref_range": "13.5-17.5", "flag": "low"},
+        "CBC_Plt": {"value": 178, "unit": "K/uL", "ref_range": "150-400", "flag": "normal"}
+      }
+    },
+    {
+      "id": 87,
+      "date": "2022-07-25",
+      "type": "visit_note",
+      "doctor": "Dr. Karen Whitfield",
+      "department": "Primary Care",
+      "summary": "eGFR dropped below 30, multiple electrolyte issues",
+      "content": "eGFR now 28. CKD stage IV. K+ 5.5. Na 131. Mg 1.5. B12 220 (low-normal, declining). HbA1c 7.8. Hgb 10.8. This is getting complicated. Nephrology recommended stopping spironolactone and metformin at eGFR <30. Will send message to endocrinology re: metformin. Metformin should be stopped per nephrology note. Cardiology needs to address spironolactone. Muscle cramps worsening — likely hypomagnesemia. Consider Mg supplementation. Sodium 131 — need serum osm, urine osm, urine Na to evaluate. Patient confused intermittently — concerning for hyponatremia contribution."
+    },
+    {
+      "id": 88,
+      "date": "2022-08-01",
+      "type": "lab_result",
+      "ordered_by": "Dr. Karen Whitfield",
+      "summary": "Hyponatremia workup",
+      "tests": {
+        "serum_osmolality": {"value": 268, "unit": "mOsm/kg", "ref_range": "275-295", "flag": "low"},
+        "urine_osmolality": {"value": 420, "unit": "mOsm/kg", "ref_range": "300-900", "flag": "normal"},
+        "urine_sodium": {"value": 45, "unit": "mEq/L", "ref_range": "<20", "flag": "high"},
+        "sodium": {"value": 131, "unit": "mEq/L", "ref_range": "136-145", "flag": "low"},
+        "INR": {"value": 2.5, "unit": "", "ref_range": "2.0-3.0", "flag": "normal"}
+      }
+    },
+    {
+      "id": 89,
+      "date": "2022-08-15",
+      "type": "visit_note",
+      "doctor": "Dr. Karen Whitfield",
+      "department": "Primary Care",
+      "summary": "Hyponatremia workup results — consistent with SIADH",
+      "content": "Hyponatremia workup: Serum osm 268 (low), urine osm 420 (inappropriately concentrated), urine Na 45 (elevated). This pattern is consistent with SIADH. Patient is euvolemic on exam (no edema after furosemide increase). Most likely cause: sertraline-induced SIADH. SSRIs are a well-known cause of SIADH, especially in elderly patients. Sodium has been declining for over 18 months (138→136→134→132→131). However, patient also has HF which can cause dilutional hyponatremia. Clinically, fluid restriction may help. Not stopping sertraline yet given depression management — will discuss with psychiatry. Fluid restriction to 1.5L/day."
+    },
+    {
+      "id": 90,
+      "date": "2022-09-05",
+      "type": "lab_result",
+      "ordered_by": "Dr. Karen Whitfield",
+      "summary": "INR and electrolytes",
+      "tests": {
+        "INR": {"value": 2.6, "unit": "", "ref_range": "2.0-3.0", "flag": "normal"},
+        "sodium": {"value": 131, "unit": "mEq/L", "ref_range": "136-145", "flag": "low"},
+        "potassium": {"value": 5.5, "unit": "mEq/L", "ref_range": "3.5-5.0", "flag": "high"}
+      }
+    },
+    {
+      "id": 91,
+      "date": "2022-09-19",
+      "type": "visit_note",
+      "doctor": "Dr. James Foster",
+      "department": "Endocrinology",
+      "summary": "Diabetes management, aware of nephrology metformin recommendation",
+      "content": "HbA1c 7.8%. Diabetes worsening. Multiple prednisone courses contributing. Reviewed nephrology note from June regarding metformin and eGFR <30. However, most recent eGFR was 28. Per FDA, metformin is contraindicated at eGFR <30 due to lactic acidosis risk. Current plan: eGFR was 30 at nephrology visit, now 28. In my clinical judgment, will reduce metformin to 500mg BID for now and plan to transition to alternative if eGFR continues to decline. Consider linagliptin (renally dosed DPP-4 inhibitor). Will recheck eGFR in 6-8 weeks."
+    },
+    {
+      "id": 92,
+      "date": "2022-09-19",
+      "type": "prescription",
+      "prescriber": "Dr. James Foster",
+      "department": "Endocrinology",
+      "summary": "Metformin dose reduction due to declining renal function",
+      "drug": "metformin",
+      "dose": "500mg",
+      "frequency": "BID",
+      "duration": "ongoing",
+      "indication": "Type 2 diabetes — dose reduced for eGFR 28"
+    },
+    {
+      "id": 93,
+      "date": "2022-10-10",
+      "type": "lab_result",
+      "ordered_by": "Dr. Karen Whitfield",
+      "summary": "Quarterly labs",
+      "tests": {
+        "BUN": {"value": 50, "unit": "mg/dL", "ref_range": "7-20", "flag": "high"},
+        "creatinine": {"value": 2.6, "unit": "mg/dL", "ref_range": "0.7-1.3", "flag": "high"},
+        "eGFR": {"value": 27, "unit": "mL/min/1.73m2", "ref_range": ">60", "flag": "low"},
+        "potassium": {"value": 5.5, "unit": "mEq/L", "ref_range": "3.5-5.0", "flag": "high"},
+        "sodium": {"value": 130, "unit": "mEq/L", "ref_range": "136-145", "flag": "low"},
+        "glucose": {"value": 170, "unit": "mg/dL", "ref_range": "70-100", "flag": "high"},
+        "magnesium": {"value": 1.4, "unit": "mg/dL", "ref_range": "1.7-2.2", "flag": "low"},
+        "INR": {"value": 2.4, "unit": "", "ref_range": "2.0-3.0", "flag": "normal"},
+        "digoxin_level": {"value": 1.3, "unit": "ng/mL", "ref_range": "0.5-2.0", "flag": "normal"}
+      }
+    },
+    {
+      "id": 94,
+      "date": "2022-10-24",
+      "type": "visit_note",
+      "doctor": "Dr. Karen Whitfield",
+      "department": "Primary Care",
+      "summary": "Multiple worsening labs, magnesium critically low",
+      "content": "eGFR 27, K+ 5.5, Na 130, Mg 1.4 (low), digoxin 1.3. Patient reporting worsening muscle cramps (calves, feet), fatigue, confusion. Mg 1.4 is below reference range. On omeprazole >5 years — known to cause hypomagnesemia. Starting magnesium oxide 400mg daily. Will recheck in 4 weeks. Also B12 trending down (350→280→235→220) — also PPI-related. Consider B12 supplementation. Sodium 130 — worsening. Fluid restriction not helping. Sertraline-induced SIADH vs HF-related. Need psychiatry consult about switching antidepressant."
+    },
+    {
+      "id": 95,
+      "date": "2022-11-07",
+      "type": "visit_note",
+      "doctor": "Dr. James Foster",
+      "department": "Endocrinology",
+      "summary": "Diabetes follow-up, continuing metformin despite eGFR 27",
+      "content": "Patient returns. HbA1c check pending. Currently on metformin 500mg BID. eGFR was 27 on last labs. I note nephrology recommended stopping metformin below eGFR 30. While FDA labeling recommends against use below 30, the risk of lactic acidosis at this level is quite low in practice. Patient is well-appearing, no symptoms of lactic acidosis. Will continue metformin 500mg BID for now as the glycemic benefit is significant. If eGFR drops below 25, will definitely stop. Adding linagliptin 5mg daily for additional control. Recheck labs in 6 weeks."
+    },
+    {
+      "id": 96,
+      "date": "2022-11-07",
+      "type": "prescription",
+      "prescriber": "Dr. James Foster",
+      "department": "Endocrinology",
+      "summary": "Adding linagliptin for diabetes",
+      "drug": "linagliptin",
+      "dose": "5mg",
+      "frequency": "daily",
+      "duration": "ongoing",
+      "indication": "Type 2 diabetes, adjunct to metformin, renal-safe"
+    },
+    {
+      "id": 97,
+      "date": "2022-11-21",
+      "type": "lab_result",
+      "ordered_by": "Dr. Karen Whitfield",
+      "summary": "INR and basic labs",
+      "tests": {
+        "INR": {"value": 2.3, "unit": "", "ref_range": "2.0-3.0", "flag": "normal"},
+        "potassium": {"value": 5.5, "unit": "mEq/L", "ref_range": "3.5-5.0", "flag": "high"},
+        "magnesium": {"value": 1.5, "unit": "mg/dL", "ref_range": "1.7-2.2", "flag": "low"}
+      }
+    },
+    {
+      "id": 98,
+      "date": "2022-12-05",
+      "type": "visit_note",
+      "doctor": "Dr. Susan Ramirez",
+      "department": "Pulmonology",
+      "summary": "Fourth COPD exacerbation requiring prednisone",
+      "content": "Patient with acute worsening of dyspnea, productive cough, O2 sat 88%. Fourth exacerbation requiring systemic steroids despite addition of ICS/LABA. Prednisone 40mg x 7 days. Azithromycin 250mg x 5 days. This is the 4th course of prednisone 40mg. Cumulative steroid exposure is significant. Glucose will spike. No DEXA has ever been ordered. Referring to PCP for osteoporosis screening. Consider roflumilast as add-on therapy to prevent future exacerbations."
+    },
+    {
+      "id": 99,
+      "date": "2022-12-05",
+      "type": "prescription",
+      "prescriber": "Dr. Susan Ramirez",
+      "department": "Pulmonology",
+      "summary": "Fourth prednisone course for COPD exacerbation",
+      "drug": "prednisone",
+      "dose": "40mg",
+      "frequency": "daily",
+      "duration": "7 days",
+      "indication": "Acute COPD exacerbation"
+    },
+    {
+      "id": 100,
+      "date": "2022-12-10",
+      "type": "lab_result",
+      "ordered_by": "Dr. Susan Ramirez",
+      "summary": "Labs during fourth prednisone course",
+      "tests": {
+        "glucose": {"value": 258, "unit": "mg/dL", "ref_range": "70-100", "flag": "high"},
+        "CBC_WBC": {"value": 14.1, "unit": "K/uL", "ref_range": "4.5-11.0", "flag": "high"}
+      }
+    },
+    {
+      "id": 101,
+      "date": "2022-12-19",
+      "type": "visit_note",
+      "doctor": "Dr. Karen Whitfield",
+      "department": "Primary Care",
+      "summary": "Post-exacerbation, glucose 258 on prednisone",
+      "content": "Fourth prednisone course. Glucose spiked to 258 this time. Highest yet. Cumulative steroid effect worsening diabetes significantly. HbA1c trend: 7.2→7.3→7.4→7.5→7.7→7.8. Multiple prednisone courses are major contributor. Need to address both: (1) prevent future exacerbations, (2) manage steroid-induced hyperglycemia with sliding scale insulin during courses. Also: still no DEXA scan ordered. This 74 y/o man on chronic steroids needs osteoporosis screening. Will order DEXA. Patient reports rib tenderness — concerning in context of steroid use."
+    },
+    {
+      "id": 102,
+      "date": "2023-01-09",
+      "type": "lab_result",
+      "ordered_by": "Dr. Karen Whitfield",
+      "summary": "Comprehensive annual labs",
+      "tests": {
+        "BUN": {"value": 52, "unit": "mg/dL", "ref_range": "7-20", "flag": "high"},
+        "creatinine": {"value": 2.7, "unit": "mg/dL", "ref_range": "0.7-1.3", "flag": "high"},
+        "eGFR": {"value": 26, "unit": "mL/min/1.73m2", "ref_range": ">60", "flag": "low"},
+        "potassium": {"value": 5.5, "unit": "mEq/L", "ref_range": "3.5-5.0", "flag": "high"},
+        "sodium": {"value": 130, "unit": "mEq/L", "ref_range": "136-145", "flag": "low"},
+        "glucose": {"value": 172, "unit": "mg/dL", "ref_range": "70-100", "flag": "high"},
+        "HbA1c": {"value": 8.0, "unit": "%", "ref_range": "<7.0", "flag": "high"},
+        "magnesium": {"value": 1.4, "unit": "mg/dL", "ref_range": "1.7-2.2", "flag": "low"},
+        "B12": {"value": 195, "unit": "pg/mL", "ref_range": "200-900", "flag": "low"},
+        "BNP": {"value": 850, "unit": "pg/mL", "ref_range": "<100", "flag": "high"},
+        "CBC_WBC": {"value": 6.5, "unit": "K/uL", "ref_range": "4.5-11.0", "flag": "normal"},
+        "CBC_Hgb": {"value": 10.5, "unit": "g/dL", "ref_range": "13.5-17.5", "flag": "low"},
+        "CBC_Plt": {"value": 175, "unit": "K/uL", "ref_range": "150-400", "flag": "normal"},
+        "INR": {"value": 2.5, "unit": "", "ref_range": "2.0-3.0", "flag": "normal"},
+        "TSH": {"value": 3.4, "unit": "mIU/L", "ref_range": "0.4-4.0", "flag": "normal"},
+        "LFTs_ALT": {"value": 28, "unit": "U/L", "ref_range": "7-56", "flag": "normal"},
+        "LFTs_AST": {"value": 32, "unit": "U/L", "ref_range": "10-40", "flag": "normal"}
+      }
+    },
+    {
+      "id": 103,
+      "date": "2023-01-23",
+      "type": "visit_note",
+      "doctor": "Dr. Karen Whitfield",
+      "department": "Primary Care",
+      "summary": "Lab review — B12 now low, magnesium still low, eGFR 26",
+      "content": "Lab review: eGFR 26 (progressive CKD stage IV). K+ 5.5. Na 130. Mg 1.4 despite supplementation (poor oral absorption). B12 now 195 — officially below normal (was 350 three years ago). Patient on omeprazole >5 years. Both hypomagnesemia and B12 deficiency are well-established complications of chronic PPI use. Starting B12 1000mcg IM monthly. Increasing magnesium supplementation. Consider stopping omeprazole or switching to H2 blocker. Patient states he has GERD symptoms when omeprazole stopped in past. HbA1c 8.0 — worst yet. Metformin still being continued per endocrinology despite eGFR 26. I disagree — nephrology said stop below 30. Will message endocrinology."
+    },
+    {
+      "id": 104,
+      "date": "2023-01-23",
+      "type": "prescription",
+      "prescriber": "Dr. Karen Whitfield",
+      "department": "Primary Care",
+      "summary": "B12 supplementation for deficiency",
+      "drug": "cyanocobalamin",
+      "dose": "1000mcg",
+      "frequency": "monthly IM injection",
+      "duration": "ongoing",
+      "indication": "B12 deficiency, likely PPI-related"
+    },
+    {
+      "id": 105,
+      "date": "2023-02-06",
+      "type": "lab_result",
+      "ordered_by": "Dr. Karen Whitfield",
+      "summary": "INR monthly",
+      "tests": {
+        "INR": {"value": 2.4, "unit": "", "ref_range": "2.0-3.0", "flag": "normal"}
+      }
+    },
+    {
+      "id": 106,
+      "date": "2023-02-20",
+      "type": "visit_note",
+      "doctor": "Dr. Ravi Mehta",
+      "department": "Nephrology",
+      "summary": "CKD stage IV, eGFR 26, medication reconciliation",
+      "content": "eGFR 26, continuing to decline. CKD stage IV. K+ 5.5 — unacceptable. Spironolactone MUST be stopped. Lisinopril should be reduced to 10mg. Metformin: I recommended stopping at eGFR <30 — was this done? Checking records... endocrinology reduced to 500mg BID but continued. At eGFR 26, this should be stopped. Lactic acidosis risk increases. Digoxin level needs close monitoring with declining GFR. UACR 380 mg/g. Consider referral for dialysis planning if eGFR continues below 20. Iron studies for anemia workup."
+    },
+    {
+      "id": 107,
+      "date": "2023-03-06",
+      "type": "lab_result",
+      "ordered_by": "Dr. Karen Whitfield",
+      "summary": "INR and electrolytes",
+      "tests": {
+        "INR": {"value": 2.6, "unit": "", "ref_range": "2.0-3.0", "flag": "normal"},
+        "potassium": {"value": 5.6, "unit": "mEq/L", "ref_range": "3.5-5.0", "flag": "high"},
+        "sodium": {"value": 130, "unit": "mEq/L", "ref_range": "136-145", "flag": "low"},
+        "creatinine": {"value": 2.8, "unit": "mg/dL", "ref_range": "0.7-1.3", "flag": "high"},
+        "eGFR": {"value": 25, "unit": "mL/min/1.73m2", "ref_range": ">60", "flag": "low"}
+      }
+    },
+    {
+      "id": 108,
+      "date": "2023-03-20",
+      "type": "visit_note",
+      "doctor": "Dr. Amit Patel",
+      "department": "Cardiology",
+      "summary": "K+ 5.6, finally stopping spironolactone",
+      "content": "K+ has risen to 5.6. This is dangerous, especially with digoxin on board. Hyperkalemia increases risk of digoxin toxicity and cardiac arrhythmias. After consulting with nephrology, reluctantly stopping spironolactone. The HF mortality benefit is outweighed by the hyperkalemia risk at this point. eGFR 25, CKD stage IV. Also reducing digoxin to 0.0625mg daily given declining GFR. Continue metoprolol, lisinopril (reducing to 10mg per nephrology), furosemide 120mg, amiodarone."
+    },
+    {
+      "id": 109,
+      "date": "2023-03-20",
+      "type": "prescription",
+      "prescriber": "Dr. Amit Patel",
+      "department": "Cardiology",
+      "summary": "Stopping spironolactone due to persistent hyperkalemia",
+      "drug": "spironolactone",
+      "dose": "DISCONTINUED",
+      "frequency": "N/A",
+      "duration": "N/A",
+      "indication": "Discontinued due to persistent hyperkalemia (K+ 5.6) with CKD stage IV"
+    },
+    {
+      "id": 110,
+      "date": "2023-03-20",
+      "type": "prescription",
+      "prescriber": "Dr. Amit Patel",
+      "department": "Cardiology",
+      "summary": "Lisinopril dose reduction",
+      "drug": "lisinopril",
+      "dose": "10mg",
+      "frequency": "daily",
+      "duration": "ongoing",
+      "indication": "HFrEF, dose reduced due to hyperkalemia and CKD stage IV"
+    },
+    {
+      "id": 111,
+      "date": "2023-04-03",
+      "type": "lab_result",
+      "ordered_by": "Dr. Karen Whitfield",
+      "summary": "Labs after stopping spironolactone",
+      "tests": {
+        "potassium": {"value": 5.3, "unit": "mEq/L", "ref_range": "3.5-5.0", "flag": "high"},
+        "sodium": {"value": 130, "unit": "mEq/L", "ref_range": "136-145", "flag": "low"},
+        "creatinine": {"value": 2.8, "unit": "mg/dL", "ref_range": "0.7-1.3", "flag": "high"},
+        "digoxin_level": {"value": 1.0, "unit": "ng/mL", "ref_range": "0.5-2.0", "flag": "normal"}
+      }
+    },
+    {
+      "id": 112,
+      "date": "2023-04-17",
+      "type": "visit_note",
+      "doctor": "Dr. Linda Chen",
+      "department": "Psychiatry",
+      "summary": "MDD — addressing hyponatremia, switching from sertraline",
+      "content": "Sodium has been persistently 130-131 for months. PCP workup consistent with SIADH. Sertraline is the most likely culprit in this elderly patient. PHQ-9 score 15 (moderately severe). Patient with ongoing confusion, fatigue. Decision to taper sertraline and switch to mirtazapine 15mg (less risk of SIADH, may help appetite and sleep). Taper: sertraline 50mg x 2 weeks, then stop. Start mirtazapine 15mg at bedtime after 1 week washout. Monitor sodium."
+    },
+    {
+      "id": 113,
+      "date": "2023-04-17",
+      "type": "prescription",
+      "prescriber": "Dr. Linda Chen",
+      "department": "Psychiatry",
+      "summary": "Tapering sertraline, starting mirtazapine",
+      "drug": "sertraline",
+      "dose": "50mg (taper), then STOP",
+      "frequency": "daily x 2 weeks then discontinue",
+      "duration": "2 weeks taper",
+      "indication": "Tapering due to SIADH/hyponatremia"
+    },
+    {
+      "id": 114,
+      "date": "2023-04-17",
+      "type": "prescription",
+      "prescriber": "Dr. Linda Chen",
+      "department": "Psychiatry",
+      "summary": "Starting mirtazapine after sertraline taper",
+      "drug": "mirtazapine",
+      "dose": "15mg",
+      "frequency": "at bedtime",
+      "duration": "ongoing",
+      "indication": "Major depressive disorder — replacing sertraline due to SIADH"
+    },
+    {
+      "id": 115,
+      "date": "2023-05-01",
+      "type": "lab_result",
+      "ordered_by": "Dr. Karen Whitfield",
+      "summary": "INR and sodium recheck after sertraline taper",
+      "tests": {
+        "INR": {"value": 2.5, "unit": "", "ref_range": "2.0-3.0", "flag": "normal"},
+        "sodium": {"value": 131, "unit": "mEq/L", "ref_range": "136-145", "flag": "low"}
+      }
+    },
+    {
+      "id": 116,
+      "date": "2023-05-22",
+      "type": "visit_note",
+      "doctor": "Dr. James Foster",
+      "department": "Endocrinology",
+      "summary": "Diabetes management, finally stopping metformin",
+      "content": "eGFR now 25 per last labs. HbA1c 8.0%. After discussion with PCP and nephrology, stopping metformin. Risk of lactic acidosis at this eGFR level is unacceptable. Should have been stopped sooner — there was a delay between nephrology recommendation (eGFR <30) and my continuation. Linagliptin 5mg will be primary oral agent. Adding low-dose basal insulin (glargine 10 units at bedtime) for glycemic control. Diet counseling. Will titrate insulin to fasting glucose target 100-130."
+    },
+    {
+      "id": 117,
+      "date": "2023-05-22",
+      "type": "prescription",
+      "prescriber": "Dr. James Foster",
+      "department": "Endocrinology",
+      "summary": "Stopping metformin, starting insulin glargine",
+      "drug": "metformin",
+      "dose": "DISCONTINUED",
+      "frequency": "N/A",
+      "duration": "N/A",
+      "indication": "Discontinued due to eGFR <30 (currently 25), lactic acidosis risk"
+    },
+    {
+      "id": 118,
+      "date": "2023-05-22",
+      "type": "prescription",
+      "prescriber": "Dr. James Foster",
+      "department": "Endocrinology",
+      "summary": "Starting basal insulin",
+      "drug": "insulin glargine",
+      "dose": "10 units",
+      "frequency": "at bedtime",
+      "duration": "ongoing",
+      "indication": "Type 2 diabetes, replacing metformin"
+    },
+    {
+      "id": 119,
+      "date": "2023-06-05",
+      "type": "lab_result",
+      "ordered_by": "Dr. Karen Whitfield",
+      "summary": "Labs after medication changes",
+      "tests": {
+        "sodium": {"value": 132, "unit": "mEq/L", "ref_range": "136-145", "flag": "low"},
+        "potassium": {"value": 5.2, "unit": "mEq/L", "ref_range": "3.5-5.0", "flag": "high"},
+        "creatinine": {"value": 2.9, "unit": "mg/dL", "ref_range": "0.7-1.3", "flag": "high"},
+        "eGFR": {"value": 24, "unit": "mL/min/1.73m2", "ref_range": ">60", "flag": "low"},
+        "glucose": {"value": 155, "unit": "mg/dL", "ref_range": "70-100", "flag": "high"},
+        "magnesium": {"value": 1.5, "unit": "mg/dL", "ref_range": "1.7-2.2", "flag": "low"}
+      }
+    },
+    {
+      "id": 120,
+      "date": "2023-06-19",
+      "type": "lab_result",
+      "ordered_by": "Dr. Karen Whitfield",
+      "summary": "INR monthly",
+      "tests": {
+        "INR": {"value": 2.4, "unit": "", "ref_range": "2.0-3.0", "flag": "normal"}
+      }
+    },
+    {
+      "id": 121,
+      "date": "2023-07-10",
+      "type": "lab_result",
+      "ordered_by": "Dr. Karen Whitfield",
+      "summary": "Quarterly comprehensive labs",
+      "tests": {
+        "BUN": {"value": 54, "unit": "mg/dL", "ref_range": "7-20", "flag": "high"},
+        "creatinine": {"value": 2.9, "unit": "mg/dL", "ref_range": "0.7-1.3", "flag": "high"},
+        "eGFR": {"value": 24, "unit": "mL/min/1.73m2", "ref_range": ">60", "flag": "low"},
+        "potassium": {"value": 5.1, "unit": "mEq/L", "ref_range": "3.5-5.0", "flag": "high"},
+        "sodium": {"value": 133, "unit": "mEq/L", "ref_range": "136-145", "flag": "low"},
+        "glucose": {"value": 148, "unit": "mg/dL", "ref_range": "70-100", "flag": "high"},
+        "HbA1c": {"value": 7.8, "unit": "%", "ref_range": "<7.0", "flag": "high"},
+        "magnesium": {"value": 1.6, "unit": "mg/dL", "ref_range": "1.7-2.2", "flag": "low"},
+        "B12": {"value": 310, "unit": "pg/mL", "ref_range": "200-900", "flag": "normal"},
+        "CBC_WBC": {"value": 6.4, "unit": "K/uL", "ref_range": "4.5-11.0", "flag": "normal"},
+        "CBC_Hgb": {"value": 10.2, "unit": "g/dL", "ref_range": "13.5-17.5", "flag": "low"},
+        "CBC_Plt": {"value": 170, "unit": "K/uL", "ref_range": "150-400", "flag": "normal"},
+        "BNP": {"value": 890, "unit": "pg/mL", "ref_range": "<100", "flag": "high"}
+      }
+    },
+    {
+      "id": 122,
+      "date": "2023-07-24",
+      "type": "visit_note",
+      "doctor": "Dr. Karen Whitfield",
+      "department": "Primary Care",
+      "summary": "Mid-year review, sodium improving slightly after sertraline stop",
+      "content": "Sodium 133 — slight improvement from 130 after stopping sertraline. Confirms SSRI contribution to SIADH. K+ 5.1, improved after stopping spironolactone. eGFR stable at 24. Mg 1.6 — still low despite supplementation. B12 improving with IM injections (310 from 195). HbA1c 7.8 — on insulin glargine now, will titrate up. BNP 890 — HF progressing. Weight 188 lbs. Mirtazapine tolerated. Patient less confused. Continue current management."
+    },
+    {
+      "id": 123,
+      "date": "2023-08-14",
+      "type": "visit_note",
+      "doctor": "Dr. Amit Patel",
+      "department": "Cardiology",
+      "summary": "HF management, stable after medication adjustments",
+      "content": "HFrEF EF 22%. BNP 890. NYHA class III. Spironolactone stopped. Digoxin reduced to 0.0625mg. Lisinopril 10mg. Metoprolol 100mg. Furosemide 120mg. Amiodarone 200mg. Warfarin 2mg (INR therapeutic). Patient dyspneic on mild exertion but not at rest. Edema controlled with increased furosemide. No acute decompensation. Continue current regimen. Consider advanced HF therapies discussion."
+    },
+    {
+      "id": 124,
+      "date": "2023-09-04",
+      "type": "lab_result",
+      "ordered_by": "Dr. Karen Whitfield",
+      "summary": "INR monthly",
+      "tests": {
+        "INR": {"value": 2.3, "unit": "", "ref_range": "2.0-3.0", "flag": "normal"}
+      }
+    },
+    {
+      "id": 125,
+      "date": "2023-09-18",
+      "type": "visit_note",
+      "doctor": "Dr. Michael Torres",
+      "department": "Rheumatology",
+      "summary": "Gout follow-up, adjusting for CKD",
+      "content": "Gout on allopurinol 300mg. eGFR 24 — should reduce allopurinol to 200mg for CKD stage IV. Uric acid 6.2. One minor flare last month, self-resolved. Reducing allopurinol to 200mg daily. Avoid NSAIDs absolutely given CKD and anticoagulation. If acute flare: low-dose colchicine (0.6mg, no repeat dose with CKD) or short prednisone burst (problematic given diabetes). Difficult balance."
+    },
+    {
+      "id": 126,
+      "date": "2023-09-18",
+      "type": "prescription",
+      "prescriber": "Dr. Michael Torres",
+      "department": "Rheumatology",
+      "summary": "Allopurinol dose reduction for CKD",
+      "drug": "allopurinol",
+      "dose": "200mg",
+      "frequency": "daily",
+      "duration": "ongoing",
+      "indication": "Gout prophylaxis, dose reduced for CKD stage IV"
+    },
+    {
+      "id": 127,
+      "date": "2023-10-09",
+      "type": "lab_result",
+      "ordered_by": "Dr. Karen Whitfield",
+      "summary": "Quarterly labs",
+      "tests": {
+        "BUN": {"value": 55, "unit": "mg/dL", "ref_range": "7-20", "flag": "high"},
+        "creatinine": {"value": 3.0, "unit": "mg/dL", "ref_range": "0.7-1.3", "flag": "high"},
+        "eGFR": {"value": 23, "unit": "mL/min/1.73m2", "ref_range": ">60", "flag": "low"},
+        "potassium": {"value": 5.1, "unit": "mEq/L", "ref_range": "3.5-5.0", "flag": "high"},
+        "sodium": {"value": 134, "unit": "mEq/L", "ref_range": "136-145", "flag": "low"},
+        "glucose": {"value": 140, "unit": "mg/dL", "ref_range": "70-100", "flag": "high"},
+        "magnesium": {"value": 1.6, "unit": "mg/dL", "ref_range": "1.7-2.2", "flag": "low"},
+        "INR": {"value": 2.5, "unit": "", "ref_range": "2.0-3.0", "flag": "normal"},
+        "uric_acid": {"value": 6.5, "unit": "mg/dL", "ref_range": "<7.0", "flag": "normal"}
+      }
+    },
+    {
+      "id": 128,
+      "date": "2023-11-06",
+      "type": "visit_note",
+      "doctor": "Dr. Susan Ramirez",
+      "department": "Pulmonology",
+      "summary": "COPD stable on triple therapy, no recent exacerbation",
+      "content": "COPD on tiotropium, fluticasone/salmeterol, albuterol PRN. No exacerbation in 11 months since adding ICS/LABA. FEV1 45% (down from 48%). Progressive but stable. O2 sat 92% on RA. May need home O2 if further decline. Continue current inhalers. Annual influenza vaccine given. Follow-up in 6 months."
+    },
+    {
+      "id": 129,
+      "date": "2023-11-20",
+      "type": "lab_result",
+      "ordered_by": "Dr. Karen Whitfield",
+      "summary": "INR monthly",
+      "tests": {
+        "INR": {"value": 2.4, "unit": "", "ref_range": "2.0-3.0", "flag": "normal"}
+      }
+    },
+    {
+      "id": 130,
+      "date": "2023-12-04",
+      "type": "visit_note",
+      "doctor": "Dr. Karen Whitfield",
+      "department": "Primary Care",
+      "summary": "Fall in bathroom, ER visit",
+      "content": "Patient fell in bathroom last night. Presented to ER, CT head negative, no fractures. Mild contusion right hip. BP was 110/68 (orthostatic hypotension noted). Contributing factors: polypharmacy, metoprolol, furosemide, gabapentin (sedating). Also: persistent mild hyponatremia may contribute to gait instability. ER recommended PCP follow-up. Review fall risk meds. Consider PT evaluation."
+    },
+    {
+      "id": 131,
+      "date": "2023-12-18",
+      "type": "visit_note",
+      "doctor": "Dr. Linda Chen",
+      "department": "Psychiatry",
+      "summary": "MDD on mirtazapine, improved",
+      "content": "PHQ-9 score 10 (moderate). Improved from 15 prior to switch. Mirtazapine 15mg tolerated. Sleeping better. Appetite improved. Less confusion. Weight up 3 lbs — common with mirtazapine. Continue current dose. No SI. Follow-up in 3 months."
+    },
+    {
+      "id": 132,
+      "date": "2024-01-08",
+      "type": "lab_result",
+      "ordered_by": "Dr. Karen Whitfield",
+      "summary": "Comprehensive annual labs",
+      "tests": {
+        "BUN": {"value": 56, "unit": "mg/dL", "ref_range": "7-20", "flag": "high"},
+        "creatinine": {"value": 3.1, "unit": "mg/dL", "ref_range": "0.7-1.3", "flag": "high"},
+        "eGFR": {"value": 22, "unit": "mL/min/1.73m2", "ref_range": ">60", "flag": "low"},
+        "potassium": {"value": 5.0, "unit": "mEq/L", "ref_range": "3.5-5.0", "flag": "normal"},
+        "sodium": {"value": 134, "unit": "mEq/L", "ref_range": "136-145", "flag": "low"},
+        "glucose": {"value": 138, "unit": "mg/dL", "ref_range": "70-100", "flag": "high"},
+        "HbA1c": {"value": 7.5, "unit": "%", "ref_range": "<7.0", "flag": "high"},
+        "magnesium": {"value": 1.6, "unit": "mg/dL", "ref_range": "1.7-2.2", "flag": "low"},
+        "B12": {"value": 380, "unit": "pg/mL", "ref_range": "200-900", "flag": "normal"},
+        "BNP": {"value": 920, "unit": "pg/mL", "ref_range": "<100", "flag": "high"},
+        "CBC_WBC": {"value": 6.3, "unit": "K/uL", "ref_range": "4.5-11.0", "flag": "normal"},
+        "CBC_Hgb": {"value": 10.0, "unit": "g/dL", "ref_range": "13.5-17.5", "flag": "low"},
+        "CBC_Plt": {"value": 168, "unit": "K/uL", "ref_range": "150-400", "flag": "normal"},
+        "INR": {"value": 2.5, "unit": "", "ref_range": "2.0-3.0", "flag": "normal"},
+        "TSH": {"value": 3.8, "unit": "mIU/L", "ref_range": "0.4-4.0", "flag": "normal"},
+        "LFTs_ALT": {"value": 30, "unit": "U/L", "ref_range": "7-56", "flag": "normal"},
+        "LFTs_AST": {"value": 34, "unit": "U/L", "ref_range": "10-40", "flag": "normal"},
+        "phosphorus": {"value": 5.2, "unit": "mg/dL", "ref_range": "2.5-4.5", "flag": "high"},
+        "calcium": {"value": 8.8, "unit": "mg/dL", "ref_range": "8.5-10.5", "flag": "normal"}
+      }
+    },
+    {
+      "id": 133,
+      "date": "2024-01-22",
+      "type": "visit_note",
+      "doctor": "Dr. Ravi Mehta",
+      "department": "Nephrology",
+      "summary": "CKD stage IV, eGFR 22, dialysis planning discussion",
+      "content": "eGFR 22. CKD stage IV, approaching stage V. K+ improved to 5.0 after stopping spironolactone. Phosphorus elevated (5.2) — starting sevelamer. Hgb 10.0 — will start epoetin alfa if drops below 10. Metformin stopped (confirmed). Continue lisinopril 10mg. Discussed dialysis planning — patient prefers peritoneal dialysis if needed. AV fistula placement to be considered proactively. Follow-up in 3 months."
+    },
+    {
+      "id": 134,
+      "date": "2024-02-12",
+      "type": "lab_result",
+      "ordered_by": "Dr. Karen Whitfield",
+      "summary": "INR monthly",
+      "tests": {
+        "INR": {"value": 2.3, "unit": "", "ref_range": "2.0-3.0", "flag": "normal"}
+      }
+    },
+    {
+      "id": 135,
+      "date": "2024-03-04",
+      "type": "visit_note",
+      "doctor": "Dr. Karen Whitfield",
+      "department": "Primary Care",
+      "summary": "Routine visit, patient overall more stable after medication adjustments",
+      "content": "Patient more stable now. Spironolactone stopped, metformin stopped, sertraline switched to mirtazapine. K+ improved to 5.0. Na improving (134). B12 improving with IM injections. Mg still low (1.6). HbA1c 7.5 on insulin glargine and linagliptin. Weight 190 lbs. BP 124/74. Falls risk: had one fall in December. Gabapentin may be contributing — consider dose reduction. Continue current medications. DEXA still pending — must be ordered."
+    },
+    {
+      "id": 136,
+      "date": "2024-03-18",
+      "type": "lab_result",
+      "ordered_by": "Dr. Karen Whitfield",
+      "summary": "INR and basic labs",
+      "tests": {
+        "INR": {"value": 2.6, "unit": "", "ref_range": "2.0-3.0", "flag": "normal"},
+        "potassium": {"value": 5.0, "unit": "mEq/L", "ref_range": "3.5-5.0", "flag": "normal"},
+        "sodium": {"value": 134, "unit": "mEq/L", "ref_range": "136-145", "flag": "low"},
+        "creatinine": {"value": 3.1, "unit": "mg/dL", "ref_range": "0.7-1.3", "flag": "high"}
+      }
+    },
+    {
+      "id": 137,
+      "date": "2024-04-15",
+      "type": "lab_result",
+      "ordered_by": "Dr. Karen Whitfield",
+      "summary": "Quarterly labs",
+      "tests": {
+        "BUN": {"value": 58, "unit": "mg/dL", "ref_range": "7-20", "flag": "high"},
+        "creatinine": {"value": 3.2, "unit": "mg/dL", "ref_range": "0.7-1.3", "flag": "high"},
+        "eGFR": {"value": 21, "unit": "mL/min/1.73m2", "ref_range": ">60", "flag": "low"},
+        "potassium": {"value": 5.0, "unit": "mEq/L", "ref_range": "3.5-5.0", "flag": "normal"},
+        "sodium": {"value": 135, "unit": "mEq/L", "ref_range": "136-145", "flag": "low"},
+        "glucose": {"value": 135, "unit": "mg/dL", "ref_range": "70-100", "flag": "high"},
+        "HbA1c": {"value": 7.4, "unit": "%", "ref_range": "<7.0", "flag": "high"},
+        "magnesium": {"value": 1.6, "unit": "mg/dL", "ref_range": "1.7-2.2", "flag": "low"},
+        "CBC_WBC": {"value": 6.5, "unit": "K/uL", "ref_range": "4.5-11.0", "flag": "normal"},
+        "CBC_Hgb": {"value": 9.8, "unit": "g/dL", "ref_range": "13.5-17.5", "flag": "low"},
+        "CBC_Plt": {"value": 165, "unit": "K/uL", "ref_range": "150-400", "flag": "normal"},
+        "digoxin_level": {"value": 1.1, "unit": "ng/mL", "ref_range": "0.5-2.0", "flag": "normal"},
+        "phosphorus": {"value": 4.8, "unit": "mg/dL", "ref_range": "2.5-4.5", "flag": "high"}
+      }
+    },
+    {
+      "id": 138,
+      "date": "2024-05-06",
+      "type": "visit_note",
+      "doctor": "Dr. James Foster",
+      "department": "Endocrinology",
+      "summary": "Diabetes on insulin, improved control",
+      "content": "HbA1c 7.4% — improved from 8.0% peak. On insulin glargine 14 units at bedtime (titrated up from 10) and linagliptin 5mg. Fasting glucose 130-150 range. No hypoglycemic episodes. Reasonable control for elderly patient with CKD and HF. Target HbA1c 7.0-7.5% given comorbidities and hypoglycemia risk. Continue current regimen. No prednisone courses in >12 months — helpful."
+    },
+    {
+      "id": 139,
+      "date": "2024-06-03",
+      "type": "lab_result",
+      "ordered_by": "Dr. Karen Whitfield",
+      "summary": "INR monthly",
+      "tests": {
+        "INR": {"value": 2.4, "unit": "", "ref_range": "2.0-3.0", "flag": "normal"}
+      }
+    },
+    {
+      "id": 140,
+      "date": "2024-07-08",
+      "type": "visit_note",
+      "doctor": "Dr. Amit Patel",
+      "department": "Cardiology",
+      "summary": "HF management, considering advanced therapies",
+      "content": "HFrEF EF 22%. BNP 920. NYHA class III. On optimal medical therapy given renal constraints. Discussed CRT-D evaluation. Patient hesitant about device implantation. Amiodarone continued — TFTs and LFTs still normal. Warfarin INR stable at 2.4. Continue current medications. Will reassess device therapy next visit."
+    },
+    {
+      "id": 141,
+      "date": "2024-08-05",
+      "type": "lab_result",
+      "ordered_by": "Dr. Karen Whitfield",
+      "summary": "Quarterly labs",
+      "tests": {
+        "BUN": {"value": 60, "unit": "mg/dL", "ref_range": "7-20", "flag": "high"},
+        "creatinine": {"value": 3.3, "unit": "mg/dL", "ref_range": "0.7-1.3", "flag": "high"},
+        "eGFR": {"value": 20, "unit": "mL/min/1.73m2", "ref_range": ">60", "flag": "low"},
+        "potassium": {"value": 5.1, "unit": "mEq/L", "ref_range": "3.5-5.0", "flag": "high"},
+        "sodium": {"value": 135, "unit": "mEq/L", "ref_range": "136-145", "flag": "low"},
+        "magnesium": {"value": 1.5, "unit": "mg/dL", "ref_range": "1.7-2.2", "flag": "low"},
+        "INR": {"value": 2.5, "unit": "", "ref_range": "2.0-3.0", "flag": "normal"},
+        "B12": {"value": 410, "unit": "pg/mL", "ref_range": "200-900", "flag": "normal"}
+      }
+    },
+    {
+      "id": 142,
+      "date": "2024-09-09",
+      "type": "visit_note",
+      "doctor": "Dr. Karen Whitfield",
+      "department": "Primary Care",
+      "summary": "Routine visit, eGFR 20, approaching dialysis threshold",
+      "content": "eGFR now 20 — stage IV/V borderline. Nephrology planning for dialysis access. Patient somewhat stable on current medication regimen after recent adjustments. Mg still low — switching to IV magnesium infusion monthly as oral not adequately absorbed (omeprazole effect). B12 normalized with IM injections. Omeprazole: strongly consider stopping or switching to famotidine given 5+ years of use causing hypomagnesemia and B12 deficiency. Patient concerned about GERD recurrence. Will trial famotidine 20mg BID."
+    },
+    {
+      "id": 143,
+      "date": "2024-09-09",
+      "type": "prescription",
+      "prescriber": "Dr. Karen Whitfield",
+      "department": "Primary Care",
+      "summary": "Switching omeprazole to famotidine",
+      "drug": "omeprazole",
+      "dose": "DISCONTINUED",
+      "frequency": "N/A",
+      "duration": "N/A",
+      "indication": "Discontinued after 5+ years due to hypomagnesemia and B12 deficiency"
+    },
+    {
+      "id": 144,
+      "date": "2024-10-07",
+      "type": "lab_result",
+      "ordered_by": "Dr. Karen Whitfield",
+      "summary": "Quarterly labs",
+      "tests": {
+        "BUN": {"value": 62, "unit": "mg/dL", "ref_range": "7-20", "flag": "high"},
+        "creatinine": {"value": 3.4, "unit": "mg/dL", "ref_range": "0.7-1.3", "flag": "high"},
+        "eGFR": {"value": 19, "unit": "mL/min/1.73m2", "ref_range": ">60", "flag": "low"},
+        "potassium": {"value": 5.1, "unit": "mEq/L", "ref_range": "3.5-5.0", "flag": "high"},
+        "sodium": {"value": 135, "unit": "mEq/L", "ref_range": "136-145", "flag": "low"},
+        "glucose": {"value": 132, "unit": "mg/dL", "ref_range": "70-100", "flag": "high"},
+        "HbA1c": {"value": 7.3, "unit": "%", "ref_range": "<7.0", "flag": "high"},
+        "magnesium": {"value": 1.7, "unit": "mg/dL", "ref_range": "1.7-2.2", "flag": "normal"},
+        "CBC_Hgb": {"value": 9.5, "unit": "g/dL", "ref_range": "13.5-17.5", "flag": "low"},
+        "INR": {"value": 2.4, "unit": "", "ref_range": "2.0-3.0", "flag": "normal"}
+      }
+    },
+    {
+      "id": 145,
+      "date": "2024-11-04",
+      "type": "visit_note",
+      "doctor": "Dr. Ravi Mehta",
+      "department": "Nephrology",
+      "summary": "CKD stage V approaching, dialysis access planning",
+      "content": "eGFR 19 — CKD stage IV/V. Will need dialysis within 6-12 months at current trajectory. AV fistula creation scheduled. Starting epoetin alfa for Hgb 9.5. Phosphorus controlled on sevelamer. Potassium 5.1 — manageable without spironolactone. Continue lisinopril 10mg. Continue dialysis education. Follow-up in 2 months."
+    },
+    {
+      "id": 146,
+      "date": "2024-12-02",
+      "type": "lab_result",
+      "ordered_by": "Dr. Karen Whitfield",
+      "summary": "INR and basic labs",
+      "tests": {
+        "INR": {"value": 2.5, "unit": "", "ref_range": "2.0-3.0", "flag": "normal"},
+        "potassium": {"value": 5.2, "unit": "mEq/L", "ref_range": "3.5-5.0", "flag": "high"},
+        "sodium": {"value": 135, "unit": "mEq/L", "ref_range": "136-145", "flag": "low"},
+        "magnesium": {"value": 1.8, "unit": "mg/dL", "ref_range": "1.7-2.2", "flag": "normal"}
+      }
+    },
+    {
+      "id": 147,
+      "date": "2025-01-13",
+      "type": "lab_result",
+      "ordered_by": "Dr. Karen Whitfield",
+      "summary": "Comprehensive start-of-year labs",
+      "tests": {
+        "BUN": {"value": 65, "unit": "mg/dL", "ref_range": "7-20", "flag": "high"},
+        "creatinine": {"value": 3.6, "unit": "mg/dL", "ref_range": "0.7-1.3", "flag": "high"},
+        "eGFR": {"value": 18, "unit": "mL/min/1.73m2", "ref_range": ">60", "flag": "low"},
+        "potassium": {"value": 5.2, "unit": "mEq/L", "ref_range": "3.5-5.0", "flag": "high"},
+        "sodium": {"value": 136, "unit": "mEq/L", "ref_range": "136-145", "flag": "normal"},
+        "glucose": {"value": 130, "unit": "mg/dL", "ref_range": "70-100", "flag": "high"},
+        "HbA1c": {"value": 7.2, "unit": "%", "ref_range": "<7.0", "flag": "high"},
+        "magnesium": {"value": 1.8, "unit": "mg/dL", "ref_range": "1.7-2.2", "flag": "normal"},
+        "B12": {"value": 450, "unit": "pg/mL", "ref_range": "200-900", "flag": "normal"},
+        "BNP": {"value": 950, "unit": "pg/mL", "ref_range": "<100", "flag": "high"},
+        "CBC_WBC": {"value": 6.2, "unit": "K/uL", "ref_range": "4.5-11.0", "flag": "normal"},
+        "CBC_Hgb": {"value": 10.2, "unit": "g/dL", "ref_range": "13.5-17.5", "flag": "low"},
+        "CBC_Plt": {"value": 160, "unit": "K/uL", "ref_range": "150-400", "flag": "normal"},
+        "INR": {"value": 2.4, "unit": "", "ref_range": "2.0-3.0", "flag": "normal"}
+      }
+    },
+    {
+      "id": 148,
+      "date": "2025-06-15",
+      "type": "visit_note",
+      "doctor": "Dr. Karen Whitfield",
+      "department": "Primary Care",
+      "summary": "Mid-year visit, patient stabilizing on adjusted regimen",
+      "content": "74 y/o male with HFrEF, a-fib, CKD stage V (eGFR 18), T2DM on insulin, COPD, gout, MDD on mirtazapine. AV fistula maturing. Dialysis being planned. Magnesium and B12 normalized after stopping omeprazole and with supplementation. Sodium improved after stopping sertraline. K+ stable around 5.0-5.2 after stopping spironolactone. HbA1c improved to 7.2 on insulin. Overall, multiple corrections made over the past 2 years to address drug interactions and adverse effects that developed over time. This case highlights the challenges of polypharmacy in elderly patients with multiple comorbidities."
+    },
+    {
+      "id": 149,
+      "date": "2025-09-15",
+      "type": "lab_result",
+      "ordered_by": "Dr. Karen Whitfield",
+      "summary": "Quarterly labs",
+      "tests": {
+        "BUN": {"value": 68, "unit": "mg/dL", "ref_range": "7-20", "flag": "high"},
+        "creatinine": {"value": 3.8, "unit": "mg/dL", "ref_range": "0.7-1.3", "flag": "high"},
+        "eGFR": {"value": 16, "unit": "mL/min/1.73m2", "ref_range": ">60", "flag": "low"},
+        "potassium": {"value": 5.1, "unit": "mEq/L", "ref_range": "3.5-5.0", "flag": "high"},
+        "sodium": {"value": 136, "unit": "mEq/L", "ref_range": "136-145", "flag": "normal"},
+        "HbA1c": {"value": 7.1, "unit": "%", "ref_range": "<7.0", "flag": "high"},
+        "CBC_Hgb": {"value": 10.5, "unit": "g/dL", "ref_range": "13.5-17.5", "flag": "low"},
+        "INR": {"value": 2.5, "unit": "", "ref_range": "2.0-3.0", "flag": "normal"}
+      }
+    },
+    {
+      "id": 150,
+      "date": "2025-12-15",
+      "type": "visit_note",
+      "doctor": "Dr. Ravi Mehta",
+      "department": "Nephrology",
+      "summary": "CKD stage V, preparing for dialysis initiation",
+      "content": "eGFR 16, continuing slow decline. AV fistula mature and functional. Will initiate hemodialysis when eGFR <15 or symptoms warrant. Patient educated on dialysis schedule. Current medications reviewed and renal-dosed appropriately. Digoxin 0.0625mg — level 1.0, acceptable. Warfarin 2mg — INR stable. EPO continued. Overall: this patient's course over 7 years illustrates progressive multi-organ decline with multiple medication management challenges that were addressed — some promptly, some with significant delay."
+    }
+  ],
+  "ground_truth_issues": [
+    {
+      "type": "drug_interaction",
+      "severity": "critical",
+      "description": "Amiodarone-warfarin interaction not properly managed at initiation. Amiodarone was started (record 15-16) concurrently with warfarin 4mg without empiric dose reduction. Amiodarone inhibits CYP2C9 and CYP3A4, increasing warfarin effect by 30-50%. The pharmacy note (record 20) flagged the interaction but did not contact the prescriber. INR progressively rose from 1.8 to 2.4 to 3.1 to 3.6 to 4.2 over 8 weeks, resulting in a bleeding episode (gingival bleeding, epistaxis) before the interaction was caught. Warfarin was eventually reduced to 2mg (record 26) but only after the patient experienced a minor hemorrhagic event.",
+      "evidence_records": [15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27],
+      "clinical_reference": "ACC/AHA Atrial Fibrillation Guidelines; Amiodarone package insert recommends reducing warfarin dose by 33-50% when initiating amiodarone. UpToDate: 'When amiodarone is initiated, the warfarin dose should be empirically reduced by one-third to one-half.'",
+      "what_should_have_happened": "When amiodarone was started at record 15, the warfarin dose should have been empirically reduced from 4mg to 2-2.5mg simultaneously. INR should have been checked within 3-5 days and weekly for the first month. The pharmacy flag at record 20 should have prompted immediate prescriber contact and dose adjustment."
+    },
+    {
+      "type": "drug_contraindication",
+      "severity": "critical",
+      "description": "Metformin was continued below eGFR 30 despite nephrology recommendation to stop. Nephrology noted at record 85 (eGFR 30) that metformin should be stopped if eGFR drops below 30. At record 86 (eGFR 28), metformin was not stopped. Endocrinology reduced the dose at record 91-92 (eGFR 28) but continued it. At record 95 (eGFR 27), endocrinology explicitly chose to continue metformin 500mg BID despite being below the FDA-recommended threshold, citing low practical risk. Nephrology reiterated at record 106 (eGFR 26) that metformin should have been stopped. It was finally discontinued at record 116-117 (eGFR 25), approximately 8-10 months after falling below eGFR 30.",
+      "evidence_records": [85, 86, 87, 91, 92, 93, 95, 102, 103, 106, 107, 116, 117],
+      "clinical_reference": "FDA labeling for metformin: contraindicated when eGFR <30 mL/min/1.73m2. KDIGO 2020 CKD Guidelines: discontinue metformin when eGFR <30. ADA Standards of Care: metformin should not be initiated below eGFR 30 and should be stopped if eGFR falls below 30.",
+      "what_should_have_happened": "Metformin should have been discontinued when eGFR was confirmed at 28 (record 86) or at the latest when endocrinology saw the patient at record 91. An alternative glucose-lowering agent (linagliptin, insulin) should have been initiated immediately. The specialist contradiction between nephrology and endocrinology should have been resolved through direct communication."
+    },
+    {
+      "type": "declining_trend",
+      "severity": "critical",
+      "description": "Persistent hyperkalemia from spironolactone + lisinopril + declining renal function went unaddressed for over 3 years. Potassium trended upward: 4.8 (record 2) → 5.0 (record 5) → 5.1 (records 7,10,12) → 5.2 (records 40,41) → 5.3 (records 54,57,66) → 5.4 (records 68,70,73,79) → 5.5 (records 86,90,93,97) → 5.6 (record 107). Spironolactone was continued at 25mg throughout despite persistent hyperkalemia and eGFR declining from 52 to 25. The addition of digoxin at record 52-53 made this more dangerous, as hyperkalemia increases digoxin toxicity risk. Spironolactone was finally stopped at record 108-109, over 3 years after potassium first exceeded 5.0.",
+      "evidence_records": [2, 4, 5, 7, 10, 14, 28, 40, 41, 45, 52, 53, 54, 57, 64, 66, 68, 69, 70, 71, 73, 79, 85, 86, 90, 93, 97, 102, 107, 108, 109],
+      "clinical_reference": "ACC/AHA Heart Failure Guidelines: Spironolactone should be avoided or used with extreme caution when K+ >5.0 and/or eGFR <30. RALES trial exclusion: creatinine >2.5 mg/dL. Digoxin toxicity is potentiated by hyperkalemia. KDIGO CKD Guidelines: monitor potassium closely with RAAS inhibitors in CKD; discontinue if persistent hyperkalemia.",
+      "what_should_have_happened": "When potassium persistently exceeded 5.0 with declining eGFR, spironolactone dose should have been reduced or stopped by record 40-45 (mid-2020). At minimum, when K+ reached 5.3 and digoxin was added (record 52-54), spironolactone should have been stopped. Sodium zirconium cyclosilicate (Lokelma) or patiromer could have been considered as potassium binders to allow continuation of RAAS inhibitors if desired."
+    },
+    {
+      "type": "missed_diagnosis",
+      "severity": "moderate",
+      "description": "SSRI-induced hyponatremia (SIADH) in elderly patient not addressed for over 18 months. Sodium progressively declined: 138 (record 2) → 137 (records 7,10) → 136 (records 14,35,36) → 135 (records 40,41,45) → 134 (records 51,57,64) → 133 (records 66,68) → 132 (records 73,79) → 131 (records 86,88) → 130 (records 93,102). Patient developed symptoms (fatigue, confusion, gait instability) that were attributed to depression, aging, and other comorbidities. Psychiatry noted the possibility at record 72 but deferred workup. PCP finally ordered SIADH workup at record 88-89 (August 2022), confirming sertraline-induced SIADH, but sodium had been trending down since early 2020. Sertraline was not switched until record 112-114 (April 2023), approximately 3 years after the decline started and 18+ months after it became clearly symptomatic.",
+      "evidence_records": [2, 7, 8, 10, 14, 37, 40, 41, 42, 51, 56, 57, 64, 66, 67, 68, 72, 73, 79, 86, 87, 88, 89, 90, 93, 102, 112, 113, 114, 115, 119],
+      "clinical_reference": "SSRIs are the most common drug cause of SIADH, especially in elderly patients (>65 years). Incidence: 12-25% in elderly on SSRIs. Hyponatremia from SSRIs typically develops within weeks to months but can be insidious. NICE Guidelines: check sodium within 1 month of starting SSRI in elderly, then periodically. APA Practice Guidelines: consider switching antidepressant class if SIADH develops.",
+      "what_should_have_happened": "Sodium should have been checked within 2-4 weeks of starting sertraline in this elderly patient. When sodium dropped below 135 (mid-2020), SIADH workup should have been initiated. When symptoms of confusion and fatigue appeared (record 37, May 2020), the declining sodium trend should have been recognized as a potential contributor. Sertraline should have been switched to a non-SSRI antidepressant (mirtazapine, bupropion) by late 2020 or early 2021."
+    },
+    {
+      "type": "missed_monitoring",
+      "severity": "moderate",
+      "description": "Repeated prednisone courses (4 courses of 40mg over 2.5 years) for COPD exacerbations caused cumulative steroid-induced diabetes worsening and osteoporosis risk, neither of which was adequately addressed. Glucose spiked with each course: 218 (record 33), 232 (record 48), 245 (record 62), 258 (record 100). HbA1c worsened from 7.2% to 8.0% over this period. No sliding scale insulin was provided during steroid courses despite known diabetes. No DEXA scan was ordered despite 4 courses of high-dose prednisone in an elderly male until record 101 (December 2022, nearly 3 years after the first course). Multiple providers noted the issue but deferred to other specialists.",
+      "evidence_records": [31, 32, 33, 34, 39, 46, 47, 48, 60, 61, 62, 63, 64, 65, 82, 98, 99, 100, 101, 102],
+      "clinical_reference": "GOLD COPD Guidelines: systemic corticosteroids for exacerbations increase blood glucose and bone loss risk. ADA Standards of Care: patients on recurrent steroids should have glucose monitoring plans and insulin coverage. ACR/Endocrine Society Glucocorticoid-Induced Osteoporosis Guidelines: DEXA scan and fracture risk assessment for patients receiving >3 months cumulative glucocorticoids; consider bisphosphonate prophylaxis. FRAX tool should be applied.",
+      "what_should_have_happened": "After the first prednisone course caused glucose >200 (record 33), a protocol should have been established for sliding scale insulin during subsequent steroid courses. DEXA scan should have been ordered after the second course (record 46-47, November 2020) given the patient's age (74), multiple risk factors, and cumulative steroid exposure. Calcium and vitamin D supplementation should have been initiated. Bisphosphonate therapy should have been considered."
+    },
+    {
+      "type": "declining_trend",
+      "severity": "moderate",
+      "description": "Long-term omeprazole use (>5 years) caused progressive hypomagnesemia and B12 deficiency that went unaddressed for years. Magnesium declined: 2.0 (record 2) → 1.9 (records 10,45) → 1.8 (records 36,45,68) → 1.7 (records 51,54,64) → 1.6 (records 68,73,79) → 1.5 (records 79,86,97) → 1.4 (records 93,102). B12 declined: 350 (record 2) → 330 (record 14) → 310 (record 41) → 280 (record 51) → 250 (record 68) → 235 (record 73) → 220 (record 86) → 195 (record 102). Patient developed muscle cramps from hypomagnesemia and was on digoxin (hypomagnesemia increases digoxin toxicity risk). B12 deficiency may have contributed to anemia and neuropathy symptoms. Omeprazole was not discontinued until record 142-143 (September 2024), over 5.5 years into the case.",
+      "evidence_records": [2, 10, 14, 36, 41, 45, 51, 54, 64, 68, 73, 74, 79, 80, 86, 93, 94, 97, 102, 103, 104, 119, 121, 127, 132, 141, 142, 143],
+      "clinical_reference": "FDA Safety Communication (2011): Long-term PPI use associated with hypomagnesemia. ACG Clinical Guidelines: PPIs should be prescribed at the lowest effective dose for the shortest duration. Risk of B12 deficiency with PPI use >2 years (JAMA 2013). Hypomagnesemia increases digoxin toxicity risk. AGA Clinical Practice Update: reassess PPI need annually; consider step-down to H2 blocker.",
+      "what_should_have_happened": "Magnesium and B12 levels should be routinely monitored in patients on long-term PPIs. When magnesium began declining (first flagged low at record 68, October 2021), omeprazole should have been re-evaluated. Given the patient was also on digoxin, hypomagnesemia carried additional cardiac risk and should have prompted urgent PPI reassessment. B12 monitoring should have prompted earlier supplementation. Omeprazole should have been switched to an H2 blocker or discontinued by mid-2021 at the latest, not September 2024."
+    }
+  ]
+}

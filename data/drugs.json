@@ -1,0 +1,431 @@
+{
+  "drugs": {
+    "metformin": {
+      "name": "Metformin",
+      "class": "Biguanide",
+      "indication": ["type 2 diabetes mellitus"],
+      "common_doses": ["500mg BID", "850mg BID", "1000mg BID"],
+      "contraindications": ["eGFR < 30 mL/min", "metabolic acidosis", "severe hepatic impairment"],
+      "warnings": ["lactic acidosis risk with renal impairment", "hold before iodinated contrast procedures"],
+      "interactions": {
+        "alcohol": {"severity": "major", "effect": "Increased risk of lactic acidosis"},
+        "iodinated_contrast": {"severity": "major", "effect": "Increased risk of lactic acidosis and acute kidney injury"}
+      },
+      "monitoring": ["renal function (eGFR) at least annually", "vitamin B12 levels periodically"],
+      "rxnorm": "860975"
+    },
+    "lisinopril": {
+      "name": "Lisinopril",
+      "class": "ACE Inhibitor",
+      "indication": ["hypertension", "heart failure", "diabetic nephropathy"],
+      "common_doses": ["5mg daily", "10mg daily", "20mg daily", "40mg daily"],
+      "contraindications": ["history of angioedema", "bilateral renal artery stenosis", "pregnancy"],
+      "warnings": ["hyperkalemia", "renal impairment", "cough"],
+      "interactions": {
+        "spironolactone": {"severity": "major", "effect": "Hyperkalemia risk — monitor potassium closely"},
+        "potassium_supplements": {"severity": "major", "effect": "Hyperkalemia risk"},
+        "NSAIDs": {"severity": "moderate", "effect": "Reduced antihypertensive effect and increased renal risk"},
+        "aliskiren": {"severity": "major", "effect": "Hyperkalemia, hypotension, renal impairment in diabetics"}
+      },
+      "monitoring": ["serum potassium", "renal function", "blood pressure"],
+      "rxnorm": "29046"
+    },
+    "warfarin": {
+      "name": "Warfarin",
+      "class": "Vitamin K Antagonist",
+      "indication": ["atrial fibrillation", "DVT/PE", "mechanical heart valve"],
+      "common_doses": ["2mg daily", "5mg daily", "7.5mg daily"],
+      "contraindications": ["active bleeding", "pregnancy", "severe hepatic disease"],
+      "warnings": ["hemorrhage risk", "skin necrosis", "purple toe syndrome"],
+      "interactions": {
+        "aspirin": {"severity": "major", "effect": "Significantly increased bleeding risk"},
+        "ibuprofen": {"severity": "major", "effect": "Increased bleeding risk and GI hemorrhage"},
+        "amiodarone": {"severity": "major", "effect": "Increased INR — reduce warfarin dose by 30-50%"},
+        "fluconazole": {"severity": "major", "effect": "Markedly increased INR"},
+        "metronidazole": {"severity": "major", "effect": "Increased anticoagulant effect"},
+        "vitamin_K": {"severity": "major", "effect": "Antagonizes anticoagulant effect"},
+        "acetaminophen": {"severity": "moderate", "effect": "May increase INR with regular use > 2g/day"}
+      },
+      "monitoring": ["INR regularly (target 2.0-3.0 for most indications)", "signs of bleeding"],
+      "rxnorm": "11289"
+    },
+    "aspirin": {
+      "name": "Aspirin",
+      "class": "NSAID / Antiplatelet",
+      "indication": ["pain", "fever", "antiplatelet therapy", "cardiovascular prophylaxis"],
+      "common_doses": ["81mg daily", "325mg PRN", "650mg PRN"],
+      "contraindications": ["active GI bleeding", "aspirin allergy", "children with viral illness (Reye syndrome)"],
+      "warnings": ["GI bleeding", "renal impairment at high doses"],
+      "interactions": {
+        "warfarin": {"severity": "major", "effect": "Significantly increased bleeding risk"},
+        "ibuprofen": {"severity": "moderate", "effect": "Ibuprofen may reduce cardioprotective effect of aspirin"},
+        "methotrexate": {"severity": "major", "effect": "Decreased methotrexate clearance — toxicity risk"},
+        "clopidogrel": {"severity": "moderate", "effect": "Increased bleeding risk but often used together with monitoring"}
+      },
+      "monitoring": ["signs of GI bleeding", "renal function with chronic use"],
+      "rxnorm": "1191"
+    },
+    "atorvastatin": {
+      "name": "Atorvastatin",
+      "class": "HMG-CoA Reductase Inhibitor (Statin)",
+      "indication": ["hyperlipidemia", "cardiovascular risk reduction"],
+      "common_doses": ["10mg daily", "20mg daily", "40mg daily", "80mg daily"],
+      "contraindications": ["active liver disease", "pregnancy", "breastfeeding"],
+      "warnings": ["myopathy/rhabdomyolysis", "hepatotoxicity", "diabetes risk"],
+      "interactions": {
+        "clarithromycin": {"severity": "major", "effect": "Increased statin levels — rhabdomyolysis risk"},
+        "cyclosporine": {"severity": "major", "effect": "Markedly increased statin exposure"},
+        "gemfibrozil": {"severity": "major", "effect": "Increased myopathy/rhabdomyolysis risk"},
+        "grapefruit_juice": {"severity": "moderate", "effect": "Increased statin levels via CYP3A4 inhibition"}
+      },
+      "monitoring": ["liver function tests", "lipid panel", "muscle symptoms"],
+      "rxnorm": "83367"
+    },
+    "amlodipine": {
+      "name": "Amlodipine",
+      "class": "Calcium Channel Blocker (Dihydropyridine)",
+      "indication": ["hypertension", "angina"],
+      "common_doses": ["2.5mg daily", "5mg daily", "10mg daily"],
+      "contraindications": ["severe aortic stenosis", "cardiogenic shock"],
+      "warnings": ["peripheral edema", "hypotension"],
+      "interactions": {
+        "simvastatin": {"severity": "moderate", "effect": "Increased simvastatin levels — limit simvastatin to 20mg"},
+        "cyclosporine": {"severity": "moderate", "effect": "Increased cyclosporine levels"}
+      },
+      "monitoring": ["blood pressure", "heart rate", "edema"],
+      "rxnorm": "17767"
+    },
+    "omeprazole": {
+      "name": "Omeprazole",
+      "class": "Proton Pump Inhibitor",
+      "indication": ["GERD", "peptic ulcer disease", "H. pylori (combination therapy)"],
+      "common_doses": ["20mg daily", "40mg daily"],
+      "contraindications": ["hypersensitivity to PPIs"],
+      "warnings": ["C. difficile infection risk", "hypomagnesemia with long-term use", "bone fracture risk", "vitamin B12 deficiency with long-term use"],
+      "interactions": {
+        "clopidogrel": {"severity": "major", "effect": "Reduces antiplatelet effect of clopidogrel — use pantoprazole instead"},
+        "methotrexate": {"severity": "moderate", "effect": "Increased methotrexate levels"},
+        "iron_supplements": {"severity": "moderate", "effect": "Reduced iron absorption"}
+      },
+      "monitoring": ["magnesium with long-term use", "B12 with long-term use"],
+      "rxnorm": "7646"
+    },
+    "metoprolol": {
+      "name": "Metoprolol",
+      "class": "Beta-1 Selective Blocker",
+      "indication": ["hypertension", "heart failure", "atrial fibrillation rate control", "post-MI"],
+      "common_doses": ["25mg BID", "50mg BID", "100mg BID", "200mg daily (XL)"],
+      "contraindications": ["severe bradycardia", "heart block (2nd/3rd degree)", "decompensated heart failure", "cardiogenic shock"],
+      "warnings": ["do not stop abruptly — taper over 1-2 weeks", "may mask hypoglycemia symptoms in diabetics"],
+      "interactions": {
+        "verapamil": {"severity": "major", "effect": "Severe bradycardia and heart block"},
+        "diltiazem": {"severity": "major", "effect": "Severe bradycardia and heart block"},
+        "clonidine": {"severity": "major", "effect": "Rebound hypertension if clonidine stopped first"},
+        "insulin": {"severity": "moderate", "effect": "Masks hypoglycemia symptoms (tachycardia)"}
+      },
+      "monitoring": ["heart rate", "blood pressure", "blood glucose in diabetics"],
+      "rxnorm": "6918"
+    },
+    "amoxicillin": {
+      "name": "Amoxicillin",
+      "class": "Aminopenicillin",
+      "indication": ["bacterial infections", "H. pylori (combination)", "endocarditis prophylaxis"],
+      "common_doses": ["250mg TID", "500mg TID", "875mg BID"],
+      "contraindications": ["penicillin allergy", "history of amoxicillin-associated cholestatic jaundice"],
+      "warnings": ["cross-reactivity with cephalosporins in penicillin-allergic patients", "C. difficile risk"],
+      "interactions": {
+        "warfarin": {"severity": "moderate", "effect": "May increase INR"},
+        "methotrexate": {"severity": "major", "effect": "Decreased methotrexate clearance"}
+      },
+      "monitoring": ["signs of allergic reaction", "renal function in prolonged use"],
+      "rxnorm": "723"
+    },
+    "prednisone": {
+      "name": "Prednisone",
+      "class": "Corticosteroid",
+      "indication": ["inflammatory conditions", "autoimmune disorders", "allergic reactions", "asthma exacerbation"],
+      "common_doses": ["5mg daily", "10mg daily", "20mg daily", "40mg daily", "60mg daily (short course)"],
+      "contraindications": ["systemic fungal infections", "live vaccines during immunosuppressive doses"],
+      "warnings": ["hyperglycemia", "osteoporosis with chronic use", "adrenal suppression", "immunosuppression", "GI bleeding risk"],
+      "interactions": {
+        "NSAIDs": {"severity": "moderate", "effect": "Increased GI bleeding risk"},
+        "warfarin": {"severity": "moderate", "effect": "Altered INR — monitor closely"},
+        "diabetes_medications": {"severity": "moderate", "effect": "Increases blood glucose — may need dose adjustment"},
+        "fluoroquinolones": {"severity": "moderate", "effect": "Increased tendon rupture risk"}
+      },
+      "monitoring": ["blood glucose", "bone density with chronic use", "blood pressure", "potassium", "signs of infection"],
+      "rxnorm": "8640"
+    },
+    "furosemide": {
+      "name": "Furosemide",
+      "class": "Loop Diuretic",
+      "indication": ["edema (heart failure, hepatic cirrhosis, renal disease)", "hypertension"],
+      "common_doses": ["20mg daily", "40mg daily", "80mg daily"],
+      "contraindications": ["anuria", "severe electrolyte depletion"],
+      "warnings": ["hypokalemia", "hyponatremia", "ototoxicity at high doses", "dehydration"],
+      "interactions": {
+        "digoxin": {"severity": "major", "effect": "Hypokalemia from furosemide increases digoxin toxicity risk"},
+        "lithium": {"severity": "major", "effect": "Increased lithium levels — toxicity risk"},
+        "aminoglycosides": {"severity": "major", "effect": "Additive ototoxicity"},
+        "ACE_inhibitors": {"severity": "moderate", "effect": "First-dose hypotension risk"}
+      },
+      "monitoring": ["electrolytes (K+, Na+, Mg2+)", "renal function", "blood pressure", "fluid status"],
+      "rxnorm": "4603"
+    },
+    "digoxin": {
+      "name": "Digoxin",
+      "class": "Cardiac Glycoside",
+      "indication": ["heart failure", "atrial fibrillation rate control"],
+      "common_doses": ["0.125mg daily", "0.25mg daily"],
+      "contraindications": ["ventricular fibrillation", "hypokalemia", "hypomagnesemia"],
+      "warnings": ["narrow therapeutic index", "toxicity with renal impairment", "toxicity with electrolyte imbalance"],
+      "interactions": {
+        "amiodarone": {"severity": "major", "effect": "Increases digoxin levels by 70-100% — reduce digoxin dose by 50%"},
+        "verapamil": {"severity": "major", "effect": "Increases digoxin levels — monitor closely"},
+        "furosemide": {"severity": "major", "effect": "Hypokalemia increases digoxin toxicity risk"},
+        "clarithromycin": {"severity": "major", "effect": "Markedly increases digoxin levels"}
+      },
+      "monitoring": ["digoxin levels (therapeutic: 0.8-2.0 ng/mL)", "potassium", "magnesium", "renal function", "heart rate"],
+      "rxnorm": "3407"
+    },
+    "clopidogrel": {
+      "name": "Clopidogrel",
+      "class": "P2Y12 Inhibitor (Antiplatelet)",
+      "indication": ["acute coronary syndrome", "recent MI/stroke", "peripheral arterial disease", "post-stent"],
+      "common_doses": ["75mg daily", "300mg loading dose"],
+      "contraindications": ["active bleeding"],
+      "warnings": ["bleeding risk", "TTP (rare)"],
+      "interactions": {
+        "omeprazole": {"severity": "major", "effect": "Omeprazole reduces antiplatelet effect — use pantoprazole instead"},
+        "aspirin": {"severity": "moderate", "effect": "Increased bleeding risk — often used together with monitoring"},
+        "warfarin": {"severity": "major", "effect": "Significantly increased bleeding risk"}
+      },
+      "monitoring": ["signs of bleeding", "platelet function if needed"],
+      "rxnorm": "32968"
+    },
+    "levothyroxine": {
+      "name": "Levothyroxine",
+      "class": "Thyroid Hormone",
+      "indication": ["hypothyroidism", "TSH suppression in thyroid cancer"],
+      "common_doses": ["25mcg daily", "50mcg daily", "75mcg daily", "100mcg daily", "125mcg daily"],
+      "contraindications": ["uncorrected adrenal insufficiency", "acute MI (relative)"],
+      "warnings": ["overreplacement causes atrial fibrillation and osteoporosis"],
+      "interactions": {
+        "calcium_supplements": {"severity": "moderate", "effect": "Reduced absorption — separate by 4 hours"},
+        "iron_supplements": {"severity": "moderate", "effect": "Reduced absorption — separate by 4 hours"},
+        "omeprazole": {"severity": "moderate", "effect": "May reduce absorption"},
+        "warfarin": {"severity": "moderate", "effect": "Increased warfarin effect — monitor INR"}
+      },
+      "monitoring": ["TSH every 6-8 weeks after dose change, then annually", "free T4"],
+      "rxnorm": "10582"
+    },
+    "gabapentin": {
+      "name": "Gabapentin",
+      "class": "Gabapentinoid",
+      "indication": ["neuropathic pain", "postherpetic neuralgia", "seizures (adjunct)"],
+      "common_doses": ["100mg TID", "300mg TID", "600mg TID"],
+      "contraindications": ["hypersensitivity"],
+      "warnings": ["CNS depression", "respiratory depression with opioids", "renal dose adjustment required"],
+      "interactions": {
+        "opioids": {"severity": "major", "effect": "Increased risk of respiratory depression, sedation, and death"},
+        "antacids": {"severity": "moderate", "effect": "Reduced gabapentin absorption — separate by 2 hours"}
+      },
+      "monitoring": ["renal function for dose adjustment", "sedation", "suicidal ideation"],
+      "rxnorm": "25480"
+    },
+    "hydrochlorothiazide": {
+      "name": "Hydrochlorothiazide",
+      "class": "Thiazide Diuretic",
+      "indication": ["hypertension", "edema"],
+      "common_doses": ["12.5mg daily", "25mg daily", "50mg daily"],
+      "contraindications": ["anuria", "sulfonamide allergy (cross-reactivity possible)"],
+      "warnings": ["hypokalemia", "hyponatremia", "hyperglycemia", "hyperuricemia", "photosensitivity"],
+      "interactions": {
+        "lithium": {"severity": "major", "effect": "Increased lithium levels — toxicity risk"},
+        "digoxin": {"severity": "major", "effect": "Hypokalemia increases digoxin toxicity"},
+        "NSAIDs": {"severity": "moderate", "effect": "Reduced diuretic effect"}
+      },
+      "monitoring": ["electrolytes", "renal function", "blood glucose", "uric acid"],
+      "rxnorm": "5487"
+    },
+    "spironolactone": {
+      "name": "Spironolactone",
+      "class": "Potassium-Sparing Diuretic / Aldosterone Antagonist",
+      "indication": ["heart failure", "resistant hypertension", "ascites", "hyperaldosteronism"],
+      "common_doses": ["25mg daily", "50mg daily", "100mg daily"],
+      "contraindications": ["hyperkalemia (K+ > 5.5)", "severe renal impairment (eGFR < 30)", "Addison disease"],
+      "warnings": ["hyperkalemia — especially with ACE inhibitors/ARBs", "gynecomastia"],
+      "interactions": {
+        "lisinopril": {"severity": "major", "effect": "Hyperkalemia risk — monitor potassium closely"},
+        "losartan": {"severity": "major", "effect": "Hyperkalemia risk"},
+        "potassium_supplements": {"severity": "major", "effect": "Dangerous hyperkalemia"},
+        "NSAIDs": {"severity": "moderate", "effect": "Increased hyperkalemia risk and reduced diuretic effect"},
+        "digoxin": {"severity": "moderate", "effect": "Spironolactone may increase digoxin levels"}
+      },
+      "monitoring": ["potassium (within 1 week of starting)", "renal function", "blood pressure"],
+      "rxnorm": "9997"
+    },
+    "ciprofloxacin": {
+      "name": "Ciprofloxacin",
+      "class": "Fluoroquinolone",
+      "indication": ["UTI", "respiratory infections", "bone/joint infections", "anthrax"],
+      "common_doses": ["250mg BID", "500mg BID", "750mg BID"],
+      "contraindications": ["concurrent tizanidine use", "myasthenia gravis (relative)"],
+      "warnings": ["tendon rupture (especially with corticosteroids)", "QT prolongation", "C. difficile", "peripheral neuropathy", "aortic aneurysm risk"],
+      "interactions": {
+        "tizanidine": {"severity": "contraindicated", "effect": "Markedly increased tizanidine levels — severe hypotension"},
+        "warfarin": {"severity": "major", "effect": "Increased INR and bleeding risk"},
+        "theophylline": {"severity": "major", "effect": "Increased theophylline levels — seizure risk"},
+        "prednisone": {"severity": "moderate", "effect": "Increased tendon rupture risk"},
+        "antacids": {"severity": "moderate", "effect": "Reduced ciprofloxacin absorption — separate by 2 hours"}
+      },
+      "monitoring": ["renal function", "tendon pain", "QT interval if risk factors"],
+      "rxnorm": "2551"
+    },
+    "insulin_glargine": {
+      "name": "Insulin Glargine (Lantus)",
+      "class": "Long-acting Insulin",
+      "indication": ["type 1 diabetes", "type 2 diabetes"],
+      "common_doses": ["10 units daily", "20 units daily", "titrate to fasting glucose"],
+      "contraindications": ["hypoglycemia"],
+      "warnings": ["hypoglycemia", "hypokalemia", "lipodystrophy at injection site"],
+      "interactions": {
+        "metoprolol": {"severity": "moderate", "effect": "Beta-blockers mask hypoglycemia symptoms"},
+        "prednisone": {"severity": "moderate", "effect": "Corticosteroids increase blood glucose — may need insulin dose increase"},
+        "thiazolidinediones": {"severity": "moderate", "effect": "Increased fluid retention and heart failure risk"}
+      },
+      "monitoring": ["blood glucose (fasting and random)", "HbA1c every 3 months", "potassium", "renal function"],
+      "rxnorm": "274783"
+    },
+    "allopurinol": {
+      "name": "Allopurinol",
+      "class": "Xanthine Oxidase Inhibitor",
+      "indication": ["gout", "hyperuricemia", "uric acid nephropathy"],
+      "common_doses": ["100mg daily", "200mg daily", "300mg daily"],
+      "contraindications": ["HLA-B*5801 positive (Stevens-Johnson syndrome risk)"],
+      "warnings": ["severe cutaneous reactions", "renal dose adjustment"],
+      "interactions": {
+        "azathioprine": {"severity": "contraindicated", "effect": "Allopurinol inhibits azathioprine metabolism — severe pancytopenia"},
+        "mercaptopurine": {"severity": "contraindicated", "effect": "Same mechanism — reduce mercaptopurine dose by 75%"},
+        "amoxicillin": {"severity": "moderate", "effect": "Increased rash risk"},
+        "ACE_inhibitors": {"severity": "moderate", "effect": "Increased hypersensitivity reaction risk"}
+      },
+      "monitoring": ["uric acid levels", "renal function", "liver function", "CBC"],
+      "rxnorm": "519"
+    },
+    "sertraline": {
+      "name": "Sertraline",
+      "class": "Selective Serotonin Reuptake Inhibitor (SSRI)",
+      "indication": ["major depressive disorder", "OCD", "PTSD", "panic disorder", "social anxiety"],
+      "common_doses": ["25mg daily", "50mg daily", "100mg daily", "200mg daily"],
+      "contraindications": ["concurrent MAOIs (wait 14 days)", "concurrent pimozide"],
+      "warnings": ["suicidal ideation in young adults", "serotonin syndrome", "hyponatremia in elderly", "bleeding risk"],
+      "interactions": {
+        "MAOIs": {"severity": "contraindicated", "effect": "Serotonin syndrome — potentially fatal"},
+        "tramadol": {"severity": "major", "effect": "Increased serotonin syndrome and seizure risk"},
+        "warfarin": {"severity": "moderate", "effect": "Increased bleeding risk"},
+        "NSAIDs": {"severity": "moderate", "effect": "Increased GI bleeding risk"}
+      },
+      "monitoring": ["mood/suicidal ideation", "sodium levels in elderly", "signs of bleeding"],
+      "rxnorm": "36437"
+    },
+    "losartan": {
+      "name": "Losartan",
+      "class": "Angiotensin II Receptor Blocker (ARB)",
+      "indication": ["hypertension", "diabetic nephropathy", "heart failure (if ACE-intolerant)"],
+      "common_doses": ["25mg daily", "50mg daily", "100mg daily"],
+      "contraindications": ["pregnancy", "bilateral renal artery stenosis"],
+      "warnings": ["hyperkalemia", "hypotension", "renal impairment"],
+      "interactions": {
+        "spironolactone": {"severity": "major", "effect": "Hyperkalemia risk"},
+        "potassium_supplements": {"severity": "major", "effect": "Hyperkalemia risk"},
+        "lithium": {"severity": "major", "effect": "Increased lithium levels"},
+        "NSAIDs": {"severity": "moderate", "effect": "Reduced antihypertensive effect and increased renal risk"}
+      },
+      "monitoring": ["potassium", "renal function", "blood pressure"],
+      "rxnorm": "52175"
+    },
+    "tramadol": {
+      "name": "Tramadol",
+      "class": "Opioid Analgesic (Weak)",
+      "indication": ["moderate to moderately severe pain"],
+      "common_doses": ["50mg Q4-6H PRN", "100mg Q4-6H PRN"],
+      "contraindications": ["concurrent MAOIs", "uncontrolled epilepsy", "children < 12"],
+      "warnings": ["seizure risk", "serotonin syndrome with SSRIs", "respiratory depression", "dependence"],
+      "interactions": {
+        "sertraline": {"severity": "major", "effect": "Serotonin syndrome and seizure risk"},
+        "carbamazepine": {"severity": "major", "effect": "Reduced tramadol efficacy + increased seizure risk"},
+        "ondansetron": {"severity": "moderate", "effect": "Reduced tramadol analgesic effect"}
+      },
+      "monitoring": ["pain control", "respiratory rate", "seizure activity", "signs of dependence"],
+      "rxnorm": "10689"
+    },
+    "pantoprazole": {
+      "name": "Pantoprazole",
+      "class": "Proton Pump Inhibitor",
+      "indication": ["GERD", "erosive esophagitis", "Zollinger-Ellison syndrome"],
+      "common_doses": ["20mg daily", "40mg daily"],
+      "contraindications": ["hypersensitivity to PPIs"],
+      "warnings": ["same long-term risks as omeprazole", "preferred PPI with clopidogrel"],
+      "interactions": {
+        "methotrexate": {"severity": "moderate", "effect": "Increased methotrexate levels"},
+        "iron_supplements": {"severity": "moderate", "effect": "Reduced iron absorption"}
+      },
+      "monitoring": ["magnesium with long-term use", "B12 with long-term use"],
+      "rxnorm": "40790"
+    },
+    "ibuprofen": {
+      "name": "Ibuprofen",
+      "class": "NSAID",
+      "indication": ["pain", "fever", "inflammation", "arthritis"],
+      "common_doses": ["200mg Q4-6H", "400mg Q4-6H", "600mg Q6-8H", "800mg TID"],
+      "contraindications": ["active GI bleeding", "severe renal impairment", "post-CABG surgery", "aspirin-exacerbated respiratory disease"],
+      "warnings": ["GI bleeding", "cardiovascular risk", "renal impairment", "hypertension"],
+      "interactions": {
+        "warfarin": {"severity": "major", "effect": "Increased bleeding risk and GI hemorrhage"},
+        "aspirin": {"severity": "moderate", "effect": "May reduce cardioprotective effect of low-dose aspirin"},
+        "lisinopril": {"severity": "moderate", "effect": "Reduced antihypertensive effect + renal risk"},
+        "lithium": {"severity": "major", "effect": "Increased lithium levels — toxicity risk"},
+        "methotrexate": {"severity": "major", "effect": "Decreased methotrexate clearance — toxicity risk"}
+      },
+      "monitoring": ["GI symptoms", "renal function", "blood pressure", "CBC with chronic use"],
+      "rxnorm": "5640"
+    },
+    "amiodarone": {
+      "name": "Amiodarone",
+      "class": "Class III Antiarrhythmic",
+      "indication": ["ventricular arrhythmias", "atrial fibrillation"],
+      "common_doses": ["200mg daily (maintenance)", "400mg daily (loading)"],
+      "contraindications": ["severe sinus node dysfunction", "2nd/3rd degree heart block", "cardiogenic shock"],
+      "warnings": ["pulmonary toxicity", "thyroid dysfunction", "hepatotoxicity", "corneal deposits", "photosensitivity", "extremely long half-life (40-55 days)"],
+      "interactions": {
+        "warfarin": {"severity": "major", "effect": "Increases INR — reduce warfarin dose by 30-50%"},
+        "digoxin": {"severity": "major", "effect": "Increases digoxin levels by 70-100% — halve digoxin dose"},
+        "simvastatin": {"severity": "major", "effect": "Increased rhabdomyolysis risk — limit simvastatin to 20mg"},
+        "metoprolol": {"severity": "major", "effect": "Additive bradycardia and heart block risk"},
+        "fluoroquinolones": {"severity": "major", "effect": "QT prolongation — torsades de pointes risk"}
+      },
+      "monitoring": ["thyroid function every 6 months", "pulmonary function tests annually", "liver function tests", "eye exams annually", "chest X-ray"],
+      "rxnorm": "703"
+    }
+  },
+  "allergy_cross_reactivity": {
+    "penicillin": {
+      "allergic_to": "Penicillin",
+      "cross_reactive_drugs": ["amoxicillin", "ampicillin", "piperacillin"],
+      "possible_cross_reactivity": ["cephalosporins (1-2% risk, higher with 1st gen)"],
+      "safe_alternatives": ["azithromycin", "fluoroquinolones", "vancomycin"]
+    },
+    "sulfonamide_antibiotics": {
+      "allergic_to": "Sulfonamide antibiotics (e.g., sulfamethoxazole)",
+      "cross_reactive_drugs": ["sulfasalazine"],
+      "possible_cross_reactivity": ["hydrochlorothiazide (very low risk)", "furosemide (very low risk)"],
+      "safe_alternatives": ["most other antibiotics"]
+    },
+    "NSAIDs": {
+      "allergic_to": "NSAIDs (aspirin-exacerbated respiratory disease)",
+      "cross_reactive_drugs": ["aspirin", "ibuprofen", "naproxen", "ketorolac"],
+      "safe_alternatives": ["acetaminophen (low dose)", "celecoxib (with caution)"]
+    }
+  }
+}

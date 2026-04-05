@@ -1,0 +1,229 @@
+{
+  "case_id": "easy_004",
+  "difficulty": "easy",
+  "patient": {
+    "id": "P-40335",
+    "age": 68,
+    "gender": "F",
+    "known_conditions": ["hypothyroidism", "osteoporosis", "GERD"],
+    "current_medications": ["levothyroxine 100mcg daily", "alendronate 70mg weekly", "omeprazole 20mg daily", "calcium carbonate 600mg BID", "vitamin D3 2000 IU daily"],
+    "allergies": [],
+    "chief_complaint": "fatigue and weight gain despite thyroid medication"
+  },
+  "records": [
+    {
+      "id": 1,
+      "date": "2021-02-08",
+      "type": "visit_note",
+      "doctor": "Dr. Karen Liu",
+      "department": "Endocrinology",
+      "summary": "Hypothyroidism management — well controlled",
+      "content": "68 y/o female with hypothyroidism x 12 years, on levothyroxine 100mcg daily. Feels well. No fatigue, no cold intolerance, no constipation. Weight stable at 156 lbs. Vitals: BP 128/76, HR 72, BMI 26.2. Assessment: Hypothyroidism, well-controlled. Plan: Continue levothyroxine 100mcg daily. Annual TSH. Reminded patient to take on empty stomach, 30-60 min before food."
+    },
+    {
+      "id": 2,
+      "date": "2021-02-08",
+      "type": "lab_result",
+      "ordered_by": "Dr. Karen Liu",
+      "summary": "Thyroid labs — baseline",
+      "tests": {
+        "TSH": {"value": 2.1, "unit": "mIU/L", "ref_range": "0.4-4.0", "flag": "NORMAL"},
+        "free_T4": {"value": 1.2, "unit": "ng/dL", "ref_range": "0.8-1.8", "flag": "NORMAL"}
+      }
+    },
+    {
+      "id": 3,
+      "date": "2021-05-15",
+      "type": "visit_note",
+      "doctor": "Dr. Sarah Patel",
+      "department": "Primary Care",
+      "summary": "GERD management",
+      "content": "68 y/o female with GERD. Symptoms well-controlled on omeprazole 20mg daily. No heartburn, no dysphagia. Assessment: GERD, controlled. Plan: Continue omeprazole. Discussed that long-term PPI use should be reassessed periodically."
+    },
+    {
+      "id": 4,
+      "date": "2021-08-10",
+      "type": "visit_note",
+      "doctor": "Dr. Linda Park",
+      "department": "Rheumatology",
+      "summary": "Osteoporosis management",
+      "content": "68 y/o female with osteoporosis diagnosed 3 years ago. On alendronate 70mg weekly + calcium 600mg BID + vitamin D 2000 IU daily. Last DEXA (2020): T-score -2.7 lumbar spine, -2.3 hip. No fractures. Assessment: Osteoporosis on treatment. Plan: Continue current regimen. Repeat DEXA in 2022. Calcium supplementation important — taking calcium carbonate with meals."
+    },
+    {
+      "id": 5,
+      "date": "2021-11-20",
+      "type": "visit_note",
+      "doctor": "Dr. Sarah Patel",
+      "department": "Primary Care",
+      "summary": "Annual physical",
+      "content": "68 y/o female for annual exam. PMH: hypothyroidism, osteoporosis, GERD. Meds: levothyroxine 100mcg, alendronate 70mg weekly, omeprazole 20mg daily, calcium 600mg BID, vitamin D 2000 IU. Reports taking all medications in the morning together for convenience. Vitals: BP 130/78, HR 70, weight 158 lbs (up 2 lbs). Assessment: Stable. Plan: Routine labs."
+    },
+    {
+      "id": 6,
+      "date": "2021-11-20",
+      "type": "lab_result",
+      "ordered_by": "Dr. Sarah Patel",
+      "summary": "Annual labs",
+      "tests": {
+        "TSH": {"value": 3.8, "unit": "mIU/L", "ref_range": "0.4-4.0", "flag": "NORMAL"},
+        "glucose_fasting": {"value": 94, "unit": "mg/dL", "ref_range": "70-100", "flag": "NORMAL"},
+        "creatinine": {"value": 0.9, "unit": "mg/dL", "ref_range": "0.6-1.1", "flag": "NORMAL"},
+        "calcium": {"value": 9.4, "unit": "mg/dL", "ref_range": "8.5-10.5", "flag": "NORMAL"},
+        "vitamin_D": {"value": 38, "unit": "ng/mL", "ref_range": "30-100", "flag": "NORMAL"}
+      }
+    },
+    {
+      "id": 7,
+      "date": "2022-04-12",
+      "type": "visit_note",
+      "doctor": "Dr. Karen Liu",
+      "department": "Endocrinology",
+      "summary": "Hypothyroidism follow-up — TSH trending up",
+      "content": "68 y/o female with hypothyroidism on levothyroxine 100mcg. TSH was 2.1 in Feb 2021, now 3.8 in Nov 2021. Still within normal range but trending upward. Patient feels fine, no symptoms. Assessment: Hypothyroidism, still controlled but TSH trending up. Plan: Recheck TSH today. If continues to rise, may need dose adjustment. Advised patient to take levothyroxine on empty stomach, 30-60 min before other medications."
+    },
+    {
+      "id": 8,
+      "date": "2022-04-12",
+      "type": "lab_result",
+      "ordered_by": "Dr. Karen Liu",
+      "summary": "TSH recheck",
+      "tests": {
+        "TSH": {"value": 5.8, "unit": "mIU/L", "ref_range": "0.4-4.0", "flag": "HIGH"},
+        "free_T4": {"value": 0.9, "unit": "ng/dL", "ref_range": "0.8-1.8", "flag": "LOW NORMAL"}
+      }
+    },
+    {
+      "id": 9,
+      "date": "2022-04-15",
+      "type": "visit_note",
+      "doctor": "Dr. Karen Liu",
+      "department": "Endocrinology",
+      "summary": "TSH elevated — dose increase",
+      "content": "69 y/o female. TSH now 5.8 (elevated), free T4 0.9 (low normal). Patient has been on levothyroxine 100mcg for years with previously stable levels. No change in brand. Explored possible causes of rising TSH. Assessment: Subclinical hypothyroidism developing despite stable dose. Plan: Increase levothyroxine to 112mcg daily. Recheck TSH in 6-8 weeks. Advised strict separation from other medications."
+    },
+    {
+      "id": 10,
+      "date": "2022-06-10",
+      "type": "lab_result",
+      "ordered_by": "Dr. Karen Liu",
+      "summary": "TSH recheck after dose increase",
+      "tests": {
+        "TSH": {"value": 5.2, "unit": "mIU/L", "ref_range": "0.4-4.0", "flag": "HIGH"},
+        "free_T4": {"value": 1.0, "unit": "ng/dL", "ref_range": "0.8-1.8", "flag": "NORMAL"}
+      }
+    },
+    {
+      "id": 11,
+      "date": "2022-06-15",
+      "type": "visit_note",
+      "doctor": "Dr. Karen Liu",
+      "department": "Endocrinology",
+      "summary": "TSH still elevated despite dose increase",
+      "content": "69 y/o female. TSH 5.2 despite increase to levothyroxine 112mcg. Minimal improvement. Patient now reports mild fatigue and 4 lb weight gain over past 6 months. Re-questioned medication timing: patient confirms she takes levothyroxine, calcium, omeprazole, and alendronate all together at 7 AM with breakfast. Assessment: Likely medication interaction causing impaired levothyroxine absorption. Plan: Increase levothyroxine to 125mcg. STRONGLY advised to separate medications — levothyroxine first thing on empty stomach, wait 30-60 min, then other meds. Recheck in 6-8 weeks."
+    },
+    {
+      "id": 12,
+      "date": "2022-08-08",
+      "type": "lab_result",
+      "ordered_by": "Dr. Karen Liu",
+      "summary": "TSH recheck",
+      "tests": {
+        "TSH": {"value": 4.6, "unit": "mIU/L", "ref_range": "0.4-4.0", "flag": "SLIGHTLY HIGH"},
+        "free_T4": {"value": 1.1, "unit": "ng/dL", "ref_range": "0.8-1.8", "flag": "NORMAL"}
+      }
+    },
+    {
+      "id": 13,
+      "date": "2022-11-18",
+      "type": "visit_note",
+      "doctor": "Dr. Sarah Patel",
+      "department": "Primary Care",
+      "summary": "Annual physical",
+      "content": "69 y/o female. PMH: hypothyroidism, osteoporosis, GERD. Reports ongoing fatigue and now constipation. Weight 164 lbs (up 8 lbs from baseline). Cold intolerance noted. Still taking all medications together in the morning. Vitals: BP 132/80, HR 62, BMI 27.5. Assessment: Symptoms suggestive of suboptimal thyroid replacement. Referred back to endocrinology."
+    },
+    {
+      "id": 14,
+      "date": "2022-11-18",
+      "type": "lab_result",
+      "ordered_by": "Dr. Sarah Patel",
+      "summary": "Labs",
+      "tests": {
+        "TSH": {"value": 6.4, "unit": "mIU/L", "ref_range": "0.4-4.0", "flag": "HIGH"},
+        "free_T4": {"value": 0.8, "unit": "ng/dL", "ref_range": "0.8-1.8", "flag": "LOW NORMAL"},
+        "total_cholesterol": {"value": 242, "unit": "mg/dL", "ref_range": "<200", "flag": "HIGH"},
+        "LDL": {"value": 158, "unit": "mg/dL", "ref_range": "<100", "flag": "HIGH"}
+      }
+    },
+    {
+      "id": 15,
+      "date": "2023-01-10",
+      "type": "visit_note",
+      "doctor": "Dr. Karen Liu",
+      "department": "Endocrinology",
+      "summary": "Hypothyroidism — persistent poor control",
+      "content": "69 y/o female with hypothyroidism. Despite escalation from levothyroxine 100mcg → 112mcg → 125mcg, TSH remains elevated at 6.4. Patient has classic hypothyroid symptoms: fatigue, weight gain, constipation, cold intolerance, rising cholesterol. Medication history review: Patient taking levothyroxine together with calcium carbonate 600mg, omeprazole 20mg, and alendronate. ALL THREE of these medications are known to impair levothyroxine absorption. Despite counseling, patient admits she continues to take them together for convenience. Assessment: Medication-interaction-induced malabsorption of levothyroxine. Plan: Increase to levothyroxine 137mcg. Pharmacy to create separate medication schedule. Alternatively, consider evening dosing of levothyroxine. Recheck in 6 weeks."
+    },
+    {
+      "id": 16,
+      "date": "2023-04-05",
+      "type": "lab_result",
+      "ordered_by": "Dr. Karen Liu",
+      "summary": "TSH recheck",
+      "tests": {
+        "TSH": {"value": 3.2, "unit": "mIU/L", "ref_range": "0.4-4.0", "flag": "NORMAL"},
+        "free_T4": {"value": 1.3, "unit": "ng/dL", "ref_range": "0.8-1.8", "flag": "NORMAL"}
+      }
+    },
+    {
+      "id": 17,
+      "date": "2023-04-10",
+      "type": "visit_note",
+      "doctor": "Dr. Karen Liu",
+      "department": "Endocrinology",
+      "summary": "Hypothyroidism — improved with medication separation",
+      "content": "70 y/o female. TSH normalized to 3.2 after patient finally separated her medications. Taking levothyroxine at 6 AM, waiting 1 hour, then taking other medications at 7 AM with breakfast. Fatigue improving. Lost 3 lbs. Assessment: Hypothyroidism, improved. Plan: Continue levothyroxine 137mcg. May be able to reduce back toward original dose once absorption is consistent."
+    },
+    {
+      "id": 18,
+      "date": "2023-09-15",
+      "type": "visit_note",
+      "doctor": "Dr. Sarah Patel",
+      "department": "Primary Care",
+      "summary": "Annual physical",
+      "content": "70 y/o female for annual exam. Feeling better. Weight 160 lbs (down 4 lbs). Energy improved. Vitals: BP 126/74, HR 70, BMI 26.9. Assessment: Overall improvement. Continue current regimen."
+    },
+    {
+      "id": 19,
+      "date": "2023-09-15",
+      "type": "lab_result",
+      "ordered_by": "Dr. Sarah Patel",
+      "summary": "Annual labs",
+      "tests": {
+        "TSH": {"value": 2.8, "unit": "mIU/L", "ref_range": "0.4-4.0", "flag": "NORMAL"},
+        "total_cholesterol": {"value": 210, "unit": "mg/dL", "ref_range": "<200", "flag": "BORDERLINE"},
+        "calcium": {"value": 9.6, "unit": "mg/dL", "ref_range": "8.5-10.5", "flag": "NORMAL"},
+        "vitamin_D": {"value": 42, "unit": "ng/mL", "ref_range": "30-100", "flag": "NORMAL"},
+        "creatinine": {"value": 0.9, "unit": "mg/dL", "ref_range": "0.6-1.1", "flag": "NORMAL"}
+      }
+    },
+    {
+      "id": 20,
+      "date": "2024-02-20",
+      "type": "visit_note",
+      "doctor": "Dr. Sarah Patel",
+      "department": "Primary Care",
+      "summary": "Medication review and refills",
+      "content": "70 y/o female for medication refills. Current medications: levothyroxine 137mcg daily (6 AM), alendronate 70mg weekly, omeprazole 20mg daily, calcium carbonate 600mg BID, vitamin D3 2000 IU daily. Patient reports she has been separating levothyroxine well. However, still taking calcium carbonate at the same time as alendronate — these should also be separated (calcium reduces alendronate absorption). Also, long-term omeprazole use (>3 years) without reassessment — risk of B12 deficiency, hypomagnesemia, and reduced calcium absorption (worsening osteoporosis). Assessment: Multiple drug-nutrient interactions present. Plan: Refills provided. Scheduled medication counseling visit."
+    }
+  ],
+  "ground_truth_issues": [
+    {
+      "type": "drug_interaction",
+      "severity": "moderate",
+      "description": "Calcium carbonate and omeprazole both significantly reduce levothyroxine absorption when taken concurrently. Despite multiple dose increases (100mcg → 137mcg), the root cause of rising TSH was medication co-administration, not true disease progression. The interaction was identified late (after nearly 2 years and 4 dose increases), causing the patient unnecessary hypothyroid symptoms, weight gain, fatigue, and rising cholesterol.",
+      "evidence_records": [1, 2, 5, 8, 10, 11, 14, 15],
+      "clinical_reference": "Calcium supplements should be separated from levothyroxine by at least 4 hours. PPIs reduce gastric acid needed for levothyroxine dissolution. Both interactions are well-documented in FDA labeling and clinical guidelines.",
+      "what_should_have_happened": "When TSH first started rising (record #6, Nov 2021), the first step should have been a thorough medication timing review — not a dose increase. The calcium + PPI + levothyroxine interaction is a classic and well-known cause of 'levothyroxine resistance.' Early identification would have avoided 2 years of symptoms and 4 unnecessary dose escalations."
+    }
+  ]
+}

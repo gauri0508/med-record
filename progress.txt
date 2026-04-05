@@ -1,0 +1,491 @@
+========================================================
+MEDRECORDAUDIT — BUILD PROGRESS & FILE DOCUMENTATION
+========================================================
+Last Updated: April 6, 2026
+Hackathon Deadline: April 8, 2026
+
+========================================================
+STEP 1: PROJECT SETUP (COMPLETED)
+========================================================
+
+What was done:
+- Cloned empty repo from https://github.com/gauri0508/med-record.git
+- Created the full folder structure
+- Added requirements.txt with all dependencies
+
+Files created:
+
+1. requirements.txt
+   - Contains: fastapi, uvicorn, pydantic, openai, httpx, pytest
+   - Why needed: These are the core libraries for the project
+     * fastapi + uvicorn = API server (the environment runs as a web server)
+     * pydantic = data validation for request/response models
+     * openai = required by hackathon rules for LLM calls in inference.py
+     * httpx = HTTP client for inference.py to talk to the server
+     * pytest = testing framework
+
+2. env/__init__.py
+   - Empty init file to make env/ a Python package
+   - Why needed: So we can import from env.environment, env.server, etc.
+
+3. tests/__init__.py
+   - Empty init file to make tests/ a Python package
+
+Folder structure created:
+   med-record/
+   ├── env/                  → will hold all environment code
+   ├── data/cases/easy/      → easy difficulty patient cases (5 cases)
+   ├── data/cases/medium/    → medium difficulty patient cases (5 cases)
+   ├── data/cases/hard/      → hard difficulty patient cases (3 cases)
+   └── tests/                → test files
+
+
+========================================================
+STEP 2: MEDICAL REFERENCE DATA (COMPLETED)
+========================================================
+
+What was done:
+- Created 3 JSON databases with real medical data
+- These act as the "knowledge base" of the environment
+- Used for: building patient cases, cross-reference action, validating findings
+
+Files created:
+
+1. data/lab_ranges.json
+   ---------------------------------------------------------
+   WHAT IT IS:
+   Reference database of normal/abnormal ranges for 50+ lab tests.
+
+   WHY IT'S NEEDED:
+   - When the environment generates lab results for patient records,
+     it uses these ranges to mark values as HIGH/LOW/NORMAL
+   - The "cross_reference" action uses this to tell the agent
+     what's normal vs abnormal
+   - Graders use it to verify if the agent correctly identified
+     abnormal lab trends
+
+   WHAT'S INSIDE:
+   13 categories of lab tests:
+
+   a) Hematology (18 tests)
+      - CBC: WBC, RBC, hemoglobin, hematocrit, platelets
+      - Differentials: neutrophils, lymphocytes, monocytes, eosinophils, basophils
+      - Other: MCV, MCH, MCHC, RDW, ESR
+      - Coagulation: INR, PT, aPTT
+
+   b) Basic Metabolic Panel (10 tests)
+      - Electrolytes: sodium, potassium, chloride, bicarbonate
+      - Kidney: BUN, creatinine, eGFR
+      - Other: glucose (fasting & random), calcium
+      - eGFR has staging thresholds (normal > 90, mild 60-89, moderate 30-59, severe 15-29, failure < 15)
+
+   c) Comprehensive Metabolic Panel (7 tests)
+      - Liver: ALT, AST, ALP, bilirubin (total & direct)
+      - Protein: total protein, albumin
+
+   d) Endocrine (7 tests)
+      - Diabetes: HbA1c (with prediabetic/diabetic thresholds)
+      - Thyroid: TSH, free T4, free T3
+      - Other: cortisol, fasting insulin, vitamin D
+
+   e) Lipid Panel (4 tests)
+      - Total cholesterol, LDL, HDL, triglycerides
+      - Includes risk thresholds (optimal, borderline, high)
+
+   f) Cardiac Markers (7 tests)
+      - Troponin I, BNP, CK, CK-MB, LDH, CRP, homocysteine
+      - Includes critical thresholds for acute events
+
+   g) Kidney-specific (3 tests)
+      - Uric acid, urine microalbumin, albumin-creatinine ratio
+
+   h) Liver-specific (2 tests)
+      - GGT, ammonia
+
+   i) Iron Studies (4 tests)
+      - Serum iron, TIBC, ferritin, transferrin saturation
+
+   j) Autoimmune (4 tests)
+      - ANA, RF, anti-CCP, anti-dsDNA
+
+   k) Vitamins (2 tests)
+      - B12, folate
+
+   l) Urinalysis (5 tests)
+      - pH, specific gravity, protein, glucose, blood
+
+   KEY FEATURE: Gender-specific ranges where applicable (e.g., hemoglobin,
+   creatinine, ferritin) and critical values that indicate life-threatening
+   levels (e.g., potassium < 2.5 or > 6.5)
+
+
+2. data/drugs.json
+   ---------------------------------------------------------
+   WHAT IT IS:
+   Database of 26 commonly prescribed drugs with their interactions,
+   contraindications, and monitoring requirements. Plus allergy
+   cross-reactivity data.
+
+   WHY IT'S NEEDED:
+   - Patient cases reference these real drugs with real dosages
+   - The "cross_reference" action uses this to return drug interaction
+     info when the agent queries it
+   - Ground truth issues are based on real drug interactions from
+     this database (e.g., "warfarin + aspirin = major bleeding risk")
+   - Graders validate that flagged drug interactions actually exist
+
+   WHAT'S INSIDE:
+
+   26 drugs organized by:
+   - name: Real drug name
+   - class: Drug class (e.g., "ACE Inhibitor", "Statin")
+   - indication: What it treats
+   - common_doses: Real-world dosing
+   - contraindications: When NOT to prescribe (e.g., "metformin if eGFR < 30")
+   - warnings: Side effects and risks
+   - interactions: Drug-drug interactions with severity (major/moderate/contraindicated)
+   - monitoring: What labs to check and how often
+   - rxnorm: Real RxNorm code for each drug
+
+   Drug categories covered:
+   - Diabetes: metformin, insulin glargine
+   - Cardiovascular: lisinopril, losartan, amlodipine, metoprolol,
+     hydrochlorothiazide, furosemide, spironolactone, digoxin, amiodarone
+   - Anticoagulation: warfarin, aspirin, clopidogrel
+   - Cholesterol: atorvastatin
+   - GI: omeprazole, pantoprazole
+   - Pain: ibuprofen, tramadol, gabapentin
+   - Antibiotics: amoxicillin, ciprofloxacin
+   - Endocrine: levothyroxine, prednisone
+   - Rheumatology: allopurinol
+   - Psychiatry: sertraline
+
+   Allergy cross-reactivity section:
+   - Penicillin allergy → which drugs to avoid (amoxicillin, ampicillin)
+   - Sulfonamide allergy → cross-reactive drugs
+   - NSAID allergy → cross-reactive drugs and safe alternatives
+
+   REAL-WORLD ACCURACY:
+   All interactions sourced from FDA drug safety communications.
+   Examples of real interactions included:
+   - Warfarin + amiodarone: reduce warfarin dose by 30-50%
+   - Omeprazole + clopidogrel: reduces antiplatelet effect (use pantoprazole)
+   - Metformin + eGFR < 30: contraindicated (lactic acidosis risk)
+   - Digoxin + amiodarone: increase digoxin levels by 70-100%
+
+
+3. data/diseases.json
+   ---------------------------------------------------------
+   WHAT IT IS:
+   Database of 15 diseases with real diagnostic criteria, symptoms,
+   complications, and — most importantly — commonly missed issues.
+
+   WHY IT'S NEEDED:
+   - Patient cases are built around these diseases
+   - The "common_missed_issues" field directly inspires the ground
+     truth issues we hide in patient cases
+   - Graders use diagnostic criteria to validate agent findings
+   - The "cross_reference" action uses this for disease info
+
+   WHAT'S INSIDE:
+
+   15 diseases across 9 medical specialties:
+
+   Endocrine:
+   - Type 2 Diabetes Mellitus (E11)
+   - Hypothyroidism (E03)
+
+   Cardiovascular:
+   - Essential Hypertension (I10)
+   - Atrial Fibrillation (I48)
+   - Heart Failure (I50)
+
+   Renal:
+   - Chronic Kidney Disease (N18)
+
+   Hematology:
+   - Iron Deficiency Anemia (D50)
+   - Deep Vein Thrombosis / PE (I82/I26)
+
+   Pulmonary:
+   - COPD (J44)
+
+   Rheumatology:
+   - Gout (M10)
+   - Rheumatoid Arthritis (M06)
+
+   Musculoskeletal:
+   - Osteoporosis (M81)
+
+   Psychiatry:
+   - Major Depressive Disorder (F33)
+
+   Autoimmune:
+   - Systemic Lupus Erythematosus (M32)
+
+   Gastroenterology:
+   - Celiac Disease (K90.0)
+
+   Each disease includes:
+   - ICD-10 code (real billing code)
+   - Symptoms list
+   - Risk factors
+   - Diagnostic criteria (with real thresholds)
+   - Key labs to order
+   - Complications
+   - Common medications
+   - Monitoring schedule
+   - COMMON MISSED ISSUES ← this is the most important field!
+     These are real-world mistakes that doctors frequently make,
+     sourced from medical literature. They become the hidden
+     problems in our patient cases.
+
+   Examples of common missed issues:
+   - "declining eGFR not addressed" (CKD)
+   - "metformin not adjusted for renal function" (Diabetes)
+   - "iron deficiency anemia attributed to menstruation without GI workup" (Celiac)
+   - "SSRI + tramadol serotonin syndrome risk" (Depression)
+   - "anticoagulation not started despite high stroke risk" (AFib)
+
+
+========================================================
+STEP 3: EASY PATIENT CASES (COMPLETED)
+========================================================
+
+What was done:
+- Created 5 patient cases in data/cases/easy/
+- Each case has 20 medical records and 1 obvious hidden issue
+- All cases use real drug names, real lab values, real clinical language
+
+Files created:
+
+1. data/cases/easy/case_001.json
+   PATIENT: 45F with asthma, penicillin allergy (anaphylaxis)
+   ISSUE: Allergy violation (CRITICAL)
+   - Amoxicillin prescribed by urgent care doctor despite documented
+     penicillin allergy with anaphylaxis history
+   - Allergy clearly documented in records #1 and #2
+   - Prescription in record #17-18 by different doctor who didn't check
+   - Near-miss event — patient had mild reaction but survived
+
+2. data/cases/easy/case_002.json
+   PATIENT: 72M with AFib on warfarin, hypertension
+   ISSUE: Drug interaction (CRITICAL)
+   - Ibuprofen prescribed by orthopedist for knee pain
+   - Patient already on warfarin — major bleeding risk
+   - Orthopedist failed to check current medications
+   - PCP caught it during medication reconciliation
+
+3. data/cases/easy/case_003.json
+   PATIENT: 58M with T2DM, hypertension, CKD (progressive)
+   ISSUE: Drug contraindication (CRITICAL)
+   - Metformin continued despite eGFR dropping below 30
+   - eGFR decline documented over 2 years: 88→82→72→65→55→48→40→34→28→25
+   - Nephrology explicitly noted "stop metformin at eGFR<30" (record #17)
+   - Endocrinology continued metformin at eGFR 25 (record #19)
+   - FDA contraindication — risk of fatal lactic acidosis
+
+4. data/cases/easy/case_004.json
+   PATIENT: 68F with hypothyroidism, osteoporosis, GERD
+   ISSUE: Drug interaction (MODERATE)
+   - Calcium carbonate + omeprazole blocking levothyroxine absorption
+   - Patient takes all medications together in the morning
+   - TSH rising over 2 years despite 4 dose increases
+   - Root cause (co-administration) identified late — 2 years of symptoms
+
+5. data/cases/easy/case_005.json
+   PATIENT: 75M with HFrEF, hypertension, T2DM
+   ISSUE: Declining trend (CRITICAL)
+   - Persistent hyperkalemia on spironolactone + lisinopril
+   - Potassium trending: 5.0→5.1→5.2→5.4→5.3→5.5 over 12+ months
+   - Spironolactone dose not reduced despite repeated elevated K+
+   - Digoxin added to a patient with chronic hyperkalemia = arrhythmia risk
+
+
+========================================================
+STEP 4: MEDIUM PATIENT CASES (COMPLETED)
+========================================================
+
+What was done:
+- Created 5 patient cases in data/cases/medium/
+- Each case has 80 medical records and 3 hidden issues
+- Much more complex — issues span multiple specialists and years
+- Issues are subtler and require connecting information across many records
+
+Files created:
+
+1. data/cases/medium/case_001.json
+   PATIENT: 71F with T2DM, HTN, AFib, OA, GERD, depression
+   3 ISSUES:
+   a) Declining sodium trend (139→130) over 18 months on sertraline —
+      SSRI-induced hyponatremia in elderly not addressed promptly
+   b) Tramadol + bupropion seizure risk — orthopedist prescribed
+      tramadol without checking current antidepressant
+   c) HbA1c rising (7.1→7.8) over 4 years without medication
+      escalation — only lifestyle counseling given
+
+2. data/cases/medium/case_002.json
+   PATIENT: 62M with HTN, T2DM, gout, BPH
+   3 ISSUES:
+   a) HCTZ (thiazide diuretic) counteracting allopurinol for gout —
+      took 18 months and a rheumatology referral to identify
+   b) Chlorthalidone prescribed AGAIN after HCTZ was removed for
+      same reason — repeating the same drug-disease interaction
+   c) eGFR declining (78→52) without microalbumin screening for
+      4 years — delayed diabetic nephropathy detection
+
+3. data/cases/medium/case_003.json
+   PATIENT: 69M with AFib, HFrEF, HTN, T2DM, hyperlipidemia
+   3 ISSUES:
+   a) Amiodarone thyroid monitoring missed for 12 months — TSH should
+      be checked every 6 months, hit 18.4 by the time it was checked
+   b) Liver enzymes steadily rising on amiodarone (ALT 22→58 over
+      3+ years) without proactive transition planning
+   c) eGFR declining (68→50) without nephrology referral or SGLT2
+      inhibitor for renal protection in a diabetic patient
+
+4. data/cases/medium/case_004.json
+   PATIENT: 78F with RA, osteoporosis, HTN, chronic back pain, insomnia, GERD
+   3 ISSUES:
+   a) Zolpidem (Beers Criteria) + gabapentin in elderly with severe
+      osteoporosis — multiple near-falls, actual fall before zolpidem removed
+   b) B12 progressively declining (280→195) on omeprazole + methotrexate
+      — two B12-depleting drugs, not supplemented until frankly deficient
+   c) Long-term prednisone (10mg x 3+ years) worsening osteoporosis
+      despite bisphosphonate — 1-year delay starting biologic for RA
+
+5. data/cases/medium/case_005.json
+   PATIENT: 38F with recurrent iron deficiency anemia, hypothyroidism, IBS
+   3 ISSUES:
+   a) Celiac disease missed for 4 years despite classic triad:
+      refractory IDA + IBS symptoms + autoimmune thyroid disease
+   b) Omeprazole worsening iron malabsorption — PPI reducing gastric
+      acid needed for iron absorption, compounding celiac malabsorption
+   c) Hypothyroidism diagnosis (2019) should have triggered celiac
+      screening due to well-documented autoimmune association
+
+
+========================================================
+STEP 5: HARD PATIENT CASES (COMPLETED)
+========================================================
+
+What was done:
+- Created 3 patient cases in data/cases/hard/
+- Each case has 150 medical records and 5-6 hidden issues
+- Extremely complex — multiple specialists, years of data, subtle trends
+- Issues are interconnected and cascade into each other
+- Agent must strategically explore 150 records within a limited budget
+
+Files created:
+
+1. data/cases/hard/case_001.json
+   PATIENT: 74M with HFrEF, AFib, CKD, T2DM, COPD, gout, MDD
+   14 medications, 7 specialists involved
+   6 ISSUES:
+   a) Amiodarone-warfarin interaction not managed → INR 4.2, bleeding
+   b) Metformin continued below eGFR 30 (nephrology vs endocrinology)
+   c) Spironolactone + lisinopril hyperkalemia (K+ 4.8→5.6) + digoxin risk
+   d) SSRI-induced hyponatremia (Na 138→128) over 18+ months
+   e) Repeated prednisone courses worsening diabetes, no DEXA ordered
+   f) Omeprazole 5+ years → hypomagnesemia (2.0→1.4) + B12 deficiency
+
+2. data/cases/hard/case_002.json
+   PATIENT: 55F with SLE, lupus nephritis, antiphospholipid syndrome,
+   secondary HTN, anemia, osteoporosis, MDD
+   11 medications, 7 specialists involved
+   5 ISSUES:
+   a) Hydroxychloroquine retinopathy screening never performed for 6+ years
+   b) Calcium carbonate blocking levothyroxine absorption (TSH rising)
+   c) Warfarin INR monitoring gaps during lupus flares (INR 4.8, then 1.4)
+   d) Progressive lupus nephritis trend (eGFR 65→32) — delayed escalation
+   e) DEXA not repeated for 4+ years on chronic prednisone → T-score -3.0
+
+3. data/cases/hard/case_003.json
+   PATIENT: 82M with CAD (post-CABG), AFib, HFpEF, T2DM, CKD stage 3,
+   HTN, BPH, OA, insomnia, GERD
+   15 medications (extreme polypharmacy), 7+ specialists
+   6 ISSUES:
+   a) Aspirin + warfarin dual therapy without indication — CABG was 8+ years ago
+   b) Digoxin toxicity cascade — declining eGFR + low K+ + low Mg2+ from furosemide
+   c) Glipizide causing recurrent hypoglycemia in CKD (3 ER visits)
+   d) Zolpidem falls → hip fracture requiring surgery in 82-year-old
+   e) ACE inhibitor cough — enalapril→lisinopril (same class!) instead of ARB
+   f) Omeprazole cascading deficiencies → feeds digoxin toxicity + fracture risk
+
+
+========================================================
+COMPLETE DATA SUMMARY
+========================================================
+
+Total patient cases: 13
+Total medical records: ~950
+Total hidden issues: 32
+
+By difficulty:
+  Easy:   5 cases × 20 records × 1 issue  = 100 records,  5 issues
+  Medium: 5 cases × 80 records × 3 issues = 400 records, 15 issues
+  Hard:   3 cases × 150 records × 5-6 issues = 450 records, 17 issues
+
+Issue types across all cases:
+  - Drug interactions: 8
+  - Drug contraindications: 4
+  - Declining trends: 8
+  - Missed monitoring: 4
+  - Contradictions: 3
+  - Missed diagnoses: 2
+  - Allergy violations: 1
+  - Other (falls risk, etc.): 2
+
+Reference databases:
+  - lab_ranges.json: 50+ lab tests, 13 categories
+  - drugs.json: 26 drugs with interactions, 3 allergy groups
+  - diseases.json: 15 diseases with diagnostic criteria
+
+
+========================================================
+WHAT'S DONE SO FAR
+========================================================
+✅ Step 1: Project setup (folders, requirements.txt)
+✅ Step 2: Medical reference data (3 JSON databases)
+✅ Step 3: Easy patient cases (5 cases, 20 records, 1 issue each)
+✅ Step 4: Medium patient cases (5 cases, 80 records, 3 issues each)
+✅ Step 5: Hard patient cases (3 cases, 150 records, 5-6 issues each)
+
+========================================================
+WHAT'S NEXT
+========================================================
+⬜ Step 6: Build env/environment.py (core RL environment class)
+⬜ Step 7: Build env/reward.py (scoring/reward function)
+⬜ Step 8: Build env/graders.py (easy/medium/hard graders)
+⬜ Step 9: Build env/server.py (FastAPI server)
+⬜ Step 10: Build inference.py (baseline agent)
+⬜ Step 11: Dockerfile + openenv.yaml
+⬜ Step 12: README.md
+⬜ Step 13: Test locally
+⬜ Step 14: Deploy to Hugging Face Spaces
+
+========================================================
+HOW THE FILES CONNECT
+========================================================
+
+1. Patient cases (data/cases/) USE data from:
+   → drugs.json (real drug names, doses, interactions)
+   → lab_ranges.json (real lab values with correct HIGH/LOW flags)
+   → diseases.json (real disease progressions, symptoms)
+
+2. Environment (env/environment.py) LOADS:
+   → Patient cases from data/cases/
+   → Reference databases for the cross_reference action
+
+3. Reward function (env/reward.py) USES:
+   → Ground truth issues from patient cases to score findings
+
+4. Graders (env/graders.py) RUN:
+   → Episodes through the environment and validate scores
+
+5. Server (env/server.py) WRAPS:
+   → Environment in FastAPI endpoints
+
+6. Inference (inference.py) TALKS TO:
+   → Server via HTTP requests
+   → LLM via OpenAI Client

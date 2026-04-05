@@ -1,0 +1,259 @@
+{
+  "diseases": {
+    "type_2_diabetes": {
+      "name": "Type 2 Diabetes Mellitus",
+      "icd10": "E11",
+      "category": "endocrine",
+      "symptoms": ["polyuria", "polydipsia", "fatigue", "blurred vision", "slow wound healing", "recurrent infections", "numbness/tingling in extremities"],
+      "risk_factors": ["obesity (BMI > 30)", "family history", "age > 45", "sedentary lifestyle", "gestational diabetes history", "PCOS"],
+      "diagnostic_criteria": {
+        "HbA1c": ">= 6.5%",
+        "fasting_glucose": ">= 126 mg/dL",
+        "random_glucose": ">= 200 mg/dL with symptoms",
+        "OGTT": ">= 200 mg/dL at 2 hours"
+      },
+      "key_labs": ["HbA1c", "fasting glucose", "creatinine", "eGFR", "urine microalbumin", "lipid panel"],
+      "complications": ["diabetic nephropathy", "diabetic neuropathy", "diabetic retinopathy", "cardiovascular disease", "diabetic foot ulcers"],
+      "common_medications": ["metformin", "insulin_glargine", "glipizide", "empagliflozin", "semaglutide"],
+      "monitoring_schedule": "HbA1c every 3 months; annual eye exam, foot exam, renal function, lipid panel",
+      "common_missed_issues": ["declining eGFR not addressed", "metformin not adjusted for renal function", "annual screening missed"]
+    },
+    "hypertension": {
+      "name": "Essential Hypertension",
+      "icd10": "I10",
+      "category": "cardiovascular",
+      "symptoms": ["usually asymptomatic", "headache (severe hypertension)", "visual changes", "chest pain", "dyspnea"],
+      "risk_factors": ["obesity", "high sodium diet", "age", "family history", "diabetes", "smoking", "excessive alcohol"],
+      "diagnostic_criteria": {
+        "stage_1": "BP 130-139/80-89 mmHg",
+        "stage_2": "BP >= 140/90 mmHg",
+        "hypertensive_crisis": "BP > 180/120 mmHg"
+      },
+      "key_labs": ["BMP (sodium, potassium, creatinine)", "urinalysis", "lipid panel", "ECG"],
+      "complications": ["stroke", "heart failure", "chronic kidney disease", "aortic aneurysm", "retinopathy"],
+      "common_medications": ["lisinopril", "amlodipine", "losartan", "hydrochlorothiazide", "metoprolol"],
+      "monitoring_schedule": "BP at every visit; annual BMP, lipid panel",
+      "common_missed_issues": ["target BP not achieved despite multiple visits", "potassium not checked after starting ACE/ARB"]
+    },
+    "atrial_fibrillation": {
+      "name": "Atrial Fibrillation",
+      "icd10": "I48",
+      "category": "cardiovascular",
+      "symptoms": ["palpitations", "irregular heartbeat", "fatigue", "dyspnea", "dizziness", "chest discomfort", "exercise intolerance"],
+      "risk_factors": ["age > 65", "hypertension", "heart failure", "thyroid disease", "obesity", "sleep apnea", "alcohol use"],
+      "diagnostic_criteria": {
+        "ECG": "irregularly irregular rhythm, absent P waves, fibrillatory baseline"
+      },
+      "key_labs": ["TSH", "BMP", "CBC", "coagulation studies (INR if on warfarin)", "echocardiogram"],
+      "complications": ["stroke (5x increased risk)", "heart failure", "cardiomyopathy"],
+      "common_medications": ["warfarin", "apixaban", "metoprolol", "diltiazem", "amiodarone", "digoxin"],
+      "monitoring_schedule": "INR monthly if on warfarin; CHA2DS2-VASc score annually; thyroid function annually",
+      "common_missed_issues": ["anticoagulation not started despite high stroke risk", "INR not monitored regularly", "thyroid function not checked"]
+    },
+    "chronic_kidney_disease": {
+      "name": "Chronic Kidney Disease",
+      "icd10": "N18",
+      "category": "renal",
+      "symptoms": ["often asymptomatic until advanced", "fatigue", "nausea", "edema", "decreased urine output", "muscle cramps", "itching"],
+      "risk_factors": ["diabetes", "hypertension", "age > 60", "family history", "recurrent kidney infections", "NSAID overuse"],
+      "diagnostic_criteria": {
+        "stage_1": "eGFR >= 90 with kidney damage markers",
+        "stage_2": "eGFR 60-89",
+        "stage_3a": "eGFR 45-59",
+        "stage_3b": "eGFR 30-44",
+        "stage_4": "eGFR 15-29",
+        "stage_5": "eGFR < 15 (kidney failure)"
+      },
+      "key_labs": ["creatinine", "eGFR", "BUN", "urine albumin-to-creatinine ratio", "potassium", "calcium", "phosphorus", "PTH", "CBC"],
+      "complications": ["anemia", "bone disease", "hyperkalemia", "metabolic acidosis", "cardiovascular disease", "uremia"],
+      "common_medications": ["ACE inhibitors/ARBs (renoprotective)", "erythropoiesis-stimulating agents", "phosphate binders", "sodium bicarbonate"],
+      "monitoring_schedule": "eGFR and urine albumin every 3-6 months; electrolytes, CBC every 3-6 months in stage 3+",
+      "common_missed_issues": ["NSAID use not stopped", "metformin not adjusted/stopped at eGFR < 30", "nephrotoxic drugs continued", "declining eGFR trend not recognized"]
+    },
+    "hypothyroidism": {
+      "name": "Hypothyroidism",
+      "icd10": "E03",
+      "category": "endocrine",
+      "symptoms": ["fatigue", "weight gain", "cold intolerance", "constipation", "dry skin", "hair loss", "depression", "bradycardia", "myalgia", "cognitive slowing"],
+      "risk_factors": ["female sex", "age > 60", "autoimmune disease", "thyroid surgery/radiation", "lithium use", "amiodarone use"],
+      "diagnostic_criteria": {
+        "primary": "TSH elevated (> 4.0 mIU/L) with low free T4",
+        "subclinical": "TSH elevated with normal free T4"
+      },
+      "key_labs": ["TSH", "free T4", "anti-TPO antibodies", "lipid panel"],
+      "complications": ["hyperlipidemia", "heart failure", "myxedema coma (severe)", "infertility", "depression"],
+      "common_medications": ["levothyroxine"],
+      "monitoring_schedule": "TSH 6-8 weeks after dose change; annually when stable",
+      "common_missed_issues": ["TSH not rechecked after dose change", "drug interactions reducing absorption (calcium, iron, PPI)", "symptoms attributed to aging instead of thyroid"]
+    },
+    "heart_failure": {
+      "name": "Heart Failure",
+      "icd10": "I50",
+      "category": "cardiovascular",
+      "symptoms": ["dyspnea on exertion", "orthopnea", "paroxysmal nocturnal dyspnea", "peripheral edema", "fatigue", "weight gain (fluid)", "reduced exercise tolerance"],
+      "risk_factors": ["coronary artery disease", "hypertension", "diabetes", "valvular disease", "obesity", "alcohol abuse"],
+      "diagnostic_criteria": {
+        "BNP": "> 100 pg/mL suggests HF",
+        "echocardiogram": "EF < 40% (HFrEF) or preserved EF with diastolic dysfunction (HFpEF)"
+      },
+      "key_labs": ["BNP/NT-proBNP", "BMP", "CBC", "liver function tests", "TSH", "iron studies"],
+      "complications": ["cardiogenic shock", "arrhythmias", "renal failure", "hepatic congestion", "pulmonary edema"],
+      "common_medications": ["lisinopril/losartan", "metoprolol", "spironolactone", "furosemide", "digoxin", "empagliflozin"],
+      "monitoring_schedule": "Weight daily; BMP and renal function every 3-6 months; BNP as needed; echocardiogram annually",
+      "common_missed_issues": ["triple therapy (ACE+BB+MRA) not started", "volume overload not recognized", "potassium not monitored with spironolactone + ACE inhibitor"]
+    },
+    "iron_deficiency_anemia": {
+      "name": "Iron Deficiency Anemia",
+      "icd10": "D50",
+      "category": "hematology",
+      "symptoms": ["fatigue", "weakness", "pallor", "dyspnea on exertion", "pica", "brittle nails", "restless legs", "cold intolerance", "glossitis"],
+      "risk_factors": ["menstruating women", "pregnancy", "GI bleeding", "poor dietary intake", "celiac disease", "chronic NSAID use"],
+      "diagnostic_criteria": {
+        "hemoglobin": "< 12 g/dL (women), < 13.5 g/dL (men)",
+        "ferritin": "< 30 ng/mL (most specific)",
+        "iron_studies": "Low serum iron, high TIBC, low transferrin saturation"
+      },
+      "key_labs": ["CBC", "ferritin", "serum iron", "TIBC", "transferrin saturation", "reticulocyte count", "peripheral smear"],
+      "complications": ["severe anemia requiring transfusion", "heart failure from chronic anemia", "impaired cognitive function"],
+      "common_medications": ["ferrous sulfate 325mg BID-TID", "IV iron (if oral intolerant)"],
+      "monitoring_schedule": "CBC and ferritin at 4-6 weeks; investigate source of blood loss",
+      "common_missed_issues": ["GI source of bleeding not investigated", "PPI reducing iron absorption", "B12/folate deficiency coexisting but missed"]
+    },
+    "COPD": {
+      "name": "Chronic Obstructive Pulmonary Disease",
+      "icd10": "J44",
+      "category": "pulmonary",
+      "symptoms": ["chronic cough", "sputum production", "dyspnea (progressive)", "wheezing", "chest tightness", "frequent respiratory infections"],
+      "risk_factors": ["smoking", "occupational dust/chemical exposure", "alpha-1 antitrypsin deficiency", "age > 40"],
+      "diagnostic_criteria": {
+        "spirometry": "FEV1/FVC < 0.70 post-bronchodilator"
+      },
+      "key_labs": ["spirometry", "ABG", "CBC", "alpha-1 antitrypsin level", "chest X-ray/CT"],
+      "complications": ["acute exacerbations", "pneumonia", "pneumothorax", "pulmonary hypertension", "cor pulmonale"],
+      "common_medications": ["albuterol inhaler", "tiotropium", "fluticasone/salmeterol", "prednisone (exacerbation)"],
+      "monitoring_schedule": "Spirometry annually; vaccination status (flu, pneumococcal); oxygen saturation",
+      "common_missed_issues": ["spirometry never performed to confirm diagnosis", "continued smoking not addressed", "osteoporosis screening not done with chronic steroid use"]
+    },
+    "gout": {
+      "name": "Gout",
+      "icd10": "M10",
+      "category": "rheumatology",
+      "symptoms": ["acute joint pain (often 1st MTP)", "swelling", "redness", "warmth", "tophi (chronic)"],
+      "risk_factors": ["male sex", "obesity", "alcohol use", "high-purine diet", "chronic kidney disease", "thiazide/loop diuretics"],
+      "diagnostic_criteria": {
+        "uric_acid": "> 6.8 mg/dL (but can be normal during acute flare)",
+        "joint_aspiration": "Monosodium urate crystals (negatively birefringent)"
+      },
+      "key_labs": ["uric acid", "BMP (renal function)", "CBC", "ESR/CRP", "joint fluid analysis"],
+      "complications": ["chronic tophaceous gout", "joint destruction", "uric acid nephrolithiasis", "chronic kidney disease"],
+      "common_medications": ["colchicine (acute/prophylaxis)", "indomethacin (acute)", "prednisone (acute)", "allopurinol (chronic)", "febuxostat (chronic)"],
+      "monitoring_schedule": "Uric acid every 3-6 months during titration; renal function annually",
+      "common_missed_issues": ["diuretic-induced hyperuricemia not recognized", "allopurinol started during acute flare (worsens attack)", "renal function not checked before starting allopurinol"]
+    },
+    "osteoporosis": {
+      "name": "Osteoporosis",
+      "icd10": "M81",
+      "category": "musculoskeletal",
+      "symptoms": ["often asymptomatic until fracture", "loss of height", "kyphosis", "back pain from vertebral fracture"],
+      "risk_factors": ["postmenopausal women", "age > 65", "low body weight", "smoking", "excessive alcohol", "chronic corticosteroid use", "family history", "vitamin D deficiency"],
+      "diagnostic_criteria": {
+        "DEXA": "T-score <= -2.5 at hip or spine",
+        "osteopenia": "T-score -1.0 to -2.5"
+      },
+      "key_labs": ["DEXA scan", "vitamin D level", "calcium", "PTH", "TSH", "CBC", "BMP"],
+      "complications": ["hip fractures", "vertebral compression fractures", "wrist fractures", "chronic pain", "disability"],
+      "common_medications": ["alendronate", "risedronate", "denosumab", "calcium + vitamin D supplementation"],
+      "monitoring_schedule": "DEXA every 2 years; vitamin D level annually; calcium intake assessment",
+      "common_missed_issues": ["DEXA not ordered for patients on chronic steroids", "vitamin D deficiency not treated", "fall risk not assessed"]
+    },
+    "major_depressive_disorder": {
+      "name": "Major Depressive Disorder",
+      "icd10": "F33",
+      "category": "psychiatry",
+      "symptoms": ["depressed mood", "anhedonia", "sleep changes", "appetite/weight changes", "fatigue", "difficulty concentrating", "psychomotor changes", "feelings of worthlessness/guilt", "suicidal ideation"],
+      "risk_factors": ["family history", "prior episodes", "chronic illness", "substance abuse", "social isolation", "trauma"],
+      "diagnostic_criteria": {
+        "DSM5": "5+ symptoms for >= 2 weeks, including depressed mood or anhedonia"
+      },
+      "key_labs": ["TSH (rule out hypothyroidism)", "CBC", "BMP", "vitamin B12", "folate", "vitamin D"],
+      "complications": ["suicide", "substance abuse", "functional impairment", "cardiovascular disease"],
+      "common_medications": ["sertraline", "escitalopram", "fluoxetine", "venlafaxine", "bupropion", "mirtazapine"],
+      "monitoring_schedule": "PHQ-9 at every visit initially; medication side effects at 2-4 weeks; suicidal ideation assessment",
+      "common_missed_issues": ["thyroid dysfunction causing depressive symptoms", "SSRI + tramadol serotonin syndrome risk", "hyponatremia from SSRIs in elderly not monitored"]
+    },
+    "systemic_lupus_erythematosus": {
+      "name": "Systemic Lupus Erythematosus (SLE)",
+      "icd10": "M32",
+      "category": "autoimmune",
+      "symptoms": ["fatigue", "joint pain", "malar (butterfly) rash", "photosensitivity", "oral ulcers", "pleurisy", "hair loss", "Raynaud phenomenon", "fever"],
+      "risk_factors": ["female sex (9:1)", "age 15-45", "African American/Hispanic", "family history of autoimmune disease"],
+      "diagnostic_criteria": {
+        "ANA": "positive (sensitive but not specific)",
+        "anti_dsDNA": "positive (highly specific)",
+        "anti_Smith": "positive (highly specific)",
+        "complement": "low C3/C4 during flares",
+        "criteria": "4+ of 11 ACR criteria OR 2019 EULAR/ACR criteria score >= 10"
+      },
+      "key_labs": ["ANA", "anti-dsDNA", "anti-Smith", "complement C3/C4", "CBC", "BMP", "urinalysis", "ESR/CRP", "urine protein-to-creatinine ratio"],
+      "complications": ["lupus nephritis", "cardiovascular disease", "stroke", "infections", "avascular necrosis"],
+      "common_medications": ["hydroxychloroquine", "prednisone", "mycophenolate", "azathioprine", "belimumab"],
+      "monitoring_schedule": "CBC, BMP, urinalysis every 3 months; complement levels; anti-dsDNA titers; eye exam annually (hydroxychloroquine)",
+      "common_missed_issues": ["early symptoms attributed to fibromyalgia or depression", "lupus nephritis missed (no urinalysis done)", "hydroxychloroquine retinopathy screening not performed"]
+    },
+    "deep_vein_thrombosis": {
+      "name": "Deep Vein Thrombosis / Pulmonary Embolism",
+      "icd10": "I82/I26",
+      "category": "hematology",
+      "symptoms": {
+        "DVT": ["unilateral leg swelling", "pain/tenderness", "warmth", "redness", "Homan sign"],
+        "PE": ["sudden dyspnea", "pleuritic chest pain", "tachycardia", "hemoptysis", "syncope"]
+      },
+      "risk_factors": ["immobilization", "surgery", "malignancy", "oral contraceptives", "pregnancy", "obesity", "thrombophilia", "prior VTE"],
+      "diagnostic_criteria": {
+        "DVT": "Duplex ultrasound showing thrombus",
+        "PE": "CT pulmonary angiography",
+        "D_dimer": "Elevated (sensitive but not specific)"
+      },
+      "key_labs": ["D-dimer", "CBC", "PT/INR", "aPTT", "BMP"],
+      "complications": ["pulmonary embolism (from DVT)", "post-thrombotic syndrome", "chronic thromboembolic pulmonary hypertension", "death"],
+      "common_medications": ["heparin (acute)", "enoxaparin (acute)", "warfarin (long-term)", "apixaban", "rivaroxaban"],
+      "monitoring_schedule": "INR monthly if on warfarin; duration of anticoagulation assessment; recurrence risk evaluation",
+      "common_missed_issues": ["anticoagulation duration too short for unprovoked VTE", "cancer screening not done for unprovoked VTE", "INR monitoring lapses on warfarin"]
+    },
+    "celiac_disease": {
+      "name": "Celiac Disease",
+      "icd10": "K90.0",
+      "category": "gastroenterology",
+      "symptoms": ["chronic diarrhea", "bloating", "abdominal pain", "weight loss", "fatigue", "iron deficiency anemia (refractory)", "osteoporosis", "dermatitis herpetiformis"],
+      "risk_factors": ["family history", "type 1 diabetes", "autoimmune thyroid disease", "Down syndrome", "Turner syndrome"],
+      "diagnostic_criteria": {
+        "tTG_IgA": "elevated tissue transglutaminase IgA",
+        "EMA": "positive endomysial antibodies",
+        "biopsy": "villous atrophy on duodenal biopsy"
+      },
+      "key_labs": ["tTG-IgA", "total IgA", "CBC", "iron studies", "folate", "vitamin D", "calcium", "liver enzymes"],
+      "complications": ["malnutrition", "osteoporosis", "infertility", "lymphoma (long-term untreated)", "neurological complications"],
+      "common_medications": ["strict gluten-free diet (primary treatment)", "vitamin/mineral supplementation as needed"],
+      "monitoring_schedule": "tTG-IgA at 6-12 months on GFD; DEXA scan; nutritional labs annually",
+      "common_missed_issues": ["iron deficiency anemia attributed to menstruation without GI workup", "osteoporosis in young patient not investigated for celiac", "refractory anemia despite iron supplementation not triggering celiac screening"]
+    },
+    "rheumatoid_arthritis": {
+      "name": "Rheumatoid Arthritis",
+      "icd10": "M06",
+      "category": "rheumatology",
+      "symptoms": ["symmetric joint pain", "morning stiffness > 30 minutes", "joint swelling (MCP, PIP, wrists)", "fatigue", "low-grade fever", "rheumatoid nodules"],
+      "risk_factors": ["female sex", "age 40-60", "smoking", "family history", "obesity"],
+      "diagnostic_criteria": {
+        "RF": "positive (60-80% of patients)",
+        "anti_CCP": "positive (more specific than RF)",
+        "ESR_CRP": "elevated inflammatory markers",
+        "criteria": "2010 ACR/EULAR criteria score >= 6"
+      },
+      "key_labs": ["RF", "anti-CCP", "ESR", "CRP", "CBC", "BMP", "liver function tests", "X-rays of hands/feet"],
+      "complications": ["joint destruction", "cardiovascular disease", "interstitial lung disease", "cervical spine instability", "vasculitis"],
+      "common_medications": ["methotrexate", "hydroxychloroquine", "sulfasalazine", "prednisone", "adalimumab", "etanercept"],
+      "monitoring_schedule": "CBC, LFTs every 1-3 months on methotrexate; ESR/CRP; disease activity assessment",
+      "common_missed_issues": ["methotrexate hepatotoxicity not monitored", "cardiovascular risk not assessed", "TB screening not done before biologics"]
+    }
+  }
+}

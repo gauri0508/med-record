@@ -1,0 +1,227 @@
+{
+  "case_id": "easy_001",
+  "difficulty": "easy",
+  "patient": {
+    "id": "P-10042",
+    "age": 45,
+    "gender": "F",
+    "known_conditions": ["asthma"],
+    "current_medications": ["albuterol inhaler PRN", "fluticasone inhaler 250mcg BID"],
+    "allergies": ["penicillin — documented hives and throat swelling at age 22"],
+    "chief_complaint": "sinus infection with facial pain and yellow-green nasal discharge"
+  },
+  "records": [
+    {
+      "id": 1,
+      "date": "2021-06-10",
+      "type": "visit_note",
+      "doctor": "Dr. Rachel Kim",
+      "department": "Allergy & Immunology",
+      "summary": "Initial allergy evaluation",
+      "content": "45 y/o female referred for allergy evaluation. Patient reports history of allergic reaction to penicillin at age 22 — developed diffuse urticaria and throat tightening within 30 minutes of taking penicillin V for strep throat. Treated in ED with epinephrine and diphenhydramine. Classified as anaphylactic reaction. ALLERGY: PENICILLIN — ANAPHYLAXIS. Skin prick testing today confirms penicillin allergy. Advised strict avoidance of all penicillin-class antibiotics including amoxicillin, ampicillin, and piperacillin. Cross-reactivity with cephalosporins possible (1-2% risk). Assessment: Confirmed penicillin allergy with history of anaphylaxis. Plan: Updated allergy list in chart. Patient educated on cross-reactive drugs."
+    },
+    {
+      "id": 2,
+      "date": "2021-06-10",
+      "type": "allergy_record",
+      "summary": "Allergy documentation",
+      "content": "ALLERGY ALERT — PENICILLIN: Reaction type: Anaphylaxis. Severity: SEVERE. Onset: Immediate (within 30 min). Symptoms: Urticaria, angioedema, throat tightening. Required epinephrine. Date of reaction: 1999. Confirmed by: skin prick test 2021-06-10. Cross-reactive drugs to avoid: amoxicillin, ampicillin, piperacillin/tazobactam. Use with caution: 1st generation cephalosporins."
+    },
+    {
+      "id": 3,
+      "date": "2021-09-15",
+      "type": "visit_note",
+      "doctor": "Dr. Sarah Patel",
+      "department": "Primary Care",
+      "summary": "Annual physical exam",
+      "content": "45 y/o female presents for annual wellness visit. PMH: asthma (well-controlled), penicillin allergy (anaphylaxis). Current meds: albuterol PRN, fluticasone 250mcg BID. Vitals: BP 118/74, HR 72, RR 16, Temp 98.4°F, BMI 24.1. HEENT: normal. Lungs: clear bilateral, no wheezing. CV: RRR, no murmurs. Abd: soft, non-tender. Skin: no rashes. Assessment: Healthy female, asthma well-controlled. Plan: Continue current medications. Flu vaccine administered. Routine labs ordered."
+    },
+    {
+      "id": 4,
+      "date": "2021-09-15",
+      "type": "lab_result",
+      "ordered_by": "Dr. Sarah Patel",
+      "summary": "Annual routine labs",
+      "tests": {
+        "WBC": {"value": 6.8, "unit": "x10^3/uL", "ref_range": "4.5-11.0", "flag": "NORMAL"},
+        "hemoglobin": {"value": 13.2, "unit": "g/dL", "ref_range": "12.0-16.0", "flag": "NORMAL"},
+        "hematocrit": {"value": 39.1, "unit": "%", "ref_range": "35.5-44.9", "flag": "NORMAL"},
+        "platelets": {"value": 245, "unit": "x10^3/uL", "ref_range": "150-400", "flag": "NORMAL"},
+        "glucose_fasting": {"value": 88, "unit": "mg/dL", "ref_range": "70-100", "flag": "NORMAL"},
+        "creatinine": {"value": 0.8, "unit": "mg/dL", "ref_range": "0.6-1.1", "flag": "NORMAL"},
+        "total_cholesterol": {"value": 195, "unit": "mg/dL", "ref_range": "<200", "flag": "NORMAL"},
+        "TSH": {"value": 2.1, "unit": "mIU/L", "ref_range": "0.4-4.0", "flag": "NORMAL"}
+      }
+    },
+    {
+      "id": 5,
+      "date": "2022-01-20",
+      "type": "visit_note",
+      "doctor": "Dr. Sarah Patel",
+      "department": "Primary Care",
+      "summary": "Acute visit — upper respiratory infection",
+      "content": "45 y/o female presents with 5-day history of nasal congestion, sore throat, and mild cough. No fever. Lungs clear. Pharynx erythematous without exudate. Assessment: Viral URI. Plan: Supportive care — rest, fluids, acetaminophen PRN. Discussed antibiotic stewardship — no antibiotics indicated for viral URI. Follow up if symptoms worsen or persist > 10 days."
+    },
+    {
+      "id": 6,
+      "date": "2022-03-08",
+      "type": "visit_note",
+      "doctor": "Dr. Sarah Patel",
+      "department": "Primary Care",
+      "summary": "Asthma follow-up",
+      "content": "45 y/o female with asthma presents for routine follow-up. Reports using albuterol rescue inhaler about once per week. No nocturnal symptoms. No ED visits or hospitalizations. PEF 420 L/min (95% predicted). Assessment: Asthma, well-controlled. Plan: Continue fluticasone 250mcg BID and albuterol PRN. Annual flu vaccine next fall."
+    },
+    {
+      "id": 7,
+      "date": "2022-07-12",
+      "type": "visit_note",
+      "doctor": "Dr. Sarah Patel",
+      "department": "Primary Care",
+      "summary": "Knee pain evaluation",
+      "content": "45 y/o female presents with right knee pain x 2 weeks after hiking. No swelling, no locking. ROM slightly decreased. McMurray test negative. Assessment: Likely mild patellar tendinitis. Plan: Rest, ice, compression, elevation. Acetaminophen 500mg PRN for pain. Physical therapy referral if not improved in 4 weeks."
+    },
+    {
+      "id": 8,
+      "date": "2022-09-20",
+      "type": "visit_note",
+      "doctor": "Dr. Sarah Patel",
+      "department": "Primary Care",
+      "summary": "Annual physical exam",
+      "content": "46 y/o female for annual wellness. PMH: asthma, penicillin allergy. Vitals: BP 122/76, HR 70, BMI 24.3. All systems reviewed — no concerns. Lungs clear. Assessment: Healthy. Plan: Routine labs, flu vaccine, continue meds."
+    },
+    {
+      "id": 9,
+      "date": "2022-09-20",
+      "type": "lab_result",
+      "ordered_by": "Dr. Sarah Patel",
+      "summary": "Annual labs",
+      "tests": {
+        "WBC": {"value": 7.1, "unit": "x10^3/uL", "ref_range": "4.5-11.0", "flag": "NORMAL"},
+        "hemoglobin": {"value": 13.5, "unit": "g/dL", "ref_range": "12.0-16.0", "flag": "NORMAL"},
+        "glucose_fasting": {"value": 92, "unit": "mg/dL", "ref_range": "70-100", "flag": "NORMAL"},
+        "creatinine": {"value": 0.8, "unit": "mg/dL", "ref_range": "0.6-1.1", "flag": "NORMAL"},
+        "total_cholesterol": {"value": 201, "unit": "mg/dL", "ref_range": "<200", "flag": "BORDERLINE"},
+        "LDL": {"value": 125, "unit": "mg/dL", "ref_range": "<100", "flag": "NEAR OPTIMAL"},
+        "HDL": {"value": 58, "unit": "mg/dL", "ref_range": ">50", "flag": "NORMAL"},
+        "TSH": {"value": 2.3, "unit": "mIU/L", "ref_range": "0.4-4.0", "flag": "NORMAL"}
+      }
+    },
+    {
+      "id": 10,
+      "date": "2022-12-05",
+      "type": "visit_note",
+      "doctor": "Dr. Sarah Patel",
+      "department": "Primary Care",
+      "summary": "Follow-up — knee pain resolved",
+      "content": "46 y/o female returns for follow-up of right knee pain. Reports complete resolution after 3 weeks of rest and ice. No current pain, full ROM. Assessment: Resolved patellar tendinitis. Plan: Resume normal activities, return if recurs."
+    },
+    {
+      "id": 11,
+      "date": "2023-02-14",
+      "type": "visit_note",
+      "doctor": "Dr. Sarah Patel",
+      "department": "Primary Care",
+      "summary": "Acute visit — headaches",
+      "content": "46 y/o female presents with recurrent tension-type headaches x 3 weeks. Bilateral, band-like pressure. No visual changes, no nausea, no neurological deficits. Stress-related (work deadline). Vitals normal. Assessment: Tension-type headaches. Plan: Ibuprofen 400mg PRN (max 3 days/week to avoid rebound), stress management, adequate sleep. Follow up if worsening."
+    },
+    {
+      "id": 12,
+      "date": "2023-05-22",
+      "type": "visit_note",
+      "doctor": "Dr. Sarah Patel",
+      "department": "Primary Care",
+      "summary": "Asthma follow-up",
+      "content": "46 y/o female with asthma. Stable. Using rescue inhaler less than once weekly. No exacerbations. PEF 415 L/min. Assessment: Well-controlled asthma. Plan: Continue current regimen."
+    },
+    {
+      "id": 13,
+      "date": "2023-09-18",
+      "type": "visit_note",
+      "doctor": "Dr. Sarah Patel",
+      "department": "Primary Care",
+      "summary": "Annual physical exam",
+      "content": "47 y/o female for annual wellness. PMH: asthma, penicillin allergy (anaphylaxis). Vitals: BP 120/78, HR 68, BMI 24.5. All WNL. Assessment: Healthy female. Plan: Routine labs, flu vaccine."
+    },
+    {
+      "id": 14,
+      "date": "2023-09-18",
+      "type": "lab_result",
+      "ordered_by": "Dr. Sarah Patel",
+      "summary": "Annual labs",
+      "tests": {
+        "WBC": {"value": 6.5, "unit": "x10^3/uL", "ref_range": "4.5-11.0", "flag": "NORMAL"},
+        "hemoglobin": {"value": 13.0, "unit": "g/dL", "ref_range": "12.0-16.0", "flag": "NORMAL"},
+        "glucose_fasting": {"value": 95, "unit": "mg/dL", "ref_range": "70-100", "flag": "NORMAL"},
+        "creatinine": {"value": 0.9, "unit": "mg/dL", "ref_range": "0.6-1.1", "flag": "NORMAL"},
+        "HbA1c": {"value": 5.4, "unit": "%", "ref_range": "<5.7", "flag": "NORMAL"}
+      }
+    },
+    {
+      "id": 15,
+      "date": "2024-01-10",
+      "type": "visit_note",
+      "doctor": "Dr. Sarah Patel",
+      "department": "Primary Care",
+      "summary": "Skin rash evaluation",
+      "content": "47 y/o female presents with contact dermatitis on both hands — likely from new cleaning products. No systemic symptoms. Assessment: Allergic contact dermatitis. Plan: Avoid offending agent, hydrocortisone 1% cream topically BID x 2 weeks, moisturize frequently."
+    },
+    {
+      "id": 16,
+      "date": "2024-04-03",
+      "type": "visit_note",
+      "doctor": "Dr. Sarah Patel",
+      "department": "Primary Care",
+      "summary": "Asthma follow-up + medication refills",
+      "content": "47 y/o female with asthma. Well-controlled. No exacerbations. Refills requested for albuterol and fluticasone. Assessment: Stable asthma. Plan: Refills provided."
+    },
+    {
+      "id": 17,
+      "date": "2024-08-19",
+      "type": "visit_note",
+      "doctor": "Dr. James Wong",
+      "department": "Urgent Care",
+      "summary": "Acute sinusitis",
+      "content": "47 y/o female presents to urgent care with 10-day history of facial pain/pressure, purulent nasal discharge (yellow-green), and low-grade fever (100.2°F). Symptoms initially improved then worsened over past 3 days. No improvement with OTC decongestants. PMH: asthma. Vitals: BP 124/78, HR 76, Temp 100.2°F. HEENT: Maxillary sinus tenderness bilateral, purulent drainage in posterior pharynx. Lungs: clear. Assessment: Acute bacterial sinusitis. Plan: Amoxicillin 500mg TID x 10 days. Nasal saline irrigation. Acetaminophen PRN for pain/fever. Follow up in 10-14 days if not improved."
+    },
+    {
+      "id": 18,
+      "date": "2024-08-19",
+      "type": "prescription",
+      "prescriber": "Dr. James Wong",
+      "department": "Urgent Care",
+      "summary": "Antibiotic for sinusitis",
+      "drug": "amoxicillin",
+      "dose": "500mg",
+      "frequency": "TID",
+      "duration": "10 days",
+      "quantity": 30,
+      "indication": "acute bacterial sinusitis"
+    },
+    {
+      "id": 19,
+      "date": "2024-08-19",
+      "type": "pharmacy_note",
+      "summary": "Prescription dispensed",
+      "content": "Rx# 4482910 — Amoxicillin 500mg capsules, qty 30, sig: take one capsule three times daily for 10 days. Prescriber: Dr. James Wong. Patient: P-10042. Dispensed by Valley Pharmacy. No drug interaction alerts triggered in pharmacy system. Patient counseled on completing full course."
+    },
+    {
+      "id": 20,
+      "date": "2024-09-02",
+      "type": "visit_note",
+      "doctor": "Dr. Sarah Patel",
+      "department": "Primary Care",
+      "summary": "Follow-up after sinusitis treatment",
+      "content": "47 y/o female follows up after 10-day course of amoxicillin for sinusitis. Reports sinusitis resolved. However, on day 3 of antibiotics, developed mild itching on arms — took diphenhydramine, itching resolved. Did not develop hives, swelling, or breathing difficulty. Completed full course. Assessment: Resolved sinusitis. Note: Patient tolerated amoxicillin this time with only mild itching, but given her DOCUMENTED PENICILLIN ALLERGY WITH HISTORY OF ANAPHYLAXIS, this prescription should not have been written. This is a NEAR-MISS event. Plan: Incident report filed. Patient re-educated about her allergy. Allergy alert re-confirmed in chart. Future antibiotic needs: azithromycin or fluoroquinolones (with caution given asthma)."
+    }
+  ],
+  "ground_truth_issues": [
+    {
+      "type": "allergy_violation",
+      "severity": "critical",
+      "description": "Amoxicillin (a penicillin-class antibiotic) prescribed to a patient with documented severe penicillin allergy (anaphylaxis). Amoxicillin is cross-reactive with penicillin. This could have caused a life-threatening anaphylactic reaction.",
+      "evidence_records": [1, 2, 17, 18],
+      "clinical_reference": "Penicillin allergy cross-reactivity — amoxicillin shares the beta-lactam ring structure with penicillin. Patients with history of penicillin anaphylaxis should NEVER receive amoxicillin.",
+      "what_should_have_happened": "Dr. Wong should have checked allergy list before prescribing. Alternative antibiotics for sinusitis in penicillin-allergic patients: doxycycline, azithromycin, or respiratory fluoroquinolone (levofloxacin)."
+    }
+  ]
+}
