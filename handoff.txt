@@ -1,0 +1,280 @@
+========================================================
+MEDRECORDAUDIT — HANDOFF NOTES
+========================================================
+Date: April 6, 2026
+Deadline: April 8, 2026 (2 days left)
+
+========================================================
+WHAT'S BEEN DONE (Steps 1-5)
+========================================================
+
+✅ Step 1: Project Setup
+   - Cloned repo: https://github.com/gauri0508/med-record.git
+   - Created folder structure: env/, data/cases/easy|medium|hard/, tests/
+   - requirements.txt: fastapi, uvicorn, pydantic, openai, httpx, pytest
+
+✅ Step 2: Medical Reference Data
+   - data/lab_ranges.json — 50+ lab tests with real clinical ranges
+   - data/drugs.json — 26 drugs with real interactions & contraindications
+   - data/diseases.json — 15 diseases with diagnostic criteria & common missed issues
+
+✅ Step 3: Easy Cases (5 cases × 20 records × 1 issue each)
+   - case_001: Penicillin allergy → amoxicillin prescribed (allergy violation)
+   - case_002: Warfarin patient → ibuprofen prescribed (drug interaction)
+   - case_003: Metformin continued at eGFR < 30 (drug contraindication)
+   - case_004: Calcium + omeprazole blocking levothyroxine (drug interaction)
+   - case_005: Persistent hyperkalemia on spironolactone+ACE (declining trend)
+
+✅ Step 4: Medium Cases (5 cases × 80 records × 3 issues each)
+   - case_001: SSRI hyponatremia + tramadol+bupropion seizure risk + HbA1c trend
+   - case_002: HCTZ vs gout + repeated mistake with chlorthalidone + CKD trend
+   - case_003: Amiodarone thyroid monitoring gap + liver trend + renal decline
+   - case_004: Zolpidem falls risk + B12 decline + prednisone osteoporosis
+   - case_005: Missed celiac disease + omeprazole worsening malabsorption
+
+✅ Step 5: Hard Cases (3 cases × 150 records × 5-6 issues each)
+   - case_001: 74M, 6 issues (amiodarone-warfarin, metformin CKD, hyperkalemia, hyponatremia, steroids, PPI)
+   - case_002: 55F lupus, 5 issues (HCQ eye screening, calcium-levothyroxine, INR gaps, nephritis trend, DEXA gap)
+   - case_003: 82M polypharmacy, 6 issues (aspirin+warfarin, digoxin toxicity, glipizide hypo, zolpidem falls, ACE cough, PPI cascade)
+
+TOTAL: 13 cases, ~950 records, 32 hidden issues
+
+
+========================================================
+WHAT NEEDS TO BE DONE (Steps 6-14)
+========================================================
+
+⬜ Step 6: env/environment.py — CORE ENVIRONMENT CLASS
+   ---------------------------------------------------------
+   This is the most important file. It's the "game engine."
+
+   Class: MedRecordAuditEnv
+
+   Methods needed:
+
+   reset(difficulty, case_id=None):
+     - Load a random case from data/cases/{difficulty}/
+     - Hide ground_truth_issues from the agent
+     - Return initial state: patient info + record_index (just id, date, type, summary — NOT full content)
+     - Set budget based on difficulty (easy=15, medium=25, hard=30)
+     - Reset step counter, findings list, reviewed records
+
+   step(action):
+     - Parse action JSON
+     - Handle 4 action types:
+       a) read_record(record_id) → return full record content, decrement budget
+       b) cross_reference(query) → search drugs.json/diseases.json/lab_ranges.json, return relevant info
+       c) flag_issue(type, description, evidence) → store finding, decrement budget
+       d) submit_report() → end episode, compute reward, return final score
+     - Return: {state, reward, done, info}
+
+   state():
+     - Return current state (what agent has seen so far)
+
+   Key data structures:
+   - self.case: loaded case JSON
+   - self.patient: patient info (visible to agent)
+   - self.records: all records (hidden, revealed on read_record)
+   - self.record_index: [{id, date, type, summary}] (visible to agent)
+   - self.reviewed: list of record IDs agent has read
+   - self.findings: list of issues agent has flagged
+   - self.ground_truth: hidden answer key
+   - self.budget: remaining steps
+   - self.done: episode over?
+
+
+⬜ Step 7: env/reward.py — REWARD FUNCTION
+   ---------------------------------------------------------
+   Computes score (0.0 - 1.0) for agent's findings.
+
+   Two scoring methods:
+
+   1. Programmatic scoring:
+      - Compare agent's flag_issue type with ground_truth type → type match?
+      - Compare agent's evidence records with ground_truth evidence → overlap?
+      - If type matches AND evidence overlaps → correct finding
+
+   2. LLM scoring (for description similarity):
+      - Compare agent's description with ground_truth description
+      - Use semantic similarity (or simple keyword overlap for now)
+
+   Formula:
+     findings_score = sum of per-finding rewards (capped at 0.7)
+       - Correct critical finding: +0.25
+       - Correct moderate finding: +0.15
+       - Correct minor finding: +0.10
+       - False positive: -0.10
+     efficiency_bonus = (budget_remaining / total_budget) * 0.15
+     completeness_bonus = (correct_findings / total_findings) * 0.15
+     TOTAL = clamp(findings_score + efficiency_bonus + completeness_bonus, 0.0, 1.0)
+
+
+⬜ Step 8: env/graders.py — TASK GRADERS
+   ---------------------------------------------------------
+   3 grader functions that run a case and validate the score.
+
+   easy_grader(env):
+     - Run one easy case
+     - Verify score is 0.0-1.0
+     - Check that env properly handles all actions
+
+   medium_grader(env):
+     - Same for medium cases
+
+   hard_grader(env):
+     - Same for hard cases
+
+   Each grader:
+   1. Calls env.reset(difficulty)
+   2. Simulates a simple agent (read a few records, flag obvious issues)
+   3. Calls env.step(submit_report)
+   4. Verifies the returned score is 0.0-1.0
+
+
+⬜ Step 9: env/server.py — FASTAPI SERVER
+   ---------------------------------------------------------
+   Wrap the environment in HTTP endpoints.
+
+   Endpoints:
+     POST /reset  → body: {difficulty, case_id?} → returns initial state
+     POST /step   → body: {action, ...params} → returns {state, reward, done, info}
+     GET  /state  → returns current state
+     GET  /health → returns {"status": "ok"} (HTTP 200)
+
+   Uses Pydantic models for request/response validation.
+   Runs on port 7860 (required for HF Spaces).
+
+
+⬜ Step 10: inference.py — BASELINE AGENT
+   ---------------------------------------------------------
+   Root-level file. Uses OpenAI Client for LLM calls.
+
+   Environment variables needed:
+     API_BASE_URL — LLM endpoint
+     MODEL_NAME — model identifier
+     HF_TOKEN — Hugging Face authentication
+
+   Simple strategy:
+   1. Call /reset
+   2. Read the record_index
+   3. Ask LLM: "which records look most important to read?"
+   4. Read those records via /step(read_record)
+   5. Ask LLM: "any issues in what you've seen?"
+   6. Flag issues via /step(flag_issue)
+   7. Submit report via /step(submit_report)
+
+   CRITICAL: Must print structured stdout logs:
+     [START] {"task": "easy_001", "timestamp": "..."}
+     [STEP]  {"action": "read_record", "record_id": 3, "step": 1, "timestamp": "..."}
+     [STEP]  {"action": "flag_issue", "type": "drug_interaction", "step": 2, "timestamp": "..."}
+     [END]   {"score": 0.85, "steps": 5, "timestamp": "..."}
+
+   Format must be EXACT — any deviation = wrong evaluation score.
+
+
+⬜ Step 11: Dockerfile + openenv.yaml
+   ---------------------------------------------------------
+   Dockerfile:
+     FROM python:3.11-slim
+     WORKDIR /app
+     COPY requirements.txt .
+     RUN pip install -r requirements.txt
+     COPY . .
+     EXPOSE 7860
+     CMD ["uvicorn", "env.server:app", "--host", "0.0.0.0", "--port", "7860"]
+
+   openenv.yaml:
+     name: MedRecordAudit
+     description: "RL environment for medical record auditing"
+     version: "0.1.0"
+     tasks:
+       - name: easy
+         grader: graders.easy_grader
+       - name: medium
+         grader: graders.medium_grader
+       - name: hard
+         grader: graders.hard_grader
+     env:
+       port: 7860
+       docker: true
+
+
+⬜ Step 12: README.md
+   ---------------------------------------------------------
+   Must cover:
+   - Environment description (what MedRecordAudit does)
+   - Action space (4 actions)
+   - Observation/state space
+   - Reward structure
+   - Difficulty levels
+   - Setup instructions (pip install, docker build, run)
+   - Example interaction
+
+
+⬜ Step 13: Test Locally
+   ---------------------------------------------------------
+   - Run server: uvicorn env.server:app --port 7860
+   - Hit /health → expect 200
+   - Hit /reset → expect valid state
+   - Hit /step with each action type → verify responses
+   - Run inference.py → verify [START]/[STEP]/[END] logs
+   - Run graders → verify all scores 0.0-1.0
+   - Check: inference < 20 min, runs on 2vCPU/8GB RAM
+
+
+⬜ Step 14: Deploy to Hugging Face Spaces
+   ---------------------------------------------------------
+   - Create HF Space (Docker type)
+   - Push all code
+   - Verify /health returns 200 from public URL
+   - Test /reset and /step from external client
+   - Submit on Scaler dashboard
+
+
+========================================================
+FILE MAP (what exists vs what's needed)
+========================================================
+
+EXISTS:
+  ✅ requirements.txt
+  ✅ env/__init__.py
+  ✅ tests/__init__.py
+  ✅ data/lab_ranges.json
+  ✅ data/drugs.json
+  ✅ data/diseases.json
+  ✅ data/cases/easy/case_001.json through case_005.json
+  ✅ data/cases/medium/case_001.json through case_005.json
+  ✅ data/cases/hard/case_001.json through case_003.json
+
+NEEDS TO BE CREATED:
+  ⬜ env/environment.py  ← Step 6 (most important)
+  ⬜ env/reward.py       ← Step 7
+  ⬜ env/graders.py      ← Step 8
+  ⬜ env/server.py       ← Step 9
+  ⬜ inference.py         ← Step 10
+  ⬜ Dockerfile           ← Step 11
+  ⬜ openenv.yaml         ← Step 11
+  ⬜ README.md            ← Step 12
+
+
+========================================================
+PRIORITY ORDER IF SHORT ON TIME
+========================================================
+
+If you can only finish some steps, here's what matters most
+for the hackathon submission:
+
+MUST HAVE (will fail submission without these):
+  1. env/environment.py + env/server.py → the API must work
+  2. inference.py → must produce correct log format
+  3. Dockerfile → must build and run
+  4. openenv.yaml → must validate
+
+SHOULD HAVE:
+  5. env/reward.py → proper scoring
+  6. env/graders.py → 3 graders scoring 0.0-1.0
+  7. README.md → documentation
+
+NICE TO HAVE:
+  8. Tests
+  9. Polished inference strategy
