@@ -2,120 +2,1519 @@
   "case_id": "medium_002",
   "difficulty": "medium",
   "patient": {
-    "id": "P-70689",
-    "age": 62,
+    "id": "P-80734",
+    "age": 69,
     "gender": "M",
-    "known_conditions": ["hypertension", "type 2 diabetes mellitus", "gout", "benign prostatic hyperplasia"],
-    "current_medications": ["lisinopril 10mg daily", "hydrochlorothiazide 25mg daily", "metformin 500mg BID", "allopurinol 300mg daily", "tamsulosin 0.4mg daily"],
+    "known_conditions": [
+      "atrial fibrillation",
+      "heart failure (HFrEF, EF 30%)",
+      "hypertension",
+      "type 2 diabetes mellitus",
+      "hyperlipidemia"
+    ],
+    "current_medications": [
+      "warfarin 5mg daily",
+      "amiodarone 200mg daily",
+      "metoprolol succinate 100mg daily",
+      "lisinopril 20mg daily",
+      "furosemide 40mg daily",
+      "metformin 1000mg BID",
+      "atorvastatin 40mg daily"
+    ],
     "allergies": [],
-    "chief_complaint": "recurrent gout flares despite treatment"
+    "chief_complaint": "fatigue, weight gain, and cold intolerance \u00e2\u20ac\u201d new symptoms"
   },
   "records": [
-    {"id": 1, "date": "2020-03-10", "type": "visit_note", "doctor": "Dr. Sarah Patel", "department": "Primary Care", "summary": "Annual physical — baseline", "content": "62 y/o male with HTN, T2DM, gout, BPH. On lisinopril 10mg, HCTZ 25mg, metformin 500mg BID, allopurinol 300mg, tamsulosin. Vitals: BP 134/82, HR 76, BMI 31.2, weight 218 lbs. Last gout flare 2 months ago in right 1st MTP. Currently pain-free. Uric acid well-controlled on allopurinol. Assessment: Chronic conditions stable. Plan: Routine labs."},
-    {"id": 2, "date": "2020-03-10", "type": "lab_result", "ordered_by": "Dr. Sarah Patel", "summary": "Annual labs", "tests": {"HbA1c": {"value": 6.8, "unit": "%", "ref_range": "<7.0", "flag": "AT TARGET"}, "glucose_fasting": {"value": 122, "unit": "mg/dL", "ref_range": "70-130", "flag": "NORMAL"}, "creatinine": {"value": 1.1, "unit": "mg/dL", "ref_range": "0.7-1.3", "flag": "NORMAL"}, "eGFR": {"value": 78, "unit": "mL/min/1.73m2", "ref_range": ">60", "flag": "NORMAL"}, "uric_acid": {"value": 5.8, "unit": "mg/dL", "ref_range": "3.4-7.0", "flag": "NORMAL"}, "potassium": {"value": 3.8, "unit": "mEq/L", "ref_range": "3.5-5.0", "flag": "NORMAL"}, "sodium": {"value": 140, "unit": "mEq/L", "ref_range": "136-145", "flag": "NORMAL"}, "total_cholesterol": {"value": 205, "unit": "mg/dL", "ref_range": "<200", "flag": "BORDERLINE"}, "LDL": {"value": 128, "unit": "mg/dL", "ref_range": "<100", "flag": "HIGH"}, "hemoglobin": {"value": 15.2, "unit": "g/dL", "ref_range": "13.5-17.5", "flag": "NORMAL"}}},
-    {"id": 3, "date": "2020-04-15", "type": "visit_note", "doctor": "Dr. Sarah Patel", "department": "Primary Care", "summary": "Follow-up — lipids", "content": "62 y/o male. LDL 128 — elevated. With diabetes, target LDL < 100 (< 70 if high risk). No statin currently. Assessment: Hyperlipidemia in diabetic patient — statin indicated. Plan: Start atorvastatin 20mg daily. Recheck lipids in 3 months."},
-    {"id": 4, "date": "2020-04-15", "type": "prescription", "prescriber": "Dr. Sarah Patel", "department": "Primary Care", "summary": "Statin started", "drug": "atorvastatin", "dose": "20mg", "frequency": "daily", "duration": "ongoing", "indication": "hyperlipidemia with diabetes"},
-    {"id": 5, "date": "2020-06-18", "type": "visit_note", "doctor": "Dr. Sarah Patel", "department": "Primary Care", "summary": "Acute visit — gout flare", "content": "62 y/o male presents with acute onset right 1st MTP pain, swelling, redness x 2 days. Classic podagra presentation. Vitals: BP 140/86, HR 80. Exam: right great toe — erythematous, swollen, exquisitely tender, warm. Assessment: Acute gout flare despite allopurinol. Plan: Prednisone 40mg daily x 5 day taper. Colchicine 0.6mg BID x 3 days then daily for prophylaxis. Continue allopurinol during flare. Review triggers."},
-    {"id": 6, "date": "2020-06-18", "type": "lab_result", "ordered_by": "Dr. Sarah Patel", "summary": "Gout flare labs", "tests": {"uric_acid": {"value": 4.2, "unit": "mg/dL", "ref_range": "3.4-7.0", "flag": "NORMAL — note: can be normal during acute flare"}, "CRP": {"value": 48, "unit": "mg/L", "ref_range": "<3.0", "flag": "HIGH"}, "WBC": {"value": 11.2, "unit": "x10^3/uL", "ref_range": "4.5-11.0", "flag": "BORDERLINE HIGH"}, "creatinine": {"value": 1.1, "unit": "mg/dL", "ref_range": "0.7-1.3", "flag": "NORMAL"}, "potassium": {"value": 3.6, "unit": "mEq/L", "ref_range": "3.5-5.0", "flag": "LOW NORMAL"}}},
-    {"id": 7, "date": "2020-07-20", "type": "lab_result", "ordered_by": "Dr. Sarah Patel", "summary": "Lipid recheck", "tests": {"total_cholesterol": {"value": 188, "unit": "mg/dL", "ref_range": "<200", "flag": "NORMAL"}, "LDL": {"value": 95, "unit": "mg/dL", "ref_range": "<100", "flag": "NEAR OPTIMAL"}, "ALT": {"value": 30, "unit": "U/L", "ref_range": "7-56", "flag": "NORMAL"}}},
-    {"id": 8, "date": "2020-09-14", "type": "visit_note", "doctor": "Dr. Sarah Patel", "department": "Primary Care", "summary": "Routine follow-up", "content": "62 y/o male. Gout flare resolved. Lipids improved on atorvastatin (LDL 95). Diabetes controlled. BP slightly elevated at 142/88 despite lisinopril + HCTZ. Assessment: HTN not at target. Plan: Increase lisinopril to 20mg daily. Continue HCTZ 25mg. Recheck BP in 4 weeks."},
-    {"id": 9, "date": "2020-09-14", "type": "lab_result", "ordered_by": "Dr. Sarah Patel", "summary": "Routine labs", "tests": {"potassium": {"value": 3.5, "unit": "mEq/L", "ref_range": "3.5-5.0", "flag": "LOW NORMAL"}, "sodium": {"value": 138, "unit": "mEq/L", "ref_range": "136-145", "flag": "NORMAL"}, "creatinine": {"value": 1.1, "unit": "mg/dL", "ref_range": "0.7-1.3", "flag": "NORMAL"}, "glucose_fasting": {"value": 118, "unit": "mg/dL", "ref_range": "70-130", "flag": "NORMAL"}}},
-    {"id": 10, "date": "2020-10-12", "type": "visit_note", "doctor": "Dr. Sarah Patel", "department": "Primary Care", "summary": "BP recheck", "content": "62 y/o male. BP today 132/78. Improved with lisinopril increase. Assessment: HTN, improved. Plan: Continue lisinopril 20mg + HCTZ 25mg."},
-    {"id": 11, "date": "2020-12-08", "type": "visit_note", "doctor": "Dr. Sarah Patel", "department": "Primary Care", "summary": "Acute visit — another gout flare", "content": "63 y/o male. Second gout flare this year — now left ankle. Onset 3 days ago. Swelling, redness, severe pain. Patient admits to holiday dietary indiscretions (red meat, beer). Assessment: Acute gout flare, left ankle. Plan: Colchicine 1.2mg then 0.6mg one hour later, then 0.6mg BID. Prednisone 30mg x 5 days. Ice, rest, elevate. Recheck uric acid when flare resolves."},
-    {"id": 12, "date": "2021-01-10", "type": "lab_result", "ordered_by": "Dr. Sarah Patel", "summary": "Post-flare uric acid", "tests": {"uric_acid": {"value": 7.2, "unit": "mg/dL", "ref_range": "3.4-7.0", "flag": "HIGH"}, "creatinine": {"value": 1.2, "unit": "mg/dL", "ref_range": "0.7-1.3", "flag": "NORMAL"}, "potassium": {"value": 3.4, "unit": "mEq/L", "ref_range": "3.5-5.0", "flag": "LOW"}, "glucose_fasting": {"value": 132, "unit": "mg/dL", "ref_range": "70-130", "flag": "BORDERLINE HIGH"}}},
-    {"id": 13, "date": "2021-01-15", "type": "visit_note", "doctor": "Dr. Sarah Patel", "department": "Primary Care", "summary": "Gout management — uric acid elevated", "content": "63 y/o male. Uric acid 7.2 despite allopurinol 300mg daily. Recurrent flares (2 in past year). Potassium trending low (3.4) — likely from HCTZ. Glucose slightly elevated. Assessment: 1) Gout not controlled on allopurinol — uric acid above target. Consider increasing allopurinol. 2) Hypokalemia from HCTZ. 3) Glucose trending up. Plan: Increase allopurinol to 400mg daily (target uric acid < 6). Recheck uric acid in 6 weeks. Add KCl 20mEq daily for hypokalemia. Recheck HbA1c."},
-    {"id": 14, "date": "2021-01-15", "type": "prescription", "prescriber": "Dr. Sarah Patel", "department": "Primary Care", "summary": "Potassium supplementation", "drug": "potassium chloride", "dose": "20mEq", "frequency": "daily", "duration": "ongoing", "indication": "HCTZ-induced hypokalemia"},
-    {"id": 15, "date": "2021-03-01", "type": "lab_result", "ordered_by": "Dr. Sarah Patel", "summary": "Recheck", "tests": {"uric_acid": {"value": 6.5, "unit": "mg/dL", "ref_range": "3.4-7.0", "flag": "NORMAL BUT ABOVE TARGET FOR GOUT (<6)"}, "potassium": {"value": 3.8, "unit": "mEq/L", "ref_range": "3.5-5.0", "flag": "NORMAL"}, "HbA1c": {"value": 7.0, "unit": "%", "ref_range": "<7.0", "flag": "AT TARGET"}, "creatinine": {"value": 1.2, "unit": "mg/dL", "ref_range": "0.7-1.3", "flag": "NORMAL"}}},
-    {"id": 16, "date": "2021-03-15", "type": "visit_note", "doctor": "Dr. Sarah Patel", "department": "Primary Care", "summary": "Follow-up — improving but not at gout target", "content": "63 y/o male. Uric acid 6.5 — improved but still above gout target of < 6.0. Potassium normalized with supplementation. HbA1c at target. Assessment: Gout improving. Plan: Continue allopurinol 400mg. Recheck uric acid in 3 months. Target < 6.0. Continue KCl."},
-    {"id": 17, "date": "2021-06-15", "type": "lab_result", "ordered_by": "Dr. Sarah Patel", "summary": "Quarterly labs", "tests": {"uric_acid": {"value": 6.8, "unit": "mg/dL", "ref_range": "3.4-7.0", "flag": "NORMAL BUT ABOVE GOUT TARGET"}, "potassium": {"value": 3.6, "unit": "mEq/L", "ref_range": "3.5-5.0", "flag": "LOW NORMAL"}, "creatinine": {"value": 1.2, "unit": "mg/dL", "ref_range": "0.7-1.3", "flag": "NORMAL"}, "glucose_fasting": {"value": 136, "unit": "mg/dL", "ref_range": "70-130", "flag": "HIGH"}}},
-    {"id": 18, "date": "2021-07-20", "type": "visit_note", "doctor": "Dr. Sarah Patel", "department": "Primary Care", "summary": "Follow-up — uric acid rising again", "content": "63 y/o male. Uric acid back up to 6.8 despite allopurinol 400mg. Recurrent flares continue. IMPORTANT NOTE NOT ADDRESSED: Patient is on hydrochlorothiazide 25mg which RAISES uric acid levels. Thiazide diuretics are a known risk factor for gout and directly counteract uric acid-lowering therapy. This has not been addressed in any prior visit. Assessment: Gout not at target. Plan: Consider referral to rheumatology."},
-    {"id": 19, "date": "2021-08-10", "type": "visit_note", "doctor": "Dr. Sarah Patel", "department": "Primary Care", "summary": "Acute visit — 3rd gout flare", "content": "63 y/o male. Third gout flare in 14 months — now right ankle. Severe pain, can barely walk. Assessment: Recurrent gout flares despite allopurinol 400mg. Plan: Colchicine + short course prednisone. Rheumatology referral placed. Must address underlying cause of treatment failure."},
-    {"id": 20, "date": "2021-09-08", "type": "visit_note", "doctor": "Dr. Linda Park", "department": "Rheumatology", "summary": "Rheumatology consultation — recurrent gout", "content": "63 y/o male referred for recurrent gout despite allopurinol 400mg daily. Three flares in past 14 months. Uric acid 6.8 (target < 6.0). Medication review: HCTZ 25mg daily for hypertension. HCTZ is a thiazide diuretic — KNOWN to increase uric acid levels and precipitate gout. This is directly counteracting the allopurinol. Assessment: Recurrent gout exacerbated by concurrent thiazide diuretic. Plan: Recommend switching HCTZ to amlodipine 5mg daily (no effect on uric acid). Increase allopurinol to 450mg daily. Continue colchicine 0.6mg daily for prophylaxis until 6 months flare-free. Goal: uric acid < 6.0."},
-    {"id": 21, "date": "2021-09-15", "type": "prescription", "prescriber": "Dr. Sarah Patel", "department": "Primary Care", "summary": "HCTZ switched to amlodipine per rheumatology", "drug": "amlodipine", "dose": "5mg", "frequency": "daily", "duration": "ongoing", "indication": "hypertension — switched from HCTZ to avoid gout exacerbation"},
-    {"id": 22, "date": "2021-09-15", "type": "visit_note", "doctor": "Dr. Sarah Patel", "department": "Primary Care", "summary": "Medication switch — HCTZ to amlodipine", "content": "63 y/o male. Per rheumatology recommendation, stopping HCTZ 25mg and starting amlodipine 5mg for HTN. Discontinuing KCl (no longer needed without HCTZ). Continue lisinopril 20mg. Assessment: Medication change to optimize gout management. Plan: Recheck BP in 2 weeks. Recheck uric acid and potassium in 4 weeks."},
-    {"id": 23, "date": "2021-10-13", "type": "lab_result", "ordered_by": "Dr. Sarah Patel", "summary": "Post-switch labs", "tests": {"uric_acid": {"value": 5.8, "unit": "mg/dL", "ref_range": "3.4-7.0", "flag": "BELOW GOUT TARGET — IMPROVING"}, "potassium": {"value": 4.2, "unit": "mEq/L", "ref_range": "3.5-5.0", "flag": "NORMAL"}, "creatinine": {"value": 1.1, "unit": "mg/dL", "ref_range": "0.7-1.3", "flag": "NORMAL"}}},
-    {"id": 24, "date": "2021-10-18", "type": "visit_note", "doctor": "Dr. Sarah Patel", "department": "Primary Care", "summary": "Excellent response to medication switch", "content": "63 y/o male. Uric acid dropped to 5.8 — now below gout target for first time! Potassium normalized (no longer needs supplementation). BP 130/78 on lisinopril + amlodipine. Assessment: Significant improvement after HCTZ removal. Confirms HCTZ was exacerbating gout. Plan: Continue current regimen. Recheck in 3 months."},
-    {"id": 25, "date": "2022-01-12", "type": "visit_note", "doctor": "Dr. Sarah Patel", "department": "Primary Care", "summary": "Annual physical — 2022", "content": "64 y/o male. No gout flares since HCTZ discontinuation (4 months ago). Feeling well. BP controlled. Vitals: BP 128/76, HR 72, weight 215 lbs. Assessment: Significant improvement in gout management. Plan: Routine labs."},
-    {"id": 26, "date": "2022-01-12", "type": "lab_result", "ordered_by": "Dr. Sarah Patel", "summary": "Annual labs", "tests": {"HbA1c": {"value": 7.2, "unit": "%", "ref_range": "<7.0", "flag": "ABOVE TARGET"}, "uric_acid": {"value": 5.4, "unit": "mg/dL", "ref_range": "3.4-7.0", "flag": "AT GOUT TARGET"}, "creatinine": {"value": 1.1, "unit": "mg/dL", "ref_range": "0.7-1.3", "flag": "NORMAL"}, "eGFR": {"value": 76, "unit": "mL/min/1.73m2", "ref_range": ">60", "flag": "NORMAL"}, "potassium": {"value": 4.3, "unit": "mEq/L", "ref_range": "3.5-5.0", "flag": "NORMAL"}, "glucose_fasting": {"value": 140, "unit": "mg/dL", "ref_range": "70-130", "flag": "HIGH"}, "ALT": {"value": 25, "unit": "U/L", "ref_range": "7-56", "flag": "NORMAL"}, "LDL": {"value": 88, "unit": "mg/dL", "ref_range": "<100", "flag": "OPTIMAL"}}},
-    {"id": 27, "date": "2022-02-08", "type": "visit_note", "doctor": "Dr. Sarah Patel", "department": "Primary Care", "summary": "Diabetes — worsening", "content": "64 y/o male. HbA1c 7.2% — above target. Fasting glucose 140. Was 6.8% two years ago. Weight stable but BMI 31.2. Assessment: T2DM worsening, lifestyle factors. Plan: Reinforce diet and exercise. Increase metformin to 1000mg BID. Recheck HbA1c in 3 months."},
-    {"id": 28, "date": "2022-05-10", "type": "lab_result", "ordered_by": "Dr. Sarah Patel", "summary": "HbA1c recheck", "tests": {"HbA1c": {"value": 7.4, "unit": "%", "ref_range": "<7.0", "flag": "ABOVE TARGET"}, "glucose_fasting": {"value": 148, "unit": "mg/dL", "ref_range": "70-130", "flag": "HIGH"}, "creatinine": {"value": 1.2, "unit": "mg/dL", "ref_range": "0.7-1.3", "flag": "NORMAL"}}},
-    {"id": 29, "date": "2022-05-15", "type": "visit_note", "doctor": "Dr. Sarah Patel", "department": "Primary Care", "summary": "Diabetes — further worsening", "content": "64 y/o male. HbA1c 7.4% despite metformin increase. Fasting glucose 148. Patient reports difficulty with dietary compliance. Assessment: T2DM, progressive. Plan: Consider adding second agent. Endocrinology referral."},
-    {"id": 30, "date": "2022-06-20", "type": "visit_note", "doctor": "Dr. Karen Liu", "department": "Endocrinology", "summary": "Endocrinology consultation — T2DM", "content": "64 y/o male with T2DM x 12 years. HbA1c 7.4% on metformin 1000mg BID. BMI 31.2. Also has gout, HTN. eGFR 76. Assessment: T2DM not at target. Plan: Add empagliflozin 10mg daily (glucose lowering + weight loss + CV benefit). Good option with his profile. Continue metformin. Recheck HbA1c in 3 months."},
-    {"id": 31, "date": "2022-06-20", "type": "prescription", "prescriber": "Dr. Karen Liu", "department": "Endocrinology", "summary": "SGLT2 inhibitor added", "drug": "empagliflozin", "dose": "10mg", "frequency": "daily", "duration": "ongoing", "indication": "T2DM — second agent"},
-    {"id": 32, "date": "2022-09-18", "type": "lab_result", "ordered_by": "Dr. Karen Liu", "summary": "HbA1c recheck", "tests": {"HbA1c": {"value": 7.0, "unit": "%", "ref_range": "<7.0", "flag": "AT TARGET"}, "creatinine": {"value": 1.2, "unit": "mg/dL", "ref_range": "0.7-1.3", "flag": "NORMAL"}, "eGFR": {"value": 72, "unit": "mL/min/1.73m2", "ref_range": ">60", "flag": "NORMAL"}, "uric_acid": {"value": 5.2, "unit": "mg/dL", "ref_range": "3.4-7.0", "flag": "AT TARGET"}}},
-    {"id": 33, "date": "2022-10-15", "type": "visit_note", "doctor": "Dr. Sarah Patel", "department": "Primary Care", "summary": "Follow-up — improved", "content": "64 y/o male. HbA1c improved to 7.0% on metformin + empagliflozin. Weight down to 210 lbs. No gout flares in over a year. Uric acid 5.2. BP 126/74. Assessment: All conditions improving. Plan: Continue current regimen."},
-    {"id": 34, "date": "2022-12-10", "type": "visit_note", "doctor": "Dr. Sarah Patel", "department": "Primary Care", "summary": "Acute visit — lower back pain", "content": "64 y/o male with acute lower back pain x 3 days after lifting heavy box. No radiation, no weakness, no bowel/bladder changes. Vitals normal. Exam: paraspinal muscle spasm, no neurological deficits. Assessment: Acute mechanical low back pain. Plan: Ibuprofen 600mg TID x 7 days. Muscle relaxant cyclobenzaprine 10mg TID PRN. Ice/heat. Avoid heavy lifting."},
-    {"id": 35, "date": "2022-12-10", "type": "prescription", "prescriber": "Dr. Sarah Patel", "department": "Primary Care", "summary": "NSAID for back pain", "drug": "ibuprofen", "dose": "600mg", "frequency": "TID", "duration": "7 days", "indication": "acute mechanical low back pain"},
-    {"id": 36, "date": "2023-01-10", "type": "visit_note", "doctor": "Dr. Sarah Patel", "department": "Primary Care", "summary": "Annual physical — 2023", "content": "65 y/o male for annual exam. Back pain resolved. No gout flares x 15 months. All conditions stable. Vitals: BP 130/78, HR 74, weight 208 lbs, BMI 30.5. Assessment: Stable. Plan: Routine labs."},
-    {"id": 37, "date": "2023-01-10", "type": "lab_result", "ordered_by": "Dr. Sarah Patel", "summary": "Annual labs", "tests": {"HbA1c": {"value": 6.9, "unit": "%", "ref_range": "<7.0", "flag": "AT TARGET"}, "creatinine": {"value": 1.2, "unit": "mg/dL", "ref_range": "0.7-1.3", "flag": "NORMAL"}, "eGFR": {"value": 70, "unit": "mL/min/1.73m2", "ref_range": ">60", "flag": "NORMAL"}, "potassium": {"value": 4.1, "unit": "mEq/L", "ref_range": "3.5-5.0", "flag": "NORMAL"}, "uric_acid": {"value": 5.0, "unit": "mg/dL", "ref_range": "3.4-7.0", "flag": "AT TARGET"}, "hemoglobin": {"value": 14.8, "unit": "g/dL", "ref_range": "13.5-17.5", "flag": "NORMAL"}, "LDL": {"value": 82, "unit": "mg/dL", "ref_range": "<100", "flag": "OPTIMAL"}, "ALT": {"value": 28, "unit": "U/L", "ref_range": "7-56", "flag": "NORMAL"}, "TSH": {"value": 2.8, "unit": "mIU/L", "ref_range": "0.4-4.0", "flag": "NORMAL"}}},
-    {"id": 38, "date": "2023-03-14", "type": "visit_note", "doctor": "Dr. Sarah Patel", "department": "Primary Care", "summary": "Routine follow-up", "content": "65 y/o male. All conditions well-controlled. HbA1c 6.9%, uric acid 5.0, BP at target. Weight trending down. Assessment: Excellent disease management. Plan: Continue all medications. Next annual in January."},
-    {"id": 39, "date": "2023-05-20", "type": "visit_note", "doctor": "Dr. Sarah Patel", "department": "Primary Care", "summary": "Acute visit — knee pain", "content": "65 y/o male with right knee pain x 1 week. No trauma. Mild swelling. Assessment: Likely OA vs gout in knee. Aspirate if worsens. Plan: Acetaminophen 650mg TID. Ice. Avoid NSAIDs long-term (renal risk with diabetes). Follow up if worsening."},
-    {"id": 40, "date": "2023-06-15", "type": "visit_note", "doctor": "Dr. Sarah Patel", "department": "Primary Care", "summary": "Knee pain resolved", "content": "65 y/o male. Knee pain resolved in 1 week. Likely transient OA flare. No further issues."},
-    {"id": 41, "date": "2023-07-18", "type": "lab_result", "ordered_by": "Dr. Sarah Patel", "summary": "Mid-year labs", "tests": {"creatinine": {"value": 1.3, "unit": "mg/dL", "ref_range": "0.7-1.3", "flag": "HIGH NORMAL"}, "eGFR": {"value": 65, "unit": "mL/min/1.73m2", "ref_range": ">60", "flag": "BORDERLINE"}, "potassium": {"value": 4.4, "unit": "mEq/L", "ref_range": "3.5-5.0", "flag": "NORMAL"}, "uric_acid": {"value": 5.3, "unit": "mg/dL", "ref_range": "3.4-7.0", "flag": "AT TARGET"}}},
-    {"id": 42, "date": "2023-09-12", "type": "visit_note", "doctor": "Dr. Sarah Patel", "department": "Primary Care", "summary": "Routine follow-up — eGFR declining slightly", "content": "65 y/o male. eGFR trending: 78 → 76 → 72 → 70 → 65. Gradual decline over 3 years. Likely diabetic nephropathy. Creatinine at upper limit. Assessment: CKD Stage 2, early. Plan: Recheck in 3 months. Ensure BP at target. Continue empagliflozin (renoprotective). Avoid nephrotoxic meds."},
-    {"id": 43, "date": "2023-10-08", "type": "visit_note", "doctor": "Dr. Mark Johnson", "department": "Urgent Care", "summary": "Acute visit — severe headache", "content": "65 y/o male with sudden severe headache and blurred vision. BP 186/112. No focal neurological deficits. No slurred speech, no facial droop. Assessment: Hypertensive urgency. Plan: Observe in clinic. Lisinopril 20mg given now (extra dose). BP after 1 hour: 162/98. Discharged home. PCP follow-up in 24-48 hours. If headache worsens or neuro symptoms develop, go to ER."},
-    {"id": 44, "date": "2023-10-10", "type": "visit_note", "doctor": "Dr. Sarah Patel", "department": "Primary Care", "summary": "Follow-up after hypertensive urgency", "content": "65 y/o male. BP today 148/92. Was 186/112 two days ago. Home readings: 150s/90s. Current regimen: lisinopril 20mg + amlodipine 5mg. Not at target. Assessment: Hypertension, worsening control. Plan: Increase amlodipine to 10mg daily. Consider adding third agent if still not controlled. Recheck BP in 2 weeks."},
-    {"id": 45, "date": "2023-10-24", "type": "visit_note", "doctor": "Dr. Sarah Patel", "department": "Primary Care", "summary": "BP recheck", "content": "65 y/o male. BP 136/84. Improved with amlodipine increase. Home readings averaging 134/82. Assessment: HTN, improved. Still above target for diabetic patient (< 130/80). Plan: Continue current doses. May need third agent. Recheck in 4 weeks."},
-    {"id": 46, "date": "2023-11-20", "type": "visit_note", "doctor": "Dr. Sarah Patel", "department": "Primary Care", "summary": "BP still slightly elevated", "content": "65 y/o male. BP 134/82. Home avg 132/80. Almost at target. Assessment: HTN, near target. Plan: Continue lisinopril 20mg + amlodipine 10mg. If still > 130/80 at next visit, add chlorthalidone 12.5mg (preferred over HCTZ for efficacy, but note — thiazide-like diuretic may affect uric acid — must monitor)."},
-    {"id": 47, "date": "2024-01-16", "type": "visit_note", "doctor": "Dr. Sarah Patel", "department": "Primary Care", "summary": "Annual physical — 2024", "content": "66 y/o male for annual exam. No gout flares x 2+ years since HCTZ removal. Diabetes controlled. BP near target. Vitals: BP 132/78, HR 70, weight 205 lbs, BMI 30.1. Assessment: Stable. Plan: Routine labs. Consider adding third BP agent."},
-    {"id": 48, "date": "2024-01-16", "type": "lab_result", "ordered_by": "Dr. Sarah Patel", "summary": "Annual labs", "tests": {"HbA1c": {"value": 7.0, "unit": "%", "ref_range": "<7.0", "flag": "AT TARGET"}, "creatinine": {"value": 1.3, "unit": "mg/dL", "ref_range": "0.7-1.3", "flag": "HIGH NORMAL"}, "eGFR": {"value": 62, "unit": "mL/min/1.73m2", "ref_range": ">60", "flag": "BORDERLINE"}, "potassium": {"value": 4.5, "unit": "mEq/L", "ref_range": "3.5-5.0", "flag": "NORMAL"}, "uric_acid": {"value": 5.1, "unit": "mg/dL", "ref_range": "3.4-7.0", "flag": "AT TARGET"}, "hemoglobin": {"value": 14.5, "unit": "g/dL", "ref_range": "13.5-17.5", "flag": "NORMAL"}, "LDL": {"value": 78, "unit": "mg/dL", "ref_range": "<100", "flag": "OPTIMAL"}, "ALT": {"value": 32, "unit": "U/L", "ref_range": "7-56", "flag": "NORMAL"}, "microalbumin_urine": {"value": 45, "unit": "mg/L", "ref_range": "<30", "flag": "MODERATELY INCREASED"}}},
-    {"id": 49, "date": "2024-01-20", "type": "visit_note", "doctor": "Dr. Sarah Patel", "department": "Primary Care", "summary": "Lab review — microalbuminuria detected", "content": "66 y/o male. Urine microalbumin 45 — elevated. First time checked. Confirms early diabetic nephropathy alongside declining eGFR. Assessment: Diabetic nephropathy with microalbuminuria. Plan: Continue lisinopril (renoprotective via RAAS blockade). Continue empagliflozin. Strict BP control. Low salt diet. Recheck microalbumin in 6 months."},
-    {"id": 50, "date": "2024-03-18", "type": "visit_note", "doctor": "Dr. Sarah Patel", "department": "Primary Care", "summary": "BP management", "content": "66 y/o male. BP 134/80. Still above 130/80 target for diabetic nephropathy. Assessment: Need tighter BP control given nephropathy. Plan: Add chlorthalidone 12.5mg daily. IMPORTANT: Patient has history of gout exacerbated by HCTZ (thiazide). Chlorthalidone is a thiazide-like diuretic with same uric acid-raising effect. Must monitor uric acid closely. Discussed with patient — agreed to trial with close monitoring."},
-    {"id": 51, "date": "2024-03-18", "type": "prescription", "prescriber": "Dr. Sarah Patel", "department": "Primary Care", "summary": "Third BP agent added", "drug": "chlorthalidone", "dose": "12.5mg", "frequency": "daily", "duration": "ongoing", "indication": "hypertension — third agent for target BP < 130/80"},
-    {"id": 52, "date": "2024-04-15", "type": "lab_result", "ordered_by": "Dr. Sarah Patel", "summary": "Post-chlorthalidone labs", "tests": {"potassium": {"value": 3.9, "unit": "mEq/L", "ref_range": "3.5-5.0", "flag": "NORMAL"}, "sodium": {"value": 138, "unit": "mEq/L", "ref_range": "136-145", "flag": "NORMAL"}, "uric_acid": {"value": 5.6, "unit": "mg/dL", "ref_range": "3.4-7.0", "flag": "RISING"}, "creatinine": {"value": 1.3, "unit": "mg/dL", "ref_range": "0.7-1.3", "flag": "HIGH NORMAL"}}},
-    {"id": 53, "date": "2024-04-18", "type": "visit_note", "doctor": "Dr. Sarah Patel", "department": "Primary Care", "summary": "BP improved, uric acid rising", "content": "66 y/o male. BP 126/76 — now at target with chlorthalidone. But uric acid rising: was 5.1, now 5.6. Expected effect of thiazide-like diuretic. Still within range, still below gout target of 6.0. Assessment: BP now controlled. Uric acid trending up as predicted. Plan: Close monitoring. If uric acid exceeds 6.0 or gout flares recur, will need to reconsider BP regimen again."},
-    {"id": 54, "date": "2024-06-15", "type": "lab_result", "ordered_by": "Dr. Sarah Patel", "summary": "Quarterly labs", "tests": {"uric_acid": {"value": 6.2, "unit": "mg/dL", "ref_range": "3.4-7.0", "flag": "ABOVE GOUT TARGET"}, "potassium": {"value": 3.7, "unit": "mEq/L", "ref_range": "3.5-5.0", "flag": "LOW NORMAL"}, "creatinine": {"value": 1.4, "unit": "mg/dL", "ref_range": "0.7-1.3", "flag": "HIGH"}, "eGFR": {"value": 58, "unit": "mL/min/1.73m2", "ref_range": ">60", "flag": "MILDLY DECREASED"}, "glucose_fasting": {"value": 128, "unit": "mg/dL", "ref_range": "70-130", "flag": "NORMAL"}}},
-    {"id": 55, "date": "2024-06-20", "type": "visit_note", "doctor": "Dr. Sarah Patel", "department": "Primary Care", "summary": "Concern — uric acid back above gout target", "content": "66 y/o male. Uric acid now 6.2 — above gout target of < 6.0. Chlorthalidone is raising it as expected. eGFR also dropped to 58 (CKD Stage 3a). Assessment: Chlorthalidone is achieving BP target but at cost of rising uric acid and possible contribution to renal decline. Plan: Watch closely. If uric acid continues to rise or gout recurs, switch chlorthalidone to a different agent."},
-    {"id": 56, "date": "2024-07-22", "type": "visit_note", "doctor": "Dr. Linda Park", "department": "Rheumatology", "summary": "Rheumatology follow-up", "content": "66 y/o male. Was gout-free for 2+ years after HCTZ removal. Now chlorthalidone added — uric acid rising again (6.2). Still on allopurinol 450mg. Assessment: Thiazide-like diuretic again raising uric acid, risking gout recurrence. RECOMMENDATION: Switch chlorthalidone to a non-diuretic antihypertensive. Options: increase amlodipine, add another class (alpha blocker — also helps BPH). Plan: Letter to PCP with recommendation."},
-    {"id": 57, "date": "2024-08-10", "type": "visit_note", "doctor": "Dr. Sarah Patel", "department": "Primary Care", "summary": "Review rheumatology recommendation", "content": "66 y/o male. Rheumatology recommends stopping chlorthalidone. Options: increase amlodipine (already at 10mg — max dose), or add doxazosin (alpha blocker — lowers BP + helps BPH symptoms). Assessment: Good option — doxazosin addresses both HTN and BPH. Plan: Stop chlorthalidone. Start doxazosin 2mg at bedtime (titrate up). Continue tamsulosin for now, may consolidate later."},
-    {"id": 58, "date": "2024-09-10", "type": "lab_result", "ordered_by": "Dr. Sarah Patel", "summary": "Post-chlorthalidone-stop labs", "tests": {"uric_acid": {"value": 5.4, "unit": "mg/dL", "ref_range": "3.4-7.0", "flag": "IMPROVING"}, "potassium": {"value": 4.3, "unit": "mEq/L", "ref_range": "3.5-5.0", "flag": "NORMAL"}, "creatinine": {"value": 1.3, "unit": "mg/dL", "ref_range": "0.7-1.3", "flag": "HIGH NORMAL"}, "eGFR": {"value": 60, "unit": "mL/min/1.73m2", "ref_range": ">60", "flag": "BORDERLINE"}}},
-    {"id": 59, "date": "2024-09-15", "type": "visit_note", "doctor": "Dr. Sarah Patel", "department": "Primary Care", "summary": "Improvement after stopping chlorthalidone", "content": "66 y/o male. Uric acid back down to 5.4 after stopping chlorthalidone. BP 130/78 on lisinopril + amlodipine + doxazosin 4mg. At target. eGFR 60 — stable. Assessment: Good response. Plan: Continue current regimen."},
-    {"id": 60, "date": "2024-10-14", "type": "visit_note", "doctor": "Dr. Sarah Patel", "department": "Primary Care", "summary": "Acute visit — upper respiratory infection", "content": "66 y/o male with URI x 4 days. Nasal congestion, sore throat, cough. No fever. Lungs clear. Assessment: Viral URI. Plan: Supportive care. Rest, fluids, acetaminophen PRN."},
-    {"id": 61, "date": "2024-11-12", "type": "visit_note", "doctor": "Dr. Sarah Patel", "department": "Primary Care", "summary": "Follow-up — URI resolved", "content": "66 y/o male. URI resolved. No complications. All chronic conditions stable."},
-    {"id": 62, "date": "2024-12-09", "type": "visit_note", "doctor": "Dr. Sarah Patel", "department": "Primary Care", "summary": "Acute visit — shoulder pain", "content": "67 y/o male with left shoulder pain x 2 weeks, worsened by overhead activity. ROM limited by pain. Impingement signs positive. Assessment: Rotator cuff tendinopathy. Plan: Physical therapy. Acetaminophen PRN. Avoid overhead activities."},
-    {"id": 63, "date": "2025-01-14", "type": "visit_note", "doctor": "Dr. Sarah Patel", "department": "Primary Care", "summary": "Annual physical — 2025", "content": "67 y/o male for annual exam. Shoulder improving with PT. No gout flares. Diabetes controlled. Vitals: BP 128/76, HR 72, weight 203 lbs, BMI 29.8. Assessment: Overall excellent management. Plan: Routine labs."},
-    {"id": 64, "date": "2025-01-14", "type": "lab_result", "ordered_by": "Dr. Sarah Patel", "summary": "Annual labs", "tests": {"HbA1c": {"value": 6.8, "unit": "%", "ref_range": "<7.0", "flag": "AT TARGET"}, "creatinine": {"value": 1.3, "unit": "mg/dL", "ref_range": "0.7-1.3", "flag": "HIGH NORMAL"}, "eGFR": {"value": 60, "unit": "mL/min/1.73m2", "ref_range": ">60", "flag": "BORDERLINE"}, "potassium": {"value": 4.4, "unit": "mEq/L", "ref_range": "3.5-5.0", "flag": "NORMAL"}, "uric_acid": {"value": 5.2, "unit": "mg/dL", "ref_range": "3.4-7.0", "flag": "AT TARGET"}, "hemoglobin": {"value": 14.2, "unit": "g/dL", "ref_range": "13.5-17.5", "flag": "NORMAL"}, "LDL": {"value": 76, "unit": "mg/dL", "ref_range": "<100", "flag": "OPTIMAL"}, "ALT": {"value": 30, "unit": "U/L", "ref_range": "7-56", "flag": "NORMAL"}, "microalbumin_urine": {"value": 38, "unit": "mg/L", "ref_range": "<30", "flag": "MODERATELY INCREASED"}}},
-    {"id": 65, "date": "2025-02-10", "type": "visit_note", "doctor": "Dr. Sarah Patel", "department": "Primary Care", "summary": "Lab review", "content": "67 y/o male. Microalbuminuria persisting at 38 (was 45, slight improvement). eGFR stable at 60. HbA1c 6.8% — excellent. LDL 76. Assessment: Stable CKD Stage 2-3a with microalbuminuria. Plan: Continue current regimen. Recheck in 6 months."},
-    {"id": 66, "date": "2025-04-15", "type": "visit_note", "doctor": "Dr. Sarah Patel", "department": "Primary Care", "summary": "Routine follow-up", "content": "67 y/o male. All conditions stable. No complaints. Shoulder pain resolved after PT. Taking all medications as prescribed. Weight 201 lbs. Assessment: Well-managed patient. Plan: Continue all meds."},
-    {"id": 67, "date": "2025-06-18", "type": "lab_result", "ordered_by": "Dr. Sarah Patel", "summary": "Mid-year labs", "tests": {"creatinine": {"value": 1.4, "unit": "mg/dL", "ref_range": "0.7-1.3", "flag": "HIGH"}, "eGFR": {"value": 56, "unit": "mL/min/1.73m2", "ref_range": ">60", "flag": "MILDLY DECREASED"}, "potassium": {"value": 4.5, "unit": "mEq/L", "ref_range": "3.5-5.0", "flag": "NORMAL"}, "glucose_fasting": {"value": 120, "unit": "mg/dL", "ref_range": "70-130", "flag": "NORMAL"}}},
-    {"id": 68, "date": "2025-06-22", "type": "visit_note", "doctor": "Dr. Sarah Patel", "department": "Primary Care", "summary": "eGFR declining further", "content": "67 y/o male. eGFR now 56. Trend: 78 → 76 → 72 → 70 → 65 → 62 → 60 → 60 → 58 → 56. Slow but persistent decline. On lisinopril and empagliflozin (both renoprotective). BP at target. HbA1c at target. Assessment: Progressive CKD despite optimal medical therapy. Plan: Nephrology referral. Continue current meds."},
-    {"id": 69, "date": "2025-07-15", "type": "visit_note", "doctor": "Dr. Anil Mehta", "department": "Nephrology", "summary": "Nephrology consultation", "content": "67 y/o male with CKD Stage 3a. eGFR 56 with persistent microalbuminuria. Diabetic nephropathy. On lisinopril, empagliflozin — both appropriate. BP at target. HbA1c at target. Assessment: Diabetic nephropathy, progressive despite optimal therapy. Plan: Continue current medications. Low sodium, low protein diet. Monitor eGFR every 3 months. If eGFR drops below 45, discuss with patient about CKD progression."},
-    {"id": 70, "date": "2025-08-12", "type": "visit_note", "doctor": "Dr. Sarah Patel", "department": "Primary Care", "summary": "Acute visit — back pain recurrence", "content": "67 y/o male with recurrent lower back pain x 5 days. Similar to episode in 2022. No radiation. No neuro deficits. Assessment: Mechanical low back pain recurrence. Plan: Acetaminophen 650mg TID. Gentle stretching. Avoid heavy lifting. Consider PT referral if not improved in 2 weeks."},
-    {"id": 71, "date": "2025-09-10", "type": "visit_note", "doctor": "Dr. Sarah Patel", "department": "Primary Care", "summary": "Follow-up — back pain improving", "content": "67 y/o male. Back pain improving with acetaminophen and stretching. PT started. Assessment: Improving mechanical back pain. Plan: Continue conservative management."},
-    {"id": 72, "date": "2025-10-08", "type": "lab_result", "ordered_by": "Dr. Anil Mehta", "summary": "Nephrology monitoring labs", "tests": {"creatinine": {"value": 1.4, "unit": "mg/dL", "ref_range": "0.7-1.3", "flag": "HIGH"}, "eGFR": {"value": 55, "unit": "mL/min/1.73m2", "ref_range": ">60", "flag": "MILDLY DECREASED"}, "potassium": {"value": 4.6, "unit": "mEq/L", "ref_range": "3.5-5.0", "flag": "NORMAL"}, "albumin_creatinine_ratio": {"value": 52, "unit": "mg/g", "ref_range": "<30", "flag": "MODERATELY INCREASED"}}},
-    {"id": 73, "date": "2025-11-10", "type": "visit_note", "doctor": "Dr. Sarah Patel", "department": "Primary Care", "summary": "Routine follow-up", "content": "67 y/o male. Chronic conditions stable. No gout flares (>4 years). Back pain resolved. Mood good. Weight 200 lbs. Assessment: Stable. Plan: Continue all medications."},
-    {"id": 74, "date": "2025-12-08", "type": "visit_note", "doctor": "Dr. Sarah Patel", "department": "Primary Care", "summary": "Acute visit — cold symptoms", "content": "67 y/o male with URI. Mild congestion and sore throat x 3 days. No fever. Assessment: Viral URI. Plan: Supportive care."},
-    {"id": 75, "date": "2026-01-13", "type": "visit_note", "doctor": "Dr. Sarah Patel", "department": "Primary Care", "summary": "Annual physical — 2026", "content": "68 y/o male for annual exam. Feeling well. No gout in over 4 years. All conditions managed. Vitals: BP 130/76, HR 70, weight 199 lbs, BMI 29.2. Current meds: metformin 1000mg BID, empagliflozin 10mg, lisinopril 20mg, amlodipine 10mg, doxazosin 4mg, atorvastatin 20mg, allopurinol 450mg, tamsulosin 0.4mg. Assessment: Stable. Plan: Labs."},
-    {"id": 76, "date": "2026-01-13", "type": "lab_result", "ordered_by": "Dr. Sarah Patel", "summary": "Annual labs", "tests": {"HbA1c": {"value": 6.9, "unit": "%", "ref_range": "<7.0", "flag": "AT TARGET"}, "creatinine": {"value": 1.5, "unit": "mg/dL", "ref_range": "0.7-1.3", "flag": "HIGH"}, "eGFR": {"value": 52, "unit": "mL/min/1.73m2", "ref_range": ">60", "flag": "MODERATELY DECREASED"}, "potassium": {"value": 4.7, "unit": "mEq/L", "ref_range": "3.5-5.0", "flag": "NORMAL"}, "uric_acid": {"value": 5.3, "unit": "mg/dL", "ref_range": "3.4-7.0", "flag": "AT TARGET"}, "hemoglobin": {"value": 13.8, "unit": "g/dL", "ref_range": "13.5-17.5", "flag": "NORMAL"}, "LDL": {"value": 72, "unit": "mg/dL", "ref_range": "<100", "flag": "OPTIMAL"}, "ALT": {"value": 35, "unit": "U/L", "ref_range": "7-56", "flag": "NORMAL"}, "microalbumin_urine": {"value": 55, "unit": "mg/L", "ref_range": "<30", "flag": "MODERATELY INCREASED"}, "vitamin_B12": {"value": 320, "unit": "pg/mL", "ref_range": "200-900", "flag": "NORMAL"}}},
-    {"id": 77, "date": "2026-01-18", "type": "visit_note", "doctor": "Dr. Sarah Patel", "department": "Primary Care", "summary": "Lab review — CKD progressing", "content": "68 y/o male. eGFR now 52 (CKD Stage 3b). Microalbuminuria worsening (55). Creatinine 1.5. Despite optimal therapy (lisinopril, empagliflozin, BP at target, HbA1c at target). Assessment: Progressive diabetic nephropathy. Plan: Continue current management. Nephrology follow-up. Monitor closely."},
-    {"id": 78, "date": "2026-02-15", "type": "visit_note", "doctor": "Dr. Anil Mehta", "department": "Nephrology", "summary": "Nephrology follow-up — CKD Stage 3b", "content": "68 y/o male. eGFR 52 with worsening microalbuminuria. On optimal RAAS blockade and SGLT2 inhibitor. Discussed CKD progression, dietary modifications, and importance of avoiding nephrotoxic drugs (NSAIDs, contrast dye). Assessment: CKD Stage 3b. Plan: Continue current management. Low protein diet. Avoid NSAIDs and nephrotoxic agents. Monitor every 3 months."},
-    {"id": 79, "date": "2026-03-10", "type": "visit_note", "doctor": "Dr. Sarah Patel", "department": "Primary Care", "summary": "Acute visit — gout flare after 4+ years", "content": "68 y/o male. FIRST gout flare in over 4 years — right 1st MTP. Severe pain, swelling, redness x 2 days. No dietary triggers identified. Review: Patient is NOT on chlorthalidone or any thiazide. Uric acid was last 5.3. Possible trigger: recent dehydration from GI illness last week. Assessment: Acute gout flare. Plan: Colchicine 1.2mg then 0.6mg. Short course prednisone. Check uric acid after flare resolves. Continue allopurinol."},
-    {"id": 80, "date": "2026-03-15", "type": "lab_result", "ordered_by": "Dr. Sarah Patel", "summary": "Post-flare labs", "tests": {"uric_acid": {"value": 5.8, "unit": "mg/dL", "ref_range": "3.4-7.0", "flag": "SLIGHTLY ABOVE GOUT TARGET"}, "creatinine": {"value": 1.5, "unit": "mg/dL", "ref_range": "0.7-1.3", "flag": "HIGH"}, "eGFR": {"value": 51, "unit": "mL/min/1.73m2", "ref_range": ">60", "flag": "MODERATELY DECREASED"}, "potassium": {"value": 4.8, "unit": "mEq/L", "ref_range": "3.5-5.0", "flag": "NORMAL"}}}
+    {
+      "id": 1,
+      "date": "2020-02-10",
+      "type": "visit_note",
+      "doctor": "Dr. Michael Torres",
+      "department": "Cardiology",
+      "summary": "AFib + HF management \u00e2\u20ac\u201d baseline",
+      "content": "69 y/o male with persistent AFib and HFrEF (EF 30%, ischemic cardiomyopathy). On warfarin for stroke prevention (CHA2DS2-VASc 5). Rate controlled with metoprolol 100mg daily. On lisinopril and furosemide for HF. Recently started amiodarone 200mg daily for rhythm control after failed cardioversion. Assessment: Complex cardiac patient. Plan: Continue current regimen. Monthly INR. IMPORTANT: Amiodarone requires monitoring \u00e2\u20ac\u201d thyroid function every 6 months, pulmonary function tests annually, liver function tests every 6 months, eye exam annually. Warfarin dose may need reduction \u00e2\u20ac\u201d amiodarone increases INR."
+    },
+    {
+      "id": 2,
+      "date": "2020-02-10",
+      "type": "lab_result",
+      "ordered_by": "Dr. Michael Torres",
+      "summary": "Baseline labs",
+      "tests": {
+        "INR": {
+          "value": 2.4,
+          "unit": "",
+          "ref_range": "2.0-3.0",
+          "flag": "THERAPEUTIC"
+        },
+        "TSH": {
+          "value": 2.1,
+          "unit": "mIU/L",
+          "ref_range": "0.4-4.0",
+          "flag": "NORMAL"
+        },
+        "free_T4": {
+          "value": 1.2,
+          "unit": "ng/dL",
+          "ref_range": "0.8-1.8",
+          "flag": "NORMAL"
+        },
+        "ALT": {
+          "value": 22,
+          "unit": "U/L",
+          "ref_range": "7-56",
+          "flag": "NORMAL"
+        },
+        "AST": {
+          "value": 18,
+          "unit": "U/L",
+          "ref_range": "10-40",
+          "flag": "NORMAL"
+        },
+        "BNP": {
+          "value": 450,
+          "unit": "pg/mL",
+          "ref_range": "<100",
+          "flag": "ELEVATED"
+        },
+        "creatinine": {
+          "value": 1.2,
+          "unit": "mg/dL",
+          "ref_range": "0.7-1.3",
+          "flag": "NORMAL"
+        },
+        "eGFR": {
+          "value": 68,
+          "unit": "mL/min/1.73m2",
+          "ref_range": ">60",
+          "flag": "NORMAL"
+        },
+        "potassium": {
+          "value": 4.2,
+          "unit": "mEq/L",
+          "ref_range": "3.5-5.0",
+          "flag": "NORMAL"
+        },
+        "hemoglobin": {
+          "value": 14.0,
+          "unit": "g/dL",
+          "ref_range": "13.5-17.5",
+          "flag": "NORMAL"
+        },
+        "HbA1c": {
+          "value": 7.1,
+          "unit": "%",
+          "ref_range": "<7.0",
+          "flag": "SLIGHTLY ABOVE"
+        }
+      }
+    },
+    {
+      "id": 3,
+      "date": "2020-03-10",
+      "type": "lab_result",
+      "ordered_by": "Dr. Michael Torres",
+      "summary": "Monthly INR",
+      "tests": {
+        "INR": {
+          "value": 3.2,
+          "unit": "",
+          "ref_range": "2.0-3.0",
+          "flag": "SLIGHTLY HIGH"
+        }
+      }
+    },
+    {
+      "id": 4,
+      "date": "2020-03-12",
+      "type": "visit_note",
+      "doctor": "Dr. Michael Torres",
+      "department": "Cardiology",
+      "summary": "INR elevated \u00e2\u20ac\u201d amiodarone effect",
+      "content": "69 y/o male. INR 3.2 \u00e2\u20ac\u201d expected increase from amiodarone interaction. Amiodarone inhibits warfarin metabolism (CYP2C9), increasing INR. Plan: Reduce warfarin to 3.5mg daily. Recheck INR in 1 week."
+    },
+    {
+      "id": 5,
+      "date": "2020-03-19",
+      "type": "lab_result",
+      "ordered_by": "Dr. Michael Torres",
+      "summary": "INR recheck after dose reduction",
+      "tests": {
+        "INR": {
+          "value": 2.8,
+          "unit": "",
+          "ref_range": "2.0-3.0",
+          "flag": "THERAPEUTIC"
+        }
+      }
+    },
+    {
+      "id": 6,
+      "date": "2020-04-15",
+      "type": "lab_result",
+      "ordered_by": "Dr. Michael Torres",
+      "summary": "Monthly INR",
+      "tests": {
+        "INR": {
+          "value": 2.6,
+          "unit": "",
+          "ref_range": "2.0-3.0",
+          "flag": "THERAPEUTIC"
+        }
+      }
+    },
+    {
+      "id": 7,
+      "date": "2020-05-12",
+      "type": "lab_result",
+      "ordered_by": "Dr. Michael Torres",
+      "summary": "Monthly INR",
+      "tests": {
+        "INR": {
+          "value": 2.5,
+          "unit": "",
+          "ref_range": "2.0-3.0",
+          "flag": "THERAPEUTIC"
+        }
+      }
+    },
+    {
+      "id": 8,
+      "date": "2020-06-15",
+      "type": "visit_note",
+      "doctor": "Dr. Michael Torres",
+      "department": "Cardiology",
+      "summary": "Cardiology follow-up \u00e2\u20ac\u201d 4 months on amiodarone",
+      "content": "69 y/o male. AFib with rate control on metoprolol + amiodarone. No palpitations. No dyspnea at rest. NYHA Class II. Weight stable at 192 lbs. INR stable on warfarin 3.5mg. Assessment: Stable. Plan: Continue all meds. Need 6-month thyroid check in August. Continue monthly INR."
+    },
+    {
+      "id": 9,
+      "date": "2020-06-15",
+      "type": "lab_result",
+      "ordered_by": "Dr. Michael Torres",
+      "summary": "Monthly INR + routine",
+      "tests": {
+        "INR": {
+          "value": 2.4,
+          "unit": "",
+          "ref_range": "2.0-3.0",
+          "flag": "THERAPEUTIC"
+        },
+        "BNP": {
+          "value": 380,
+          "unit": "pg/mL",
+          "ref_range": "<100",
+          "flag": "ELEVATED"
+        },
+        "creatinine": {
+          "value": 1.2,
+          "unit": "mg/dL",
+          "ref_range": "0.7-1.3",
+          "flag": "NORMAL"
+        }
+      }
+    },
+    {
+      "id": 10,
+      "date": "2020-07-14",
+      "type": "lab_result",
+      "ordered_by": "Dr. Michael Torres",
+      "summary": "Monthly INR",
+      "tests": {
+        "INR": {
+          "value": 2.3,
+          "unit": "",
+          "ref_range": "2.0-3.0",
+          "flag": "THERAPEUTIC"
+        }
+      }
+    },
+    {
+      "id": 11,
+      "date": "2020-08-18",
+      "type": "lab_result",
+      "ordered_by": "Dr. Michael Torres",
+      "summary": "Monthly INR \u00e2\u20ac\u201d NOTE: 6-month thyroid check was DUE this month but NOT ordered",
+      "tests": {
+        "INR": {
+          "value": 2.5,
+          "unit": "",
+          "ref_range": "2.0-3.0",
+          "flag": "THERAPEUTIC"
+        }
+      }
+    },
+    {
+      "id": 12,
+      "date": "2020-09-15",
+      "type": "visit_note",
+      "doctor": "Dr. Sarah Patel",
+      "department": "Primary Care",
+      "summary": "Annual physical",
+      "content": "69 y/o male with AFib, HFrEF, HTN, T2DM. Complex cardiac history. On amiodarone since Feb 2020. Vitals: BP 128/76, HR 62, weight 194 lbs (+2 lbs), BMI 28.4. Reports mild fatigue \u00e2\u20ac\u201d attributes to heart failure. Assessment: Stable chronic conditions. Plan: Routine labs ordered. Flu vaccine. Continue all medications."
+    },
+    {
+      "id": 13,
+      "date": "2020-09-15",
+      "type": "lab_result",
+      "ordered_by": "Dr. Sarah Patel",
+      "summary": "Annual labs \u00e2\u20ac\u201d NOTE: TSH not included despite amiodarone use",
+      "tests": {
+        "HbA1c": {
+          "value": 7.0,
+          "unit": "%",
+          "ref_range": "<7.0",
+          "flag": "AT TARGET"
+        },
+        "creatinine": {
+          "value": 1.2,
+          "unit": "mg/dL",
+          "ref_range": "0.7-1.3",
+          "flag": "NORMAL"
+        },
+        "eGFR": {
+          "value": 66,
+          "unit": "mL/min/1.73m2",
+          "ref_range": ">60",
+          "flag": "NORMAL"
+        },
+        "hemoglobin": {
+          "value": 13.8,
+          "unit": "g/dL",
+          "ref_range": "13.5-17.5",
+          "flag": "NORMAL"
+        },
+        "ALT": {
+          "value": 24,
+          "unit": "U/L",
+          "ref_range": "7-56",
+          "flag": "NORMAL"
+        },
+        "potassium": {
+          "value": 4.3,
+          "unit": "mEq/L",
+          "ref_range": "3.5-5.0",
+          "flag": "NORMAL"
+        },
+        "total_cholesterol": {
+          "value": 178,
+          "unit": "mg/dL",
+          "ref_range": "<200",
+          "flag": "NORMAL"
+        },
+        "LDL": {
+          "value": 88,
+          "unit": "mg/dL",
+          "ref_range": "<100",
+          "flag": "NEAR OPTIMAL"
+        }
+      }
+    },
+    {
+      "id": 14,
+      "date": "2020-10-13",
+      "type": "lab_result",
+      "ordered_by": "Dr. Michael Torres",
+      "summary": "Monthly INR",
+      "tests": {
+        "INR": {
+          "value": 2.7,
+          "unit": "",
+          "ref_range": "2.0-3.0",
+          "flag": "THERAPEUTIC"
+        }
+      }
+    },
+    {
+      "id": 15,
+      "date": "2020-11-10",
+      "type": "lab_result",
+      "ordered_by": "Dr. Michael Torres",
+      "summary": "Monthly INR",
+      "tests": {
+        "INR": {
+          "value": 2.4,
+          "unit": "",
+          "ref_range": "2.0-3.0",
+          "flag": "THERAPEUTIC"
+        }
+      }
+    },
+    {
+      "id": 16,
+      "date": "2020-12-15",
+      "type": "visit_note",
+      "doctor": "Dr. Michael Torres",
+      "department": "Cardiology",
+      "summary": "Cardiology follow-up \u00e2\u20ac\u201d 10 months on amiodarone",
+      "content": "70 y/o male. AFib stable on amiodarone + metoprolol. HF stable NYHA II. No hospitalizations. INR stable. Weight 196 lbs (+4 lbs from baseline). Patient reports increased fatigue and feeling colder than usual \u00e2\u20ac\u201d attributes to winter weather. HR 58. Assessment: Stable cardiac status. Mild bradycardia \u00e2\u20ac\u201d expected on amiodarone + metoprolol. Plan: Continue current regimen. Monthly INR."
+    },
+    {
+      "id": 17,
+      "date": "2020-12-15",
+      "type": "lab_result",
+      "ordered_by": "Dr. Michael Torres",
+      "summary": "Monthly INR + cardiac labs \u00e2\u20ac\u201d NOTE: Still no thyroid check (now 10 months overdue)",
+      "tests": {
+        "INR": {
+          "value": 2.5,
+          "unit": "",
+          "ref_range": "2.0-3.0",
+          "flag": "THERAPEUTIC"
+        },
+        "BNP": {
+          "value": 420,
+          "unit": "pg/mL",
+          "ref_range": "<100",
+          "flag": "ELEVATED"
+        }
+      }
+    },
+    {
+      "id": 18,
+      "date": "2021-01-12",
+      "type": "lab_result",
+      "ordered_by": "Dr. Michael Torres",
+      "summary": "Monthly INR",
+      "tests": {
+        "INR": {
+          "value": 2.3,
+          "unit": "",
+          "ref_range": "2.0-3.0",
+          "flag": "THERAPEUTIC"
+        }
+      }
+    },
+    {
+      "id": 19,
+      "date": "2021-02-10",
+      "type": "visit_note",
+      "doctor": "Dr. Michael Torres",
+      "department": "Cardiology",
+      "summary": "1-year amiodarone anniversary \u00e2\u20ac\u201d review",
+      "content": "70 y/o male. One year on amiodarone. AFib well-controlled, no breakthrough arrhythmias. Ongoing symptoms: persistent fatigue, weight gain (now 200 lbs, +8 lbs from baseline), cold intolerance, mild constipation. HR 56. Exam: mild periorbital puffiness noted. Skin dry. Assessment: Symptoms could be from HF progression, beta-blocker, or amiodarone-induced hypothyroidism. CRITICAL: Realized thyroid function has NOT been checked since baseline in Feb 2020 \u00e2\u20ac\u201d one full year ago. This is a significant monitoring failure. Plan: STAT TSH and free T4. Also overdue: LFTs (6-month check), PFTs (annual). Order all today."
+    },
+    {
+      "id": 20,
+      "date": "2021-02-10",
+      "type": "lab_result",
+      "ordered_by": "Dr. Michael Torres",
+      "summary": "STAT thyroid + monitoring labs \u00e2\u20ac\u201d 1 year overdue",
+      "tests": {
+        "TSH": {
+          "value": 18.4,
+          "unit": "mIU/L",
+          "ref_range": "0.4-4.0",
+          "flag": "HIGH \u00e2\u20ac\u201d HYPOTHYROID"
+        },
+        "free_T4": {
+          "value": 0.5,
+          "unit": "ng/dL",
+          "ref_range": "0.8-1.8",
+          "flag": "LOW"
+        },
+        "ALT": {
+          "value": 38,
+          "unit": "U/L",
+          "ref_range": "7-56",
+          "flag": "NORMAL"
+        },
+        "AST": {
+          "value": 34,
+          "unit": "U/L",
+          "ref_range": "10-40",
+          "flag": "NORMAL"
+        },
+        "total_cholesterol": {
+          "value": 248,
+          "unit": "mg/dL",
+          "ref_range": "<200",
+          "flag": "HIGH"
+        },
+        "LDL": {
+          "value": 156,
+          "unit": "mg/dL",
+          "ref_range": "<100",
+          "flag": "HIGH"
+        }
+      }
+    },
+    {
+      "id": 21,
+      "date": "2021-02-12",
+      "type": "visit_note",
+      "doctor": "Dr. Michael Torres",
+      "department": "Cardiology",
+      "summary": "AMIODARONE-INDUCED HYPOTHYROIDISM CONFIRMED",
+      "content": "70 y/o male. TSH 18.4, free T4 0.5 \u00e2\u20ac\u201d overt hypothyroidism. Amiodarone is a well-known cause (contains 37% iodine by weight, disrupts thyroid hormone synthesis). This explains the past 6+ months of symptoms: fatigue, weight gain (+8 lbs), cold intolerance, constipation, dry skin, periorbital puffiness, rising cholesterol (248, was 178), and bradycardia (HR 56). MONITORING FAILURE: Thyroid function should have been checked every 6 months on amiodarone \u00e2\u20ac\u201d was checked at baseline only (Feb 2020) and not again until now (Feb 2021). This means hypothyroidism has been developing for months without detection. Assessment: Amiodarone-induced hypothyroidism. Plan: Start levothyroxine 50mcg daily (cautious dose given cardiac history). DO NOT stop amiodarone \u00e2\u20ac\u201d needed for AFib control. Recheck TSH in 6-8 weeks. Endocrinology referral for co-management."
+    },
+    {
+      "id": 22,
+      "date": "2021-02-12",
+      "type": "prescription",
+      "prescriber": "Dr. Michael Torres",
+      "department": "Cardiology",
+      "summary": "Levothyroxine for amiodarone-induced hypothyroidism",
+      "drug": "levothyroxine",
+      "dose": "50mcg",
+      "frequency": "daily",
+      "duration": "ongoing",
+      "indication": "amiodarone-induced hypothyroidism"
+    },
+    {
+      "id": 23,
+      "date": "2021-03-10",
+      "type": "lab_result",
+      "ordered_by": "Dr. Michael Torres",
+      "summary": "Monthly INR",
+      "tests": {
+        "INR": {
+          "value": 2.8,
+          "unit": "",
+          "ref_range": "2.0-3.0",
+          "flag": "THERAPEUTIC \u00e2\u20ac\u201d note: levothyroxine can increase warfarin effect"
+        }
+      }
+    },
+    {
+      "id": 24,
+      "date": "2021-04-05",
+      "type": "lab_result",
+      "ordered_by": "Dr. Michael Torres",
+      "summary": "TSH recheck \u00e2\u20ac\u201d 6 weeks after levothyroxine start",
+      "tests": {
+        "TSH": {
+          "value": 12.6,
+          "unit": "mIU/L",
+          "ref_range": "0.4-4.0",
+          "flag": "STILL HIGH"
+        },
+        "free_T4": {
+          "value": 0.7,
+          "unit": "ng/dL",
+          "ref_range": "0.8-1.8",
+          "flag": "LOW"
+        }
+      }
+    },
+    {
+      "id": 25,
+      "date": "2021-04-08",
+      "type": "visit_note",
+      "doctor": "Dr. Karen Liu",
+      "department": "Endocrinology",
+      "summary": "Endocrinology consultation \u00e2\u20ac\u201d amiodarone hypothyroidism",
+      "content": "70 y/o male with amiodarone-induced hypothyroidism. TSH 12.6 on levothyroxine 50mcg (6 weeks). Still symptomatic \u00e2\u20ac\u201d fatigue, weight 198 lbs. Assessment: Undertreated hypothyroidism. Amiodarone-induced hypothyroidism often requires higher levothyroxine doses due to ongoing iodine load. Plan: Increase levothyroxine to 75mcg daily. Take on empty stomach, 30-60 min before food. Separate from calcium/iron if applicable. Recheck TSH in 6-8 weeks. Monitor INR closely \u00e2\u20ac\u201d levothyroxine increases warfarin sensitivity."
+    },
+    {
+      "id": 26,
+      "date": "2021-05-11",
+      "type": "lab_result",
+      "ordered_by": "Dr. Michael Torres",
+      "summary": "Monthly INR",
+      "tests": {
+        "INR": {
+          "value": 3.1,
+          "unit": "",
+          "ref_range": "2.0-3.0",
+          "flag": "SLIGHTLY HIGH"
+        }
+      }
+    },
+    {
+      "id": 27,
+      "date": "2021-05-13",
+      "type": "visit_note",
+      "doctor": "Dr. Michael Torres",
+      "department": "Cardiology",
+      "summary": "INR rising with levothyroxine",
+      "content": "70 y/o male. INR 3.1 \u00e2\u20ac\u201d rising since levothyroxine started. Expected interaction: thyroid hormone increases warfarin metabolism sensitivity. Plan: Reduce warfarin to 3mg daily. Recheck INR in 1 week."
+    },
+    {
+      "id": 28,
+      "date": "2021-05-20",
+      "type": "lab_result",
+      "ordered_by": "Dr. Michael Torres",
+      "summary": "INR recheck",
+      "tests": {
+        "INR": {
+          "value": 2.7,
+          "unit": "",
+          "ref_range": "2.0-3.0",
+          "flag": "THERAPEUTIC"
+        }
+      }
+    },
+    {
+      "id": 29,
+      "date": "2021-06-01",
+      "type": "lab_result",
+      "ordered_by": "Dr. Karen Liu",
+      "summary": "TSH recheck after dose increase",
+      "tests": {
+        "TSH": {
+          "value": 6.8,
+          "unit": "mIU/L",
+          "ref_range": "0.4-4.0",
+          "flag": "STILL HIGH"
+        },
+        "free_T4": {
+          "value": 0.9,
+          "unit": "ng/dL",
+          "ref_range": "0.8-1.8",
+          "flag": "LOW NORMAL"
+        }
+      }
+    },
+    {
+      "id": 30,
+      "date": "2021-06-05",
+      "type": "visit_note",
+      "doctor": "Dr. Karen Liu",
+      "department": "Endocrinology",
+      "summary": "Levothyroxine \u00e2\u20ac\u201d further increase",
+      "content": "70 y/o male. TSH 6.8 on levothyroxine 75mcg. Improving but not at target. Still mildly fatigued. Weight 196 lbs (down 4 lbs). Plan: Increase levothyroxine to 100mcg daily. Recheck in 6-8 weeks."
+    },
+    {
+      "id": 31,
+      "date": "2021-06-15",
+      "type": "lab_result",
+      "ordered_by": "Dr. Michael Torres",
+      "summary": "Monthly INR",
+      "tests": {
+        "INR": {
+          "value": 2.5,
+          "unit": "",
+          "ref_range": "2.0-3.0",
+          "flag": "THERAPEUTIC"
+        }
+      }
+    },
+    {
+      "id": 32,
+      "date": "2021-07-13",
+      "type": "lab_result",
+      "ordered_by": "Dr. Michael Torres",
+      "summary": "Monthly INR",
+      "tests": {
+        "INR": {
+          "value": 2.6,
+          "unit": "",
+          "ref_range": "2.0-3.0",
+          "flag": "THERAPEUTIC"
+        }
+      }
+    },
+    {
+      "id": 33,
+      "date": "2021-07-28",
+      "type": "lab_result",
+      "ordered_by": "Dr. Karen Liu",
+      "summary": "TSH recheck",
+      "tests": {
+        "TSH": {
+          "value": 3.8,
+          "unit": "mIU/L",
+          "ref_range": "0.4-4.0",
+          "flag": "NORMAL"
+        },
+        "free_T4": {
+          "value": 1.1,
+          "unit": "ng/dL",
+          "ref_range": "0.8-1.8",
+          "flag": "NORMAL"
+        }
+      }
+    },
+    {
+      "id": 34,
+      "date": "2021-08-02",
+      "type": "visit_note",
+      "doctor": "Dr. Karen Liu",
+      "department": "Endocrinology",
+      "summary": "Hypothyroidism \u00e2\u20ac\u201d normalized",
+      "content": "71 y/o male. TSH 3.8 \u00e2\u20ac\u201d normalized on levothyroxine 100mcg. Free T4 1.1 \u00e2\u20ac\u201d normal. Fatigue resolved. Weight 192 lbs \u00e2\u20ac\u201d back to baseline. Cold intolerance resolved. Assessment: Amiodarone-induced hypothyroidism, now euthyroid on replacement. Plan: Continue levothyroxine 100mcg. Monitor TSH every 3-6 months (may need adjustment as long as on amiodarone). Monitor INR \u00e2\u20ac\u201d stable on warfarin 3mg."
+    },
+    {
+      "id": 35,
+      "date": "2021-08-17",
+      "type": "lab_result",
+      "ordered_by": "Dr. Michael Torres",
+      "summary": "Monthly INR",
+      "tests": {
+        "INR": {
+          "value": 2.4,
+          "unit": "",
+          "ref_range": "2.0-3.0",
+          "flag": "THERAPEUTIC"
+        }
+      }
+    },
+    {
+      "id": 36,
+      "date": "2021-09-14",
+      "type": "visit_note",
+      "doctor": "Dr. Sarah Patel",
+      "department": "Primary Care",
+      "summary": "Annual physical \u00e2\u20ac\u201d 2021",
+      "content": "71 y/o male for annual exam. Now on levothyroxine for amiodarone-induced hypothyroidism. Feeling much better. Weight back to 192. Vitals: BP 130/78, HR 64, BMI 28.2. Assessment: Stable. Plan: Routine labs."
+    },
+    {
+      "id": 37,
+      "date": "2021-09-14",
+      "type": "lab_result",
+      "ordered_by": "Dr. Sarah Patel",
+      "summary": "Annual labs",
+      "tests": {
+        "HbA1c": {
+          "value": 7.2,
+          "unit": "%",
+          "ref_range": "<7.0",
+          "flag": "ABOVE TARGET"
+        },
+        "creatinine": {
+          "value": 1.3,
+          "unit": "mg/dL",
+          "ref_range": "0.7-1.3",
+          "flag": "HIGH NORMAL"
+        },
+        "eGFR": {
+          "value": 62,
+          "unit": "mL/min/1.73m2",
+          "ref_range": ">60",
+          "flag": "NORMAL"
+        },
+        "hemoglobin": {
+          "value": 13.6,
+          "unit": "g/dL",
+          "ref_range": "13.5-17.5",
+          "flag": "NORMAL"
+        },
+        "TSH": {
+          "value": 3.5,
+          "unit": "mIU/L",
+          "ref_range": "0.4-4.0",
+          "flag": "NORMAL"
+        },
+        "ALT": {
+          "value": 26,
+          "unit": "U/L",
+          "ref_range": "7-56",
+          "flag": "NORMAL"
+        },
+        "LDL": {
+          "value": 92,
+          "unit": "mg/dL",
+          "ref_range": "<100",
+          "flag": "NEAR OPTIMAL"
+        },
+        "total_cholesterol": {
+          "value": 186,
+          "unit": "mg/dL",
+          "ref_range": "<200",
+          "flag": "NORMAL"
+        }
+      }
+    },
+    {
+      "id": 38,
+      "date": "2021-10-12",
+      "type": "lab_result",
+      "ordered_by": "Dr. Michael Torres",
+      "summary": "Monthly INR",
+      "tests": {
+        "INR": {
+          "value": 2.3,
+          "unit": "",
+          "ref_range": "2.0-3.0",
+          "flag": "THERAPEUTIC"
+        }
+      }
+    },
+    {
+      "id": 39,
+      "date": "2021-11-16",
+      "type": "lab_result",
+      "ordered_by": "Dr. Michael Torres",
+      "summary": "Monthly INR",
+      "tests": {
+        "INR": {
+          "value": 2.5,
+          "unit": "",
+          "ref_range": "2.0-3.0",
+          "flag": "THERAPEUTIC"
+        }
+      }
+    },
+    {
+      "id": 40,
+      "date": "2021-12-14",
+      "type": "visit_note",
+      "doctor": "Dr. Michael Torres",
+      "department": "Cardiology",
+      "summary": "Cardiology follow-up",
+      "content": "71 y/o male. AFib/HF stable. On amiodarone 22 months. Hypothyroidism treated. INR stable on warfarin 3mg. No HF exacerbations. NYHA Class II. Weight 193 lbs. HR 62. BNP trending. Assessment: Stable. Plan: Continue all meds. PFTs overdue \u00e2\u20ac\u201d should be annual on amiodarone. Order PFTs. Continue monthly INR."
+    },
+    {
+      "id": 41,
+      "date": "2021-12-14",
+      "type": "lab_result",
+      "ordered_by": "Dr. Michael Torres",
+      "summary": "Cardiac labs + INR",
+      "tests": {
+        "INR": {
+          "value": 2.6,
+          "unit": "",
+          "ref_range": "2.0-3.0",
+          "flag": "THERAPEUTIC"
+        },
+        "BNP": {
+          "value": 410,
+          "unit": "pg/mL",
+          "ref_range": "<100",
+          "flag": "ELEVATED"
+        },
+        "creatinine": {
+          "value": 1.3,
+          "unit": "mg/dL",
+          "ref_range": "0.7-1.3",
+          "flag": "HIGH NORMAL"
+        }
+      }
+    },
+    {
+      "id": 42,
+      "date": "2022-01-18",
+      "type": "visit_note",
+      "doctor": "Dr. Sarah Patel",
+      "department": "Primary Care",
+      "summary": "PFT results",
+      "content": "71 y/o male. PFTs performed \u00e2\u20ac\u201d DLCO 78% predicted (slightly reduced). FVC and FEV1 normal. No dyspnea beyond baseline HF. Assessment: DLCO mildly reduced \u00e2\u20ac\u201d could be early amiodarone pulmonary toxicity vs HF-related. Plan: Repeat PFTs in 6 months. If DLCO continues to decline, will need to reassess amiodarone."
+    },
+    {
+      "id": 43,
+      "date": "2022-01-18",
+      "type": "lab_result",
+      "ordered_by": "Dr. Michael Torres",
+      "summary": "Monthly INR",
+      "tests": {
+        "INR": {
+          "value": 2.4,
+          "unit": "",
+          "ref_range": "2.0-3.0",
+          "flag": "THERAPEUTIC"
+        }
+      }
+    },
+    {
+      "id": 44,
+      "date": "2022-02-15",
+      "type": "lab_result",
+      "ordered_by": "Dr. Michael Torres",
+      "summary": "Monthly INR",
+      "tests": {
+        "INR": {
+          "value": 2.5,
+          "unit": "",
+          "ref_range": "2.0-3.0",
+          "flag": "THERAPEUTIC"
+        }
+      }
+    },
+    {
+      "id": 45,
+      "date": "2022-03-08",
+      "type": "lab_result",
+      "ordered_by": "Dr. Karen Liu",
+      "summary": "Thyroid monitoring",
+      "tests": {
+        "TSH": {
+          "value": 4.2,
+          "unit": "mIU/L",
+          "ref_range": "0.4-4.0",
+          "flag": "BORDERLINE HIGH"
+        },
+        "free_T4": {
+          "value": 1.0,
+          "unit": "ng/dL",
+          "ref_range": "0.8-1.8",
+          "flag": "NORMAL"
+        }
+      }
+    },
+    {
+      "id": 46,
+      "date": "2022-03-15",
+      "type": "lab_result",
+      "ordered_by": "Dr. Michael Torres",
+      "summary": "Monthly INR",
+      "tests": {
+        "INR": {
+          "value": 2.3,
+          "unit": "",
+          "ref_range": "2.0-3.0",
+          "flag": "THERAPEUTIC"
+        }
+      }
+    },
+    {
+      "id": 47,
+      "date": "2022-04-12",
+      "type": "visit_note",
+      "doctor": "Dr. Karen Liu",
+      "department": "Endocrinology",
+      "summary": "TSH borderline \u00e2\u20ac\u201d increase levothyroxine",
+      "content": "71 y/o male. TSH 4.2 \u00e2\u20ac\u201d borderline elevated on levothyroxine 100mcg. Still on amiodarone (ongoing iodine load). Plan: Increase levothyroxine to 112mcg daily. Recheck in 6-8 weeks."
+    },
+    {
+      "id": 48,
+      "date": "2022-04-12",
+      "type": "lab_result",
+      "ordered_by": "Dr. Michael Torres",
+      "summary": "Monthly INR",
+      "tests": {
+        "INR": {
+          "value": 2.6,
+          "unit": "",
+          "ref_range": "2.0-3.0",
+          "flag": "THERAPEUTIC"
+        }
+      }
+    },
+    {
+      "id": 49,
+      "date": "2022-05-17",
+      "type": "lab_result",
+      "ordered_by": "Dr. Michael Torres",
+      "summary": "Monthly INR",
+      "tests": {
+        "INR": {
+          "value": 2.4,
+          "unit": "",
+          "ref_range": "2.0-3.0",
+          "flag": "THERAPEUTIC"
+        }
+      }
+    },
+    {
+      "id": 50,
+      "date": "2022-06-07",
+      "type": "lab_result",
+      "ordered_by": "Dr. Karen Liu",
+      "summary": "TSH recheck",
+      "tests": {
+        "TSH": {
+          "value": 3.2,
+          "unit": "mIU/L",
+          "ref_range": "0.4-4.0",
+          "flag": "NORMAL"
+        },
+        "free_T4": {
+          "value": 1.2,
+          "unit": "ng/dL",
+          "ref_range": "0.8-1.8",
+          "flag": "NORMAL"
+        }
+      }
+    },
+    {
+      "id": 51,
+      "date": "2022-06-14",
+      "type": "lab_result",
+      "ordered_by": "Dr. Michael Torres",
+      "summary": "Monthly INR",
+      "tests": {
+        "INR": {
+          "value": 2.5,
+          "unit": "",
+          "ref_range": "2.0-3.0",
+          "flag": "THERAPEUTIC"
+        }
+      }
+    },
+    {
+      "id": 52,
+      "date": "2022-07-12",
+      "type": "visit_note",
+      "doctor": "Dr. Michael Torres",
+      "department": "Cardiology",
+      "summary": "Cardiology follow-up \u00e2\u20ac\u201d mid-2022",
+      "content": "72 y/o male. AFib/HF stable. NYHA Class II. On amiodarone 2.5 years. Thyroid managed with levothyroxine 112mcg. PFTs showed mildly reduced DLCO \u00e2\u20ac\u201d needs repeat. INR stable. No HF exacerbations. Weight 194 lbs. Assessment: Stable but needs ongoing amiodarone surveillance. Plan: Repeat PFTs. Continue monthly INR. Remind PCP about eye exam (amiodarone corneal deposits)."
+    },
+    {
+      "id": 53,
+      "date": "2022-07-12",
+      "type": "lab_result",
+      "ordered_by": "Dr. Michael Torres",
+      "summary": "Monthly INR + labs",
+      "tests": {
+        "INR": {
+          "value": 2.4,
+          "unit": "",
+          "ref_range": "2.0-3.0",
+          "flag": "THERAPEUTIC"
+        },
+        "BNP": {
+          "value": 440,
+          "unit": "pg/mL",
+          "ref_range": "<100",
+          "flag": "ELEVATED"
+        },
+        "creatinine": {
+          "value": 1.4,
+          "unit": "mg/dL",
+          "ref_range": "0.7-1.3",
+          "flag": "HIGH"
+        },
+        "eGFR": {
+          "value": 56,
+          "unit": "mL/min/1.73m2",
+          "ref_range": ">60",
+          "flag": "MILDLY DECREASED"
+        }
+      }
+    },
+    {
+      "id": 54,
+      "date": "2022-08-16",
+      "type": "lab_result",
+      "ordered_by": "Dr. Michael Torres",
+      "summary": "Monthly INR",
+      "tests": {
+        "INR": {
+          "value": 2.7,
+          "unit": "",
+          "ref_range": "2.0-3.0",
+          "flag": "THERAPEUTIC"
+        }
+      }
+    },
+    {
+      "id": 55,
+      "date": "2022-09-13",
+      "type": "visit_note",
+      "doctor": "Dr. Sarah Patel",
+      "department": "Primary Care",
+      "summary": "Annual physical \u00e2\u20ac\u201d 2022",
+      "content": "72 y/o male for annual exam. Complex patient. On amiodarone >2.5 years. Hypothyroidism managed. HF stable. Reports new dry cough x 2 months \u00e2\u20ac\u201d intermittent, non-productive. Vitals: BP 132/80, HR 60, weight 196 lbs, SpO2 96%. Lungs: clear on auscultation. Assessment: New cough \u00e2\u20ac\u201d differential includes: 1) ACE inhibitor cough (on lisinopril), 2) Amiodarone pulmonary toxicity, 3) HF-related. Plan: Routine labs. Repeat PFTs. CXR. If ACE cough suspected, switch to ARB."
+    },
+    {
+      "id": 56,
+      "date": "2022-09-13",
+      "type": "lab_result",
+      "ordered_by": "Dr. Sarah Patel",
+      "summary": "Annual labs",
+      "tests": {
+        "HbA1c": {
+          "value": 7.3,
+          "unit": "%",
+          "ref_range": "<7.0",
+          "flag": "ABOVE TARGET"
+        },
+        "creatinine": {
+          "value": 1.4,
+          "unit": "mg/dL",
+          "ref_range": "0.7-1.3",
+          "flag": "HIGH"
+        },
+        "eGFR": {
+          "value": 54,
+          "unit": "mL/min/1.73m2",
+          "ref_range": ">60",
+          "flag": "MILDLY DECREASED"
+        },
+        "hemoglobin": {
+          "value": 13.4,
+          "unit": "g/dL",
+          "ref_range": "13.5-17.5",
+          "flag": "BORDERLINE LOW"
+        },
+        "ALT": {
+          "value": 42,
+          "unit": "U/L",
+          "ref_range": "7-56",
+          "flag": "NORMAL BUT RISING"
+        },
+        "AST": {
+          "value": 38,
+          "unit": "U/L",
+          "ref_range": "10-40",
+          "flag": "NORMAL BUT RISING"
+        },
+        "TSH": {
+          "value": 3.4,
+          "unit": "mIU/L",
+          "ref_range": "0.4-4.0",
+          "flag": "NORMAL"
+        },
+        "LDL": {
+          "value": 85,
+          "unit": "mg/dL",
+          "ref_range": "<100",
+          "flag": "OPTIMAL"
+        }
+      }
+    },
+    {
+      "id": 57,
+      "date": "2022-09-20",
+      "type": "visit_note",
+      "doctor": "Dr. Sarah Patel",
+      "department": "Primary Care",
+      "summary": "CXR and PFT results",
+      "content": "72 y/o male. CXR: mild cardiomegaly, no infiltrates, no effusion. PFTs: DLCO now 68% predicted (was 78% six months ago \u00e2\u20ac\u201d declining). FVC normal. Assessment: Declining DLCO on amiodarone \u00e2\u20ac\u201d concerning for pulmonary toxicity. However, no radiographic changes yet. Also noted: ALT/AST trending up (42/38). Plan: Discussed with cardiology \u00e2\u20ac\u201d may need to consider stopping amiodarone if DLCO continues to decline. High-resolution CT chest if symptoms worsen. Monitor LFTs closely. Switch lisinopril to losartan 50mg for cough."
+    },
+    {
+      "id": 58,
+      "date": "2022-10-11",
+      "type": "lab_result",
+      "ordered_by": "Dr. Michael Torres",
+      "summary": "Monthly INR",
+      "tests": {
+        "INR": {
+          "value": 2.3,
+          "unit": "",
+          "ref_range": "2.0-3.0",
+          "flag": "THERAPEUTIC"
+        }
+      }
+    },
+    {
+      "id": 59,
+      "date": "2022-10-15",
+      "type": "prescription",
+      "prescriber": "Dr. Sarah Patel",
+      "department": "Primary Care",
+      "summary": "ACE to ARB switch for cough",
+      "drug": "losartan",
+      "dose": "50mg",
+      "frequency": "daily",
+      "duration": "ongoing",
+      "indication": "hypertension \u00e2\u20ac\u201d switched from lisinopril due to cough"
+    },
+    {
+      "id": 60,
+      "date": "2022-11-15",
+      "type": "lab_result",
+      "ordered_by": "Dr. Michael Torres",
+      "summary": "Monthly INR",
+      "tests": {
+        "INR": {
+          "value": 2.5,
+          "unit": "",
+          "ref_range": "2.0-3.0",
+          "flag": "THERAPEUTIC"
+        }
+      }
+    },
+    {
+      "id": 61,
+      "date": "2022-12-13",
+      "type": "visit_note",
+      "doctor": "Dr. Sarah Patel",
+      "department": "Primary Care",
+      "summary": "Follow-up \u00e2\u20ac\u201d cough improved",
+      "content": "72 y/o male. Cough resolved after switching lisinopril to losartan \u00e2\u20ac\u201d confirms ACE inhibitor cough, not amiodarone pulmonary toxicity. Assessment: ACE cough resolved. Plan: Continue losartan 50mg. Continue amiodarone monitoring."
+    },
+    {
+      "id": 62,
+      "date": "2022-12-13",
+      "type": "lab_result",
+      "ordered_by": "Dr. Michael Torres",
+      "summary": "Monthly INR",
+      "tests": {
+        "INR": {
+          "value": 2.6,
+          "unit": "",
+          "ref_range": "2.0-3.0",
+          "flag": "THERAPEUTIC"
+        }
+      }
+    },
+    {
+      "id": 63,
+      "date": "2023-01-17",
+      "type": "lab_result",
+      "ordered_by": "Dr. Michael Torres",
+      "summary": "Monthly INR",
+      "tests": {
+        "INR": {
+          "value": 2.4,
+          "unit": "",
+          "ref_range": "2.0-3.0",
+          "flag": "THERAPEUTIC"
+        }
+      }
+    },
+    {
+      "id": 64,
+      "date": "2023-02-14",
+      "type": "visit_note",
+      "doctor": "Dr. Michael Torres",
+      "department": "Cardiology",
+      "summary": "Cardiology follow-up \u00e2\u20ac\u201d 3 years on amiodarone",
+      "content": "73 y/o male. On amiodarone 3 years. AFib well-controlled. HF stable. DLCO was declining \u00e2\u20ac\u201d need repeat PFTs. Cough resolved (was ACE cough). Liver enzymes slightly elevated last check. Thyroid managed. eGFR declining slowly (54). Assessment: Complex patient requiring multi-organ surveillance for amiodarone. Plan: PFTs, LFTs, TSH, eye exam referral. Monthly INR. Atorvastatin 40mg \u00e2\u20ac\u201d check for interaction (amiodarone + statin rhabdomyolysis risk, though lower with atorvastatin than simvastatin)."
+    },
+    {
+      "id": 65,
+      "date": "2023-02-14",
+      "type": "lab_result",
+      "ordered_by": "Dr. Michael Torres",
+      "summary": "Monitoring labs",
+      "tests": {
+        "INR": {
+          "value": 2.5,
+          "unit": "",
+          "ref_range": "2.0-3.0",
+          "flag": "THERAPEUTIC"
+        },
+        "TSH": {
+          "value": 3.6,
+          "unit": "mIU/L",
+          "ref_range": "0.4-4.0",
+          "flag": "NORMAL"
+        },
+        "ALT": {
+          "value": 48,
+          "unit": "U/L",
+          "ref_range": "7-56",
+          "flag": "RISING"
+        },
+        "AST": {
+          "value": 42,
+          "unit": "U/L",
+          "ref_range": "10-40",
+          "flag": "HIGH"
+        },
+        "CK": {
+          "value": 180,
+          "unit": "U/L",
+          "ref_range": "39-308",
+          "flag": "NORMAL"
+        },
+        "BNP": {
+          "value": 460,
+          "unit": "pg/mL",
+          "ref_range": "<100",
+          "flag": "ELEVATED"
+        }
+      }
+    },
+    {
+      "id": 66,
+      "date": "2023-03-14",
+      "type": "lab_result",
+      "ordered_by": "Dr. Michael Torres",
+      "summary": "Monthly INR",
+      "tests": {
+        "INR": {
+          "value": 2.3,
+          "unit": "",
+          "ref_range": "2.0-3.0",
+          "flag": "THERAPEUTIC"
+        }
+      }
+    },
+    {
+      "id": 67,
+      "date": "2023-04-11",
+      "type": "visit_note",
+      "doctor": "Dr. Michael Torres",
+      "department": "Cardiology",
+      "summary": "PFT results \u00e2\u20ac\u201d stable",
+      "content": "73 y/o male. PFTs: DLCO 70% (was 68% \u00e2\u20ac\u201d stable). Not worsening. FVC/FEV1 normal. Reassuring. LFTs: ALT 48, AST 42 \u00e2\u20ac\u201d trending up. Could be amiodarone hepatotoxicity or statin-related. CK normal (180). Plan: Reduce atorvastatin to 20mg \u00e2\u20ac\u201d see if LFTs improve. If not, may be amiodarone hepatotoxicity. Repeat LFTs in 6 weeks."
+    },
+    {
+      "id": 68,
+      "date": "2023-04-11",
+      "type": "lab_result",
+      "ordered_by": "Dr. Michael Torres",
+      "summary": "Monthly INR",
+      "tests": {
+        "INR": {
+          "value": 2.6,
+          "unit": "",
+          "ref_range": "2.0-3.0",
+          "flag": "THERAPEUTIC"
+        }
+      }
+    },
+    {
+      "id": 69,
+      "date": "2023-05-16",
+      "type": "lab_result",
+      "ordered_by": "Dr. Michael Torres",
+      "summary": "Monthly INR",
+      "tests": {
+        "INR": {
+          "value": 2.4,
+          "unit": "",
+          "ref_range": "2.0-3.0",
+          "flag": "THERAPEUTIC"
+        }
+      }
+    },
+    {
+      "id": 70,
+      "date": "2023-05-30",
+      "type": "lab_result",
+      "ordered_by": "Dr. Michael Torres",
+      "summary": "LFTs recheck after statin dose reduction",
+      "tests": {
+        "ALT": {
+          "value": 44,
+          "unit": "U/L",
+          "ref_range": "7-56",
+          "flag": "STILL ELEVATED"
+        },
+        "AST": {
+          "value": 40,
+          "unit": "U/L",
+          "ref_range": "10-40",
+          "flag": "BORDERLINE"
+        }
+      }
+    },
+    {
+      "id": 71,
+      "date": "2023-06-05",
+      "type": "visit_note",
+      "doctor": "Dr. Michael Torres",
+      "department": "Cardiology",
+      "summary": "LFTs still elevated after statin reduction",
+      "content": "73 y/o male. ALT 44, AST 40 \u00e2\u20ac\u201d minimally improved after reducing atorvastatin. Suggests amiodarone hepatotoxicity rather than statin. Not yet > 3x ULN so not critical, but trending upward (was 22/18 at baseline, now 44/40). Assessment: Likely amiodarone hepatotoxicity, mild. Plan: Continue monitoring LFTs every 3 months. If ALT exceeds 3x ULN (>168), will need to discontinue amiodarone. Continue atorvastatin 20mg."
+    },
+    {
+      "id": 72,
+      "date": "2023-06-13",
+      "type": "lab_result",
+      "ordered_by": "Dr. Michael Torres",
+      "summary": "Monthly INR",
+      "tests": {
+        "INR": {
+          "value": 2.5,
+          "unit": "",
+          "ref_range": "2.0-3.0",
+          "flag": "THERAPEUTIC"
+        }
+      }
+    },
+    {
+      "id": 73,
+      "date": "2023-07-18",
+      "type": "lab_result",
+      "ordered_by": "Dr. Michael Torres",
+      "summary": "Monthly INR",
+      "tests": {
+        "INR": {
+          "value": 2.7,
+          "unit": "",
+          "ref_range": "2.0-3.0",
+          "flag": "THERAPEUTIC"
+        }
+      }
+    },
+    {
+      "id": 74,
+      "date": "2023-08-15",
+      "type": "lab_result",
+      "ordered_by": "Dr. Michael Torres",
+      "summary": "Monthly INR",
+      "tests": {
+        "INR": {
+          "value": 2.4,
+          "unit": "",
+          "ref_range": "2.0-3.0",
+          "flag": "THERAPEUTIC"
+        }
+      }
+    },
+    {
+      "id": 75,
+      "date": "2023-09-12",
+      "type": "visit_note",
+      "doctor": "Dr. Sarah Patel",
+      "department": "Primary Care",
+      "summary": "Annual physical \u00e2\u20ac\u201d 2023",
+      "content": "73 y/o male. Complex cardiac patient. On amiodarone >3.5 years. Stable overall. Reports mild ankle edema \u00e2\u20ac\u201d bilateral. Weight 198 lbs. Vitals: BP 134/80, HR 58, SpO2 96%. Lungs clear. Assessment: Mild fluid retention \u00e2\u20ac\u201d may need furosemide adjustment. Plan: Routine labs. Increase furosemide to 60mg daily if edema persists."
+    },
+    {
+      "id": 76,
+      "date": "2023-09-12",
+      "type": "lab_result",
+      "ordered_by": "Dr. Sarah Patel",
+      "summary": "Annual labs",
+      "tests": {
+        "HbA1c": {
+          "value": 7.4,
+          "unit": "%",
+          "ref_range": "<7.0",
+          "flag": "ABOVE TARGET"
+        },
+        "creatinine": {
+          "value": 1.5,
+          "unit": "mg/dL",
+          "ref_range": "0.7-1.3",
+          "flag": "HIGH"
+        },
+        "eGFR": {
+          "value": 50,
+          "unit": "mL/min/1.73m2",
+          "ref_range": ">60",
+          "flag": "MODERATELY DECREASED"
+        },
+        "potassium": {
+          "value": 4.5,
+          "unit": "mEq/L",
+          "ref_range": "3.5-5.0",
+          "flag": "NORMAL"
+        },
+        "hemoglobin": {
+          "value": 13.0,
+          "unit": "g/dL",
+          "ref_range": "13.5-17.5",
+          "flag": "LOW"
+        },
+        "ALT": {
+          "value": 52,
+          "unit": "U/L",
+          "ref_range": "7-56",
+          "flag": "BORDERLINE HIGH"
+        },
+        "AST": {
+          "value": 46,
+          "unit": "U/L",
+          "ref_range": "10-40",
+          "flag": "HIGH"
+        },
+        "TSH": {
+          "value": 3.8,
+          "unit": "mIU/L",
+          "ref_range": "0.4-4.0",
+          "flag": "NORMAL"
+        },
+        "BNP": {
+          "value": 520,
+          "unit": "pg/mL",
+          "ref_range": "<100",
+          "flag": "HIGH"
+        }
+      }
+    },
+    {
+      "id": 77,
+      "date": "2023-10-10",
+      "type": "lab_result",
+      "ordered_by": "Dr. Michael Torres",
+      "summary": "Monthly INR",
+      "tests": {
+        "INR": {
+          "value": 2.5,
+          "unit": "",
+          "ref_range": "2.0-3.0",
+          "flag": "THERAPEUTIC"
+        }
+      }
+    },
+    {
+      "id": 78,
+      "date": "2023-11-14",
+      "type": "visit_note",
+      "doctor": "Dr. Michael Torres",
+      "department": "Cardiology",
+      "summary": "Comprehensive review \u00e2\u20ac\u201d amiodarone 3.5+ years",
+      "content": "73 y/o male. On amiodarone since Feb 2020. LFTs continuing to rise (ALT 52, AST 46). DLCO was stable at 70%. Thyroid managed. eGFR declining (50). BNP rising (520). HF may be progressing. Anemia developing (Hgb 13.0). Assessment: Multiple concerning trends. Plan: Continue amiodarone for now but very close monitoring. If LFTs exceed 3x ULN, will discontinue. Consider switching to dronedarone or catheter ablation. HF: optimize therapy. Check iron studies for anemia workup."
+    },
+    {
+      "id": 79,
+      "date": "2023-12-12",
+      "type": "lab_result",
+      "ordered_by": "Dr. Michael Torres",
+      "summary": "Monthly INR + LFTs",
+      "tests": {
+        "INR": {
+          "value": 2.6,
+          "unit": "",
+          "ref_range": "2.0-3.0",
+          "flag": "THERAPEUTIC"
+        },
+        "ALT": {
+          "value": 58,
+          "unit": "U/L",
+          "ref_range": "7-56",
+          "flag": "HIGH"
+        },
+        "AST": {
+          "value": 50,
+          "unit": "U/L",
+          "ref_range": "10-40",
+          "flag": "HIGH"
+        }
+      }
+    },
+    {
+      "id": 80,
+      "date": "2024-01-15",
+      "type": "visit_note",
+      "doctor": "Dr. Michael Torres",
+      "department": "Cardiology",
+      "summary": "LFTs now above normal \u00e2\u20ac\u201d decision point",
+      "content": "74 y/o male. ALT 58 (exceeded ULN for first time), AST 50. Trending: baseline 22/18 \u00e2\u2020\u2019 24/18 \u00e2\u2020\u2019 38/34 \u00e2\u2020\u2019 42/38 \u00e2\u2020\u2019 48/42 \u00e2\u2020\u2019 44/40 \u00e2\u2020\u2019 52/46 \u00e2\u2020\u2019 58/50. Clear upward trajectory over 3+ years on amiodarone. Not yet at 3x ULN (would be >168) but concerning trend. Assessment: Progressive amiodarone hepatotoxicity. Plan: Continue amiodarone with very close LFT monitoring monthly. If ALT reaches 100, will discontinue. Discuss catheter ablation as alternative for AFib rhythm control. Meanwhile, continue all other medications."
+    }
   ],
   "ground_truth_issues": [
     {
-      "type": "drug_interaction",
-      "severity": "moderate",
-      "description": "Hydrochlorothiazide (HCTZ) prescribed concurrently with allopurinol for a patient with gout. HCTZ is a thiazide diuretic that RAISES uric acid levels, directly counteracting the uric acid-lowering effect of allopurinol. This was present from the initial medication list and was not identified for over 18 months (records #1 through #18) despite the patient having recurrent gout flares. It took a rheumatology referral (record #20) to identify this obvious drug-disease interaction.",
-      "evidence_records": [1, 2, 5, 6, 11, 12, 13, 17, 18, 20],
-      "clinical_reference": "Thiazide diuretics decrease renal uric acid excretion and are a well-known precipitant of gout. All gout guidelines recommend avoiding thiazides in patients with gout when possible.",
-      "what_should_have_happened": "At the initial visit (record #1), the prescribing of HCTZ in a patient with gout should have been flagged as a drug-disease interaction. When the first gout flare occurred (record #5) despite adequate allopurinol dosing, HCTZ should have been immediately considered as a contributing factor and switched."
-    },
-    {
-      "type": "contradiction",
-      "severity": "moderate",
-      "description": "After successfully identifying and resolving the HCTZ-gout issue in 2021, the same mistake was repeated in 2024 when chlorthalidone (another thiazide-like diuretic with identical uric acid-raising effect) was prescribed (record #51). While closer monitoring was planned, the fundamental drug-disease interaction was knowingly reintroduced. Uric acid predictably rose above gout target again (records #52-54).",
-      "evidence_records": [20, 21, 24, 50, 51, 52, 53, 54, 55, 56],
-      "clinical_reference": "Chlorthalidone, like HCTZ, is a thiazide-type diuretic that raises serum uric acid. The pharmacological mechanism is identical — decreased renal urate clearance. Prescribing a thiazide-like diuretic after removing another thiazide for the same reason represents a contradiction in treatment approach.",
-      "what_should_have_happened": "Given the well-documented history of HCTZ causing gout exacerbation in this patient, chlorthalidone should not have been chosen as the third BP agent. Better alternatives: doxazosin (which was eventually used), spironolactone (with potassium monitoring), or hydralazine."
+      "type": "missed_monitoring",
+      "severity": "critical",
+      "description": "Amiodarone requires thyroid function monitoring every 6 months. Baseline TSH was checked in Feb 2020 (record #2), but the next thyroid check was not performed until Feb 2021 (record #20) \u00e2\u20ac\u201d a full 12-month gap. The initial 6-month check (due Aug 2020) was completely missed, as noted in record #11 where only INR was ordered. By the time TSH was finally checked, the patient had overt hypothyroidism (TSH 18.4) with 6+ months of symptomatic disease (fatigue, weight gain, cold intolerance, rising cholesterol). Earlier detection at the 6-month mark could have caught subclinical hypothyroidism and prevented months of unnecessary symptoms.",
+      "evidence_records": [
+        1,
+        2,
+        8,
+        11,
+        12,
+        13,
+        16,
+        17,
+        19,
+        20,
+        21
+      ],
+      "clinical_reference": "Amiodarone monitoring guidelines (AHA/ACC): thyroid function tests every 6 months, liver function tests every 6 months, PFTs annually, eye exam annually. Amiodarone-induced thyroid dysfunction occurs in 15-20% of patients.",
+      "what_should_have_happened": "TSH and free T4 should have been ordered at the 6-month mark (Aug 2020, record #11). Instead, only INR was checked. The PCP annual labs in Sep 2020 (record #13) also failed to include TSH despite the patient being on amiodarone. Both represent missed monitoring opportunities."
     },
     {
       "type": "declining_trend",
       "severity": "moderate",
-      "description": "Progressive decline in eGFR over 6 years (78 → 76 → 72 → 70 → 65 → 62 → 60 → 58 → 56 → 55 → 52 → 51) indicating progressive CKD, likely diabetic nephropathy. While this was eventually recognized and managed appropriately, microalbuminuria screening was not performed until 2024 (record #48) — 4 years after the eGFR decline began. Earlier detection of microalbuminuria could have triggered more aggressive renoprotective measures sooner.",
-      "evidence_records": [2, 9, 26, 32, 37, 41, 48, 54, 64, 67, 72, 76, 80],
-      "clinical_reference": "ADA Standards of Care recommend annual urine albumin-to-creatinine ratio screening in all patients with type 2 diabetes. This patient had T2DM with declining eGFR and was not screened for albuminuria until 2024.",
-      "what_should_have_happened": "Microalbumin screening should have been performed annually from the start (record #2 in 2020). The combination of declining eGFR + unscreened albuminuria + T2DM represents a gap in guideline-concordant care. Earlier detection in 2020-2021 would have triggered earlier nephrology referral and potentially more aggressive BP control sooner."
+      "description": "Progressive liver enzyme elevation over 3+ years on amiodarone (ALT: 22 \u00e2\u2020\u2019 24 \u00e2\u2020\u2019 38 \u00e2\u2020\u2019 42 \u00e2\u2020\u2019 48 \u00e2\u2020\u2019 44 \u00e2\u2020\u2019 52 \u00e2\u2020\u2019 58; AST: 18 \u00e2\u2020\u2019 18 \u00e2\u2020\u2019 34 \u00e2\u2020\u2019 38 \u00e2\u2020\u2019 42 \u00e2\u2020\u2019 40 \u00e2\u2020\u2019 46 \u00e2\u2020\u2019 50). This slow, steady rise represents likely amiodarone hepatotoxicity. While each individual value was addressed, the overall trajectory was not acted upon decisively \u00e2\u20ac\u201d amiodarone was continued with a 'watch and wait' approach rather than proactive planning for discontinuation or transition to catheter ablation.",
+      "evidence_records": [
+        2,
+        13,
+        56,
+        65,
+        70,
+        71,
+        76,
+        79,
+        80
+      ],
+      "clinical_reference": "Amiodarone hepatotoxicity occurs in 15-30% of patients. Guidelines recommend LFTs every 6 months. ALT > 3x ULN or continued rise should prompt discontinuation. A persistent upward trend, even if below 3x ULN, should trigger consideration of alternative therapy.",
+      "what_should_have_happened": "When ALT first exceeded baseline significantly (record #56, Sep 2022 \u00e2\u20ac\u201d ALT 42, double baseline), a more proactive transition plan should have been developed rather than waiting for values to approach dangerous levels. By Jan 2024 (record #80), amiodarone had been continued for nearly 4 years with steadily worsening hepatotoxicity."
+    },
+    {
+      "type": "declining_trend",
+      "severity": "moderate",
+      "description": "Progressive renal decline (eGFR: 68 \u00e2\u2020\u2019 66 \u00e2\u2020\u2019 62 \u00e2\u2020\u2019 56 \u00e2\u2020\u2019 54 \u00e2\u2020\u2019 50) over 3.5 years. While the eGFR decline was documented, no nephrology referral was made and no specific renoprotective measures were initiated despite the patient having diabetes (a major CKD risk factor). Metformin dose was not adjusted despite eGFR approaching thresholds. Additionally, the declining renal function affects warfarin and digoxin clearance (if used) and amiodarone metabolite accumulation.",
+      "evidence_records": [
+        2,
+        13,
+        37,
+        53,
+        56,
+        76
+      ],
+      "clinical_reference": "CKD in diabetic patients requires proactive management: SGLT2 inhibitors for renal protection, nephrology referral at eGFR < 60, metformin dose adjustment at eGFR < 45, and avoidance of nephrotoxic agents.",
+      "what_should_have_happened": "When eGFR dropped below 60 (record #53, Jul 2022), nephrology referral and consideration of renoprotective therapy (SGLT2 inhibitor like empagliflozin) should have been initiated. The diabetic patient with declining eGFR represents a high-risk scenario for progressive CKD that requires early intervention."
     }
   ]
 }

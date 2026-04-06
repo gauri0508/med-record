@@ -443,49 +443,273 @@ Reference databases:
 
 
 ========================================================
+STEP 6-9: ENVIRONMENT CODE (COMPLETED)
+========================================================
+
+What was done:
+- Built all 4 core Python files that make the environment work
+
+Files created:
+
+1. env/environment.py — CORE RL ENVIRONMENT
+   - MedRecordAuditEnv class
+   - reset(difficulty, case_id) → loads case + task.json, returns initial state
+   - step(action) → handles 4 actions: read_record, cross_reference, flag_issue, submit_report
+   - state() → returns current state (patient, records reviewed, findings, budget)
+   - _compute_reward() → scores findings against ground truth
+   - _match_finding() → matches agent's flags to ground truth (type + evidence + keywords)
+   - Loads task instructions from tasks/{case_id}/task.json on reset
+
+2. env/reward.py — REWARD FUNCTION
+   - match_finding() → scores how well a finding matches ground truth (0.0-1.0)
+     * Type match: 0.4 weight
+     * Evidence overlap: 0.3 weight
+     * Description keyword overlap: 0.3 weight
+   - compute_reward() → final score calculation
+     * findings_score (max 0.70): correct findings + false positive penalties
+     * efficiency_bonus (max 0.15): budget remaining / total budget
+     * completeness_bonus (max 0.15): correct findings / total issues
+     * Returns 0.0 when no findings submitted
+
+3. env/graders/ — INDIVIDUAL GRADERS (1 per case)
+   - base.py: shared run_case() logic
+   - 9 individual grader files: easy_001.py through hard_003.py
+   - __init__.py: exports all graders + easy_grader/medium_grader/hard_grader
+   - __main__.py: runs all 9 when you do: py -m env.graders
+   - Each grader validates environment loads correctly for that case
+
+4. env/server.py — FASTAPI SERVER
+   - POST /reset → start episode (returns task + patient + record_index)
+   - POST /step → take action (returns state + reward + done + info)
+   - GET /state → current state
+   - GET /health → returns 200 (required for HF Spaces)
+   - Runs on port 7860
+
+
+========================================================
+STEP 10: INFERENCE AGENT (COMPLETED)
+========================================================
+
+File: inference.py (root level, required by hackathon)
+
+What it does:
+- Connects to the environment server via HTTP
+- Uses OpenAI Client to call an LLM
+- For each task:
+  1. Calls /reset → gets task instruction + patient + records
+  2. Sends task to LLM: "which records should I read?"
+  3. Reads priority records via /step(read_record)
+  4. Sends records to LLM: "what issues do you see?"
+  5. Flags issues via /step(flag_issue)
+  6. Submits report via /step(submit_report)
+- Prints [START]/[STEP]/[END] structured logs (STRICT format)
+
+Usage:
+  py inference.py              → run ALL 9 tasks (what judges run)
+  py inference.py easy_001     → run single task
+  py inference.py easy         → run all easy tasks
+  py inference.py hard         → run all hard tasks
+
+Requires env vars: API_BASE_URL, MODEL_NAME, OPENAI_API_KEY (or use Ollama)
+
+
+========================================================
+STEP 11: DOCKERFILE + OPENENV.YAML (COMPLETED)
+========================================================
+
+Dockerfile:
+- python:3.11-slim base image
+- Installs requirements, copies code
+- Runs uvicorn server on port 7860
+- Judges run inference.py separately
+
+openenv.yaml:
+- Name: MedRecordAudit
+- 3 task levels: easy, medium, hard
+- References graders
+
+
+========================================================
+STEP 12: README + TASKS (COMPLETED)
+========================================================
+
+README.md: Full documentation of the environment
+
+tasks/ folder: 9 task.json files, one per case
+- Each has: task_id, title, instruction, focus_areas, expected_findings
+- Loaded by environment on reset() and passed to the agent
+- Agent uses task instructions to guide LLM analysis
+
+
+========================================================
+STEP 13: LOCAL TESTING (COMPLETED)
+========================================================
+
+All tests passed:
+- py -m pytest tests/ -v → 58/58 tests passed
+- py -m env.graders → all 9 cases PASS, score=0.0, all zeros
+- Server starts → /health returns 200
+- /reset returns task + patient + record_index
+- /step(read_record) returns full record content
+- /step(cross_reference) returns drug/disease info
+- /step(flag_issue) stores findings
+- /step(submit_report) returns score 0.0-1.0
+- Correct finding on easy_001 → score 0.44 (Groq llama-3.3-70b)
+- medium_002 → score 0.77 (found all 3 issues!)
+- Wrong finding → score < 0.3
+
+
+========================================================
+STEP 13b: VALIDATION FIXES (COMPLETED)
+========================================================
+
+Ran `openenv validate` and fixed all issues:
+
+1. FIXED: Log format in inference.py
+   - Was: JSON format [START] {"task": "..."}
+   - Now: key=value format [START] task=easy_001 env=MedRecordAudit model=llama3
+   - Matches exact hackathon sample script format
+
+2. FIXED: Added pyproject.toml
+   - Required by openenv-core validator
+   - Includes project metadata, dependencies, [project.scripts] entry point
+
+3. FIXED: Added server/app.py
+   - Entry point required by openenv validator
+   - Imports from env.server and runs uvicorn
+
+4. FIXED: Generated uv.lock
+   - Required by openenv validator
+   - Generated via `uv lock`
+
+5. FIXED: Added openenv-core>=0.2.0 to dependencies
+
+6. FIXED: openenv.yaml grader paths
+   - Was: graders.easy_grader
+   - Now: env.graders.easy_grader
+
+7. FIXED: Added .gitignore
+   - Excludes __pycache__, .pytest_cache, .env, etc.
+
+8. FIXED: ENV variables match hackathon spec
+   - API_BASE_URL, MODEL_NAME, HF_TOKEN/API_KEY all supported
+   - inference.py checks HF_TOKEN → API_KEY → OPENAI_API_KEY
+
+Validation result:
+  openenv validate → [OK] med-record: Ready for multi-mode deployment
+
+
+========================================================
+INFERENCE TEST RESULTS (WITH GROQ llama-3.3-70b)
+========================================================
+
+Tested inference.py with Groq API (free, fast):
+  API_BASE_URL = https://api.groq.com/openai/v1
+  MODEL_NAME = llama-3.3-70b-versatile
+
+Results:
+  easy_001 (Allergy Audit):       score=0.44 ✅ found allergy_violation
+  medium_002 (Amiodarone Audit):  score=0.77 ✅ found all 3 issues
+
+Log format confirmed correct:
+  [START] task=easy_001 env=MedRecordAudit model=llama-3.3-70b-versatile
+  [STEP] step=1 action=read_record(18) reward=0.00 done=false error=null
+  [STEP] step=11 action=flag_issue('allergy_violation') reward=0.00 done=false error=null
+  [END] success=true steps=12 score=0.44 rewards=0.00,...,0.44
+
+
+========================================================
 WHAT'S DONE SO FAR
 ========================================================
-✅ Step 1: Project setup (folders, requirements.txt)
-✅ Step 2: Medical reference data (3 JSON databases)
-✅ Step 3: Easy patient cases (5 cases, 20 records, 1 issue each)
-✅ Step 4: Medium patient cases (5 cases, 80 records, 3 issues each)
-✅ Step 5: Hard patient cases (3 cases, 150 records, 5-6 issues each)
+✅ Step 1:  Project setup
+✅ Step 2:  Medical reference data (3 JSON databases)
+✅ Step 3:  Easy patient cases (3 cases)
+✅ Step 4:  Medium patient cases (3 cases)
+✅ Step 5:  Hard patient cases (3 cases)
+✅ Step 6:  env/environment.py (core RL environment)
+✅ Step 7:  env/reward.py (scoring function)
+✅ Step 8:  env/graders/ (9 individual graders)
+✅ Step 9:  env/server.py (FastAPI server)
+✅ Step 10: inference.py (baseline LLM agent)
+✅ Step 11: Dockerfile + openenv.yaml
+✅ Step 12: README.md + tasks/ (9 task.json files)
+✅ Step 13: Local testing (58 tests, 9 graders, inference with Groq)
+✅ Step 13b: openenv validate → PASSED
 
 ========================================================
 WHAT'S NEXT
 ========================================================
-⬜ Step 6: Build env/environment.py (core RL environment class)
-⬜ Step 7: Build env/reward.py (scoring/reward function)
-⬜ Step 8: Build env/graders.py (easy/medium/hard graders)
-⬜ Step 9: Build env/server.py (FastAPI server)
-⬜ Step 10: Build inference.py (baseline agent)
-⬜ Step 11: Dockerfile + openenv.yaml
-⬜ Step 12: README.md
-⬜ Step 13: Test locally
-⬜ Step 14: Deploy to Hugging Face Spaces
+⬜ Step 14: Push to GitHub + Deploy to Hugging Face Spaces
+⬜ Step 15: Run full validation script (validate-submission.sh)
+
+
+========================================================
+COMPLETE DATA SUMMARY (UPDATED)
+========================================================
+
+Total patient cases: 9 (reduced from 13)
+  Easy:   3 cases × 20 records × 1 issue  = 60 records,  3 issues
+  Medium: 3 cases × 80 records × 3 issues = 240 records, 9 issues
+  Hard:   3 cases × 150 records × 5-6 issues = 450 records, 17 issues
+  TOTAL: ~750 records, 29 hidden issues
+
+Cases kept:
+  easy_001: Penicillin allergy → amoxicillin (allergy violation)
+  easy_002: Warfarin + ibuprofen (drug interaction)
+  easy_003: Metformin + eGFR < 30 (drug contraindication)
+  medium_001: SSRI hyponatremia + tramadol seizure risk + HbA1c trend
+  medium_002: Amiodarone monitoring gap + liver trend + renal decline
+  medium_003: Missed celiac + omeprazole malabsorption + autoimmune screening
+  hard_001: 74M, 6 issues across 7 specialists
+  hard_002: 55F lupus, 5 issues
+  hard_003: 82M polypharmacy, 6 issues
+
 
 ========================================================
 HOW THE FILES CONNECT
 ========================================================
 
-1. Patient cases (data/cases/) USE data from:
-   → drugs.json (real drug names, doses, interactions)
-   → lab_ranges.json (real lab values with correct HIGH/LOW flags)
-   → diseases.json (real disease progressions, symptoms)
+1. tasks/{case_id}/task.json DEFINES:
+   → What the AI agent should look for in each case
 
-2. Environment (env/environment.py) LOADS:
+2. data/cases/{difficulty}/ CONTAINS:
+   → Patient records + hidden ground truth issues (answer key)
+
+3. env/environment.py LOADS:
+   → Task instructions from tasks/
    → Patient cases from data/cases/
-   → Reference databases for the cross_reference action
+   → Reference databases from data/
 
-3. Reward function (env/reward.py) USES:
-   → Ground truth issues from patient cases to score findings
+4. env/reward.py SCORES:
+   → Agent's findings against ground truth issues
 
-4. Graders (env/graders.py) RUN:
-   → Episodes through the environment and validate scores
+5. env/graders/ VALIDATES:
+   → Environment loads correctly, scores are 0.0-1.0
 
-5. Server (env/server.py) WRAPS:
-   → Environment in FastAPI endpoints
+6. env/server.py WRAPS:
+   → Environment in FastAPI endpoints (port 7860)
 
-6. Inference (inference.py) TALKS TO:
-   → Server via HTTP requests
-   → LLM via OpenAI Client
+7. inference.py RUNS:
+   → Connects to server, uses LLM to analyze records, flags issues
+   → Prints [START]/[STEP]/[END] logs for judges
+
+
+========================================================
+HOW JUDGES EVALUATE
+========================================================
+
+1. They ping your HF Space URL:
+   GET /health → must return 200
+   POST /reset → must return valid state
+
+2. They build your Docker:
+   docker build → must succeed
+
+3. They run inference.py on their machine:
+   python inference.py → must complete < 20 min
+   → reads [START]/[STEP]/[END] logs for scores
+
+4. They run graders:
+   python -m env.graders → all 9 tasks must pass, scores 0.0-1.0
+
+Hardware: 2 vCPU, 8GB RAM

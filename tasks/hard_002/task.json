@@ -1,0 +1,8 @@
+{
+  "task_id": "hard_002",
+  "difficulty": "hard",
+  "title": "Autoimmune Disease Management Audit",
+  "instruction": "Conduct a full safety audit of this 55-year-old female lupus patient with lupus nephritis, antiphospholipid syndrome, and multiple complications. She is on immunosuppressants, anticoagulation, and chronic steroids. This case has 150 records over 6.5 years. Look for: (1) required drug-specific screening that was never performed despite years of use, (2) drug absorption interactions causing treatment failure, (3) anticoagulation monitoring gaps during disease flares that put her at risk, (4) progressive organ damage trends that should have triggered earlier treatment escalation, (5) bone density monitoring gaps while on chronic high-dose steroids. You need to find 5 separate issues.",
+  "focus_areas": ["missed_monitoring", "drug_interaction", "declining_trend"],
+  "expected_findings": 5
+}

@@ -1,0 +1,8 @@
+{
+  "task_id": "easy_002",
+  "difficulty": "easy",
+  "title": "Anticoagulant Drug Interaction Check",
+  "instruction": "Audit this 72-year-old male patient's records for DANGEROUS DRUG INTERACTIONS with his anticoagulant therapy. He is on warfarin for atrial fibrillation. Check if any provider prescribed a medication that dangerously interacts with warfarin, especially NSAIDs or drugs that increase bleeding risk.",
+  "focus_areas": ["drug_interaction"],
+  "expected_findings": 1
+}

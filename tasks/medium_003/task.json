@@ -1,0 +1,12 @@
+{
+  "task_id": "medium_003",
+  "difficulty": "medium",
+  "title": "Missed Diagnosis & Malabsorption Audit",
+  "instruction": "Audit this 38-year-old female patient's records for a MISSED DIAGNOSIS. She has had refractory iron deficiency anemia for years that does not respond to oral iron supplementation. She also has hypothyroidism and IBS-like symptoms. Check: (1) whether a diagnosis was missed that could explain all her symptoms together, (2) whether a medication she is taking is making her malabsorption worse, (3) whether her autoimmune condition should have triggered screening for related autoimmune diseases earlier. You need to find 3 separate issues.",
+  "focus_areas": [
+    "missed_diagnosis",
+    "drug_interaction",
+    "missed_monitoring"
+  ],
+  "expected_findings": 3
+}

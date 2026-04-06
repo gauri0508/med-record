@@ -1,0 +1,8 @@
+{
+  "task_id": "easy_003",
+  "difficulty": "easy",
+  "title": "Medication Safety in Kidney Disease",
+  "instruction": "Audit this 58-year-old male diabetic patient's records for MEDICATION CONTRAINDICATIONS related to declining kidney function. His eGFR has been dropping over time. Check if any medication is being continued despite reaching a kidney function threshold where it becomes unsafe. Pay close attention to diabetes medications and renal function labs.",
+  "focus_areas": ["drug_contraindication"],
+  "expected_findings": 1
+}

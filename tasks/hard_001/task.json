@@ -1,0 +1,8 @@
+{
+  "task_id": "hard_001",
+  "difficulty": "hard",
+  "title": "Complex Multi-System Safety Audit",
+  "instruction": "Conduct a full safety audit of this 74-year-old male patient with 7 chronic conditions managed by 7 different specialists on 14 medications. This is a complex case with 150 records spanning 7 years. Look for: (1) drug-drug interactions that were not managed when new medications were added, (2) medications continued past the point where they became contraindicated due to declining organ function, (3) electrolyte trends that were persistently abnormal without dose adjustments, (4) medication side effects causing symptoms that were attributed to other conditions, (5) repeated steroid courses causing cumulative harm without bone density assessment, (6) long-term PPI use causing nutritional deficiencies. You need to find 6 separate issues across multiple specialties.",
+  "focus_areas": ["drug_interaction", "drug_contraindication", "declining_trend", "missed_monitoring"],
+  "expected_findings": 6
+}

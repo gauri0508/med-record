@@ -1,0 +1,8 @@
+{
+  "task_id": "easy_001",
+  "difficulty": "easy",
+  "title": "Allergy Safety Audit",
+  "instruction": "Audit this 45-year-old female patient's records for ALLERGY SAFETY VIOLATIONS. She has a documented severe drug allergy. Check if any provider prescribed a medication that is contraindicated given her allergy history. Review allergy documentation first, then check all prescriptions against it.",
+  "focus_areas": ["allergy_violation"],
+  "expected_findings": 1
+}

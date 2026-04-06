@@ -2,120 +2,1479 @@
   "case_id": "medium_003",
   "difficulty": "medium",
   "patient": {
-    "id": "P-80734",
-    "age": 69,
-    "gender": "M",
-    "known_conditions": ["atrial fibrillation", "heart failure (HFrEF, EF 30%)", "hypertension", "type 2 diabetes mellitus", "hyperlipidemia"],
-    "current_medications": ["warfarin 5mg daily", "amiodarone 200mg daily", "metoprolol succinate 100mg daily", "lisinopril 20mg daily", "furosemide 40mg daily", "metformin 1000mg BID", "atorvastatin 40mg daily"],
+    "id": "P-11093",
+    "age": 38,
+    "gender": "F",
+    "known_conditions": [
+      "iron deficiency anemia (recurrent)",
+      "hypothyroidism",
+      "chronic fatigue",
+      "irritable bowel syndrome"
+    ],
+    "current_medications": [
+      "levothyroxine 75mcg daily",
+      "ferrous sulfate 325mg BID",
+      "omeprazole 20mg daily",
+      "dicyclomine 20mg QID PRN"
+    ],
     "allergies": [],
-    "chief_complaint": "fatigue, weight gain, and cold intolerance — new symptoms"
+    "chief_complaint": "persistent anemia despite iron supplementation for 2+ years"
   },
   "records": [
-    {"id": 1, "date": "2020-02-10", "type": "visit_note", "doctor": "Dr. Michael Torres", "department": "Cardiology", "summary": "AFib + HF management — baseline", "content": "69 y/o male with persistent AFib and HFrEF (EF 30%, ischemic cardiomyopathy). On warfarin for stroke prevention (CHA2DS2-VASc 5). Rate controlled with metoprolol 100mg daily. On lisinopril and furosemide for HF. Recently started amiodarone 200mg daily for rhythm control after failed cardioversion. Assessment: Complex cardiac patient. Plan: Continue current regimen. Monthly INR. IMPORTANT: Amiodarone requires monitoring — thyroid function every 6 months, pulmonary function tests annually, liver function tests every 6 months, eye exam annually. Warfarin dose may need reduction — amiodarone increases INR."},
-    {"id": 2, "date": "2020-02-10", "type": "lab_result", "ordered_by": "Dr. Michael Torres", "summary": "Baseline labs", "tests": {"INR": {"value": 2.4, "unit": "", "ref_range": "2.0-3.0", "flag": "THERAPEUTIC"}, "TSH": {"value": 2.1, "unit": "mIU/L", "ref_range": "0.4-4.0", "flag": "NORMAL"}, "free_T4": {"value": 1.2, "unit": "ng/dL", "ref_range": "0.8-1.8", "flag": "NORMAL"}, "ALT": {"value": 22, "unit": "U/L", "ref_range": "7-56", "flag": "NORMAL"}, "AST": {"value": 18, "unit": "U/L", "ref_range": "10-40", "flag": "NORMAL"}, "BNP": {"value": 450, "unit": "pg/mL", "ref_range": "<100", "flag": "ELEVATED"}, "creatinine": {"value": 1.2, "unit": "mg/dL", "ref_range": "0.7-1.3", "flag": "NORMAL"}, "eGFR": {"value": 68, "unit": "mL/min/1.73m2", "ref_range": ">60", "flag": "NORMAL"}, "potassium": {"value": 4.2, "unit": "mEq/L", "ref_range": "3.5-5.0", "flag": "NORMAL"}, "hemoglobin": {"value": 14.0, "unit": "g/dL", "ref_range": "13.5-17.5", "flag": "NORMAL"}, "HbA1c": {"value": 7.1, "unit": "%", "ref_range": "<7.0", "flag": "SLIGHTLY ABOVE"}}},
-    {"id": 3, "date": "2020-03-10", "type": "lab_result", "ordered_by": "Dr. Michael Torres", "summary": "Monthly INR", "tests": {"INR": {"value": 3.2, "unit": "", "ref_range": "2.0-3.0", "flag": "SLIGHTLY HIGH"}}},
-    {"id": 4, "date": "2020-03-12", "type": "visit_note", "doctor": "Dr. Michael Torres", "department": "Cardiology", "summary": "INR elevated — amiodarone effect", "content": "69 y/o male. INR 3.2 — expected increase from amiodarone interaction. Amiodarone inhibits warfarin metabolism (CYP2C9), increasing INR. Plan: Reduce warfarin to 3.5mg daily. Recheck INR in 1 week."},
-    {"id": 5, "date": "2020-03-19", "type": "lab_result", "ordered_by": "Dr. Michael Torres", "summary": "INR recheck after dose reduction", "tests": {"INR": {"value": 2.8, "unit": "", "ref_range": "2.0-3.0", "flag": "THERAPEUTIC"}}},
-    {"id": 6, "date": "2020-04-15", "type": "lab_result", "ordered_by": "Dr. Michael Torres", "summary": "Monthly INR", "tests": {"INR": {"value": 2.6, "unit": "", "ref_range": "2.0-3.0", "flag": "THERAPEUTIC"}}},
-    {"id": 7, "date": "2020-05-12", "type": "lab_result", "ordered_by": "Dr. Michael Torres", "summary": "Monthly INR", "tests": {"INR": {"value": 2.5, "unit": "", "ref_range": "2.0-3.0", "flag": "THERAPEUTIC"}}},
-    {"id": 8, "date": "2020-06-15", "type": "visit_note", "doctor": "Dr. Michael Torres", "department": "Cardiology", "summary": "Cardiology follow-up — 4 months on amiodarone", "content": "69 y/o male. AFib with rate control on metoprolol + amiodarone. No palpitations. No dyspnea at rest. NYHA Class II. Weight stable at 192 lbs. INR stable on warfarin 3.5mg. Assessment: Stable. Plan: Continue all meds. Need 6-month thyroid check in August. Continue monthly INR."},
-    {"id": 9, "date": "2020-06-15", "type": "lab_result", "ordered_by": "Dr. Michael Torres", "summary": "Monthly INR + routine", "tests": {"INR": {"value": 2.4, "unit": "", "ref_range": "2.0-3.0", "flag": "THERAPEUTIC"}, "BNP": {"value": 380, "unit": "pg/mL", "ref_range": "<100", "flag": "ELEVATED"}, "creatinine": {"value": 1.2, "unit": "mg/dL", "ref_range": "0.7-1.3", "flag": "NORMAL"}}},
-    {"id": 10, "date": "2020-07-14", "type": "lab_result", "ordered_by": "Dr. Michael Torres", "summary": "Monthly INR", "tests": {"INR": {"value": 2.3, "unit": "", "ref_range": "2.0-3.0", "flag": "THERAPEUTIC"}}},
-    {"id": 11, "date": "2020-08-18", "type": "lab_result", "ordered_by": "Dr. Michael Torres", "summary": "Monthly INR — NOTE: 6-month thyroid check was DUE this month but NOT ordered", "tests": {"INR": {"value": 2.5, "unit": "", "ref_range": "2.0-3.0", "flag": "THERAPEUTIC"}}},
-    {"id": 12, "date": "2020-09-15", "type": "visit_note", "doctor": "Dr. Sarah Patel", "department": "Primary Care", "summary": "Annual physical", "content": "69 y/o male with AFib, HFrEF, HTN, T2DM. Complex cardiac history. On amiodarone since Feb 2020. Vitals: BP 128/76, HR 62, weight 194 lbs (+2 lbs), BMI 28.4. Reports mild fatigue — attributes to heart failure. Assessment: Stable chronic conditions. Plan: Routine labs ordered. Flu vaccine. Continue all medications."},
-    {"id": 13, "date": "2020-09-15", "type": "lab_result", "ordered_by": "Dr. Sarah Patel", "summary": "Annual labs — NOTE: TSH not included despite amiodarone use", "tests": {"HbA1c": {"value": 7.0, "unit": "%", "ref_range": "<7.0", "flag": "AT TARGET"}, "creatinine": {"value": 1.2, "unit": "mg/dL", "ref_range": "0.7-1.3", "flag": "NORMAL"}, "eGFR": {"value": 66, "unit": "mL/min/1.73m2", "ref_range": ">60", "flag": "NORMAL"}, "hemoglobin": {"value": 13.8, "unit": "g/dL", "ref_range": "13.5-17.5", "flag": "NORMAL"}, "ALT": {"value": 24, "unit": "U/L", "ref_range": "7-56", "flag": "NORMAL"}, "potassium": {"value": 4.3, "unit": "mEq/L", "ref_range": "3.5-5.0", "flag": "NORMAL"}, "total_cholesterol": {"value": 178, "unit": "mg/dL", "ref_range": "<200", "flag": "NORMAL"}, "LDL": {"value": 88, "unit": "mg/dL", "ref_range": "<100", "flag": "NEAR OPTIMAL"}}},
-    {"id": 14, "date": "2020-10-13", "type": "lab_result", "ordered_by": "Dr. Michael Torres", "summary": "Monthly INR", "tests": {"INR": {"value": 2.7, "unit": "", "ref_range": "2.0-3.0", "flag": "THERAPEUTIC"}}},
-    {"id": 15, "date": "2020-11-10", "type": "lab_result", "ordered_by": "Dr. Michael Torres", "summary": "Monthly INR", "tests": {"INR": {"value": 2.4, "unit": "", "ref_range": "2.0-3.0", "flag": "THERAPEUTIC"}}},
-    {"id": 16, "date": "2020-12-15", "type": "visit_note", "doctor": "Dr. Michael Torres", "department": "Cardiology", "summary": "Cardiology follow-up — 10 months on amiodarone", "content": "70 y/o male. AFib stable on amiodarone + metoprolol. HF stable NYHA II. No hospitalizations. INR stable. Weight 196 lbs (+4 lbs from baseline). Patient reports increased fatigue and feeling colder than usual — attributes to winter weather. HR 58. Assessment: Stable cardiac status. Mild bradycardia — expected on amiodarone + metoprolol. Plan: Continue current regimen. Monthly INR."},
-    {"id": 17, "date": "2020-12-15", "type": "lab_result", "ordered_by": "Dr. Michael Torres", "summary": "Monthly INR + cardiac labs — NOTE: Still no thyroid check (now 10 months overdue)", "tests": {"INR": {"value": 2.5, "unit": "", "ref_range": "2.0-3.0", "flag": "THERAPEUTIC"}, "BNP": {"value": 420, "unit": "pg/mL", "ref_range": "<100", "flag": "ELEVATED"}}},
-    {"id": 18, "date": "2021-01-12", "type": "lab_result", "ordered_by": "Dr. Michael Torres", "summary": "Monthly INR", "tests": {"INR": {"value": 2.3, "unit": "", "ref_range": "2.0-3.0", "flag": "THERAPEUTIC"}}},
-    {"id": 19, "date": "2021-02-10", "type": "visit_note", "doctor": "Dr. Michael Torres", "department": "Cardiology", "summary": "1-year amiodarone anniversary — review", "content": "70 y/o male. One year on amiodarone. AFib well-controlled, no breakthrough arrhythmias. Ongoing symptoms: persistent fatigue, weight gain (now 200 lbs, +8 lbs from baseline), cold intolerance, mild constipation. HR 56. Exam: mild periorbital puffiness noted. Skin dry. Assessment: Symptoms could be from HF progression, beta-blocker, or amiodarone-induced hypothyroidism. CRITICAL: Realized thyroid function has NOT been checked since baseline in Feb 2020 — one full year ago. This is a significant monitoring failure. Plan: STAT TSH and free T4. Also overdue: LFTs (6-month check), PFTs (annual). Order all today."},
-    {"id": 20, "date": "2021-02-10", "type": "lab_result", "ordered_by": "Dr. Michael Torres", "summary": "STAT thyroid + monitoring labs — 1 year overdue", "tests": {"TSH": {"value": 18.4, "unit": "mIU/L", "ref_range": "0.4-4.0", "flag": "HIGH — HYPOTHYROID"}, "free_T4": {"value": 0.5, "unit": "ng/dL", "ref_range": "0.8-1.8", "flag": "LOW"}, "ALT": {"value": 38, "unit": "U/L", "ref_range": "7-56", "flag": "NORMAL"}, "AST": {"value": 34, "unit": "U/L", "ref_range": "10-40", "flag": "NORMAL"}, "total_cholesterol": {"value": 248, "unit": "mg/dL", "ref_range": "<200", "flag": "HIGH"}, "LDL": {"value": 156, "unit": "mg/dL", "ref_range": "<100", "flag": "HIGH"}}},
-    {"id": 21, "date": "2021-02-12", "type": "visit_note", "doctor": "Dr. Michael Torres", "department": "Cardiology", "summary": "AMIODARONE-INDUCED HYPOTHYROIDISM CONFIRMED", "content": "70 y/o male. TSH 18.4, free T4 0.5 — overt hypothyroidism. Amiodarone is a well-known cause (contains 37% iodine by weight, disrupts thyroid hormone synthesis). This explains the past 6+ months of symptoms: fatigue, weight gain (+8 lbs), cold intolerance, constipation, dry skin, periorbital puffiness, rising cholesterol (248, was 178), and bradycardia (HR 56). MONITORING FAILURE: Thyroid function should have been checked every 6 months on amiodarone — was checked at baseline only (Feb 2020) and not again until now (Feb 2021). This means hypothyroidism has been developing for months without detection. Assessment: Amiodarone-induced hypothyroidism. Plan: Start levothyroxine 50mcg daily (cautious dose given cardiac history). DO NOT stop amiodarone — needed for AFib control. Recheck TSH in 6-8 weeks. Endocrinology referral for co-management."},
-    {"id": 22, "date": "2021-02-12", "type": "prescription", "prescriber": "Dr. Michael Torres", "department": "Cardiology", "summary": "Levothyroxine for amiodarone-induced hypothyroidism", "drug": "levothyroxine", "dose": "50mcg", "frequency": "daily", "duration": "ongoing", "indication": "amiodarone-induced hypothyroidism"},
-    {"id": 23, "date": "2021-03-10", "type": "lab_result", "ordered_by": "Dr. Michael Torres", "summary": "Monthly INR", "tests": {"INR": {"value": 2.8, "unit": "", "ref_range": "2.0-3.0", "flag": "THERAPEUTIC — note: levothyroxine can increase warfarin effect"}}},
-    {"id": 24, "date": "2021-04-05", "type": "lab_result", "ordered_by": "Dr. Michael Torres", "summary": "TSH recheck — 6 weeks after levothyroxine start", "tests": {"TSH": {"value": 12.6, "unit": "mIU/L", "ref_range": "0.4-4.0", "flag": "STILL HIGH"}, "free_T4": {"value": 0.7, "unit": "ng/dL", "ref_range": "0.8-1.8", "flag": "LOW"}}},
-    {"id": 25, "date": "2021-04-08", "type": "visit_note", "doctor": "Dr. Karen Liu", "department": "Endocrinology", "summary": "Endocrinology consultation — amiodarone hypothyroidism", "content": "70 y/o male with amiodarone-induced hypothyroidism. TSH 12.6 on levothyroxine 50mcg (6 weeks). Still symptomatic — fatigue, weight 198 lbs. Assessment: Undertreated hypothyroidism. Amiodarone-induced hypothyroidism often requires higher levothyroxine doses due to ongoing iodine load. Plan: Increase levothyroxine to 75mcg daily. Take on empty stomach, 30-60 min before food. Separate from calcium/iron if applicable. Recheck TSH in 6-8 weeks. Monitor INR closely — levothyroxine increases warfarin sensitivity."},
-    {"id": 26, "date": "2021-05-11", "type": "lab_result", "ordered_by": "Dr. Michael Torres", "summary": "Monthly INR", "tests": {"INR": {"value": 3.1, "unit": "", "ref_range": "2.0-3.0", "flag": "SLIGHTLY HIGH"}}},
-    {"id": 27, "date": "2021-05-13", "type": "visit_note", "doctor": "Dr. Michael Torres", "department": "Cardiology", "summary": "INR rising with levothyroxine", "content": "70 y/o male. INR 3.1 — rising since levothyroxine started. Expected interaction: thyroid hormone increases warfarin metabolism sensitivity. Plan: Reduce warfarin to 3mg daily. Recheck INR in 1 week."},
-    {"id": 28, "date": "2021-05-20", "type": "lab_result", "ordered_by": "Dr. Michael Torres", "summary": "INR recheck", "tests": {"INR": {"value": 2.7, "unit": "", "ref_range": "2.0-3.0", "flag": "THERAPEUTIC"}}},
-    {"id": 29, "date": "2021-06-01", "type": "lab_result", "ordered_by": "Dr. Karen Liu", "summary": "TSH recheck after dose increase", "tests": {"TSH": {"value": 6.8, "unit": "mIU/L", "ref_range": "0.4-4.0", "flag": "STILL HIGH"}, "free_T4": {"value": 0.9, "unit": "ng/dL", "ref_range": "0.8-1.8", "flag": "LOW NORMAL"}}},
-    {"id": 30, "date": "2021-06-05", "type": "visit_note", "doctor": "Dr. Karen Liu", "department": "Endocrinology", "summary": "Levothyroxine — further increase", "content": "70 y/o male. TSH 6.8 on levothyroxine 75mcg. Improving but not at target. Still mildly fatigued. Weight 196 lbs (down 4 lbs). Plan: Increase levothyroxine to 100mcg daily. Recheck in 6-8 weeks."},
-    {"id": 31, "date": "2021-06-15", "type": "lab_result", "ordered_by": "Dr. Michael Torres", "summary": "Monthly INR", "tests": {"INR": {"value": 2.5, "unit": "", "ref_range": "2.0-3.0", "flag": "THERAPEUTIC"}}},
-    {"id": 32, "date": "2021-07-13", "type": "lab_result", "ordered_by": "Dr. Michael Torres", "summary": "Monthly INR", "tests": {"INR": {"value": 2.6, "unit": "", "ref_range": "2.0-3.0", "flag": "THERAPEUTIC"}}},
-    {"id": 33, "date": "2021-07-28", "type": "lab_result", "ordered_by": "Dr. Karen Liu", "summary": "TSH recheck", "tests": {"TSH": {"value": 3.8, "unit": "mIU/L", "ref_range": "0.4-4.0", "flag": "NORMAL"}, "free_T4": {"value": 1.1, "unit": "ng/dL", "ref_range": "0.8-1.8", "flag": "NORMAL"}}},
-    {"id": 34, "date": "2021-08-02", "type": "visit_note", "doctor": "Dr. Karen Liu", "department": "Endocrinology", "summary": "Hypothyroidism — normalized", "content": "71 y/o male. TSH 3.8 — normalized on levothyroxine 100mcg. Free T4 1.1 — normal. Fatigue resolved. Weight 192 lbs — back to baseline. Cold intolerance resolved. Assessment: Amiodarone-induced hypothyroidism, now euthyroid on replacement. Plan: Continue levothyroxine 100mcg. Monitor TSH every 3-6 months (may need adjustment as long as on amiodarone). Monitor INR — stable on warfarin 3mg."},
-    {"id": 35, "date": "2021-08-17", "type": "lab_result", "ordered_by": "Dr. Michael Torres", "summary": "Monthly INR", "tests": {"INR": {"value": 2.4, "unit": "", "ref_range": "2.0-3.0", "flag": "THERAPEUTIC"}}},
-    {"id": 36, "date": "2021-09-14", "type": "visit_note", "doctor": "Dr. Sarah Patel", "department": "Primary Care", "summary": "Annual physical — 2021", "content": "71 y/o male for annual exam. Now on levothyroxine for amiodarone-induced hypothyroidism. Feeling much better. Weight back to 192. Vitals: BP 130/78, HR 64, BMI 28.2. Assessment: Stable. Plan: Routine labs."},
-    {"id": 37, "date": "2021-09-14", "type": "lab_result", "ordered_by": "Dr. Sarah Patel", "summary": "Annual labs", "tests": {"HbA1c": {"value": 7.2, "unit": "%", "ref_range": "<7.0", "flag": "ABOVE TARGET"}, "creatinine": {"value": 1.3, "unit": "mg/dL", "ref_range": "0.7-1.3", "flag": "HIGH NORMAL"}, "eGFR": {"value": 62, "unit": "mL/min/1.73m2", "ref_range": ">60", "flag": "NORMAL"}, "hemoglobin": {"value": 13.6, "unit": "g/dL", "ref_range": "13.5-17.5", "flag": "NORMAL"}, "TSH": {"value": 3.5, "unit": "mIU/L", "ref_range": "0.4-4.0", "flag": "NORMAL"}, "ALT": {"value": 26, "unit": "U/L", "ref_range": "7-56", "flag": "NORMAL"}, "LDL": {"value": 92, "unit": "mg/dL", "ref_range": "<100", "flag": "NEAR OPTIMAL"}, "total_cholesterol": {"value": 186, "unit": "mg/dL", "ref_range": "<200", "flag": "NORMAL"}}},
-    {"id": 38, "date": "2021-10-12", "type": "lab_result", "ordered_by": "Dr. Michael Torres", "summary": "Monthly INR", "tests": {"INR": {"value": 2.3, "unit": "", "ref_range": "2.0-3.0", "flag": "THERAPEUTIC"}}},
-    {"id": 39, "date": "2021-11-16", "type": "lab_result", "ordered_by": "Dr. Michael Torres", "summary": "Monthly INR", "tests": {"INR": {"value": 2.5, "unit": "", "ref_range": "2.0-3.0", "flag": "THERAPEUTIC"}}},
-    {"id": 40, "date": "2021-12-14", "type": "visit_note", "doctor": "Dr. Michael Torres", "department": "Cardiology", "summary": "Cardiology follow-up", "content": "71 y/o male. AFib/HF stable. On amiodarone 22 months. Hypothyroidism treated. INR stable on warfarin 3mg. No HF exacerbations. NYHA Class II. Weight 193 lbs. HR 62. BNP trending. Assessment: Stable. Plan: Continue all meds. PFTs overdue — should be annual on amiodarone. Order PFTs. Continue monthly INR."},
-    {"id": 41, "date": "2021-12-14", "type": "lab_result", "ordered_by": "Dr. Michael Torres", "summary": "Cardiac labs + INR", "tests": {"INR": {"value": 2.6, "unit": "", "ref_range": "2.0-3.0", "flag": "THERAPEUTIC"}, "BNP": {"value": 410, "unit": "pg/mL", "ref_range": "<100", "flag": "ELEVATED"}, "creatinine": {"value": 1.3, "unit": "mg/dL", "ref_range": "0.7-1.3", "flag": "HIGH NORMAL"}}},
-    {"id": 42, "date": "2022-01-18", "type": "visit_note", "doctor": "Dr. Sarah Patel", "department": "Primary Care", "summary": "PFT results", "content": "71 y/o male. PFTs performed — DLCO 78% predicted (slightly reduced). FVC and FEV1 normal. No dyspnea beyond baseline HF. Assessment: DLCO mildly reduced — could be early amiodarone pulmonary toxicity vs HF-related. Plan: Repeat PFTs in 6 months. If DLCO continues to decline, will need to reassess amiodarone."},
-    {"id": 43, "date": "2022-01-18", "type": "lab_result", "ordered_by": "Dr. Michael Torres", "summary": "Monthly INR", "tests": {"INR": {"value": 2.4, "unit": "", "ref_range": "2.0-3.0", "flag": "THERAPEUTIC"}}},
-    {"id": 44, "date": "2022-02-15", "type": "lab_result", "ordered_by": "Dr. Michael Torres", "summary": "Monthly INR", "tests": {"INR": {"value": 2.5, "unit": "", "ref_range": "2.0-3.0", "flag": "THERAPEUTIC"}}},
-    {"id": 45, "date": "2022-03-08", "type": "lab_result", "ordered_by": "Dr. Karen Liu", "summary": "Thyroid monitoring", "tests": {"TSH": {"value": 4.2, "unit": "mIU/L", "ref_range": "0.4-4.0", "flag": "BORDERLINE HIGH"}, "free_T4": {"value": 1.0, "unit": "ng/dL", "ref_range": "0.8-1.8", "flag": "NORMAL"}}},
-    {"id": 46, "date": "2022-03-15", "type": "lab_result", "ordered_by": "Dr. Michael Torres", "summary": "Monthly INR", "tests": {"INR": {"value": 2.3, "unit": "", "ref_range": "2.0-3.0", "flag": "THERAPEUTIC"}}},
-    {"id": 47, "date": "2022-04-12", "type": "visit_note", "doctor": "Dr. Karen Liu", "department": "Endocrinology", "summary": "TSH borderline — increase levothyroxine", "content": "71 y/o male. TSH 4.2 — borderline elevated on levothyroxine 100mcg. Still on amiodarone (ongoing iodine load). Plan: Increase levothyroxine to 112mcg daily. Recheck in 6-8 weeks."},
-    {"id": 48, "date": "2022-04-12", "type": "lab_result", "ordered_by": "Dr. Michael Torres", "summary": "Monthly INR", "tests": {"INR": {"value": 2.6, "unit": "", "ref_range": "2.0-3.0", "flag": "THERAPEUTIC"}}},
-    {"id": 49, "date": "2022-05-17", "type": "lab_result", "ordered_by": "Dr. Michael Torres", "summary": "Monthly INR", "tests": {"INR": {"value": 2.4, "unit": "", "ref_range": "2.0-3.0", "flag": "THERAPEUTIC"}}},
-    {"id": 50, "date": "2022-06-07", "type": "lab_result", "ordered_by": "Dr. Karen Liu", "summary": "TSH recheck", "tests": {"TSH": {"value": 3.2, "unit": "mIU/L", "ref_range": "0.4-4.0", "flag": "NORMAL"}, "free_T4": {"value": 1.2, "unit": "ng/dL", "ref_range": "0.8-1.8", "flag": "NORMAL"}}},
-    {"id": 51, "date": "2022-06-14", "type": "lab_result", "ordered_by": "Dr. Michael Torres", "summary": "Monthly INR", "tests": {"INR": {"value": 2.5, "unit": "", "ref_range": "2.0-3.0", "flag": "THERAPEUTIC"}}},
-    {"id": 52, "date": "2022-07-12", "type": "visit_note", "doctor": "Dr. Michael Torres", "department": "Cardiology", "summary": "Cardiology follow-up — mid-2022", "content": "72 y/o male. AFib/HF stable. NYHA Class II. On amiodarone 2.5 years. Thyroid managed with levothyroxine 112mcg. PFTs showed mildly reduced DLCO — needs repeat. INR stable. No HF exacerbations. Weight 194 lbs. Assessment: Stable but needs ongoing amiodarone surveillance. Plan: Repeat PFTs. Continue monthly INR. Remind PCP about eye exam (amiodarone corneal deposits)."},
-    {"id": 53, "date": "2022-07-12", "type": "lab_result", "ordered_by": "Dr. Michael Torres", "summary": "Monthly INR + labs", "tests": {"INR": {"value": 2.4, "unit": "", "ref_range": "2.0-3.0", "flag": "THERAPEUTIC"}, "BNP": {"value": 440, "unit": "pg/mL", "ref_range": "<100", "flag": "ELEVATED"}, "creatinine": {"value": 1.4, "unit": "mg/dL", "ref_range": "0.7-1.3", "flag": "HIGH"}, "eGFR": {"value": 56, "unit": "mL/min/1.73m2", "ref_range": ">60", "flag": "MILDLY DECREASED"}}},
-    {"id": 54, "date": "2022-08-16", "type": "lab_result", "ordered_by": "Dr. Michael Torres", "summary": "Monthly INR", "tests": {"INR": {"value": 2.7, "unit": "", "ref_range": "2.0-3.0", "flag": "THERAPEUTIC"}}},
-    {"id": 55, "date": "2022-09-13", "type": "visit_note", "doctor": "Dr. Sarah Patel", "department": "Primary Care", "summary": "Annual physical — 2022", "content": "72 y/o male for annual exam. Complex patient. On amiodarone >2.5 years. Hypothyroidism managed. HF stable. Reports new dry cough x 2 months — intermittent, non-productive. Vitals: BP 132/80, HR 60, weight 196 lbs, SpO2 96%. Lungs: clear on auscultation. Assessment: New cough — differential includes: 1) ACE inhibitor cough (on lisinopril), 2) Amiodarone pulmonary toxicity, 3) HF-related. Plan: Routine labs. Repeat PFTs. CXR. If ACE cough suspected, switch to ARB."},
-    {"id": 56, "date": "2022-09-13", "type": "lab_result", "ordered_by": "Dr. Sarah Patel", "summary": "Annual labs", "tests": {"HbA1c": {"value": 7.3, "unit": "%", "ref_range": "<7.0", "flag": "ABOVE TARGET"}, "creatinine": {"value": 1.4, "unit": "mg/dL", "ref_range": "0.7-1.3", "flag": "HIGH"}, "eGFR": {"value": 54, "unit": "mL/min/1.73m2", "ref_range": ">60", "flag": "MILDLY DECREASED"}, "hemoglobin": {"value": 13.4, "unit": "g/dL", "ref_range": "13.5-17.5", "flag": "BORDERLINE LOW"}, "ALT": {"value": 42, "unit": "U/L", "ref_range": "7-56", "flag": "NORMAL BUT RISING"}, "AST": {"value": 38, "unit": "U/L", "ref_range": "10-40", "flag": "NORMAL BUT RISING"}, "TSH": {"value": 3.4, "unit": "mIU/L", "ref_range": "0.4-4.0", "flag": "NORMAL"}, "LDL": {"value": 85, "unit": "mg/dL", "ref_range": "<100", "flag": "OPTIMAL"}}},
-    {"id": 57, "date": "2022-09-20", "type": "visit_note", "doctor": "Dr. Sarah Patel", "department": "Primary Care", "summary": "CXR and PFT results", "content": "72 y/o male. CXR: mild cardiomegaly, no infiltrates, no effusion. PFTs: DLCO now 68% predicted (was 78% six months ago — declining). FVC normal. Assessment: Declining DLCO on amiodarone — concerning for pulmonary toxicity. However, no radiographic changes yet. Also noted: ALT/AST trending up (42/38). Plan: Discussed with cardiology — may need to consider stopping amiodarone if DLCO continues to decline. High-resolution CT chest if symptoms worsen. Monitor LFTs closely. Switch lisinopril to losartan 50mg for cough."},
-    {"id": 58, "date": "2022-10-11", "type": "lab_result", "ordered_by": "Dr. Michael Torres", "summary": "Monthly INR", "tests": {"INR": {"value": 2.3, "unit": "", "ref_range": "2.0-3.0", "flag": "THERAPEUTIC"}}},
-    {"id": 59, "date": "2022-10-15", "type": "prescription", "prescriber": "Dr. Sarah Patel", "department": "Primary Care", "summary": "ACE to ARB switch for cough", "drug": "losartan", "dose": "50mg", "frequency": "daily", "duration": "ongoing", "indication": "hypertension — switched from lisinopril due to cough"},
-    {"id": 60, "date": "2022-11-15", "type": "lab_result", "ordered_by": "Dr. Michael Torres", "summary": "Monthly INR", "tests": {"INR": {"value": 2.5, "unit": "", "ref_range": "2.0-3.0", "flag": "THERAPEUTIC"}}},
-    {"id": 61, "date": "2022-12-13", "type": "visit_note", "doctor": "Dr. Sarah Patel", "department": "Primary Care", "summary": "Follow-up — cough improved", "content": "72 y/o male. Cough resolved after switching lisinopril to losartan — confirms ACE inhibitor cough, not amiodarone pulmonary toxicity. Assessment: ACE cough resolved. Plan: Continue losartan 50mg. Continue amiodarone monitoring."},
-    {"id": 62, "date": "2022-12-13", "type": "lab_result", "ordered_by": "Dr. Michael Torres", "summary": "Monthly INR", "tests": {"INR": {"value": 2.6, "unit": "", "ref_range": "2.0-3.0", "flag": "THERAPEUTIC"}}},
-    {"id": 63, "date": "2023-01-17", "type": "lab_result", "ordered_by": "Dr. Michael Torres", "summary": "Monthly INR", "tests": {"INR": {"value": 2.4, "unit": "", "ref_range": "2.0-3.0", "flag": "THERAPEUTIC"}}},
-    {"id": 64, "date": "2023-02-14", "type": "visit_note", "doctor": "Dr. Michael Torres", "department": "Cardiology", "summary": "Cardiology follow-up — 3 years on amiodarone", "content": "73 y/o male. On amiodarone 3 years. AFib well-controlled. HF stable. DLCO was declining — need repeat PFTs. Cough resolved (was ACE cough). Liver enzymes slightly elevated last check. Thyroid managed. eGFR declining slowly (54). Assessment: Complex patient requiring multi-organ surveillance for amiodarone. Plan: PFTs, LFTs, TSH, eye exam referral. Monthly INR. Atorvastatin 40mg — check for interaction (amiodarone + statin rhabdomyolysis risk, though lower with atorvastatin than simvastatin)."},
-    {"id": 65, "date": "2023-02-14", "type": "lab_result", "ordered_by": "Dr. Michael Torres", "summary": "Monitoring labs", "tests": {"INR": {"value": 2.5, "unit": "", "ref_range": "2.0-3.0", "flag": "THERAPEUTIC"}, "TSH": {"value": 3.6, "unit": "mIU/L", "ref_range": "0.4-4.0", "flag": "NORMAL"}, "ALT": {"value": 48, "unit": "U/L", "ref_range": "7-56", "flag": "RISING"}, "AST": {"value": 42, "unit": "U/L", "ref_range": "10-40", "flag": "HIGH"}, "CK": {"value": 180, "unit": "U/L", "ref_range": "39-308", "flag": "NORMAL"}, "BNP": {"value": 460, "unit": "pg/mL", "ref_range": "<100", "flag": "ELEVATED"}}},
-    {"id": 66, "date": "2023-03-14", "type": "lab_result", "ordered_by": "Dr. Michael Torres", "summary": "Monthly INR", "tests": {"INR": {"value": 2.3, "unit": "", "ref_range": "2.0-3.0", "flag": "THERAPEUTIC"}}},
-    {"id": 67, "date": "2023-04-11", "type": "visit_note", "doctor": "Dr. Michael Torres", "department": "Cardiology", "summary": "PFT results — stable", "content": "73 y/o male. PFTs: DLCO 70% (was 68% — stable). Not worsening. FVC/FEV1 normal. Reassuring. LFTs: ALT 48, AST 42 — trending up. Could be amiodarone hepatotoxicity or statin-related. CK normal (180). Plan: Reduce atorvastatin to 20mg — see if LFTs improve. If not, may be amiodarone hepatotoxicity. Repeat LFTs in 6 weeks."},
-    {"id": 68, "date": "2023-04-11", "type": "lab_result", "ordered_by": "Dr. Michael Torres", "summary": "Monthly INR", "tests": {"INR": {"value": 2.6, "unit": "", "ref_range": "2.0-3.0", "flag": "THERAPEUTIC"}}},
-    {"id": 69, "date": "2023-05-16", "type": "lab_result", "ordered_by": "Dr. Michael Torres", "summary": "Monthly INR", "tests": {"INR": {"value": 2.4, "unit": "", "ref_range": "2.0-3.0", "flag": "THERAPEUTIC"}}},
-    {"id": 70, "date": "2023-05-30", "type": "lab_result", "ordered_by": "Dr. Michael Torres", "summary": "LFTs recheck after statin dose reduction", "tests": {"ALT": {"value": 44, "unit": "U/L", "ref_range": "7-56", "flag": "STILL ELEVATED"}, "AST": {"value": 40, "unit": "U/L", "ref_range": "10-40", "flag": "BORDERLINE"}}},
-    {"id": 71, "date": "2023-06-05", "type": "visit_note", "doctor": "Dr. Michael Torres", "department": "Cardiology", "summary": "LFTs still elevated after statin reduction", "content": "73 y/o male. ALT 44, AST 40 — minimally improved after reducing atorvastatin. Suggests amiodarone hepatotoxicity rather than statin. Not yet > 3x ULN so not critical, but trending upward (was 22/18 at baseline, now 44/40). Assessment: Likely amiodarone hepatotoxicity, mild. Plan: Continue monitoring LFTs every 3 months. If ALT exceeds 3x ULN (>168), will need to discontinue amiodarone. Continue atorvastatin 20mg."},
-    {"id": 72, "date": "2023-06-13", "type": "lab_result", "ordered_by": "Dr. Michael Torres", "summary": "Monthly INR", "tests": {"INR": {"value": 2.5, "unit": "", "ref_range": "2.0-3.0", "flag": "THERAPEUTIC"}}},
-    {"id": 73, "date": "2023-07-18", "type": "lab_result", "ordered_by": "Dr. Michael Torres", "summary": "Monthly INR", "tests": {"INR": {"value": 2.7, "unit": "", "ref_range": "2.0-3.0", "flag": "THERAPEUTIC"}}},
-    {"id": 74, "date": "2023-08-15", "type": "lab_result", "ordered_by": "Dr. Michael Torres", "summary": "Monthly INR", "tests": {"INR": {"value": 2.4, "unit": "", "ref_range": "2.0-3.0", "flag": "THERAPEUTIC"}}},
-    {"id": 75, "date": "2023-09-12", "type": "visit_note", "doctor": "Dr. Sarah Patel", "department": "Primary Care", "summary": "Annual physical — 2023", "content": "73 y/o male. Complex cardiac patient. On amiodarone >3.5 years. Stable overall. Reports mild ankle edema — bilateral. Weight 198 lbs. Vitals: BP 134/80, HR 58, SpO2 96%. Lungs clear. Assessment: Mild fluid retention — may need furosemide adjustment. Plan: Routine labs. Increase furosemide to 60mg daily if edema persists."},
-    {"id": 76, "date": "2023-09-12", "type": "lab_result", "ordered_by": "Dr. Sarah Patel", "summary": "Annual labs", "tests": {"HbA1c": {"value": 7.4, "unit": "%", "ref_range": "<7.0", "flag": "ABOVE TARGET"}, "creatinine": {"value": 1.5, "unit": "mg/dL", "ref_range": "0.7-1.3", "flag": "HIGH"}, "eGFR": {"value": 50, "unit": "mL/min/1.73m2", "ref_range": ">60", "flag": "MODERATELY DECREASED"}, "potassium": {"value": 4.5, "unit": "mEq/L", "ref_range": "3.5-5.0", "flag": "NORMAL"}, "hemoglobin": {"value": 13.0, "unit": "g/dL", "ref_range": "13.5-17.5", "flag": "LOW"}, "ALT": {"value": 52, "unit": "U/L", "ref_range": "7-56", "flag": "BORDERLINE HIGH"}, "AST": {"value": 46, "unit": "U/L", "ref_range": "10-40", "flag": "HIGH"}, "TSH": {"value": 3.8, "unit": "mIU/L", "ref_range": "0.4-4.0", "flag": "NORMAL"}, "BNP": {"value": 520, "unit": "pg/mL", "ref_range": "<100", "flag": "HIGH"}}},
-    {"id": 77, "date": "2023-10-10", "type": "lab_result", "ordered_by": "Dr. Michael Torres", "summary": "Monthly INR", "tests": {"INR": {"value": 2.5, "unit": "", "ref_range": "2.0-3.0", "flag": "THERAPEUTIC"}}},
-    {"id": 78, "date": "2023-11-14", "type": "visit_note", "doctor": "Dr. Michael Torres", "department": "Cardiology", "summary": "Comprehensive review — amiodarone 3.5+ years", "content": "73 y/o male. On amiodarone since Feb 2020. LFTs continuing to rise (ALT 52, AST 46). DLCO was stable at 70%. Thyroid managed. eGFR declining (50). BNP rising (520). HF may be progressing. Anemia developing (Hgb 13.0). Assessment: Multiple concerning trends. Plan: Continue amiodarone for now but very close monitoring. If LFTs exceed 3x ULN, will discontinue. Consider switching to dronedarone or catheter ablation. HF: optimize therapy. Check iron studies for anemia workup."},
-    {"id": 79, "date": "2023-12-12", "type": "lab_result", "ordered_by": "Dr. Michael Torres", "summary": "Monthly INR + LFTs", "tests": {"INR": {"value": 2.6, "unit": "", "ref_range": "2.0-3.0", "flag": "THERAPEUTIC"}, "ALT": {"value": 58, "unit": "U/L", "ref_range": "7-56", "flag": "HIGH"}, "AST": {"value": 50, "unit": "U/L", "ref_range": "10-40", "flag": "HIGH"}}},
-    {"id": 80, "date": "2024-01-15", "type": "visit_note", "doctor": "Dr. Michael Torres", "department": "Cardiology", "summary": "LFTs now above normal — decision point", "content": "74 y/o male. ALT 58 (exceeded ULN for first time), AST 50. Trending: baseline 22/18 → 24/18 → 38/34 → 42/38 → 48/42 → 44/40 → 52/46 → 58/50. Clear upward trajectory over 3+ years on amiodarone. Not yet at 3x ULN (would be >168) but concerning trend. Assessment: Progressive amiodarone hepatotoxicity. Plan: Continue amiodarone with very close LFT monitoring monthly. If ALT reaches 100, will discontinue. Discuss catheter ablation as alternative for AFib rhythm control. Meanwhile, continue all other medications."}
+    {
+      "id": 1,
+      "date": "2020-02-18",
+      "type": "visit_note",
+      "doctor": "Dr. Sarah Patel",
+      "department": "Primary Care",
+      "summary": "Annual physical \u00e2\u20ac\u201d recurrent anemia evaluation",
+      "content": "38 y/o female with recurrent iron deficiency anemia (IDA) x 3 years. On ferrous sulfate 325mg BID. Also has hypothyroidism on levothyroxine, IBS with bloating/diarrhea on dicyclomine, and chronic fatigue. Reports ongoing fatigue despite iron supplementation and thyroid being 'controlled.' Menstrual history: regular periods, moderate flow \u00e2\u20ac\u201d previously assumed as cause of IDA. Vitals: BP 110/68, HR 78, BMI 22.1, weight 128 lbs. Exam: pale conjunctivae, mild glossitis noted. Assessment: Persistent IDA despite adequate supplementation \u00e2\u20ac\u201d need to investigate further. Plan: Labs including iron studies, CBC, thyroid. Consider GI evaluation if anemia not improving."
+    },
+    {
+      "id": 2,
+      "date": "2020-02-18",
+      "type": "lab_result",
+      "ordered_by": "Dr. Sarah Patel",
+      "summary": "Baseline labs",
+      "tests": {
+        "hemoglobin": {
+          "value": 10.2,
+          "unit": "g/dL",
+          "ref_range": "12.0-16.0",
+          "flag": "LOW"
+        },
+        "hematocrit": {
+          "value": 31.5,
+          "unit": "%",
+          "ref_range": "35.5-44.9",
+          "flag": "LOW"
+        },
+        "MCV": {
+          "value": 72,
+          "unit": "fL",
+          "ref_range": "80-100",
+          "flag": "LOW \u00e2\u20ac\u201d MICROCYTIC"
+        },
+        "RDW": {
+          "value": 16.8,
+          "unit": "%",
+          "ref_range": "11.5-14.5",
+          "flag": "HIGH"
+        },
+        "ferritin": {
+          "value": 8,
+          "unit": "ng/mL",
+          "ref_range": "10-120",
+          "flag": "LOW"
+        },
+        "serum_iron": {
+          "value": 28,
+          "unit": "mcg/dL",
+          "ref_range": "50-170",
+          "flag": "LOW"
+        },
+        "TIBC": {
+          "value": 450,
+          "unit": "mcg/dL",
+          "ref_range": "250-370",
+          "flag": "HIGH"
+        },
+        "transferrin_saturation": {
+          "value": 6,
+          "unit": "%",
+          "ref_range": "20-50",
+          "flag": "LOW"
+        },
+        "TSH": {
+          "value": 3.2,
+          "unit": "mIU/L",
+          "ref_range": "0.4-4.0",
+          "flag": "NORMAL"
+        },
+        "free_T4": {
+          "value": 1.1,
+          "unit": "ng/dL",
+          "ref_range": "0.8-1.8",
+          "flag": "NORMAL"
+        },
+        "vitamin_B12": {
+          "value": 310,
+          "unit": "pg/mL",
+          "ref_range": "200-900",
+          "flag": "NORMAL"
+        },
+        "folate": {
+          "value": 6.8,
+          "unit": "ng/mL",
+          "ref_range": "2.7-17.0",
+          "flag": "NORMAL"
+        }
+      }
+    },
+    {
+      "id": 3,
+      "date": "2020-03-10",
+      "type": "visit_note",
+      "doctor": "Dr. Sarah Patel",
+      "department": "Primary Care",
+      "summary": "Lab review \u00e2\u20ac\u201d severe iron deficiency despite treatment",
+      "content": "38 y/o female. Ferritin 8 \u00e2\u20ac\u201d critically low DESPITE being on ferrous sulfate 325mg BID for over 2 years. Not absorbing iron. Possible causes: 1) Non-compliance (patient insists she takes it), 2) Omeprazole reducing iron absorption (PPIs reduce gastric acid needed for iron), 3) Ongoing blood loss exceeding supplementation, 4) Malabsorption. Assessment: Refractory iron deficiency anemia. Plan: Verify compliance \u00e2\u20ac\u201d switch to liquid iron (easier to verify). Ensure taking on empty stomach with vitamin C. Separate from omeprazole by 2 hours. GYN referral for heavy menstrual bleeding evaluation. If still not improving in 3 months, consider IV iron and GI evaluation."
+    },
+    {
+      "id": 4,
+      "date": "2020-04-14",
+      "type": "visit_note",
+      "doctor": "Dr. Amy Nguyen",
+      "department": "OB/GYN",
+      "summary": "Heavy menstrual bleeding evaluation",
+      "content": "38 y/o female referred for evaluation of heavy menstrual bleeding as possible cause of refractory IDA. Menstrual history: cycles q28 days, duration 5 days, uses 3-4 regular pads/day. Reports occasional cramping but no clots. Pelvic exam: normal. Pelvic ultrasound: normal uterus, no fibroids, no polyps, normal endometrial thickness. Assessment: Menstrual bleeding appears NORMAL \u00e2\u20ac\u201d not heavy enough to explain severe refractory IDA. Plan: No GYN intervention needed. Suggest further workup for other causes of iron loss or malabsorption."
+    },
+    {
+      "id": 5,
+      "date": "2020-05-12",
+      "type": "visit_note",
+      "doctor": "Dr. Sarah Patel",
+      "department": "Primary Care",
+      "summary": "Follow-up \u00e2\u20ac\u201d GYN normal",
+      "content": "38 y/o female. GYN evaluation normal \u00e2\u20ac\u201d menstrual bleeding is NOT the cause of refractory IDA. Still on iron + omeprazole. Assessment: If not menstrual loss and taking iron, then must be malabsorption or occult GI loss. Plan: Check stool guaiac. Consider GI referral. Also: omeprazole is reducing iron absorption \u00e2\u20ac\u201d discuss stepping down."
+    },
+    {
+      "id": 6,
+      "date": "2020-05-12",
+      "type": "lab_result",
+      "ordered_by": "Dr. Sarah Patel",
+      "summary": "Follow-up labs",
+      "tests": {
+        "hemoglobin": {
+          "value": 10.4,
+          "unit": "g/dL",
+          "ref_range": "12.0-16.0",
+          "flag": "LOW"
+        },
+        "ferritin": {
+          "value": 10,
+          "unit": "ng/mL",
+          "ref_range": "10-120",
+          "flag": "LOW"
+        },
+        "stool_guaiac": {
+          "value": "negative",
+          "unit": "",
+          "ref_range": "negative",
+          "flag": "NORMAL"
+        }
+      }
+    },
+    {
+      "id": 7,
+      "date": "2020-06-16",
+      "type": "visit_note",
+      "doctor": "Dr. Sarah Patel",
+      "department": "Primary Care",
+      "summary": "IBS management + fatigue",
+      "content": "38 y/o female. IBS symptoms: intermittent bloating, diarrhea alternating with normal stools, abdominal cramping. On dicyclomine PRN. Diet: no specific restrictions. Reports fatigue worsening. Assessment: IBS, chronic fatigue, persistent IDA. Plan: Trial of low-FODMAP diet for IBS. Continue iron. Fatigue likely from anemia."
+    },
+    {
+      "id": 8,
+      "date": "2020-09-15",
+      "type": "visit_note",
+      "doctor": "Dr. Sarah Patel",
+      "department": "Primary Care",
+      "summary": "Routine follow-up",
+      "content": "38 y/o female. Low-FODMAP diet helped bloating somewhat. Still fatigued. Iron studies show minimal improvement. Assessment: Refractory IDA \u00e2\u20ac\u201d 3 months of continued supplementation with little improvement. Plan: IV iron infusion (ferric carboxymaltose 750mg). Recheck labs in 4 weeks post-infusion."
+    },
+    {
+      "id": 9,
+      "date": "2020-09-22",
+      "type": "visit_note",
+      "doctor": "Dr. Sarah Patel",
+      "department": "Primary Care",
+      "summary": "IV iron infusion #1",
+      "content": "38 y/o female. Ferric carboxymaltose 750mg IV infused over 15 min. No adverse reaction. Plan: Repeat in 1 week. Check labs 4 weeks post-second infusion."
+    },
+    {
+      "id": 10,
+      "date": "2020-09-29",
+      "type": "visit_note",
+      "doctor": "Dr. Sarah Patel",
+      "department": "Primary Care",
+      "summary": "IV iron infusion #2",
+      "content": "38 y/o female. Second dose ferric carboxymaltose 750mg IV. Total dose: 1500mg. No reaction. Plan: Labs in 4 weeks."
+    },
+    {
+      "id": 11,
+      "date": "2020-10-27",
+      "type": "lab_result",
+      "ordered_by": "Dr. Sarah Patel",
+      "summary": "Post-IV iron labs",
+      "tests": {
+        "hemoglobin": {
+          "value": 11.8,
+          "unit": "g/dL",
+          "ref_range": "12.0-16.0",
+          "flag": "IMPROVED BUT STILL LOW"
+        },
+        "ferritin": {
+          "value": 120,
+          "unit": "ng/mL",
+          "ref_range": "10-120",
+          "flag": "NORMAL \u00e2\u20ac\u201d REPLETE"
+        },
+        "serum_iron": {
+          "value": 85,
+          "unit": "mcg/dL",
+          "ref_range": "50-170",
+          "flag": "NORMAL"
+        },
+        "transferrin_saturation": {
+          "value": 25,
+          "unit": "%",
+          "ref_range": "20-50",
+          "flag": "NORMAL"
+        }
+      }
+    },
+    {
+      "id": 12,
+      "date": "2020-11-02",
+      "type": "visit_note",
+      "doctor": "Dr. Sarah Patel",
+      "department": "Primary Care",
+      "summary": "Post-IV iron \u00e2\u20ac\u201d good response",
+      "content": "38 y/o female. Excellent response to IV iron \u00e2\u20ac\u201d ferritin from 8 to 120, hemoglobin 10.2 \u00e2\u2020\u2019 11.8. Feeling somewhat better, more energy. Assessment: IDA responding to IV iron but NOT to oral iron \u00e2\u20ac\u201d confirms malabsorption of oral iron. The fact that she responded to IV but not oral strongly suggests a GI absorption issue. Plus she's on omeprazole which reduces gastric acid (needed for iron absorption). Plan: Continue oral iron maintenance. Consider GI referral for malabsorption workup. Recheck in 3 months."
+    },
+    {
+      "id": 13,
+      "date": "2021-01-19",
+      "type": "lab_result",
+      "ordered_by": "Dr. Sarah Patel",
+      "summary": "3-month post-IV iron",
+      "tests": {
+        "hemoglobin": {
+          "value": 11.2,
+          "unit": "g/dL",
+          "ref_range": "12.0-16.0",
+          "flag": "DECLINING AGAIN"
+        },
+        "ferritin": {
+          "value": 42,
+          "unit": "ng/mL",
+          "ref_range": "10-120",
+          "flag": "DECLINING"
+        }
+      }
+    },
+    {
+      "id": 14,
+      "date": "2021-01-25",
+      "type": "visit_note",
+      "doctor": "Dr. Sarah Patel",
+      "department": "Primary Care",
+      "summary": "Iron stores dropping again",
+      "content": "39 y/o female. Ferritin already dropped from 120 to 42 in 3 months. Hemoglobin declining again (11.8 \u00e2\u2020\u2019 11.2). This is rapid depletion \u00e2\u20ac\u201d either ongoing loss or continued malabsorption on oral iron. Assessment: Refractory IDA with rapid iron depletion. Oral iron not maintaining stores. Plan: GI referral for malabsorption workup. May need periodic IV iron infusions."
+    },
+    {
+      "id": 15,
+      "date": "2021-02-22",
+      "type": "visit_note",
+      "doctor": "Dr. Robert Kim",
+      "department": "Gastroenterology",
+      "summary": "GI consultation \u00e2\u20ac\u201d refractory IDA",
+      "content": "39 y/o female referred for refractory IDA. Iron stores rapidly deplete despite supplementation. Responds to IV but not oral iron. Stool guaiac negative. GYN workup normal. Also has IBS-like symptoms (bloating, diarrhea). On omeprazole 20mg daily. Assessment: Refractory IDA with malabsorption pattern. Differential: 1) PPI-related iron malabsorption, 2) Celiac disease, 3) H. pylori, 4) Occult GI pathology. Plan: EGD with duodenal biopsies (celiac evaluation). Celiac serologies. H. pylori testing. Colonoscopy (age-appropriate screening + rule out occult blood loss source)."
+    },
+    {
+      "id": 16,
+      "date": "2021-02-22",
+      "type": "lab_result",
+      "ordered_by": "Dr. Robert Kim",
+      "summary": "Celiac and H. pylori screening",
+      "tests": {
+        "tTG_IgA": {
+          "value": 98,
+          "unit": "U/mL",
+          "ref_range": "<20",
+          "flag": "HIGH \u00e2\u20ac\u201d STRONGLY POSITIVE"
+        },
+        "total_IgA": {
+          "value": 280,
+          "unit": "mg/dL",
+          "ref_range": "70-400",
+          "flag": "NORMAL"
+        },
+        "H_pylori_stool_antigen": {
+          "value": "negative",
+          "unit": "",
+          "ref_range": "negative",
+          "flag": "NORMAL"
+        }
+      }
+    },
+    {
+      "id": 17,
+      "date": "2021-02-25",
+      "type": "visit_note",
+      "doctor": "Dr. Robert Kim",
+      "department": "Gastroenterology",
+      "summary": "CELIAC DISEASE CONFIRMED ON SEROLOGY",
+      "content": "39 y/o female. tTG-IgA: 98 (strongly positive \u00e2\u20ac\u201d normal < 20). Total IgA normal (rules out IgA deficiency). This is HIGHLY suggestive of celiac disease. This explains EVERYTHING: 1) Refractory iron deficiency (malabsorption in proximal small bowel), 2) Failure of oral iron (can't absorb it), 3) Response to IV iron (bypasses gut), 4) Rapid depletion of iron stores (ongoing malabsorption), 5) IBS-like symptoms (bloating, diarrhea \u00e2\u20ac\u201d classic celiac), 6) Chronic fatigue. Assessment: Celiac disease \u00e2\u20ac\u201d serologically confirmed. Plan: Proceed with EGD + duodenal biopsy for histological confirmation (Marsh classification). Colonoscopy still planned. Begin education about gluten-free diet."
+    },
+    {
+      "id": 18,
+      "date": "2021-03-10",
+      "type": "visit_note",
+      "doctor": "Dr. Robert Kim",
+      "department": "Gastroenterology",
+      "summary": "EGD + colonoscopy results",
+      "content": "39 y/o female. EGD: Duodenum appears scalloped/flattened (loss of normal villous pattern). Biopsies taken from D1 and D2. Colonoscopy: Normal. No polyps, no inflammation, no bleeding source. Pathology results: Duodenal biopsies show villous atrophy (Marsh 3b), increased intraepithelial lymphocytes, crypt hyperplasia. Assessment: CELIAC DISEASE \u00e2\u20ac\u201d histologically confirmed. Marsh 3b (subtotal villous atrophy). Plan: Strict gluten-free diet (GFD). Dietitian referral. Check additional nutritional labs (vitamin D, calcium, B12, folate, zinc). DEXA scan (celiac increases osteoporosis risk). Recheck tTG-IgA in 6-12 months to confirm dietary compliance. Continue iron supplementation. May be able to stop omeprazole after GFD as GERD symptoms may improve."
+    },
+    {
+      "id": 19,
+      "date": "2021-03-10",
+      "type": "lab_result",
+      "ordered_by": "Dr. Robert Kim",
+      "summary": "Nutritional panel for celiac",
+      "tests": {
+        "vitamin_D": {
+          "value": 18,
+          "unit": "ng/mL",
+          "ref_range": "30-100",
+          "flag": "DEFICIENT"
+        },
+        "calcium": {
+          "value": 8.4,
+          "unit": "mg/dL",
+          "ref_range": "8.5-10.5",
+          "flag": "LOW"
+        },
+        "vitamin_B12": {
+          "value": 290,
+          "unit": "pg/mL",
+          "ref_range": "200-900",
+          "flag": "NORMAL"
+        },
+        "folate": {
+          "value": 5.2,
+          "unit": "ng/mL",
+          "ref_range": "2.7-17.0",
+          "flag": "LOW NORMAL"
+        },
+        "zinc": {
+          "value": 55,
+          "unit": "mcg/dL",
+          "ref_range": "60-120",
+          "flag": "LOW"
+        },
+        "albumin": {
+          "value": 3.4,
+          "unit": "g/dL",
+          "ref_range": "3.5-5.5",
+          "flag": "LOW"
+        }
+      }
+    },
+    {
+      "id": 20,
+      "date": "2021-03-15",
+      "type": "visit_note",
+      "doctor": "Dr. Sarah Patel",
+      "department": "Primary Care",
+      "summary": "Celiac diagnosis \u00e2\u20ac\u201d comprehensive plan",
+      "content": "39 y/o female. Celiac disease confirmed. Multiple nutritional deficiencies: iron (chronic), vitamin D (18 \u00e2\u20ac\u201d deficient), calcium (8.4 \u00e2\u20ac\u201d low), zinc (55 \u00e2\u20ac\u201d low), albumin (3.4 \u00e2\u20ac\u201d low). Assessment: Celiac disease with malabsorption-related nutritional deficiencies. Plan: Strict gluten-free diet. Vitamin D 5000 IU daily. Calcium citrate 600mg BID (citrate \u00e2\u20ac\u201d better absorbed without acid, unlike carbonate). Continue iron. Zinc supplementation 25mg daily. DEXA scan. Dietitian referral. Recheck labs in 3-6 months."
+    },
+    {
+      "id": 21,
+      "date": "2021-04-12",
+      "type": "visit_note",
+      "doctor": "Dr. Sarah Patel",
+      "department": "Primary Care",
+      "summary": "Follow-up \u00e2\u20ac\u201d GFD started",
+      "content": "39 y/o female. Started gluten-free diet 4 weeks ago. Reports significant improvement in bloating and diarrhea. Less abdominal cramping. Dicyclomine use decreased. Energy slightly improved. Assessment: Early positive response to GFD. Plan: Continue GFD strictly. Labs in 2 months."
+    },
+    {
+      "id": 22,
+      "date": "2021-05-18",
+      "type": "visit_note",
+      "doctor": "Dr. Sarah Patel",
+      "department": "Primary Care",
+      "summary": "DEXA scan results",
+      "content": "39 y/o female with celiac disease. DEXA: Lumbar spine T-score -1.8 (osteopenia). Hip T-score -1.2 (normal). Assessment: Osteopenia \u00e2\u20ac\u201d likely from celiac-related calcium and vitamin D malabsorption. Plan: Continue vitamin D 5000 IU + calcium citrate. Repeat DEXA in 2 years. GFD should help absorption improve."
+    },
+    {
+      "id": 23,
+      "date": "2021-06-15",
+      "type": "lab_result",
+      "ordered_by": "Dr. Sarah Patel",
+      "summary": "3-month post-GFD labs",
+      "tests": {
+        "hemoglobin": {
+          "value": 11.8,
+          "unit": "g/dL",
+          "ref_range": "12.0-16.0",
+          "flag": "IMPROVING"
+        },
+        "ferritin": {
+          "value": 35,
+          "unit": "ng/mL",
+          "ref_range": "10-120",
+          "flag": "IMPROVING"
+        },
+        "tTG_IgA": {
+          "value": 45,
+          "unit": "U/mL",
+          "ref_range": "<20",
+          "flag": "DECLINING \u00e2\u20ac\u201d GFD WORKING"
+        },
+        "vitamin_D": {
+          "value": 28,
+          "unit": "ng/mL",
+          "ref_range": "30-100",
+          "flag": "IMPROVING"
+        },
+        "calcium": {
+          "value": 8.8,
+          "unit": "mg/dL",
+          "ref_range": "8.5-10.5",
+          "flag": "NORMAL"
+        },
+        "albumin": {
+          "value": 3.6,
+          "unit": "g/dL",
+          "ref_range": "3.5-5.5",
+          "flag": "NORMAL"
+        }
+      }
+    },
+    {
+      "id": 24,
+      "date": "2021-06-20",
+      "type": "visit_note",
+      "doctor": "Dr. Sarah Patel",
+      "department": "Primary Care",
+      "summary": "Excellent response to GFD",
+      "content": "39 y/o female. 3 months on GFD. All labs improving. tTG-IgA declining (98 \u00e2\u2020\u2019 45). Iron stores rebuilding on oral iron now (ferritin 35 \u00e2\u20ac\u201d previously couldn't get above 10 on oral). Vitamin D improving. Calcium normalized. Bloating and diarrhea 80% improved. Assessment: Celiac disease responding well to GFD. Iron absorption improving. Plan: Continue strict GFD. Continue supplements. Next labs in 6 months."
+    },
+    {
+      "id": 25,
+      "date": "2021-09-14",
+      "type": "visit_note",
+      "doctor": "Dr. Sarah Patel",
+      "department": "Primary Care",
+      "summary": "Annual physical \u00e2\u20ac\u201d 2021",
+      "content": "39 y/o female. Dramatic improvement since celiac diagnosis. GFD well-maintained. Energy much better. GI symptoms minimal. Weight 132 lbs (+4 lbs \u00e2\u20ac\u201d healthy gain). Assessment: Celiac disease well-managed. Plan: Labs."
+    },
+    {
+      "id": 26,
+      "date": "2021-09-14",
+      "type": "lab_result",
+      "ordered_by": "Dr. Sarah Patel",
+      "summary": "6-month post-GFD labs",
+      "tests": {
+        "hemoglobin": {
+          "value": 12.4,
+          "unit": "g/dL",
+          "ref_range": "12.0-16.0",
+          "flag": "NORMAL \u00e2\u20ac\u201d FIRST TIME IN YEARS"
+        },
+        "ferritin": {
+          "value": 58,
+          "unit": "ng/mL",
+          "ref_range": "10-120",
+          "flag": "NORMAL"
+        },
+        "tTG_IgA": {
+          "value": 18,
+          "unit": "U/mL",
+          "ref_range": "<20",
+          "flag": "NORMAL \u00e2\u20ac\u201d NEGATIVE"
+        },
+        "vitamin_D": {
+          "value": 36,
+          "unit": "ng/mL",
+          "ref_range": "30-100",
+          "flag": "SUFFICIENT"
+        },
+        "calcium": {
+          "value": 9.2,
+          "unit": "mg/dL",
+          "ref_range": "8.5-10.5",
+          "flag": "NORMAL"
+        },
+        "TSH": {
+          "value": 2.8,
+          "unit": "mIU/L",
+          "ref_range": "0.4-4.0",
+          "flag": "NORMAL"
+        },
+        "albumin": {
+          "value": 4.0,
+          "unit": "g/dL",
+          "ref_range": "3.5-5.5",
+          "flag": "NORMAL"
+        }
+      }
+    },
+    {
+      "id": 27,
+      "date": "2021-09-18",
+      "type": "visit_note",
+      "doctor": "Dr. Sarah Patel",
+      "department": "Primary Care",
+      "summary": "Lab review \u00e2\u20ac\u201d all normalized",
+      "content": "39 y/o female. Hemoglobin 12.4 \u00e2\u20ac\u201d NORMAL for the first time in years! Ferritin 58 \u00e2\u20ac\u201d healthy stores. tTG-IgA negative \u00e2\u20ac\u201d confirmed GFD compliance and mucosal healing. Vitamin D sufficient. Calcium normal. Assessment: Celiac disease in remission on GFD. Iron deficiency RESOLVED. Plan: Continue GFD lifelong. Continue vitamin D + calcium. Can likely stop iron supplementation \u00e2\u20ac\u201d recheck ferritin in 6 months to confirm stores maintained."
+    },
+    {
+      "id": 28,
+      "date": "2022-01-18",
+      "type": "visit_note",
+      "doctor": "Dr. Sarah Patel",
+      "department": "Primary Care",
+      "summary": "Routine follow-up",
+      "content": "40 y/o female. Celiac in remission. Off iron supplementation x 4 months (trial). Feeling great. GFD maintained. IBS symptoms essentially resolved. Assessment: Excellent. Plan: Labs to confirm iron stores maintained."
+    },
+    {
+      "id": 29,
+      "date": "2022-01-18",
+      "type": "lab_result",
+      "ordered_by": "Dr. Sarah Patel",
+      "summary": "Follow-up labs \u00e2\u20ac\u201d off iron",
+      "tests": {
+        "hemoglobin": {
+          "value": 12.6,
+          "unit": "g/dL",
+          "ref_range": "12.0-16.0",
+          "flag": "NORMAL"
+        },
+        "ferritin": {
+          "value": 52,
+          "unit": "ng/mL",
+          "ref_range": "10-120",
+          "flag": "NORMAL \u00e2\u20ac\u201d MAINTAINED"
+        },
+        "MCV": {
+          "value": 86,
+          "unit": "fL",
+          "ref_range": "80-100",
+          "flag": "NORMAL"
+        }
+      }
+    },
+    {
+      "id": 30,
+      "date": "2022-01-20",
+      "type": "visit_note",
+      "doctor": "Dr. Sarah Patel",
+      "department": "Primary Care",
+      "summary": "Iron stores maintained off supplementation",
+      "content": "40 y/o female. Ferritin 52, hemoglobin 12.6 \u00e2\u20ac\u201d iron stores maintained without supplementation! This confirms the GFD has restored intestinal absorption. Assessment: Celiac disease in full remission. Iron deficiency resolved. Plan: No iron supplementation needed. Continue GFD, vitamin D, calcium. Annual labs."
+    },
+    {
+      "id": 31,
+      "date": "2022-04-12",
+      "type": "visit_note",
+      "doctor": "Dr. Sarah Patel",
+      "department": "Primary Care",
+      "summary": "Omeprazole reassessment",
+      "content": "40 y/o female. On omeprazole 20mg daily for 'GERD' x 4 years. Now that celiac is diagnosed and treated, GI symptoms have resolved. GERD symptoms: patient reports no heartburn in over 6 months. Assessment: GERD symptoms resolved \u00e2\u20ac\u201d likely were celiac-related all along. Plan: Trial PPI discontinuation: omeprazole 20mg every other day x 2 weeks, then stop. Switch to famotidine 20mg PRN if any breakthrough reflux."
+    },
+    {
+      "id": 32,
+      "date": "2022-05-10",
+      "type": "visit_note",
+      "doctor": "Dr. Sarah Patel",
+      "department": "Primary Care",
+      "summary": "Omeprazole successfully discontinued",
+      "content": "40 y/o female. Omeprazole stopped x 2 weeks. No GERD symptoms. Assessment: GERD was likely celiac-related. Omeprazole no longer needed. This removes the PPI contribution to iron malabsorption (which was compounding the celiac malabsorption). Plan: Continue without PPI. Famotidine PRN if needed."
+    },
+    {
+      "id": 33,
+      "date": "2022-09-13",
+      "type": "visit_note",
+      "doctor": "Dr. Sarah Patel",
+      "department": "Primary Care",
+      "summary": "Annual physical \u00e2\u20ac\u201d 2022",
+      "content": "40 y/o female. Best health in years. Celiac in remission. No IDA. No GERD. IBS symptoms resolved (was celiac all along). Energy normalized. Weight 134 lbs. Off iron, off omeprazole, off dicyclomine. Current meds: levothyroxine 75mcg, vitamin D 2000 IU, calcium citrate 600mg. Assessment: Dramatic improvement with celiac diagnosis and treatment. Plan: Annual labs."
+    },
+    {
+      "id": 34,
+      "date": "2022-09-13",
+      "type": "lab_result",
+      "ordered_by": "Dr. Sarah Patel",
+      "summary": "Annual labs",
+      "tests": {
+        "hemoglobin": {
+          "value": 13.0,
+          "unit": "g/dL",
+          "ref_range": "12.0-16.0",
+          "flag": "NORMAL"
+        },
+        "ferritin": {
+          "value": 65,
+          "unit": "ng/mL",
+          "ref_range": "10-120",
+          "flag": "NORMAL"
+        },
+        "TSH": {
+          "value": 2.5,
+          "unit": "mIU/L",
+          "ref_range": "0.4-4.0",
+          "flag": "NORMAL"
+        },
+        "vitamin_D": {
+          "value": 42,
+          "unit": "ng/mL",
+          "ref_range": "30-100",
+          "flag": "SUFFICIENT"
+        },
+        "calcium": {
+          "value": 9.4,
+          "unit": "mg/dL",
+          "ref_range": "8.5-10.5",
+          "flag": "NORMAL"
+        },
+        "tTG_IgA": {
+          "value": 8,
+          "unit": "U/mL",
+          "ref_range": "<20",
+          "flag": "NORMAL"
+        }
+      }
+    },
+    {
+      "id": 35,
+      "date": "2023-01-17",
+      "type": "visit_note",
+      "doctor": "Dr. Sarah Patel",
+      "department": "Primary Care",
+      "summary": "Routine follow-up",
+      "content": "41 y/o female. Doing great. GFD maintained. No complaints. Assessment: Stable. Plan: Continue current simple regimen."
+    },
+    {
+      "id": 36,
+      "date": "2023-03-14",
+      "type": "visit_note",
+      "doctor": "Dr. Sarah Patel",
+      "department": "Primary Care",
+      "summary": "Hypothyroidism follow-up",
+      "content": "41 y/o female. On levothyroxine 75mcg daily. TSH stable. Note: Celiac disease and hypothyroidism are both autoimmune \u00e2\u20ac\u201d association is well-documented. Patient should be aware of other autoimmune disease risk. Plan: Continue levothyroxine. Annual TSH."
+    },
+    {
+      "id": 37,
+      "date": "2023-05-16",
+      "type": "visit_note",
+      "doctor": "Dr. Sarah Patel",
+      "department": "Primary Care",
+      "summary": "Acute visit \u00e2\u20ac\u201d skin rash",
+      "content": "41 y/o female with itchy, blistering rash on elbows and knees x 1 week. Symmetrical. Very pruritic. Exam: grouped vesicles on an erythematous base, bilateral elbows and knees. Assessment: Dermatitis herpetiformis \u00e2\u20ac\u201d the skin manifestation of celiac disease. Despite GFD compliance (tTG normal), this can occur with even trace gluten exposure. Plan: Dermatology referral. May need dapsone for symptom control. Reinforce strict GFD \u00e2\u20ac\u201d check for hidden gluten sources."
+    },
+    {
+      "id": 38,
+      "date": "2023-06-12",
+      "type": "visit_note",
+      "doctor": "Dr. Jennifer Walsh",
+      "department": "Dermatology",
+      "summary": "Dermatitis herpetiformis evaluation",
+      "content": "41 y/o female with celiac disease. Classic DH presentation \u00e2\u20ac\u201d grouped vesicles on elbows and knees. Skin biopsy performed: direct immunofluorescence shows granular IgA deposits at dermal papillae \u00e2\u20ac\u201d CONFIRMS dermatitis herpetiformis. Assessment: DH confirmed. Plan: Dapsone 50mg daily (first-line for DH). Check G6PD before starting (dapsone causes hemolytic anemia in G6PD deficiency). CBC monitoring. Reinforce strict GFD \u00e2\u20ac\u201d with sustained GFD compliance, DH often improves and dapsone can be tapered."
+    },
+    {
+      "id": 39,
+      "date": "2023-06-12",
+      "type": "lab_result",
+      "ordered_by": "Dr. Jennifer Walsh",
+      "summary": "Pre-dapsone labs",
+      "tests": {
+        "G6PD": {
+          "value": "normal",
+          "unit": "",
+          "ref_range": "normal",
+          "flag": "NORMAL"
+        },
+        "hemoglobin": {
+          "value": 12.8,
+          "unit": "g/dL",
+          "ref_range": "12.0-16.0",
+          "flag": "NORMAL"
+        },
+        "reticulocyte_count": {
+          "value": 1.0,
+          "unit": "%",
+          "ref_range": "0.5-2.5",
+          "flag": "NORMAL"
+        },
+        "methemoglobin": {
+          "value": 0.8,
+          "unit": "%",
+          "ref_range": "<1.5",
+          "flag": "NORMAL"
+        }
+      }
+    },
+    {
+      "id": 40,
+      "date": "2023-07-10",
+      "type": "visit_note",
+      "doctor": "Dr. Jennifer Walsh",
+      "department": "Dermatology",
+      "summary": "Dapsone \u00e2\u20ac\u201d 4 week follow-up",
+      "content": "41 y/o female. Dapsone 50mg daily x 4 weeks. Rash dramatically improved \u00e2\u20ac\u201d vesicles resolved, mild residual erythema. No hemolysis on labs. Assessment: DH responding to dapsone. Plan: Continue dapsone 50mg. Attempt to taper to 25mg in 2 months if GFD strictly maintained. Monitor hemoglobin monthly x 3 months."
+    },
+    {
+      "id": 41,
+      "date": "2023-07-10",
+      "type": "lab_result",
+      "ordered_by": "Dr. Jennifer Walsh",
+      "summary": "Dapsone monitoring",
+      "tests": {
+        "hemoglobin": {
+          "value": 12.2,
+          "unit": "g/dL",
+          "ref_range": "12.0-16.0",
+          "flag": "NORMAL \u00e2\u20ac\u201d slight drop expected on dapsone"
+        },
+        "reticulocyte_count": {
+          "value": 2.0,
+          "unit": "%",
+          "ref_range": "0.5-2.5",
+          "flag": "NORMAL \u00e2\u20ac\u201d compensatory"
+        },
+        "methemoglobin": {
+          "value": 1.2,
+          "unit": "%",
+          "ref_range": "<1.5",
+          "flag": "NORMAL"
+        }
+      }
+    },
+    {
+      "id": 42,
+      "date": "2023-09-12",
+      "type": "visit_note",
+      "doctor": "Dr. Sarah Patel",
+      "department": "Primary Care",
+      "summary": "Annual physical \u00e2\u20ac\u201d 2023",
+      "content": "41 y/o female. Celiac in remission. DH treated with dapsone. GFD strict. Hypothyroidism stable. No IDA recurrence. Weight 135 lbs. Assessment: Overall excellent. Plan: Annual labs."
+    },
+    {
+      "id": 43,
+      "date": "2023-09-12",
+      "type": "lab_result",
+      "ordered_by": "Dr. Sarah Patel",
+      "summary": "Annual labs",
+      "tests": {
+        "hemoglobin": {
+          "value": 12.4,
+          "unit": "g/dL",
+          "ref_range": "12.0-16.0",
+          "flag": "NORMAL"
+        },
+        "ferritin": {
+          "value": 70,
+          "unit": "ng/mL",
+          "ref_range": "10-120",
+          "flag": "NORMAL"
+        },
+        "TSH": {
+          "value": 2.6,
+          "unit": "mIU/L",
+          "ref_range": "0.4-4.0",
+          "flag": "NORMAL"
+        },
+        "tTG_IgA": {
+          "value": 6,
+          "unit": "U/mL",
+          "ref_range": "<20",
+          "flag": "NORMAL"
+        },
+        "vitamin_D": {
+          "value": 44,
+          "unit": "ng/mL",
+          "ref_range": "30-100",
+          "flag": "SUFFICIENT"
+        },
+        "calcium": {
+          "value": 9.6,
+          "unit": "mg/dL",
+          "ref_range": "8.5-10.5",
+          "flag": "NORMAL"
+        }
+      }
+    },
+    {
+      "id": 44,
+      "date": "2023-11-14",
+      "type": "visit_note",
+      "doctor": "Dr. Jennifer Walsh",
+      "department": "Dermatology",
+      "summary": "DH \u00e2\u20ac\u201d dapsone taper",
+      "content": "41 y/o female. DH in remission x 3 months. GFD strictly maintained. Plan: Taper dapsone to 25mg daily. If remission maintained x 3 months, discontinue."
+    },
+    {
+      "id": 45,
+      "date": "2024-02-13",
+      "type": "visit_note",
+      "doctor": "Dr. Jennifer Walsh",
+      "department": "Dermatology",
+      "summary": "DH \u00e2\u20ac\u201d dapsone discontinued",
+      "content": "42 y/o female. DH in remission on dapsone 25mg x 3 months. No recurrence. GFD strictly maintained. Plan: Discontinue dapsone. Monitor for recurrence. GFD is the long-term treatment."
+    },
+    {
+      "id": 46,
+      "date": "2024-03-12",
+      "type": "visit_note",
+      "doctor": "Dr. Robert Kim",
+      "department": "Gastroenterology",
+      "summary": "Celiac annual follow-up",
+      "content": "42 y/o female with celiac disease. On GFD x 3 years. tTG-IgA consistently negative. Symptoms in complete remission. Iron stores normal. Nutritional status normalized. Assessment: Celiac disease in complete remission on GFD. Plan: Annual tTG-IgA. Annual nutritional labs. Repeat DEXA at 5-year mark (2026). Continue GFD lifelong."
+    },
+    {
+      "id": 47,
+      "date": "2024-05-14",
+      "type": "visit_note",
+      "doctor": "Dr. Sarah Patel",
+      "department": "Primary Care",
+      "summary": "Routine follow-up",
+      "content": "42 y/o female. Doing excellently. All conditions stable. Simplified medication list: levothyroxine 75mcg, vitamin D 2000 IU, calcium citrate 600mg. Assessment: Dramatic improvement from complex undiagnosed celiac patient to well-managed with simple regimen."
+    },
+    {
+      "id": 48,
+      "date": "2024-09-10",
+      "type": "visit_note",
+      "doctor": "Dr. Sarah Patel",
+      "department": "Primary Care",
+      "summary": "Annual physical \u00e2\u20ac\u201d 2024",
+      "content": "42 y/o female. Excellent year. Assessment: Stable. Plan: Labs."
+    },
+    {
+      "id": 49,
+      "date": "2024-09-10",
+      "type": "lab_result",
+      "ordered_by": "Dr. Sarah Patel",
+      "summary": "Annual labs",
+      "tests": {
+        "hemoglobin": {
+          "value": 13.2,
+          "unit": "g/dL",
+          "ref_range": "12.0-16.0",
+          "flag": "NORMAL"
+        },
+        "ferritin": {
+          "value": 78,
+          "unit": "ng/mL",
+          "ref_range": "10-120",
+          "flag": "NORMAL"
+        },
+        "TSH": {
+          "value": 2.4,
+          "unit": "mIU/L",
+          "ref_range": "0.4-4.0",
+          "flag": "NORMAL"
+        },
+        "vitamin_D": {
+          "value": 48,
+          "unit": "ng/mL",
+          "ref_range": "30-100",
+          "flag": "SUFFICIENT"
+        },
+        "calcium": {
+          "value": 9.4,
+          "unit": "mg/dL",
+          "ref_range": "8.5-10.5",
+          "flag": "NORMAL"
+        },
+        "tTG_IgA": {
+          "value": 5,
+          "unit": "U/mL",
+          "ref_range": "<20",
+          "flag": "NORMAL"
+        }
+      }
+    },
+    {
+      "id": 50,
+      "date": "2025-01-14",
+      "type": "visit_note",
+      "doctor": "Dr. Sarah Patel",
+      "department": "Primary Care",
+      "summary": "Routine follow-up",
+      "content": "43 y/o female. Stable. GFD x 4 years. No recurrence of IDA, DH, or GI symptoms. Assessment: Celiac disease in sustained remission."
+    },
+    {
+      "id": 51,
+      "date": "2025-03-11",
+      "type": "visit_note",
+      "doctor": "Dr. Sarah Patel",
+      "department": "Primary Care",
+      "summary": "Routine follow-up",
+      "content": "43 y/o female. No new issues. Assessment: Stable."
+    },
+    {
+      "id": 52,
+      "date": "2025-05-13",
+      "type": "visit_note",
+      "doctor": "Dr. Sarah Patel",
+      "department": "Primary Care",
+      "summary": "Acute visit \u00e2\u20ac\u201d joint pain",
+      "content": "43 y/o female with new bilateral hand joint stiffness and pain x 3 weeks. Morning stiffness lasting 30-40 minutes. PIP and MCP joints involved. Mild swelling bilateral. No trauma. Assessment: Inflammatory joint symptoms \u00e2\u20ac\u201d concerning for RA (another autoimmune condition; celiac + hypothyroidism = autoimmune predisposition). Plan: Labs \u00e2\u20ac\u201d RF, anti-CCP, ESR, CRP. If positive, rheumatology referral."
+    },
+    {
+      "id": 53,
+      "date": "2025-05-13",
+      "type": "lab_result",
+      "ordered_by": "Dr. Sarah Patel",
+      "summary": "Rheumatologic workup",
+      "tests": {
+        "RF": {
+          "value": 42,
+          "unit": "IU/mL",
+          "ref_range": "<14",
+          "flag": "HIGH"
+        },
+        "anti_CCP": {
+          "value": 68,
+          "unit": "U/mL",
+          "ref_range": "<20",
+          "flag": "HIGH"
+        },
+        "ESR": {
+          "value": 32,
+          "unit": "mm/hr",
+          "ref_range": "0-20",
+          "flag": "HIGH"
+        },
+        "CRP": {
+          "value": 8.5,
+          "unit": "mg/L",
+          "ref_range": "<3.0",
+          "flag": "HIGH"
+        },
+        "ANA": {
+          "value": "1:80",
+          "unit": "titer",
+          "ref_range": "<1:40",
+          "flag": "POSITIVE"
+        }
+      }
+    },
+    {
+      "id": 54,
+      "date": "2025-05-18",
+      "type": "visit_note",
+      "doctor": "Dr. Sarah Patel",
+      "department": "Primary Care",
+      "summary": "RA labs positive \u00e2\u20ac\u201d rheumatology referral",
+      "content": "43 y/o female. RF 42 (positive), anti-CCP 68 (positive \u00e2\u20ac\u201d highly specific for RA), elevated ESR/CRP. ANA 1:80 (low positive \u00e2\u20ac\u201d nonspecific). Assessment: Early rheumatoid arthritis, seropositive. This is the THIRD autoimmune condition (celiac + hypothyroidism + now RA). Autoimmune clustering is well-documented. Plan: Rheumatology referral. Hand X-rays."
+    },
+    {
+      "id": 55,
+      "date": "2025-06-10",
+      "type": "visit_note",
+      "doctor": "Dr. Linda Park",
+      "department": "Rheumatology",
+      "summary": "Rheumatology consultation \u00e2\u20ac\u201d early RA",
+      "content": "43 y/o female with celiac disease, hypothyroidism, and new inflammatory arthritis. RF+, anti-CCP+, elevated ESR/CRP. Exam: tender and swollen PIP/MCP joints bilateral, mild grip weakness. Hand X-rays: no erosions yet \u00e2\u20ac\u201d early disease. DAS28: 4.2 (moderate disease activity). Assessment: Seropositive RA, early, no erosions. Plan: Start methotrexate 10mg weekly + folic acid 1mg daily. LOW threshold for biologic if disease progresses (given celiac \u00e2\u20ac\u201d must monitor GI symptoms on methotrexate). Note: Methotrexate requires monitoring \u00e2\u20ac\u201d CBC, LFTs every 2-3 months. Also monitor celiac \u00e2\u20ac\u201d methotrexate can affect GI mucosa."
+    },
+    {
+      "id": 56,
+      "date": "2025-06-10",
+      "type": "prescription",
+      "prescriber": "Dr. Linda Park",
+      "department": "Rheumatology",
+      "summary": "DMARD started",
+      "drug": "methotrexate",
+      "dose": "10mg",
+      "frequency": "weekly",
+      "duration": "ongoing",
+      "indication": "rheumatoid arthritis \u00e2\u20ac\u201d early, seropositive"
+    },
+    {
+      "id": 57,
+      "date": "2025-07-15",
+      "type": "visit_note",
+      "doctor": "Dr. Sarah Patel",
+      "department": "Primary Care",
+      "summary": "Follow-up \u00e2\u20ac\u201d methotrexate started",
+      "content": "43 y/o female. On methotrexate 10mg weekly x 5 weeks. Joint stiffness improving. Reports mild nausea on methotrexate days. No mouth sores. No GI worsening (celiac stable). Assessment: Early response to methotrexate. Plan: Continue. Labs in 2 weeks for monitoring."
+    },
+    {
+      "id": 58,
+      "date": "2025-07-29",
+      "type": "lab_result",
+      "ordered_by": "Dr. Linda Park",
+      "summary": "Methotrexate 2-month monitoring",
+      "tests": {
+        "WBC": {
+          "value": 5.8,
+          "unit": "x10^3/uL",
+          "ref_range": "4.5-11.0",
+          "flag": "NORMAL"
+        },
+        "hemoglobin": {
+          "value": 12.8,
+          "unit": "g/dL",
+          "ref_range": "12.0-16.0",
+          "flag": "NORMAL"
+        },
+        "platelets": {
+          "value": 220,
+          "unit": "x10^3/uL",
+          "ref_range": "150-400",
+          "flag": "NORMAL"
+        },
+        "ALT": {
+          "value": 22,
+          "unit": "U/L",
+          "ref_range": "7-56",
+          "flag": "NORMAL"
+        },
+        "creatinine": {
+          "value": 0.8,
+          "unit": "mg/dL",
+          "ref_range": "0.6-1.1",
+          "flag": "NORMAL"
+        }
+      }
+    },
+    {
+      "id": 59,
+      "date": "2025-09-09",
+      "type": "visit_note",
+      "doctor": "Dr. Sarah Patel",
+      "department": "Primary Care",
+      "summary": "Annual physical \u00e2\u20ac\u201d 2025",
+      "content": "43 y/o female. Complex autoimmune patient: celiac (in remission on GFD), hypothyroidism (stable on levothyroxine), early RA (responding to methotrexate). Weight 136 lbs. Vitals normal. Assessment: Three autoimmune conditions managed. RA early and responding well. Plan: Labs."
+    },
+    {
+      "id": 60,
+      "date": "2025-09-09",
+      "type": "lab_result",
+      "ordered_by": "Dr. Sarah Patel",
+      "summary": "Annual labs",
+      "tests": {
+        "hemoglobin": {
+          "value": 12.6,
+          "unit": "g/dL",
+          "ref_range": "12.0-16.0",
+          "flag": "NORMAL"
+        },
+        "ferritin": {
+          "value": 72,
+          "unit": "ng/mL",
+          "ref_range": "10-120",
+          "flag": "NORMAL"
+        },
+        "TSH": {
+          "value": 2.8,
+          "unit": "mIU/L",
+          "ref_range": "0.4-4.0",
+          "flag": "NORMAL"
+        },
+        "tTG_IgA": {
+          "value": 4,
+          "unit": "U/mL",
+          "ref_range": "<20",
+          "flag": "NORMAL"
+        },
+        "vitamin_D": {
+          "value": 44,
+          "unit": "ng/mL",
+          "ref_range": "30-100",
+          "flag": "SUFFICIENT"
+        },
+        "ESR": {
+          "value": 18,
+          "unit": "mm/hr",
+          "ref_range": "0-20",
+          "flag": "NORMAL"
+        },
+        "CRP": {
+          "value": 2.8,
+          "unit": "mg/L",
+          "ref_range": "<3.0",
+          "flag": "NORMAL"
+        },
+        "ALT": {
+          "value": 20,
+          "unit": "U/L",
+          "ref_range": "7-56",
+          "flag": "NORMAL"
+        }
+      }
+    },
+    {
+      "id": 61,
+      "date": "2025-10-14",
+      "type": "visit_note",
+      "doctor": "Dr. Linda Park",
+      "department": "Rheumatology",
+      "summary": "RA follow-up \u00e2\u20ac\u201d 4 months",
+      "content": "43 y/o female. RA on methotrexate 10mg weekly x 4 months. DAS28: 2.6 (low disease activity). Morning stiffness < 15 min. Mild residual PIP swelling. Assessment: RA responding well. Plan: Continue methotrexate 10mg. If not in remission by 6 months, increase dose or add biologic."
+    },
+    {
+      "id": 62,
+      "date": "2025-11-11",
+      "type": "lab_result",
+      "ordered_by": "Dr. Linda Park",
+      "summary": "Methotrexate monitoring",
+      "tests": {
+        "WBC": {
+          "value": 5.4,
+          "unit": "x10^3/uL",
+          "ref_range": "4.5-11.0",
+          "flag": "NORMAL"
+        },
+        "hemoglobin": {
+          "value": 12.4,
+          "unit": "g/dL",
+          "ref_range": "12.0-16.0",
+          "flag": "NORMAL"
+        },
+        "platelets": {
+          "value": 210,
+          "unit": "x10^3/uL",
+          "ref_range": "150-400",
+          "flag": "NORMAL"
+        },
+        "ALT": {
+          "value": 24,
+          "unit": "U/L",
+          "ref_range": "7-56",
+          "flag": "NORMAL"
+        }
+      }
+    },
+    {
+      "id": 63,
+      "date": "2025-12-09",
+      "type": "visit_note",
+      "doctor": "Dr. Sarah Patel",
+      "department": "Primary Care",
+      "summary": "Routine follow-up",
+      "content": "43 y/o female. All three autoimmune conditions stable. RA improving on methotrexate. Celiac in remission. Thyroid stable. Assessment: Well-managed complex autoimmune patient."
+    },
+    {
+      "id": 64,
+      "date": "2026-01-13",
+      "type": "visit_note",
+      "doctor": "Dr. Linda Park",
+      "department": "Rheumatology",
+      "summary": "RA \u00e2\u20ac\u201d 7 month review",
+      "content": "44 y/o female. RA on methotrexate 10mg weekly. DAS28: 2.2 (low disease activity, near remission). Morning stiffness resolved. Minimal joint swelling. Assessment: Near remission. Plan: Continue methotrexate. Target: DAS28 < 2.0 for clinical remission."
+    },
+    {
+      "id": 65,
+      "date": "2026-01-13",
+      "type": "lab_result",
+      "ordered_by": "Dr. Linda Park",
+      "summary": "Monitoring",
+      "tests": {
+        "WBC": {
+          "value": 5.6,
+          "unit": "x10^3/uL",
+          "ref_range": "4.5-11.0",
+          "flag": "NORMAL"
+        },
+        "hemoglobin": {
+          "value": 12.8,
+          "unit": "g/dL",
+          "ref_range": "12.0-16.0",
+          "flag": "NORMAL"
+        },
+        "ESR": {
+          "value": 12,
+          "unit": "mm/hr",
+          "ref_range": "0-20",
+          "flag": "NORMAL"
+        },
+        "CRP": {
+          "value": 1.5,
+          "unit": "mg/L",
+          "ref_range": "<3.0",
+          "flag": "NORMAL"
+        },
+        "ALT": {
+          "value": 22,
+          "unit": "U/L",
+          "ref_range": "7-56",
+          "flag": "NORMAL"
+        }
+      }
+    },
+    {
+      "id": 66,
+      "date": "2026-02-10",
+      "type": "visit_note",
+      "doctor": "Dr. Sarah Patel",
+      "department": "Primary Care",
+      "summary": "Routine follow-up",
+      "content": "44 y/o female. Stable. GFD maintained. RA near remission on methotrexate. Hypothyroidism stable. Assessment: Excellent management of triple autoimmune disease."
+    },
+    {
+      "id": 67,
+      "date": "2026-03-10",
+      "type": "visit_note",
+      "doctor": "Dr. Robert Kim",
+      "department": "Gastroenterology",
+      "summary": "Celiac 5-year follow-up",
+      "content": "44 y/o female. Celiac disease x 5 years on GFD. In complete remission. tTG-IgA consistently negative. No GI symptoms. Iron stores normal. DEXA to be repeated this year. Assessment: Excellent long-term celiac management. Plan: Continue GFD lifelong. Annual tTG-IgA. DEXA soon."
+    },
+    {
+      "id": 68,
+      "date": "2026-03-10",
+      "type": "lab_result",
+      "ordered_by": "Dr. Robert Kim",
+      "summary": "5-year celiac labs",
+      "tests": {
+        "tTG_IgA": {
+          "value": 3,
+          "unit": "U/mL",
+          "ref_range": "<20",
+          "flag": "NORMAL"
+        },
+        "hemoglobin": {
+          "value": 13.0,
+          "unit": "g/dL",
+          "ref_range": "12.0-16.0",
+          "flag": "NORMAL"
+        },
+        "ferritin": {
+          "value": 80,
+          "unit": "ng/mL",
+          "ref_range": "10-120",
+          "flag": "NORMAL"
+        },
+        "vitamin_D": {
+          "value": 46,
+          "unit": "ng/mL",
+          "ref_range": "30-100",
+          "flag": "SUFFICIENT"
+        },
+        "calcium": {
+          "value": 9.4,
+          "unit": "mg/dL",
+          "ref_range": "8.5-10.5",
+          "flag": "NORMAL"
+        },
+        "albumin": {
+          "value": 4.2,
+          "unit": "g/dL",
+          "ref_range": "3.5-5.5",
+          "flag": "NORMAL"
+        }
+      }
+    },
+    {
+      "id": 69,
+      "date": "2020-01-10",
+      "type": "visit_note",
+      "doctor": "Dr. Sarah Patel",
+      "department": "Primary Care",
+      "summary": "HISTORICAL \u00e2\u20ac\u201d first IDA diagnosis (3 years before current records)",
+      "content": "HISTORICAL NOTE: Patient first diagnosed with iron deficiency anemia in 2017. Attributed to menstrual blood loss. Started on ferrous sulfate 325mg daily, later increased to BID. Iron stores never normalized on oral supplementation over 3 years. Multiple courses of oral iron tried. No GI evaluation performed at that time. Started omeprazole in 2018 for 'heartburn' (in retrospect, likely celiac-related dyspepsia)."
+    },
+    {
+      "id": 70,
+      "date": "2020-01-10",
+      "type": "visit_note",
+      "doctor": "Dr. Sarah Patel",
+      "department": "Primary Care",
+      "summary": "HISTORICAL \u00e2\u20ac\u201d hypothyroidism diagnosis",
+      "content": "HISTORICAL NOTE: Hypothyroidism diagnosed in 2019. TSH was 8.4, free T4 0.7. Started on levothyroxine 75mcg daily. TSH normalized. Note: Hypothyroidism is associated with celiac disease (autoimmune clustering). This association was not recognized at the time of hypothyroidism diagnosis \u00e2\u20ac\u201d celiac screening was not performed."
+    },
+    {
+      "id": 71,
+      "date": "2020-04-20",
+      "type": "lab_result",
+      "ordered_by": "Dr. Sarah Patel",
+      "summary": "Thyroid monitoring",
+      "tests": {
+        "TSH": {
+          "value": 2.8,
+          "unit": "mIU/L",
+          "ref_range": "0.4-4.0",
+          "flag": "NORMAL"
+        }
+      }
+    },
+    {
+      "id": 72,
+      "date": "2020-07-14",
+      "type": "lab_result",
+      "ordered_by": "Dr. Sarah Patel",
+      "summary": "Follow-up CBC",
+      "tests": {
+        "hemoglobin": {
+          "value": 10.6,
+          "unit": "g/dL",
+          "ref_range": "12.0-16.0",
+          "flag": "LOW"
+        },
+        "MCV": {
+          "value": 74,
+          "unit": "fL",
+          "ref_range": "80-100",
+          "flag": "LOW"
+        },
+        "WBC": {
+          "value": 6.0,
+          "unit": "x10^3/uL",
+          "ref_range": "4.5-11.0",
+          "flag": "NORMAL"
+        }
+      }
+    },
+    {
+      "id": 73,
+      "date": "2020-08-18",
+      "type": "visit_note",
+      "doctor": "Dr. Sarah Patel",
+      "department": "Primary Care",
+      "summary": "Follow-up \u00e2\u20ac\u201d still anemic",
+      "content": "38 y/o female. Hemoglobin 10.6, MCV 74 \u00e2\u20ac\u201d still microcytic anemia. On iron BID. Assessment: Persistent IDA. Plan: Will push for IV iron trial and GI referral if not improved."
+    },
+    {
+      "id": 74,
+      "date": "2020-11-17",
+      "type": "visit_note",
+      "doctor": "Dr. Sarah Patel",
+      "department": "Primary Care",
+      "summary": "Post-IV iron \u00e2\u20ac\u201d counseling",
+      "content": "38 y/o female. Post-IV iron infusions. Feeling better. Assessment: Responding to IV iron. This suggests oral malabsorption. Plan: GI referral priority for malabsorption workup."
+    },
+    {
+      "id": 75,
+      "date": "2021-04-20",
+      "type": "visit_note",
+      "doctor": "Dr. Sarah Patel",
+      "department": "Primary Care",
+      "summary": "Dietitian follow-up for GFD",
+      "content": "39 y/o female. Met with dietitian for GFD education. Learning to read food labels. Eliminating all wheat, barley, rye. Reports feeling better already after 6 weeks GFD. Assessment: Good GFD compliance. Plan: Continue education. Follow up in 3 months."
+    },
+    {
+      "id": 76,
+      "date": "2021-08-17",
+      "type": "visit_note",
+      "doctor": "Dr. Robert Kim",
+      "department": "Gastroenterology",
+      "summary": "6-month celiac follow-up",
+      "content": "39 y/o female. Celiac on GFD x 5 months. tTG declining. Symptoms improved. Iron stores rebuilding. Assessment: Excellent early response. Plan: Continue GFD. Annual follow-up."
+    },
+    {
+      "id": 77,
+      "date": "2022-03-15",
+      "type": "visit_note",
+      "doctor": "Dr. Sarah Patel",
+      "department": "Primary Care",
+      "summary": "Thyroid monitoring",
+      "content": "40 y/o female. TSH stable on levothyroxine 75mcg. No dose adjustment needed. Assessment: Hypothyroidism stable. Plan: Continue. Annual TSH."
+    },
+    {
+      "id": 78,
+      "date": "2022-06-14",
+      "type": "visit_note",
+      "doctor": "Dr. Sarah Patel",
+      "department": "Primary Care",
+      "summary": "Routine follow-up",
+      "content": "40 y/o female. All conditions stable. Celiac in remission. IDA resolved. IBS resolved. Assessment: Doing well."
+    },
+    {
+      "id": 79,
+      "date": "2024-01-16",
+      "type": "visit_note",
+      "doctor": "Dr. Sarah Patel",
+      "department": "Primary Care",
+      "summary": "Annual physical \u00e2\u20ac\u201d 2024",
+      "content": "42 y/o female for annual exam. Healthy. Celiac in remission. Hypothyroidism stable. No IDA. Weight 135 lbs. Assessment: Excellent. Plan: Annual labs."
+    },
+    {
+      "id": 80,
+      "date": "2024-01-16",
+      "type": "lab_result",
+      "ordered_by": "Dr. Sarah Patel",
+      "summary": "Annual labs 2024",
+      "tests": {
+        "hemoglobin": {
+          "value": 13.0,
+          "unit": "g/dL",
+          "ref_range": "12.0-16.0",
+          "flag": "NORMAL"
+        },
+        "ferritin": {
+          "value": 75,
+          "unit": "ng/mL",
+          "ref_range": "10-120",
+          "flag": "NORMAL"
+        },
+        "TSH": {
+          "value": 2.5,
+          "unit": "mIU/L",
+          "ref_range": "0.4-4.0",
+          "flag": "NORMAL"
+        },
+        "vitamin_D": {
+          "value": 45,
+          "unit": "ng/mL",
+          "ref_range": "30-100",
+          "flag": "SUFFICIENT"
+        },
+        "tTG_IgA": {
+          "value": 5,
+          "unit": "U/mL",
+          "ref_range": "<20",
+          "flag": "NORMAL"
+        }
+      }
+    }
   ],
   "ground_truth_issues": [
     {
-      "type": "missed_monitoring",
+      "type": "missed_diagnosis",
       "severity": "critical",
-      "description": "Amiodarone requires thyroid function monitoring every 6 months. Baseline TSH was checked in Feb 2020 (record #2), but the next thyroid check was not performed until Feb 2021 (record #20) — a full 12-month gap. The initial 6-month check (due Aug 2020) was completely missed, as noted in record #11 where only INR was ordered. By the time TSH was finally checked, the patient had overt hypothyroidism (TSH 18.4) with 6+ months of symptomatic disease (fatigue, weight gain, cold intolerance, rising cholesterol). Earlier detection at the 6-month mark could have caught subclinical hypothyroidism and prevented months of unnecessary symptoms.",
-      "evidence_records": [1, 2, 8, 11, 12, 13, 16, 17, 19, 20, 21],
-      "clinical_reference": "Amiodarone monitoring guidelines (AHA/ACC): thyroid function tests every 6 months, liver function tests every 6 months, PFTs annually, eye exam annually. Amiodarone-induced thyroid dysfunction occurs in 15-20% of patients.",
-      "what_should_have_happened": "TSH and free T4 should have been ordered at the 6-month mark (Aug 2020, record #11). Instead, only INR was checked. The PCP annual labs in Sep 2020 (record #13) also failed to include TSH despite the patient being on amiodarone. Both represent missed monitoring opportunities."
+      "description": "Celiac disease was not diagnosed for approximately 4 years (2017-2021) despite classic presentation: refractory iron deficiency anemia unresponsive to oral supplementation, IBS-like symptoms (bloating, diarrhea), chronic fatigue, and autoimmune hypothyroidism (which should have triggered celiac screening due to well-documented association). The IDA was initially attributed to menstrual blood loss (record #69), but GYN evaluation (record #4) confirmed normal menstrual flow. Celiac serologies were not ordered until GI referral in Feb 2021 (record #16). The delay caused years of unnecessary symptoms, multiple courses of failed oral iron, need for IV iron infusions, vitamin D deficiency, osteopenia, and zinc deficiency.",
+      "evidence_records": [
+        1,
+        2,
+        3,
+        5,
+        6,
+        7,
+        8,
+        12,
+        14,
+        15,
+        16,
+        17,
+        69,
+        70
+      ],
+      "clinical_reference": "ACG guidelines recommend celiac screening in: 1) Refractory iron deficiency anemia, 2) Patients with autoimmune thyroid disease, 3) Chronic diarrhea with bloating. This patient had ALL THREE indicators. Celiac disease affects ~1% of the population and is frequently missed \u00e2\u20ac\u201d average diagnosis delay is 6-10 years.",
+      "what_should_have_happened": "Celiac screening (tTG-IgA) should have been performed at initial IDA evaluation in 2017, or at minimum when hypothyroidism was diagnosed in 2019 (autoimmune association), or when IDA proved refractory to oral iron by 2020. The combination of refractory IDA + IBS symptoms + hypothyroidism is a classic celiac triad."
     },
     {
-      "type": "declining_trend",
+      "type": "drug_interaction",
       "severity": "moderate",
-      "description": "Progressive liver enzyme elevation over 3+ years on amiodarone (ALT: 22 → 24 → 38 → 42 → 48 → 44 → 52 → 58; AST: 18 → 18 → 34 → 38 → 42 → 40 → 46 → 50). This slow, steady rise represents likely amiodarone hepatotoxicity. While each individual value was addressed, the overall trajectory was not acted upon decisively — amiodarone was continued with a 'watch and wait' approach rather than proactive planning for discontinuation or transition to catheter ablation.",
-      "evidence_records": [2, 13, 56, 65, 70, 71, 76, 79, 80],
-      "clinical_reference": "Amiodarone hepatotoxicity occurs in 15-30% of patients. Guidelines recommend LFTs every 6 months. ALT > 3x ULN or continued rise should prompt discontinuation. A persistent upward trend, even if below 3x ULN, should trigger consideration of alternative therapy.",
-      "what_should_have_happened": "When ALT first exceeded baseline significantly (record #56, Sep 2022 — ALT 42, double baseline), a more proactive transition plan should have been developed rather than waiting for values to approach dangerous levels. By Jan 2024 (record #80), amiodarone had been continued for nearly 4 years with steadily worsening hepatotoxicity."
+      "description": "Omeprazole (PPI) was prescribed from 2018 onwards for 'GERD/heartburn' which was actually a manifestation of undiagnosed celiac disease. The omeprazole further impaired iron absorption (PPIs reduce gastric acid needed for non-heme iron absorption), compounding the celiac-related malabsorption and making the refractory IDA even worse. The PPI was continued for 4 years before being recognized as both unnecessary (GERD was celiac-related) and harmful (worsening iron malabsorption).",
+      "evidence_records": [
+        1,
+        3,
+        5,
+        12,
+        31,
+        32,
+        69
+      ],
+      "clinical_reference": "PPIs reduce gastric acid production, which is required for the reduction of ferric iron to the absorbable ferrous form. Long-term PPI use is associated with iron deficiency. In a patient with celiac-related iron malabsorption, adding a PPI creates a dual malabsorption mechanism.",
+      "what_should_have_happened": "When investigating refractory IDA in 2020, the omeprazole should have been identified as a contributing factor to iron malabsorption and stepped down or switched to an H2 blocker (which has less impact on iron absorption). The 'GERD' symptoms should have been investigated as potentially celiac-related."
     },
     {
-      "type": "declining_trend",
+      "type": "missed_monitoring",
       "severity": "moderate",
-      "description": "Progressive renal decline (eGFR: 68 → 66 → 62 → 56 → 54 → 50) over 3.5 years. While the eGFR decline was documented, no nephrology referral was made and no specific renoprotective measures were initiated despite the patient having diabetes (a major CKD risk factor). Metformin dose was not adjusted despite eGFR approaching thresholds. Additionally, the declining renal function affects warfarin and digoxin clearance (if used) and amiodarone metabolite accumulation.",
-      "evidence_records": [2, 13, 37, 53, 56, 76],
-      "clinical_reference": "CKD in diabetic patients requires proactive management: SGLT2 inhibitors for renal protection, nephrology referral at eGFR < 60, metformin dose adjustment at eGFR < 45, and avoidance of nephrotoxic agents.",
-      "what_should_have_happened": "When eGFR dropped below 60 (record #53, Jul 2022), nephrology referral and consideration of renoprotective therapy (SGLT2 inhibitor like empagliflozin) should have been initiated. The diabetic patient with declining eGFR represents a high-risk scenario for progressive CKD that requires early intervention."
+      "description": "When hypothyroidism was diagnosed in 2019 (record #70), celiac screening was not performed despite the well-documented association between autoimmune thyroid disease and celiac disease (5-10% of celiac patients have thyroid autoimmunity, and vice versa). AGA and multiple guidelines recommend celiac screening in patients with autoimmune thyroid disease, especially when other suggestive symptoms are present (this patient had IDA and GI symptoms at the time).",
+      "evidence_records": [
+        70,
+        36,
+        54
+      ],
+      "clinical_reference": "AGA Technical Review on Celiac Disease (2006) and ACG Guidelines (2013) recommend celiac screening in patients with autoimmune thyroid disease. The prevalence of celiac in autoimmune thyroid patients is 2-5%, much higher than the general population (1%).",
+      "what_should_have_happened": "At the time of hypothyroidism diagnosis (2019), a tTG-IgA should have been ordered as part of autoimmune screening, especially given the concurrent refractory IDA and GI symptoms. This would have led to celiac diagnosis 2 years earlier."
     }
   ]
 }

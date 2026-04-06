@@ -1,0 +1,8 @@
+{
+  "task_id": "medium_001",
+  "difficulty": "medium",
+  "title": "Polypharmacy Safety Review — Elderly Female",
+  "instruction": "Conduct a comprehensive safety audit of this 71-year-old female patient's records. She has 6 chronic conditions managed by multiple specialists. Look for: (1) lab values trending in a dangerous direction without intervention, (2) drug interactions introduced when specialists prescribe without checking existing medications, (3) worsening chronic disease markers that should have triggered medication changes earlier. You need to find 3 separate issues.",
+  "focus_areas": ["declining_trend", "drug_interaction"],
+  "expected_findings": 3
+}
