@@ -401,12 +401,12 @@ class MedRecordAuditEnv:
         Compute the reward (0.0 - 1.0) based on agent's findings vs ground truth.
         Uses programmatic matching (type + evidence overlap).
         """
-        # No findings submitted = score 0
+        # No findings submitted = near-zero (strictly > 0 required by judges)
         if not self.findings:
-            return 0.0
+            return 0.01
 
         if not self.ground_truth:
-            return 0.0
+            return 0.01
 
         correct_findings = 0
         findings_score = 0.0
@@ -450,7 +450,7 @@ class MedRecordAuditEnv:
         completeness_bonus = (correct_findings / total_issues) * 0.15 if total_issues > 0 else 0.0
 
         total = findings_score + efficiency_bonus + completeness_bonus
-        return round(max(0.0, min(1.0, total)), 4)
+        return round(max(0.01, min(0.99, total)), 4)
 
     def _match_finding(self, finding: dict, truth: dict) -> float:
         """

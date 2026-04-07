@@ -105,10 +105,10 @@ def compute_reward(
             "matches": [{"finding_idx": int, "truth_idx": int, "score": float}]
         }
     """
-    # If no findings submitted, score is 0 — no bonus for doing nothing
+    # If no findings submitted, score is near-zero (strictly > 0 required)
     if not findings:
         return {
-            "total": 0.0,
+            "total": 0.01,
             "findings_score": 0.0,
             "efficiency_bonus": 0.0,
             "completeness_bonus": 0.0,
@@ -183,7 +183,8 @@ def compute_reward(
         completeness_bonus = (correct_findings / total_issues) * COMPLETENESS_WEIGHT
 
     total = findings_score + efficiency_bonus + completeness_bonus
-    total = round(max(0.0, min(1.0, total)), 4)
+    # Clamp to strictly (0, 1) — judges require 0 < score < 1
+    total = round(max(0.01, min(0.99, total)), 4)
 
     return {
         "total": total,
