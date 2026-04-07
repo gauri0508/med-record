@@ -184,6 +184,14 @@ python -m pytest tests/ -v
 python -m env.graders
 ```
 
+## Environment Variables
+
+```python
+API_BASE_URL = os.getenv("API_BASE_URL", "<your-active-endpoint>")
+MODEL_NAME = os.getenv("MODEL_NAME", "<your-active-model>")
+HF_TOKEN = os.getenv("HF_TOKEN")  # No default — must be set
+```
+
 ## Project Structure
 
 ```
@@ -191,8 +199,14 @@ MedRecordAudit/
 ├── inference.py              # Baseline LLM agent (judges run this)
 ├── Dockerfile                # Docker for HF Spaces
 ├── openenv.yaml              # OpenEnv config
+├── pyproject.toml            # Python project config (required by openenv)
+├── uv.lock                   # Dependency lock file (required by openenv)
+├── requirements.txt          # pip dependencies
+├── .gitignore                # Excludes __pycache__, etc.
 ├── README.md                 # This file
-├── requirements.txt          # Dependencies
+│
+├── server/                   # Entry point for openenv deployment
+│   └── app.py                # main() server entry point
 │
 ├── env/                      # Environment code
 │   ├── environment.py        # Core RL environment (reset/step/state)

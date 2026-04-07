@@ -24,7 +24,7 @@ from openai import OpenAI
 # --- Configuration ---
 API_BASE_URL = os.getenv("API_BASE_URL", "https://api.openai.com/v1")
 MODEL_NAME = os.getenv("MODEL_NAME", "gpt-4o-mini")
-API_KEY = os.getenv("HF_TOKEN") or os.getenv("API_KEY") or os.getenv("OPENAI_API_KEY", "sk-placeholder")
+HF_TOKEN = os.getenv("HF_TOKEN")  # No default — must be set by user
 ENV_URL = os.getenv("ENV_URL", "http://localhost:7860")
 BENCHMARK = "MedRecordAudit"
 MAX_STEPS = 30
@@ -32,7 +32,7 @@ MAX_STEPS = 30
 # Initialize OpenAI client
 client = OpenAI(
     base_url=API_BASE_URL,
-    api_key=API_KEY,
+    api_key=HF_TOKEN,
 )
 
 
