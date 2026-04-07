@@ -1,3 +1,13 @@
+---
+title: MedRecordAudit
+emoji: 🏥
+colorFrom: blue
+colorTo: green
+sdk: docker
+app_port: 7860
+pinned: false
+---
+
 # MedRecordAudit — OpenEnv RL Environment
 
 An RL environment where AI agents audit years of patient medical records to find missed diagnoses, dangerous drug interactions, contradictions between doctors, and declining lab trends that went unaddressed.
