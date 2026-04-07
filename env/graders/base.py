@@ -1,5 +1,9 @@
 """
 Base grader logic shared by all individual case graders.
+
+The grader validates that the environment works correctly by playing
+through a basic episode: read a few records, flag a plausible issue
+based on record content, and submit. No access to ground truth.
 """
 
 from env.environment import MedRecordAuditEnv
