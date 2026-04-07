@@ -173,7 +173,7 @@ class MedRecordAuditEnv:
         if self.done:
             return {
                 "state": self.state(),
-                "reward": self.reward,
+                "reward": max(0.01, min(0.99, self.reward)),
                 "done": True,
                 "info": {"error": "Episode already ended. Call reset() to start a new one."},
             }
@@ -184,7 +184,7 @@ class MedRecordAuditEnv:
             self.reward = self._compute_reward()
             return {
                 "state": self.state(),
-                "reward": self.reward,
+                "reward": max(0.01, min(0.99, self.reward)),
                 "done": True,
                 "info": {"message": "Budget exhausted. Episode ended automatically."},
             }
@@ -205,14 +205,16 @@ class MedRecordAuditEnv:
             # Don't consume budget for invalid actions
             return {
                 "state": self.state(),
-                "reward": 0.0,
+                "reward": 0.01,
                 "done": False,
                 "info": info,
             }
 
+        # Clamp reward to (0.01, 0.99) — validator requires strictly between 0 and 1
+        clamped_reward = max(0.01, min(0.99, self.reward))
         return {
             "state": self.state(),
-            "reward": self.reward,
+            "reward": clamped_reward,
             "done": self.done,
             "info": info,
         }
@@ -401,7 +403,7 @@ class MedRecordAuditEnv:
         Compute the reward (0.0 - 1.0) based on agent's findings vs ground truth.
         Uses programmatic matching (type + evidence overlap).
         """
-        # No findings submitted = near-zero (strictly > 0 required by judges)
+        # No findings submitted = minimal score (validator requires > 0)
         if not self.findings:
             return 0.01
 
@@ -450,6 +452,7 @@ class MedRecordAuditEnv:
         completeness_bonus = (correct_findings / total_issues) * 0.15 if total_issues > 0 else 0.0
 
         total = findings_score + efficiency_bonus + completeness_bonus
+        # Clamp to (0.01, 0.99) — validator requires strictly between 0 and 1
         return round(max(0.01, min(0.99, total)), 4)
 
     def _match_finding(self, finding: dict, truth: dict) -> float:

@@ -189,7 +189,7 @@ def test_submit_report_no_findings(env):
     env.reset("easy", "easy_001")
     result = env.step({"action": "submit_report"})
     assert result["done"] == True
-    assert result["info"]["final_score"] == 0.0
+    assert result["info"]["final_score"] == 0.01
     assert result["info"]["findings_submitted"] == 0
 
 
