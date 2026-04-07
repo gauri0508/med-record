@@ -54,7 +54,7 @@ async def health():
 
 
 @app.post("/reset")
-async def reset(request: ResetRequest):
+async def reset(request: ResetRequest = None):
     """
     Start a new episode.
 
@@ -63,6 +63,8 @@ async def reset(request: ResetRequest):
 
     Returns the initial state with patient info and record index (summaries only).
     """
+    if request is None:
+        request = ResetRequest()
     try:
         state = env.reset(
             difficulty=request.difficulty,
