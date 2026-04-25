@@ -460,6 +460,7 @@ Master plan lines 1301-1337 had a manual loop calling `run_rollout` without ever
 The dataset has one row per training step; each row carries the formatted prompt + the case metadata (`case_id`, `difficulty`) which flows through to the reward functions as kwargs."""),
     code_cell("""
 import random
+import torch
 from datasets import Dataset
 
 # Pre-cache patient + records for all 9 cases so dataset build doesn't reset env 250x
@@ -527,6 +528,11 @@ print(f"Stage breakdown: easy-only first 50, easy+medium 50-150, all-mix after")
 # ---------------------------------------------------------------------------
 from trl import GRPOConfig, GRPOTrainer
 
+# T4 GPUs don't support bfloat16 (only fp16). Detect at runtime so the
+# notebook works on T4 (Colab free), A100, H100, etc.
+_use_bf16 = torch.cuda.is_available() and torch.cuda.is_bf16_supported()
+print(f"GPU bf16 support: {_use_bf16}  (using {'bf16' if _use_bf16 else 'fp16'})")
+
 grpo_config = GRPOConfig(
     output_dir=CONFIG["output_dir"],
     learning_rate=CONFIG["learning_rate"],
@@ -538,7 +544,8 @@ grpo_config = GRPOConfig(
     beta=CONFIG["beta"],
     save_steps=50,
     logging_steps=1,
-    bf16=True,
+    bf16=_use_bf16,
+    fp16=not _use_bf16,
     optim="adamw_8bit",
     report_to=[],          # no wandb
     remove_unused_columns=False,  # keep case_id, difficulty for reward fns
