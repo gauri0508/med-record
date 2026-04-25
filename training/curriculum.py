@@ -39,7 +39,7 @@ class CurriculumSampler:
         threshold_medium: float = 0.55,
         history_window: int = 10,
         easy_mix_rate: float = 0.20,
-        cases_per_difficulty: int = 3,
+        cases_per_difficulty: int = 1,
         rng_seed: int = None,
     ):
         self.threshold_easy = threshold_easy

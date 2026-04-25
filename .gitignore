@@ -9,3 +9,4 @@ build/
 venv/
 *.log
 MASTER_PLAN.md
+assets/plots/

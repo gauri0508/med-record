@@ -1,8 +1,0 @@
-{
-  "task_id": "hard_003",
-  "difficulty": "hard",
-  "title": "Extreme Polypharmacy Cascade Audit",
-  "instruction": "Conduct a full safety audit of this 82-year-old male patient on 15 medications with 10 chronic conditions. This is an extreme polypharmacy case where drug side effects cascade into each other. This case has 150 records over 7 years. Look for: (1) dual anticoagulant/antiplatelet therapy without a current indication, (2) a narrow therapeutic index drug becoming toxic as kidney function declines and electrolytes shift, (3) a diabetes drug causing recurrent dangerous hypoglycemia episodes in the setting of kidney disease, (4) sedating medications inappropriate for elderly patients causing falls and fractures, (5) a drug class-effect being ignored when switching between drugs in the same class, (6) long-term PPI causing cascading nutritional deficiencies that feed into other drug toxicities. You need to find 6 separate issues.",
-  "focus_areas": ["drug_interaction", "drug_contraindication", "declining_trend", "contradiction"],
-  "expected_findings": 6
-}

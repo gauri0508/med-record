@@ -13,9 +13,9 @@ from env.environment import MedRecordAuditEnv
 
 
 ALL_CASES = [
-    ("easy", "easy_001"), ("easy", "easy_002"), ("easy", "easy_003"),
-    ("medium", "medium_001"), ("medium", "medium_002"), ("medium", "medium_003"),
-    ("hard", "hard_001"), ("hard", "hard_002"), ("hard", "hard_003"),
+    ("easy", "easy_001"),
+    ("medium", "medium_001"),
+    ("hard", "hard_001"),
 ]
 
 # Strict forbidden keys — must never appear in pre-submit observations.
@@ -230,7 +230,7 @@ def test_cumulative_step_reward_resets_on_reset():
     env.step({"action": "read_record", "record_id": 1})
     assert env._cumulative_step_reward > 0
 
-    env.reset("easy", "easy_002")
+    env.reset("medium", "medium_001")
     assert env._cumulative_step_reward == 0.0
 
 

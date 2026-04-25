@@ -1,0 +1,120 @@
+{
+  "agent": "trained",
+  "model": "gauri0508/med-record-audit-qwen2.5-3b-grpo",
+  "n_trials_per_case": 2,
+  "average_score": 0.1564,
+  "peak_average_score": 0.2002,
+  "per_case": {
+    "easy_001": {
+      "difficulty": "easy",
+      "avg_score": 0.71,
+      "best_score": 0.7967,
+      "best_rubric": {
+        "finding_accuracy": 0.25,
+        "evidence_validity": 0.2,
+        "completeness": 0.2,
+        "efficiency": 0.0467,
+        "anti_hacking": 0.1
+      },
+      "n_trials": 2
+    },
+    "easy_002": {
+      "difficulty": "easy",
+      "avg_score": 0.01,
+      "best_score": 0.01,
+      "best_rubric": {},
+      "n_trials": 2
+    },
+    "easy_003": {
+      "difficulty": "easy",
+      "avg_score": 0.32,
+      "best_score": 0.32,
+      "best_rubric": {
+        "finding_accuracy": 0.0,
+        "evidence_validity": 0.2,
+        "completeness": 0.0,
+        "efficiency": 0.02,
+        "anti_hacking": 0.1
+      },
+      "n_trials": 2
+    },
+    "medium_001": {
+      "difficulty": "medium",
+      "avg_score": 0.01,
+      "best_score": 0.01,
+      "best_rubric": {
+        "finding_accuracy": 0.0,
+        "evidence_validity": 0.0,
+        "completeness": 0.0,
+        "efficiency": 0.032,
+        "anti_hacking": 0.0
+      },
+      "n_trials": 2
+    },
+    "medium_002": {
+      "difficulty": "medium",
+      "avg_score": 0.01,
+      "best_score": 0.01,
+      "best_rubric": {
+        "finding_accuracy": 0.0,
+        "evidence_validity": 0.0,
+        "completeness": 0.0,
+        "efficiency": 0.1,
+        "anti_hacking": 0.0
+      },
+      "n_trials": 2
+    },
+    "medium_003": {
+      "difficulty": "medium",
+      "avg_score": 0.01,
+      "best_score": 0.01,
+      "best_rubric": {
+        "finding_accuracy": 0.0,
+        "evidence_validity": 0.0,
+        "completeness": 0.0,
+        "efficiency": 0.1,
+        "anti_hacking": 0.0
+      },
+      "n_trials": 2
+    },
+    "hard_001": {
+      "difficulty": "hard",
+      "avg_score": 0.1924,
+      "best_score": 0.3748,
+      "best_rubric": {
+        "finding_accuracy": 0.15,
+        "evidence_validity": 0.0182,
+        "completeness": 0.0333,
+        "efficiency": 0.0733,
+        "anti_hacking": 0.1
+      },
+      "n_trials": 2
+    },
+    "hard_002": {
+      "difficulty": "hard",
+      "avg_score": 0.135,
+      "best_score": 0.26,
+      "best_rubric": {
+        "finding_accuracy": 0.0,
+        "evidence_validity": 0.06,
+        "completeness": 0.04,
+        "efficiency": 0.06,
+        "anti_hacking": 0.1
+      },
+      "n_trials": 2
+    },
+    "hard_003": {
+      "difficulty": "hard",
+      "avg_score": 0.01,
+      "best_score": 0.01,
+      "best_rubric": {
+        "finding_accuracy": 0.0,
+        "evidence_validity": 0.0,
+        "completeness": 0.0,
+        "efficiency": 0.1,
+        "anti_hacking": 0.0
+      },
+      "n_trials": 2
+    }
+  }
+}

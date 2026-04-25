@@ -18,9 +18,9 @@ import json
 from pathlib import Path
 
 CASES = [
-    ("easy", "easy_001"), ("easy", "easy_002"), ("easy", "easy_003"),
-    ("medium", "medium_001"), ("medium", "medium_002"), ("medium", "medium_003"),
-    ("hard", "hard_001"), ("hard", "hard_002"), ("hard", "hard_003"),
+    ("easy", "easy_001"),
+    ("medium", "medium_001"),
+    ("hard", "hard_001"),
 ]
 
 BASELINE_FILES = {

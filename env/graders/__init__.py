@@ -1,58 +1,36 @@
 """
 MedRecordAudit — Graders Package
 
-Individual graders for each case + difficulty-level + run-all utilities.
-9 total cases: 3 easy, 3 medium, 3 hard.
+One representative case per difficulty: easy_001, medium_001, hard_001.
+Each case is comprehensive enough to exercise the full rubric (all 5
+components) at its difficulty tier.
 """
 
 from env.graders.easy_001 import grader as easy_001_grader
-from env.graders.easy_002 import grader as easy_002_grader
-from env.graders.easy_003 import grader as easy_003_grader
-
 from env.graders.medium_001 import grader as medium_001_grader
-from env.graders.medium_002 import grader as medium_002_grader
-from env.graders.medium_003 import grader as medium_003_grader
-
 from env.graders.hard_001 import grader as hard_001_grader
-from env.graders.hard_002 import grader as hard_002_grader
-from env.graders.hard_003 import grader as hard_003_grader
 
 
 def easy_grader() -> dict:
-    """Run all 3 easy case graders."""
-    results = {
-        "easy_001": easy_001_grader(),
-        "easy_002": easy_002_grader(),
-        "easy_003": easy_003_grader(),
-    }
-    results["all_passed"] = all(r["passed"] for r in results.values() if isinstance(r, dict))
-    return results
+    """Run the easy-difficulty grader."""
+    result = easy_001_grader()
+    return {"easy_001": result, "all_passed": result.get("passed", False)}
 
 
 def medium_grader() -> dict:
-    """Run all 3 medium case graders."""
-    results = {
-        "medium_001": medium_001_grader(),
-        "medium_002": medium_002_grader(),
-        "medium_003": medium_003_grader(),
-    }
-    results["all_passed"] = all(r["passed"] for r in results.values() if isinstance(r, dict))
-    return results
+    """Run the medium-difficulty grader."""
+    result = medium_001_grader()
+    return {"medium_001": result, "all_passed": result.get("passed", False)}
 
 
 def hard_grader() -> dict:
-    """Run all 3 hard case graders."""
-    results = {
-        "hard_001": hard_001_grader(),
-        "hard_002": hard_002_grader(),
-        "hard_003": hard_003_grader(),
-    }
-    results["all_passed"] = all(r["passed"] for r in results.values() if isinstance(r, dict))
-    return results
+    """Run the hard-difficulty grader."""
+    result = hard_001_grader()
+    return {"hard_001": result, "all_passed": result.get("passed", False)}
 
 
 def run_all() -> dict:
-    """Run all 9 case graders."""
+    """Run all 3 difficulty graders."""
     results = {
         "easy": easy_grader(),
         "medium": medium_grader(),

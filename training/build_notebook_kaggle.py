@@ -66,7 +66,7 @@ rubric components, used to generate training curve plots.
     md_cell("## Cell 1 — Setup\n\nInstall dependencies. Metrics are written to stdout and `trainer_state.json` — no external logger needed."),
     code_cell("""
 # Install dependencies — metrics go to stdout and trainer_state.json
-!pip install -q "unsloth[colab-new]" "trl>=0.11.0" "transformers>=4.45" datasets matplotlib pandas requests
+!pip install -q unsloth "trl>=0.11.0" "transformers>=4.45" datasets matplotlib pandas requests
 
 import os
 import re
@@ -88,16 +88,13 @@ CONFIG = {
     "target_modules": ["q_proj", "k_proj", "v_proj", "o_proj",
                         "gate_proj", "up_proj", "down_proj"],
 
-    # GRPO hyperparameters
-    # Tuned to fit comfortably in a single free-Colab T4 session (~50 min)
-    # while leaving headroom for the periodic Hub checkpoint pushes.
+    # GRPO hyperparameters — tuned for 3-case scope on Kaggle T4 (single GPU)
     "learning_rate": 5e-6,
-    "num_generations": 2,    # rollouts per training step
-    "max_steps": 100,        # ~50 min on T4 with num_generations=2
-    "save_steps": 20,        # checkpoint every 10 min
-    "beta": 0.04,            # KL coefficient (penalizes drift from base model)
+    "num_generations": 2,    # 2 rollouts per step keeps step time ~30s
+    "max_steps": 150,        # ~45 min total on T4 with 3 cases
+    "save_steps": 25,        # checkpoint every ~12 min
+    "beta": 0.04,
 
-    # Episode caps
     "max_episode_steps": 12,
     "max_seq_length": 4096,
     "max_completion_length": 512,
@@ -106,8 +103,8 @@ CONFIG = {
     "env_url": "https://gauri0508-med-record-audit.hf.space",
     "hub_model_id": "gauri0508/med-record-audit-qwen2.5-3b-grpo",
 
-    # Output dir for checkpoints + trainer_state.json
-    "output_dir": "med-record-audit-qwen2.5-3b-grpo",
+    # Output dir — Kaggle exposes /kaggle/working/ as persistent across the run
+    "output_dir": "/kaggle/working/med-record-audit-qwen2.5-3b-grpo",
 }
 
 print(json.dumps(CONFIG, indent=2))
@@ -466,27 +463,31 @@ REWARD_WEIGHTS = [1.0, 0.0, 0.0, 0.0, 0.0]
 print(f"{len(REWARD_FUNCTIONS)} reward functions registered. Weights: {REWARD_WEIGHTS}")
 """),
 
-    md_cell("""## Cell 6b — Load HF_TOKEN
+    md_cell("""## Cell 6b — Load HF_TOKEN from Kaggle Secrets
 
-Required for the training cell to push checkpoints to HuggingFace Hub during training (so the run is resumable after a Colab disconnect) and for Cell 8 to push the final merged model.
+Required for the training cell to push checkpoints to HuggingFace Hub during training (so the run is resumable across Kaggle session limits) and for Cell 8 to push the final merged model.
 
-**Setup:** Add `HF_TOKEN` to Colab Secrets (🔑 sidebar → Add new secret → Notebook access ON)."""),
+**Setup before running this notebook:**
+1. Click **Add-ons** (top right of the Kaggle editor) → **Secrets**
+2. Click **Add a new secret**
+3. Label: `HF_TOKEN`, Value: your HuggingFace API token (Write permission)
+4. Click **Save**, then **toggle the access for this notebook ON**"""),
     code_cell("""
-# Load HF_TOKEN — try Colab Secrets first, fall back to os.environ
+# Load HF_TOKEN from Kaggle Secrets, fall back to env var if running elsewhere
 import os
 
 try:
-    from google.colab import userdata  # type: ignore
-    token = userdata.get("HF_TOKEN")
-    os.environ["HF_TOKEN"] = token
-    print("HF_TOKEN loaded from Colab Secrets.")
+    from kaggle_secrets import UserSecretsClient  # type: ignore
+    secrets = UserSecretsClient()
+    os.environ["HF_TOKEN"] = secrets.get_secret("HF_TOKEN")
+    print("HF_TOKEN loaded from Kaggle Secrets.")
 except Exception as e:
     if os.environ.get("HF_TOKEN"):
         print("HF_TOKEN already set via os.environ.")
     else:
         raise RuntimeError(
             "HF_TOKEN must be set before training. "
-            "Add it as a Colab Secret named HF_TOKEN with Notebook access ON. "
+            "Add it as a Kaggle Secret named HF_TOKEN with notebook access enabled. "
             f"(Underlying error: {e})"
         )
 
@@ -548,49 +549,42 @@ import random
 import torch
 from datasets import Dataset
 
-# Pre-cache patient + records for all 9 cases so dataset build doesn't reset env 250x
-print("Caching all 9 cases...")
+# Pre-cache patient + records for the 3 representative cases (1 per difficulty)
+print("Caching 3 cases...")
 case_cache = {}
-for difficulty in ["easy", "medium", "hard"]:
-    for n in [1, 2, 3]:
-        cid = f"{difficulty}_{n:03d}"
-        s = env_client.reset(difficulty, cid)
-        case_cache[cid] = {
-            "user_prompt": build_user_prompt(s),
-            "difficulty": difficulty,
-        }
-        print(f"  cached {cid}")
+for difficulty, cid in [("easy", "easy_001"), ("medium", "medium_001"), ("hard", "hard_001")]:
+    s = env_client.reset(difficulty, cid)
+    case_cache[cid] = {
+        "user_prompt": build_user_prompt(s),
+        "difficulty": difficulty,
+    }
+    print(f"  cached {cid}")
 
 
 def build_curriculum_dataset(max_steps: int) -> Dataset:
-    \"\"\"Static curriculum: easy first, then mix in medium, then hard.
+    \"\"\"Static curriculum across one representative case per difficulty.
 
-    Stage 1 (steps 0-50):   only easy
-    Stage 2 (steps 50-150): easy + medium (50/50)
-    Stage 3 (steps 150+):   easy 30% / medium 30% / hard 40%
+    Stage 1 (steps 0-40):    only easy_001
+    Stage 2 (steps 40-90):   easy_001 + medium_001 (50/50)
+    Stage 3 (steps 90+):     easy_001 30% / medium_001 30% / hard_001 40%
     \"\"\"
     rng = random.Random(42)
-    easy_ids = ["easy_001", "easy_002", "easy_003"]
-    medium_ids = ["medium_001", "medium_002", "medium_003"]
-    hard_ids = ["hard_001", "hard_002", "hard_003"]
-
     rows = []
     for step in range(max_steps):
-        if step < 50:
-            cid = rng.choice(easy_ids)
-        elif step < 150:
-            cid = rng.choice(easy_ids if rng.random() < 0.5 else medium_ids)
+        if step < 40:
+            cid = "easy_001"
+        elif step < 90:
+            cid = "easy_001" if rng.random() < 0.5 else "medium_001"
         else:
             r = rng.random()
             if r < 0.3:
-                cid = rng.choice(easy_ids)
+                cid = "easy_001"
             elif r < 0.6:
-                cid = rng.choice(medium_ids)
+                cid = "medium_001"
             else:
-                cid = rng.choice(hard_ids)
+                cid = "hard_001"
 
         c = case_cache[cid]
-        # GRPOTrainer expects the prompt as a list-of-messages (chat format)
         prompt = [
             {"role": "system", "content": SYSTEM_PROMPT},
             {"role": "user", "content": c["user_prompt"]},
@@ -605,7 +599,7 @@ def build_curriculum_dataset(max_steps: int) -> Dataset:
 
 train_dataset = build_curriculum_dataset(CONFIG["max_steps"])
 print(f"Dataset built: {len(train_dataset)} rows")
-print(f"Stage breakdown: easy-only first 50, easy+medium 50-150, all-mix after")
+print(f"Stage breakdown: easy-only steps 0-40, easy+medium 40-90, all 3 mixed after")
 
 
 # ---------------------------------------------------------------------------
@@ -723,7 +717,7 @@ NOTEBOOK = {
 
 
 def main():
-    out = Path("training/train_grpo.ipynb")
+    out = Path("training/train_grpo_kaggle.ipynb")
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(json.dumps(NOTEBOOK, indent=1))
     print(f"Wrote {out} ({out.stat().st_size:,} bytes, {len(CELLS)} cells)")
