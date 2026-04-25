@@ -47,29 +47,25 @@ def md_cell(source: str) -> dict:
 
 CELLS = [
     md_cell("""
-# MedRecordAudit — GRPO Training (Phase 7)
+# MedRecordAudit — GRPO Training
 
 Trains `unsloth/Qwen2.5-3B-Instruct-bnb-4bit` via TRL's `GRPOTrainer`
-against the deployed HF Space env. Uses the 5-component rubric breakdown
-returned by `submit_report` as the reward signal, with curriculum
-progression from easy → medium → hard cases.
+against the deployed MedRecordAudit env on HuggingFace Spaces. The
+5-component rubric breakdown returned by the env's `submit_report`
+endpoint is the reward signal, with curriculum progression
+from easy → medium → hard cases.
 
 **Run on Google Colab T4 (free).** GPU is required — Unsloth needs CUDA.
 
-Built strictly per `MASTER_PLAN.md` Phase 7 (lines 1110-1368). Three
-user-approved deviations:
-1. No W&B (plain stdout / `trainer_state.json` for metrics)
-2. Hub model id: `gauri0508/med-record-audit-qwen2.5-3b-grpo`
-3. Env URL: `https://gauri0508-med-record-audit.hf.space`
-
-Plus one structural fix: master plan's Cell 7 was a manual rollout loop
-without gradient updates. Replaced with proper `GRPOTrainer.train()`
-call so the model actually learns.
+Output: a LoRA-adapted Qwen2.5-3B model pushed to
+`gauri0508/med-record-audit-qwen2.5-3b-grpo` and a
+`trainer_state.json` containing per-step rewards for each of the 5
+rubric components, used to generate training curve plots.
 """),
 
-    md_cell("## Cell 1 — Setup\n\nInstall dependencies. We drop `wandb` (using stdout + `trainer_state.json` instead)."),
+    md_cell("## Cell 1 — Setup\n\nInstall dependencies. Metrics are written to stdout and `trainer_state.json` — no external logger needed."),
     code_cell("""
-# Install dependencies (no wandb — we log to stdout + trainer_state.json)
+# Install dependencies — metrics go to stdout and trainer_state.json
 !pip install -q "unsloth[colab-new]" "trl>=0.11.0" "transformers>=4.45" datasets matplotlib pandas requests
 
 import os
@@ -80,28 +76,30 @@ from dataclasses import asdict
 from pathlib import Path
 """),
 
-    md_cell("## Cell 2 — Configuration\n\nAll hyperparameters in one dict. Master plan defaults preserved except: drop `wandb_project`, real `env_url`, real `hub_model_id`."),
+    md_cell("## Cell 2 — Configuration\n\nAll hyperparameters in one dict. Adjust `max_steps`, `num_generations`, and `max_completion_length` based on your GPU's time budget."),
     code_cell("""
 CONFIG = {
-    # Model — master plan line 1134
+    # Base model — Qwen2.5-3B-Instruct in 4-bit fits a free Colab T4
     "model_name": "unsloth/Qwen2.5-3B-Instruct-bnb-4bit",
-    # LoRA — master plan lines 1135-1137
+
+    # LoRA — only ~30M trainable params (≈1% of the 3B base)
     "lora_r": 16,
     "lora_alpha": 32,
     "target_modules": ["q_proj", "k_proj", "v_proj", "o_proj",
                         "gate_proj", "up_proj", "down_proj"],
-    # GRPO hyperparameters — master plan lines 1138-1141
-    "learning_rate": 5e-6,
-    "num_generations": 4,    # G in GRPO
-    "max_steps": 250,        # ~2-3 hours on T4
-    "beta": 0.04,            # KL coefficient
 
-    # Episode caps (per spec line 1218: max_steps=20; we use 12 for time)
+    # GRPO hyperparameters
+    "learning_rate": 5e-6,
+    "num_generations": 4,    # G in GRPO — number of rollouts per training step
+    "max_steps": 250,        # roughly 2–3 hours on T4
+    "beta": 0.04,            # KL coefficient (penalizes drift from base model)
+
+    # Episode caps
     "max_episode_steps": 12,
     "max_seq_length": 4096,
     "max_completion_length": 768,
 
-    # Endpoints (user-confirmed deviations from spec lines 1142, 1144)
+    # Endpoints
     "env_url": "https://gauri0508-med-record-audit.hf.space",
     "hub_model_id": "gauri0508/med-record-audit-qwen2.5-3b-grpo",
 
@@ -112,7 +110,7 @@ CONFIG = {
 print(json.dumps(CONFIG, indent=2))
 """),
 
-    md_cell("## Cell 3 — Load model with Unsloth\n\nMaster plan lines 1149-1168. Verbatim — Qwen2.5-3B in 4-bit, LoRA r=16."),
+    md_cell("## Cell 3 — Load model with Unsloth\n\nQwen2.5-3B in 4-bit quantization, with LoRA r=16 adapters attached for parameter-efficient fine-tuning."),
     code_cell("""
 from unsloth import FastLanguageModel
 
@@ -138,7 +136,7 @@ print(f"Loaded {CONFIG['model_name']} with LoRA r={CONFIG['lora_r']}")
 print(f"Trainable params: {sum(p.numel() for p in model.parameters() if p.requires_grad):,}")
 """),
 
-    md_cell("## Cell 4 — Environment client\n\nMaster plan lines 1173-1196. Thin HTTP wrapper around the deployed Space. (Tiny fix: master plan's print used `state['patient']['name']` which doesn't exist; using `id` instead.)"),
+    md_cell("## Cell 4 — Environment client\n\nThin HTTP wrapper around the deployed env. Each `step()` call returns `{state, reward, done, info}`; the `info` dict on `submit_report` contains the 5 rubric components used for training rewards."),
     code_cell("""
 class MedRecordClient:
     \"\"\"Thin HTTP wrapper around the deployed HF Space.\"\"\"
@@ -172,11 +170,11 @@ print(f"Connected! Patient {patient.get('id')} ({patient.get('age')}yo), Budget:
 
 Two helpers:
 
-1. `run_rollout(...)` — multi-turn rollout per master plan lines 1218-1266. Useful for evaluation / debugging. Each step: model generates one action, env executes, conversation continues.
+1. `run_rollout(...)` — multi-turn rollout used for evaluation and debugging. The model generates one action at a time; the env executes it and the conversation continues until `submit_report` or budget exhaustion.
 
-2. `score_completion(...)` — single-turn scorer used by reward functions. The model emits a JSON action list in one completion; we replay it on a fresh env episode and return the rubric breakdown.
+2. `score_completion(...)` — single-turn scorer used by the reward functions during training. The model emits a JSON action list in one completion, which is replayed on a fresh env episode to compute the rubric breakdown.
 
-Both call the same env. The single-turn variant is what GRPOTrainer needs (it expects one completion per prompt, no multi-turn loops inside rewards)."""),
+Both functions call the same env. The single-turn variant is what `GRPOTrainer` needs (it expects one completion per prompt with no multi-turn loops inside the reward function)."""),
     code_cell("""
 SYSTEM_PROMPT = \"\"\"You are a medical record auditor. You will review patient records to find:
 - drug_interaction: Two drugs with dangerous interactions
@@ -216,7 +214,7 @@ def build_user_prompt(state: dict) -> str:
 
 
 # ---------------------------------------------------------------------------
-# Multi-turn rollout — master plan lines 1218-1266 (useful for debug / eval)
+# Multi-turn rollout — used for evaluation and debugging
 # ---------------------------------------------------------------------------
 def run_rollout(model, tokenizer, env_client, difficulty: str, case_id: str,
                 max_steps: int = None) -> dict:
@@ -297,7 +295,7 @@ def _noop():
 
 
 # ---------------------------------------------------------------------------
-# Single-turn scorer — gap fill for GRPOTrainer (master plan Cell 6 was stubs)
+# Single-turn scorer — used by reward functions during GRPO training
 # ---------------------------------------------------------------------------
 def parse_actions_from_completion(completion: str) -> list:
     \"\"\"Extract a JSON action list from the model's completion text.\"\"\"
@@ -361,13 +359,12 @@ print("Helpers ready: run_rollout, parse_actions_from_completion, score_completi
 
     md_cell("""## Cell 6 — Reward functions (with caching)
 
-Master plan lines 1269-1298 defines 5 reward functions but their bodies are stubs (line 1278 comment: *"In practice, run rollouts and return final_score"*).
+Five reward functions are defined, one per rubric component returned by the env. Each returns a list of floats (one per completion in the batch). To avoid running the env five times per batch, results are cached per batch using a small LRU.
 
-This cell fills in the bodies. Each function returns a list of floats (one per completion in the batch). To avoid running the env 5× per batch, we cache the rubric scoring per batch using a small LRU.
-
-`reward_weights` in GRPOConfig is set so only `reward_fn_total` drives gradients — the other 4 are computed for free (cache hit) and surface as separate columns in `trainer_state.json` so we can plot per-component curves later."""),
+`reward_weights` in `GRPOConfig` is set so only `reward_fn_total` drives gradients — the other four are computed for free (cache hit) and surface as separate columns in `trainer_state.json`, so per-component training curves can be plotted later."""),
     code_cell("""
 from collections import OrderedDict
+import json as _json
 
 
 # Tiny LRU: completion-batch tuple -> list of rubric_breakdown dicts
@@ -375,21 +372,34 @@ _score_cache: \"OrderedDict[tuple, list]\" = OrderedDict()
 _CACHE_MAX = 8
 
 
+def _completion_to_text(comp) -> str:
+    \"\"\"Normalize a TRL completion (str or list-of-messages) to plain text.\"\"\"
+    if isinstance(comp, list):
+        return "".join(m.get("content", "") for m in comp if isinstance(m, dict))
+    return str(comp or "")
+
+
+def _completion_to_key(comp) -> str:
+    \"\"\"Hashable string representation of a completion for the LRU cache.\"\"\"
+    if isinstance(comp, list):
+        return _json.dumps(comp, sort_keys=True, default=str)
+    return str(comp or "")
+
+
 def _score_batch(case_ids, difficulties, completions) -> list:
     \"\"\"Run env episodes for all completions in a batch; cache by tuple key.\"\"\"
-    # Build a cache key from the completion strings (which uniquely id the batch).
-    key = tuple((c, d, c2) for c, d, c2 in zip(case_ids, difficulties, completions))
+    # Build a hashable cache key — stringify completions (lists aren't hashable).
+    key = tuple(
+        (cid, diff, _completion_to_key(c))
+        for cid, diff, c in zip(case_ids, difficulties, completions)
+    )
     if key in _score_cache:
         _score_cache.move_to_end(key)
         return _score_cache[key]
 
     results = []
     for cid, diff, comp in zip(case_ids, difficulties, completions):
-        # Completions arrive as either str or list-of-message-dicts; normalize
-        if isinstance(comp, list):
-            comp_text = "".join(m.get("content", "") for m in comp if isinstance(m, dict))
-        else:
-            comp_text = str(comp or "")
+        comp_text = _completion_to_text(comp)
         results.append(score_completion(cid, diff, comp_text))
 
     _score_cache[key] = results
@@ -399,7 +409,7 @@ def _score_batch(case_ids, difficulties, completions) -> list:
 
 
 # ---------------------------------------------------------------------------
-# Master plan reward functions (lines 1274-1297) — bodies filled in.
+# Reward functions — one per rubric component.
 # Signatures match TRL GRPOTrainer's expected reward_func contract.
 # ---------------------------------------------------------------------------
 def reward_fn_total(completions, case_id=None, difficulty=None, **kwargs):
@@ -438,7 +448,7 @@ def reward_fn_anti_hacking(completions, case_id=None, difficulty=None, **kwargs)
     return [r["rubric_breakdown"].get("anti_hacking", 0.0) for r in results]
 
 
-# Master plan line 1292-1298 — the function list.
+# The list of reward functions passed to GRPOTrainer.
 REWARD_FUNCTIONS = [
     reward_fn_total,
     reward_fn_finding_accuracy,
@@ -455,9 +465,9 @@ print(f"{len(REWARD_FUNCTIONS)} reward functions registered. Weights: {REWARD_WE
 
     md_cell("""## Cell 7 — Build dataset, configure GRPO, train
 
-Master plan lines 1301-1337 had a manual loop calling `run_rollout` without ever invoking gradient updates. Replaced with proper `GRPOTrainer.train()`. Curriculum is baked into the dataset ordering instead of `CurriculumSampler` (which needs runtime reward feedback).
+The training loop. Curriculum is baked into the dataset ordering: easy cases for the first 50 steps, easy + medium for steps 50–150, then a mix of all three difficulties. Each dataset row carries the formatted prompt plus the case metadata (`case_id`, `difficulty`) which flows through to the reward functions as kwargs.
 
-The dataset has one row per training step; each row carries the formatted prompt + the case metadata (`case_id`, `difficulty`) which flows through to the reward functions as kwargs."""),
+`GRPOTrainer.train()` handles everything: generation, reward computation, advantage normalization, and the policy update."""),
     code_cell("""
 import random
 import torch
@@ -547,7 +557,7 @@ grpo_config = GRPOConfig(
     bf16=_use_bf16,
     fp16=not _use_bf16,
     optim="adamw_8bit",
-    report_to=[],          # no wandb
+    report_to=[],          # disable external logging — use trainer_state.json
     remove_unused_columns=False,  # keep case_id, difficulty for reward fns
     reward_weights=REWARD_WEIGHTS,
 )
@@ -564,11 +574,39 @@ trainer.train()
 print("Training complete.")
 """),
 
+    md_cell("""## Cell 7b — Load HF_TOKEN from Colab Secrets
+
+Required for Cell 8 to push the trained model to HuggingFace Hub. Without this, the trained model only exists inside the Colab runtime and is lost when the runtime disconnects.
+
+**Setup before running this cell:**
+1. Open the **Secrets** panel in Colab's left sidebar (key 🔑 icon)
+2. Add a new secret named `HF_TOKEN` with your HuggingFace API token (must have *Write* permission to your model repo)
+3. Toggle **Notebook access** ON for the secret"""),
+    code_cell("""
+# Load HF_TOKEN — try Colab Secrets first, fall back to os.environ
+import os
+
+try:
+    from google.colab import userdata  # type: ignore
+    token = userdata.get("HF_TOKEN")
+    os.environ["HF_TOKEN"] = token
+    print("HF_TOKEN loaded from Colab Secrets.")
+except Exception as e:
+    if os.environ.get("HF_TOKEN"):
+        print("HF_TOKEN already set via os.environ.")
+    else:
+        print(f"WARNING: Could not load HF_TOKEN from Colab Secrets ({e}).")
+        print("Cell 8 will save locally only and skip the hub push.")
+        print("Add HF_TOKEN as a Colab Secret, or set os.environ['HF_TOKEN'] manually.")
+
+print(f"HF_TOKEN present: {bool(os.environ.get('HF_TOKEN'))}")
+"""),
+
     md_cell("""## Cell 8 — Save and push merged model
 
-Master plan lines 1342-1357. Verbatim except hub_model_id reflects the user's actual repo name. Uses Unsloth's `save_pretrained_merged` (master plan line 1342 explicitly warns NOT to upcast 4-bit → 16-bit naively)."""),
+Uses Unsloth's `save_pretrained_merged` to merge the LoRA adapters back into the base model and save as 16-bit. Naively upcasting from 4-bit to 16-bit and merging produces broken weights; `save_pretrained_merged` handles this correctly."""),
     code_cell("""
-# Save locally (master plan lines 1343-1347)
+# Save locally
 model.save_pretrained_merged(
     CONFIG["output_dir"],
     tokenizer,
@@ -576,11 +614,12 @@ model.save_pretrained_merged(
 )
 print(f"Saved locally to: {CONFIG['output_dir']}")
 
-# Push to HF Hub (master plan lines 1350-1355)
+# Push to HF Hub (HF_TOKEN should have been loaded by previous cell)
 hf_token = os.environ.get("HF_TOKEN")
 if not hf_token:
-    print("WARNING: HF_TOKEN not set. Skipping hub push.")
-    print("Set os.environ['HF_TOKEN'] = 'hf_...' before this cell to push.")
+    print("WARNING: HF_TOKEN not set. Model saved locally but NOT pushed to hub.")
+    print("To push later: set os.environ['HF_TOKEN'] and call:")
+    print(f"  model.push_to_hub_merged('{CONFIG['hub_model_id']}', tokenizer, save_method='merged_16bit', token='hf_...')")
 else:
     model.push_to_hub_merged(
         CONFIG["hub_model_id"],
@@ -590,11 +629,10 @@ else:
     )
     print(f"Pushed to: https://huggingface.co/{CONFIG['hub_model_id']}")
 
-# Also save the trainer state JSON (contains per-step metrics for plotting later)
+# Trainer state JSON contains per-step metrics for plotting later
 ts_path = Path(CONFIG["output_dir"]) / "trainer_state.json"
 if ts_path.exists():
     print(f"Trainer state with per-step metrics: {ts_path}")
-    print("Use this in Phase 8 to generate reward / loss curve PNGs.")
 """),
 ]
 
