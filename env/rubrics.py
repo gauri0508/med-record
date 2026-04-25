@@ -84,7 +84,11 @@ class RubricFindingAccuracy:
     MAX_SCORE = 0.40
     SEVERITY_REWARDS = {"critical": 0.25, "moderate": 0.15, "minor": 0.10}
     FALSE_POSITIVE_PENALTY = -0.10
-    MATCH_THRESHOLD = 0.50
+    # Tightened from 0.50 to 0.55 (Phase 0 finding): a type-only match
+    # gives exactly 0.50 from the type weight alone, which let random-flag
+    # agents accidentally clear the threshold. Now correct findings must
+    # also include some keyword overlap with the truth description.
+    MATCH_THRESHOLD = 0.55
     MIN_KEYWORD_RATIO = 0.15
 
     def score(self, findings: list, ground_truth: list):
