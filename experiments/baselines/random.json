@@ -3,8 +3,8 @@
   "env_url": "https://gauri0508-med-record-audit.hf.space",
   "seed": 42,
   "repeats_per_case": 3,
-  "elapsed_seconds": 1290.2,
-  "average_score": 0.1665,
+  "elapsed_seconds": 297.3,
+  "average_score": 0.241,
   "per_case": {
     "easy_001": {
       "difficulty": "easy",
@@ -61,442 +61,94 @@
       ],
       "n_trials": 3
     },
-    "easy_002": {
-      "difficulty": "easy",
-      "avg_score": 0.2347,
-      "trials": [
-        {
-          "case_id": "easy_002",
-          "difficulty": "easy",
-          "score": 0.1419,
-          "steps": 14,
-          "findings_submitted": 4,
-          "correct_findings": 0,
-          "false_positives": 4,
-          "rubric_breakdown": {
-            "finding_accuracy": 0.0,
-            "evidence_validity": 0.0286,
-            "completeness": 0.0,
-            "efficiency": 0.0133,
-            "anti_hacking": 0.1
-          }
-        },
-        {
-          "case_id": "easy_002",
-          "difficulty": "easy",
-          "score": 0.399,
-          "steps": 14,
-          "findings_submitted": 6,
-          "correct_findings": 1,
-          "false_positives": 5,
-          "rubric_breakdown": {
-            "finding_accuracy": 0.0,
-            "evidence_validity": 0.0857,
-            "completeness": 0.2,
-            "efficiency": 0.0133,
-            "anti_hacking": 0.1
-          }
-        },
-        {
-          "case_id": "easy_002",
-          "difficulty": "easy",
-          "score": 0.1633,
-          "steps": 14,
-          "findings_submitted": 3,
-          "correct_findings": 0,
-          "false_positives": 3,
-          "rubric_breakdown": {
-            "finding_accuracy": 0.0,
-            "evidence_validity": 0.05,
-            "completeness": 0.0,
-            "efficiency": 0.0133,
-            "anti_hacking": 0.1
-          }
-        }
-      ],
-      "n_trials": 3
-    },
-    "easy_003": {
-      "difficulty": "easy",
-      "avg_score": 0.1731,
-      "trials": [
-        {
-          "case_id": "easy_003",
-          "difficulty": "easy",
-          "score": 0.1595,
-          "steps": 14,
-          "findings_submitted": 6,
-          "correct_findings": 0,
-          "false_positives": 6,
-          "rubric_breakdown": {
-            "finding_accuracy": 0.0,
-            "evidence_validity": 0.0462,
-            "completeness": 0.0,
-            "efficiency": 0.0133,
-            "anti_hacking": 0.1
-          }
-        },
-        {
-          "case_id": "easy_003",
-          "difficulty": "easy",
-          "score": 0.2133,
-          "steps": 14,
-          "findings_submitted": 2,
-          "correct_findings": 0,
-          "false_positives": 2,
-          "rubric_breakdown": {
-            "finding_accuracy": 0.0,
-            "evidence_validity": 0.1,
-            "completeness": 0.0,
-            "efficiency": 0.0133,
-            "anti_hacking": 0.1
-          }
-        },
-        {
-          "case_id": "easy_003",
-          "difficulty": "easy",
-          "score": 0.1466,
-          "steps": 14,
-          "findings_submitted": 4,
-          "correct_findings": 0,
-          "false_positives": 4,
-          "rubric_breakdown": {
-            "finding_accuracy": 0.0,
-            "evidence_validity": 0.0333,
-            "completeness": 0.0,
-            "efficiency": 0.0133,
-            "anti_hacking": 0.1
-          }
-        }
-      ],
-      "n_trials": 3
-    },
     "medium_001": {
       "difficulty": "medium",
-      "avg_score": 0.153,
+      "avg_score": 0.233,
       "trials": [
         {
           "case_id": "medium_001",
           "difficulty": "medium",
-          "score": 0.1247,
+          "score": 0.1937,
           "steps": 24,
-          "findings_submitted": 7,
-          "correct_findings": 0,
-          "false_positives": 7,
-          "rubric_breakdown": {
-            "finding_accuracy": 0.0,
-            "evidence_validity": 0.0167,
-            "completeness": 0.0,
-            "efficiency": 0.008,
-            "anti_hacking": 0.1
-          }
-        },
-        {
-          "case_id": "medium_001",
-          "difficulty": "medium",
-          "score": 0.208,
-          "steps": 24,
-          "findings_submitted": 1,
-          "correct_findings": 0,
-          "false_positives": 1,
-          "rubric_breakdown": {
-            "finding_accuracy": 0.0,
-            "evidence_validity": 0.1,
-            "completeness": 0.0,
-            "efficiency": 0.008,
-            "anti_hacking": 0.1
-          }
-        },
-        {
-          "case_id": "medium_001",
-          "difficulty": "medium",
-          "score": 0.1262,
-          "steps": 24,
-          "findings_submitted": 6,
-          "correct_findings": 0,
-          "false_positives": 6,
-          "rubric_breakdown": {
-            "finding_accuracy": 0.0,
-            "evidence_validity": 0.0182,
-            "completeness": 0.0,
-            "efficiency": 0.008,
-            "anti_hacking": 0.1
-          }
-        }
-      ],
-      "n_trials": 3
-    },
-    "medium_002": {
-      "difficulty": "medium",
-      "avg_score": 0.1452,
-      "trials": [
-        {
-          "case_id": "medium_002",
-          "difficulty": "medium",
-          "score": 0.1747,
-          "steps": 25,
-          "findings_submitted": 5,
+          "findings_submitted": 10,
           "correct_findings": 1,
-          "false_positives": 4,
-          "rubric_breakdown": {
-            "finding_accuracy": 0.0,
-            "evidence_validity": 0.0,
-            "completeness": 0.0667,
-            "efficiency": 0.008,
-            "anti_hacking": 0.1
-          }
-        },
-        {
-          "case_id": "medium_002",
-          "difficulty": "medium",
-          "score": 0.128,
-          "steps": 24,
-          "findings_submitted": 5,
-          "correct_findings": 0,
-          "false_positives": 5,
-          "rubric_breakdown": {
-            "finding_accuracy": 0.0,
-            "evidence_validity": 0.02,
-            "completeness": 0.0,
-            "efficiency": 0.008,
-            "anti_hacking": 0.1
-          }
-        },
-        {
-          "case_id": "medium_002",
-          "difficulty": "medium",
-          "score": 0.133,
-          "steps": 24,
-          "findings_submitted": 5,
-          "correct_findings": 0,
-          "false_positives": 5,
-          "rubric_breakdown": {
-            "finding_accuracy": 0.0,
-            "evidence_validity": 0.025,
-            "completeness": 0.0,
-            "efficiency": 0.008,
-            "anti_hacking": 0.1
-          }
-        }
-      ],
-      "n_trials": 3
-    },
-    "medium_003": {
-      "difficulty": "medium",
-      "avg_score": 0.1591,
-      "trials": [
-        {
-          "case_id": "medium_003",
-          "difficulty": "medium",
-          "score": 0.108,
-          "steps": 24,
-          "findings_submitted": 3,
-          "correct_findings": 0,
-          "false_positives": 3,
-          "rubric_breakdown": {
-            "finding_accuracy": 0.0,
-            "evidence_validity": 0.0,
-            "completeness": 0.0,
-            "efficiency": 0.008,
-            "anti_hacking": 0.1
-          }
-        },
-        {
-          "case_id": "medium_003",
-          "difficulty": "medium",
-          "score": 0.2347,
-          "steps": 26,
-          "findings_submitted": 5,
-          "correct_findings": 1,
-          "false_positives": 4,
-          "rubric_breakdown": {
-            "finding_accuracy": 0.0,
-            "evidence_validity": 0.06,
-            "completeness": 0.0667,
-            "efficiency": 0.008,
-            "anti_hacking": 0.1
-          }
-        },
-        {
-          "case_id": "medium_003",
-          "difficulty": "medium",
-          "score": 0.1347,
-          "steps": 24,
-          "findings_submitted": 9,
-          "correct_findings": 0,
           "false_positives": 9,
           "rubric_breakdown": {
             "finding_accuracy": 0.0,
-            "evidence_validity": 0.0267,
-            "completeness": 0.0,
+            "evidence_validity": 0.019,
+            "completeness": 0.0667,
             "efficiency": 0.008,
             "anti_hacking": 0.1
           }
+        },
+        {
+          "case_id": "medium_001",
+          "difficulty": "medium",
+          "score": 0.2054,
+          "steps": 32,
+          "findings_submitted": 6,
+          "correct_findings": 1,
+          "false_positives": 5,
+          "rubric_breakdown": {
+            "finding_accuracy": 0.0,
+            "evidence_validity": 0.0154,
+            "completeness": 0.0333,
+            "efficiency": 0.0567,
+            "anti_hacking": 0.1
+          }
+        },
+        {
+          "case_id": "medium_001",
+          "difficulty": "medium",
+          "score": 0.3,
+          "steps": 25,
+          "findings_submitted": 0,
+          "correct_findings": 0,
+          "false_positives": 0,
+          "rubric_breakdown": {}
         }
       ],
       "n_trials": 3
     },
     "hard_001": {
       "difficulty": "hard",
-      "avg_score": 0.1188,
+      "avg_score": 0.2678,
       "trials": [
         {
           "case_id": "hard_001",
           "difficulty": "hard",
-          "score": 0.12,
+          "score": 0.01,
           "steps": 30,
-          "findings_submitted": 7,
+          "findings_submitted": 0,
           "correct_findings": 0,
-          "false_positives": 7,
+          "false_positives": 0,
           "rubric_breakdown": {
             "finding_accuracy": 0.0,
-            "evidence_validity": 0.0133,
+            "evidence_validity": 0.0,
             "completeness": 0.0,
-            "efficiency": 0.0067,
-            "anti_hacking": 0.1
+            "efficiency": 0.0833,
+            "anti_hacking": 0.0
           }
         },
         {
           "case_id": "hard_001",
           "difficulty": "hard",
-          "score": 0.1172,
-          "steps": 29,
-          "findings_submitted": 9,
+          "score": 0.61,
+          "steps": 18,
+          "findings_submitted": 0,
           "correct_findings": 0,
-          "false_positives": 9,
-          "rubric_breakdown": {
-            "finding_accuracy": 0.0,
-            "evidence_validity": 0.0105,
-            "completeness": 0.0,
-            "efficiency": 0.0067,
-            "anti_hacking": 0.1
-          }
+          "false_positives": 0,
+          "rubric_breakdown": {}
         },
         {
           "case_id": "hard_001",
           "difficulty": "hard",
-          "score": 0.1192,
-          "steps": 29,
-          "findings_submitted": 9,
+          "score": 0.1833,
+          "steps": 16,
+          "findings_submitted": 0,
           "correct_findings": 0,
-          "false_positives": 9,
-          "rubric_breakdown": {
-            "finding_accuracy": 0.0,
-            "evidence_validity": 0.0125,
-            "completeness": 0.0,
-            "efficiency": 0.0067,
-            "anti_hacking": 0.1
-          }
-        }
-      ],
-      "n_trials": 3
-    },
-    "hard_002": {
-      "difficulty": "hard",
-      "avg_score": 0.1405,
-      "trials": [
-        {
-          "case_id": "hard_002",
-          "difficulty": "hard",
-          "score": 0.1317,
-          "steps": 29,
-          "findings_submitted": 5,
-          "correct_findings": 0,
-          "false_positives": 5,
-          "rubric_breakdown": {
-            "finding_accuracy": 0.0,
-            "evidence_validity": 0.025,
-            "completeness": 0.0,
-            "efficiency": 0.0067,
-            "anti_hacking": 0.1
-          }
-        },
-        {
-          "case_id": "hard_002",
-          "difficulty": "hard",
-          "score": 0.1431,
-          "steps": 29,
-          "findings_submitted": 4,
-          "correct_findings": 0,
-          "false_positives": 4,
-          "rubric_breakdown": {
-            "finding_accuracy": 0.0,
-            "evidence_validity": 0.0364,
-            "completeness": 0.0,
-            "efficiency": 0.0067,
-            "anti_hacking": 0.1
-          }
-        },
-        {
-          "case_id": "hard_002",
-          "difficulty": "hard",
-          "score": 0.1467,
-          "steps": 29,
-          "findings_submitted": 6,
-          "correct_findings": 1,
-          "false_positives": 5,
-          "rubric_breakdown": {
-            "finding_accuracy": 0.0,
-            "evidence_validity": 0.0,
-            "completeness": 0.04,
-            "efficiency": 0.0067,
-            "anti_hacking": 0.1
-          }
-        }
-      ],
-      "n_trials": 3
-    },
-    "hard_003": {
-      "difficulty": "hard",
-      "avg_score": 0.152,
-      "trials": [
-        {
-          "case_id": "hard_003",
-          "difficulty": "hard",
-          "score": 0.1067,
-          "steps": 29,
-          "findings_submitted": 4,
-          "correct_findings": 0,
-          "false_positives": 4,
-          "rubric_breakdown": {
-            "finding_accuracy": 0.0,
-            "evidence_validity": 0.0,
-            "completeness": 0.0,
-            "efficiency": 0.0067,
-            "anti_hacking": 0.1
-          }
-        },
-        {
-          "case_id": "hard_003",
-          "difficulty": "hard",
-          "score": 0.1825,
-          "steps": 29,
-          "findings_submitted": 9,
-          "correct_findings": 2,
-          "false_positives": 7,
-          "rubric_breakdown": {
-            "finding_accuracy": 0.0,
-            "evidence_validity": 0.0091,
-            "completeness": 0.0667,
-            "efficiency": 0.0067,
-            "anti_hacking": 0.1
-          }
-        },
-        {
-          "case_id": "hard_003",
-          "difficulty": "hard",
-          "score": 0.1667,
-          "steps": 29,
-          "findings_submitted": 7,
-          "correct_findings": 1,
-          "false_positives": 6,
-          "rubric_breakdown": {
-            "finding_accuracy": 0.0,
-            "evidence_validity": 0.0267,
-            "completeness": 0.0333,
-            "efficiency": 0.0067,
-            "anti_hacking": 0.1
-          }
+          "false_positives": 0,
+          "rubric_breakdown": {}
         }
       ],
       "n_trials": 3

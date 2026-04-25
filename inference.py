@@ -259,14 +259,29 @@ Respond with ONLY the JSON array."""
         budget = result.get("state", {}).get("budget_remaining", 0)
 
     # --- STEP 5: Submit report ---
-    result = call_env("/step", method="POST", body={"action": "submit_report"})
+    # If the env auto-terminated mid-flow (budget exhausted, etc), the
+    # last `result` already has the rubric score in `reward`, but its
+    # `info` won't have `final_score`. We submit anyway in case the env
+    # is still active, then fall back to the last seen reward / 0.01 floor.
+    last_reward = result.get("reward", 0.01) if rewards else 0.01
 
+    submit_result = call_env("/step", method="POST", body={"action": "submit_report"})
     step_count += 1
-    final_score = result.get("info", {}).get("final_score", 0.0)
-    reward = final_score
-    rewards.append(reward)
+    submit_info = submit_result.get("info", {})
 
-    log_step(step_count, "submit_report()", reward, True)
+    if "final_score" in submit_info:
+        final_score = submit_info["final_score"]
+    elif "error" in submit_info:
+        # "Episode already ended" path — env auto-terminated earlier.
+        # The rubric was computed; use the last meaningful reward we saw.
+        final_score = last_reward
+    else:
+        final_score = submit_result.get("reward", last_reward)
+
+    final_score = max(0.01, min(0.99, final_score))
+    rewards.append(final_score)
+
+    log_step(step_count, "submit_report()", final_score, True)
 
     # --- END ---
     success = final_score >= 0.1

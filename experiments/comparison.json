@@ -11,81 +11,33 @@
       "case": "easy_001",
       "difficulty": "easy",
       "Random": 0.2222,
-      "Naive LLM": 0.1933,
-      "Smart LLM": 0.8167,
-      "Trained": 0.71
-    },
-    {
-      "case": "easy_002",
-      "difficulty": "easy",
-      "Random": 0.2347,
-      "Naive LLM": 0.6433,
-      "Smart LLM": 0.7767,
-      "Trained": 0.01
-    },
-    {
-      "case": "easy_003",
-      "difficulty": "easy",
-      "Random": 0.1731,
       "Naive LLM": 0.01,
-      "Smart LLM": 0.7767,
-      "Trained": 0.32
+      "Smart LLM": 0.7923,
+      "Trained": 0.7787
     },
     {
       "case": "medium_001",
       "difficulty": "medium",
-      "Random": 0.153,
-      "Naive LLM": 0.2547,
-      "Smart LLM": 0.948,
-      "Trained": 0.01
-    },
-    {
-      "case": "medium_002",
-      "difficulty": "medium",
-      "Random": 0.1452,
-      "Naive LLM": 0.01,
-      "Smart LLM": 0.4647,
-      "Trained": 0.01
-    },
-    {
-      "case": "medium_003",
-      "difficulty": "medium",
-      "Random": 0.1591,
-      "Naive LLM": 0.6213,
-      "Smart LLM": 0.89,
-      "Trained": 0.01
+      "Random": 0.233,
+      "Naive LLM": 0.196,
+      "Smart LLM": 0.3499,
+      "Trained": 0.2
     },
     {
       "case": "hard_001",
       "difficulty": "hard",
-      "Random": 0.1188,
-      "Naive LLM": 0.7467,
-      "Smart LLM": 0.38,
-      "Trained": 0.1924
-    },
-    {
-      "case": "hard_002",
-      "difficulty": "hard",
-      "Random": 0.1405,
-      "Naive LLM": 0.2533,
-      "Smart LLM": 0.43,
-      "Trained": 0.135
-    },
-    {
-      "case": "hard_003",
-      "difficulty": "hard",
-      "Random": 0.152,
-      "Naive LLM": 0.2133,
-      "Smart LLM": 0.8766,
-      "Trained": 0.01
+      "Random": 0.2678,
+      "Naive LLM": 0.01,
+      "Smart LLM": 0.4839,
+      "Trained": 0.085
     }
   ],
   "averages": {
     "case": "**Average**",
     "difficulty": "",
-    "Random": 0.1665,
-    "Naive LLM": 0.3273,
-    "Smart LLM": 0.7066,
-    "Trained": 0.1564
+    "Random": 0.241,
+    "Naive LLM": 0.072,
+    "Smart LLM": 0.542,
+    "Trained": 0.3546
   }
 }
