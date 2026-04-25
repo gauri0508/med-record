@@ -1,0 +1,92 @@
+{
+  "agents_loaded": [
+    "Random",
+    "Naive LLM",
+    "Smart LLM"
+  ],
+  "agents_missing": [
+    "Trained"
+  ],
+  "rows": [
+    {
+      "case": "easy_001",
+      "difficulty": "easy",
+      "Random": 0.2222,
+      "Naive LLM": 0.1933,
+      "Smart LLM": 0.8167,
+      "Trained": null
+    },
+    {
+      "case": "easy_002",
+      "difficulty": "easy",
+      "Random": 0.2347,
+      "Naive LLM": 0.6433,
+      "Smart LLM": 0.7767,
+      "Trained": null
+    },
+    {
+      "case": "easy_003",
+      "difficulty": "easy",
+      "Random": 0.1731,
+      "Naive LLM": 0.01,
+      "Smart LLM": 0.7767,
+      "Trained": null
+    },
+    {
+      "case": "medium_001",
+      "difficulty": "medium",
+      "Random": 0.153,
+      "Naive LLM": 0.2547,
+      "Smart LLM": 0.948,
+      "Trained": null
+    },
+    {
+      "case": "medium_002",
+      "difficulty": "medium",
+      "Random": 0.1452,
+      "Naive LLM": 0.01,
+      "Smart LLM": 0.4647,
+      "Trained": null
+    },
+    {
+      "case": "medium_003",
+      "difficulty": "medium",
+      "Random": 0.1591,
+      "Naive LLM": 0.6213,
+      "Smart LLM": 0.89,
+      "Trained": null
+    },
+    {
+      "case": "hard_001",
+      "difficulty": "hard",
+      "Random": 0.1188,
+      "Naive LLM": 0.7467,
+      "Smart LLM": 0.38,
+      "Trained": null
+    },
+    {
+      "case": "hard_002",
+      "difficulty": "hard",
+      "Random": 0.1405,
+      "Naive LLM": 0.2533,
+      "Smart LLM": 0.43,
+      "Trained": null
+    },
+    {
+      "case": "hard_003",
+      "difficulty": "hard",
+      "Random": 0.152,
+      "Naive LLM": 0.2133,
+      "Smart LLM": 0.8766,
+      "Trained": null
+    }
+  ],
+  "averages": {
+    "case": "**Average**",
+    "difficulty": "",
+    "Random": 0.1665,
+    "Naive LLM": 0.3273,
+    "Smart LLM": 0.7066,
+    "Trained": null
+  }
+}

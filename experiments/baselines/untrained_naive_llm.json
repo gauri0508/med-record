@@ -1,0 +1,182 @@
+{
+  "agent": "untrained_naive_llm",
+  "model": "llama-3.1-8b-instant",
+  "api_base_url": "https://api.groq.com/openai/v1",
+  "env_url": "https://gauri0508-med-record-audit.hf.space",
+  "elapsed_seconds": 129.4,
+  "average_score": 0.3273,
+  "strategy": "1 LLM call, no reads, blind flag, submit",
+  "per_case": {
+    "easy_001": {
+      "case_id": "easy_001",
+      "difficulty": "easy",
+      "score": 0.1933,
+      "findings_submitted": 1,
+      "findings_rejected": 0,
+      "correct_findings": 0,
+      "false_positives": 1,
+      "rubric_breakdown": {
+        "finding_accuracy": 0.0,
+        "evidence_validity": 0.0,
+        "completeness": 0.0,
+        "efficiency": 0.0933,
+        "anti_hacking": 0.1
+      },
+      "n_steps": 2,
+      "elapsed_seconds": 4.7,
+      "raw_llm_issues_count": 1
+    },
+    "easy_002": {
+      "case_id": "easy_002",
+      "difficulty": "easy",
+      "score": 0.6433,
+      "findings_submitted": 1,
+      "findings_rejected": 1,
+      "correct_findings": 1,
+      "false_positives": 0,
+      "rubric_breakdown": {
+        "finding_accuracy": 0.25,
+        "evidence_validity": 0.0,
+        "completeness": 0.2,
+        "efficiency": 0.0933,
+        "anti_hacking": 0.1
+      },
+      "n_steps": 2,
+      "elapsed_seconds": 5.5,
+      "raw_llm_issues_count": 2
+    },
+    "easy_003": {
+      "case_id": "easy_003",
+      "difficulty": "easy",
+      "score": 0.01,
+      "findings_submitted": 0,
+      "findings_rejected": 3,
+      "correct_findings": 0,
+      "false_positives": 0,
+      "rubric_breakdown": {
+        "finding_accuracy": 0.0,
+        "evidence_validity": 0.0,
+        "completeness": 0.0,
+        "efficiency": 0.1,
+        "anti_hacking": 0.0
+      },
+      "n_steps": 1,
+      "elapsed_seconds": 6.8,
+      "raw_llm_issues_count": 3
+    },
+    "medium_001": {
+      "case_id": "medium_001",
+      "difficulty": "medium",
+      "score": 0.2547,
+      "findings_submitted": 3,
+      "findings_rejected": 0,
+      "correct_findings": 1,
+      "false_positives": 2,
+      "rubric_breakdown": {
+        "finding_accuracy": 0.0,
+        "evidence_validity": 0.0,
+        "completeness": 0.0667,
+        "efficiency": 0.088,
+        "anti_hacking": 0.1
+      },
+      "n_steps": 4,
+      "elapsed_seconds": 7.4,
+      "raw_llm_issues_count": 3
+    },
+    "medium_002": {
+      "case_id": "medium_002",
+      "difficulty": "medium",
+      "score": 0.01,
+      "findings_submitted": 0,
+      "findings_rejected": 0,
+      "correct_findings": 0,
+      "false_positives": 0,
+      "rubric_breakdown": {
+        "finding_accuracy": 0.0,
+        "evidence_validity": 0.0,
+        "completeness": 0.0,
+        "efficiency": 0.1,
+        "anti_hacking": 0.0
+      },
+      "n_steps": 1,
+      "elapsed_seconds": 4.4,
+      "raw_llm_issues_count": 0
+    },
+    "medium_003": {
+      "case_id": "medium_003",
+      "difficulty": "medium",
+      "score": 0.6213,
+      "findings_submitted": 3,
+      "findings_rejected": 0,
+      "correct_findings": 2,
+      "false_positives": 1,
+      "rubric_breakdown": {
+        "finding_accuracy": 0.3,
+        "evidence_validity": 0.0,
+        "completeness": 0.1333,
+        "efficiency": 0.088,
+        "anti_hacking": 0.1
+      },
+      "n_steps": 4,
+      "elapsed_seconds": 12.6,
+      "raw_llm_issues_count": 3
+    },
+    "hard_001": {
+      "case_id": "hard_001",
+      "difficulty": "hard",
+      "score": 0.7467,
+      "findings_submitted": 6,
+      "findings_rejected": 0,
+      "correct_findings": 5,
+      "false_positives": 1,
+      "rubric_breakdown": {
+        "finding_accuracy": 0.4,
+        "evidence_validity": 0.0,
+        "completeness": 0.1667,
+        "efficiency": 0.08,
+        "anti_hacking": 0.1
+      },
+      "n_steps": 7,
+      "elapsed_seconds": 17.8,
+      "raw_llm_issues_count": 6
+    },
+    "hard_002": {
+      "case_id": "hard_002",
+      "difficulty": "hard",
+      "score": 0.2533,
+      "findings_submitted": 8,
+      "findings_rejected": 0,
+      "correct_findings": 2,
+      "false_positives": 6,
+      "rubric_breakdown": {
+        "finding_accuracy": 0.0,
+        "evidence_validity": 0.0,
+        "completeness": 0.08,
+        "efficiency": 0.0733,
+        "anti_hacking": 0.1
+      },
+      "n_steps": 9,
+      "elapsed_seconds": 32.4,
+      "raw_llm_issues_count": 8
+    },
+    "hard_003": {
+      "case_id": "hard_003",
+      "difficulty": "hard",
+      "score": 0.2133,
+      "findings_submitted": 6,
+      "findings_rejected": 4,
+      "correct_findings": 1,
+      "false_positives": 5,
+      "rubric_breakdown": {
+        "finding_accuracy": 0.0,
+        "evidence_validity": 0.0,
+        "completeness": 0.0333,
+        "efficiency": 0.08,
+        "anti_hacking": 0.1
+      },
+      "n_steps": 7,
+      "elapsed_seconds": 37.8,
+      "raw_llm_issues_count": 13
+    }
+  }
+}
