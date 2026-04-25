@@ -7,11 +7,14 @@ manages state, handles agent actions, and tracks the episode.
 The agent NEVER sees ground_truth_issues — only the grader/reward module does.
 """
 
+import copy
 import json
 import os
 import random
 from pathlib import Path
 from typing import Optional
+
+from env.rubrics import compute_rubric_scores, RubricScores
 
 # Base paths
 DATA_DIR = Path(__file__).parent.parent / "data"
@@ -28,12 +31,20 @@ class MedRecordAuditEnv:
     flag issues, and submit a report — all within a limited step budget.
     """
 
-    # Budget per difficulty level
+    # Budget per difficulty level.
+    # "curriculum" is a meta-mode: resolved to easy/medium/hard at reset time
+    # based on curriculum_reward_history. Its entry is None — never read directly.
     BUDGETS = {
         "easy": 15,
         "medium": 25,
         "hard": 30,
+        "curriculum": None,
     }
+
+    # Curriculum thresholds (Phase 4)
+    CURRICULUM_THRESHOLD_EASY_TO_MEDIUM = 0.35
+    CURRICULUM_THRESHOLD_MEDIUM_TO_HARD = 0.55
+    CURRICULUM_HISTORY_WINDOW = 10
 
     def __init__(self):
         # Load reference databases once
@@ -57,6 +68,8 @@ class MedRecordAuditEnv:
         self.findings = []
         self.done = False
         self.reward = 0.0
+        self._last_rubric_scores: Optional[RubricScores] = None
+        self._cumulative_step_reward = 0.0
 
     def _load_json(self, path: Path) -> dict:
         """Load a JSON file and return its contents."""
@@ -70,19 +83,46 @@ class MedRecordAuditEnv:
             return []
         return sorted(case_dir.glob("case_*.json"))
 
-    def reset(self, difficulty: str = "easy", case_id: Optional[str] = None) -> dict:
+    def reset(
+        self,
+        difficulty: str = "easy",
+        case_id: Optional[str] = None,
+        curriculum_reward_history: Optional[list] = None,
+    ) -> dict:
         """
         Start a new episode.
 
         Args:
-            difficulty: "easy", "medium", or "hard"
-            case_id: specific case ID (e.g., "easy_001") or None for random
+            difficulty: "easy", "medium", "hard", or "curriculum"
+                If "curriculum", the environment picks the actual difficulty
+                based on the recent reward window (Phase 4 curriculum mode):
+                    avg(last N) <  0.35  → easy
+                    0.35 <= avg < 0.55   → medium
+                    avg >= 0.55          → hard
+                where N = CURRICULUM_HISTORY_WINDOW (default 10).
+            case_id: specific case ID (e.g., "easy_001") or None for random.
+                Ignored when difficulty="curriculum" (curriculum picks at random
+                within the resolved difficulty).
+            curriculum_reward_history: list of recent episode rewards (floats).
+                Only used when difficulty="curriculum". If empty/None, defaults
+                to easy.
 
         Returns:
-            Initial state visible to the agent.
+            Initial state visible to the agent. The difficulty field reflects
+            the RESOLVED level (never "curriculum") so the agent and trainer
+            see the actual difficulty.
         """
         if difficulty not in self.BUDGETS:
             raise ValueError(f"Invalid difficulty: {difficulty}. Must be one of {list(self.BUDGETS.keys())}")
+
+        # Curriculum mode: resolve "curriculum" to easy/medium/hard before
+        # consuming any other state. After this block, downstream code sees
+        # only the resolved difficulty, so existing logic (budget lookup,
+        # case loading) works unchanged.
+        if difficulty == "curriculum":
+            difficulty = self._resolve_curriculum_difficulty(curriculum_reward_history)
+            # case_id from caller does not apply across difficulties
+            case_id = None
 
         self.difficulty = difficulty
         self.done = False
@@ -92,6 +132,8 @@ class MedRecordAuditEnv:
         self.findings = []
         self.budget = self.BUDGETS[difficulty]
         self.total_budget = self.BUDGETS[difficulty]
+        self._last_rubric_scores = None
+        self._cumulative_step_reward = 0.0
 
         # Load case
         cases = self._list_cases(difficulty)
@@ -192,6 +234,14 @@ class MedRecordAuditEnv:
         action_type = action.get("action", "")
         info = {}
 
+        # Reset per-step reward to 0 before dispatching. Handlers that produce
+        # a real step reward (or final score) will overwrite this; handlers
+        # that don't will leave reward at 0, clamped to 0.01 by the validator
+        # floor on return. Without this reset, self.reward would retain the
+        # previous step's value (e.g. re-reading a GT record would show stale
+        # reward).
+        self.reward = 0.0
+
         if action_type == "read_record":
             info = self._handle_read_record(action)
         elif action_type == "cross_reference":
@@ -228,17 +278,32 @@ class MedRecordAuditEnv:
         if record_id not in self.records:
             return {"error": f"Record ID {record_id} not found. Valid IDs: 1-{len(self.records)}"}
 
+        # Detect first-time read BEFORE mutation (used for anti-farming step reward)
+        is_first_read = record_id not in self.reviewed_records
+
         # Consume budget
         self.budget -= 1
         self.steps_taken += 1
 
         # Track which records have been read
-        if record_id not in self.reviewed_records:
+        if is_first_read:
             self.reviewed_records.append(record_id)
 
         # Return full record content
         record = self.records[record_id]
-        return {"record": record}
+        info = {"record": record}
+
+        # Per-step reward (Phase 3) — only on first read of a ground-truth evidence
+        # record. Re-reading does not farm the bonus (anti-hacking). The key is
+        # always set in info (even when 0.0) so trainers can log consistently;
+        # the numeric value is the only signal — GT IDs are NEVER named in info.
+        if is_first_read:
+            step_reward = self._compute_step_reward("read_record", action)
+        else:
+            step_reward = 0.0
+        self._apply_step_reward(step_reward, info)
+
+        return info
 
     def _handle_cross_reference(self, action: dict) -> dict:
         """Search reference databases for relevant medical information."""
@@ -333,15 +398,51 @@ class MedRecordAuditEnv:
         results["drugs"] = unique_drugs
 
         if not results["drugs"] and not results["diseases"] and not results["lab_info"]:
-            return {"message": f"No results found for query: '{query}'", "results": results}
+            info = {"message": f"No results found for query: '{query}'", "results": results}
+        else:
+            info = {"results": results}
 
-        return {"results": results}
+        # Per-step reward (Phase 3) — small bonus if query matches a term in
+        # any ground-truth issue description (e.g., the drug or condition involved).
+        step_reward = self._compute_step_reward("cross_reference", action)
+        self._apply_step_reward(step_reward, info)
+
+        return info
+
+    # Anti-hacking guard configuration (Phase 2)
+    DESCRIPTION_LENGTH_LIMIT = 500
+    DUPLICATE_PREFIX_LEN = 60
+    UNREAD_EVIDENCE_WARN_RATIO = 0.5
+
+    VALID_ISSUE_TYPES = (
+        "drug_interaction",
+        "drug_contraindication",
+        "allergy_violation",
+        "declining_trend",
+        "missed_monitoring",
+        "contradiction",
+        "missed_diagnosis",
+    )
 
     def _handle_flag_issue(self, action: dict) -> dict:
-        """Flag a potential issue found in the records."""
+        """
+        Flag a potential issue found in the records.
+
+        Anti-hacking guards (Phase 2) — applied before budget is consumed:
+          1. Empty type / description rejection (existing)
+          2. Invalid issue type rejection (existing)
+          3. Description length cap (>500 chars rejected)
+          4. Evidence record ID existence check (IDs must exist in this case)
+          5. Duplicate flag rejection (same type + first 60 chars of description)
+
+        Soft signal (post-success):
+          6. Unread evidence warning — if >50% of cited records were not read,
+             a warning is added to info. The flag is still accepted, but
+             RubricEvidenceValidity will penalize it during scoring.
+        """
         issue_type = action.get("type", "")
         description = action.get("description", "")
-        evidence = action.get("evidence", [])
+        evidence = action.get("evidence", []) or []
 
         if not issue_type:
             return {"error": "type is required for flag_issue. Valid types: drug_interaction, drug_contraindication, allergy_violation, declining_trend, missed_monitoring, contradiction, missed_diagnosis"}
@@ -349,47 +450,75 @@ class MedRecordAuditEnv:
         if not description:
             return {"error": "description is required for flag_issue."}
 
-        valid_types = [
-            "drug_interaction",
-            "drug_contraindication",
-            "allergy_violation",
-            "declining_trend",
-            "missed_monitoring",
-            "contradiction",
-            "missed_diagnosis",
-        ]
+        if issue_type not in self.VALID_ISSUE_TYPES:
+            return {"error": f"Invalid issue type: {issue_type}. Valid types: {list(self.VALID_ISSUE_TYPES)}"}
 
-        if issue_type not in valid_types:
-            return {"error": f"Invalid issue type: {issue_type}. Valid types: {valid_types}"}
+        # GUARD 3: description length cap
+        if len(description) > self.DESCRIPTION_LENGTH_LIMIT:
+            return {"error": f"Description too long ({len(description)} chars). Maximum {self.DESCRIPTION_LENGTH_LIMIT} characters. Be concise and clinical."}
 
-        # Consume budget
+        # GUARD 4: evidence IDs must exist in this case
+        valid_ids = set(self.records.keys())
+        invalid_ids = [eid for eid in evidence if eid not in valid_ids]
+        if invalid_ids:
+            return {"error": f"Evidence record IDs do not exist in this case: {invalid_ids}. Valid range: 1-{len(self.records)}."}
+
+        # GUARD 5: duplicate flag rejection (same type + description prefix)
+        new_sig = (issue_type, description[:self.DUPLICATE_PREFIX_LEN].lower().strip())
+        for existing in self.findings:
+            existing_sig = (
+                existing.get("type", ""),
+                existing.get("description", "")[:self.DUPLICATE_PREFIX_LEN].lower().strip(),
+            )
+            if new_sig == existing_sig:
+                return {"error": "Duplicate finding rejected. You already flagged an identical issue. Refine your description or flag a different issue."}
+
+        # All guards passed — consume budget and store finding
         self.budget -= 1
         self.steps_taken += 1
 
-        # Store the finding
         finding = {
             "type": issue_type,
             "description": description,
-            "evidence": evidence,
+            "evidence": list(evidence),
             "step_flagged": self.steps_taken,
         }
         self.findings.append(finding)
 
-        return {
+        info = {
             "message": f"Issue flagged: {issue_type}",
             "finding_number": len(self.findings),
             "budget_remaining": self.budget,
         }
+
+        # GUARD 6 (soft): warn if too many cited records were never read.
+        # Does not reject — RubricEvidenceValidity will penalize at scoring time.
+        if evidence:
+            unread = [eid for eid in evidence if eid not in self.reviewed_records]
+            if len(unread) > len(evidence) * self.UNREAD_EVIDENCE_WARN_RATIO:
+                info["warning"] = (
+                    f"Cited {len(unread)} of {len(evidence)} records that were not read: {unread}. "
+                    f"Evidence validity score will be reduced. Consider reading these records first."
+                )
+
+        # Per-step reward (Phase 3) — tiny positive bump for any successful flag.
+        # Encourages the model to attempt findings; deliberately small so it can't
+        # be farmed by spamming flags (RubricAntiHacking + duplicate guard catch that).
+        step_reward = self._compute_step_reward("flag_issue", action)
+        self._apply_step_reward(step_reward, info)
+
+        return info
 
     def _handle_submit_report(self) -> dict:
         """Submit the final report and end the episode."""
         self.done = True
         self.steps_taken += 1
 
-        # Compute final reward
+        # Compute final reward via composable rubric system
         self.reward = self._compute_reward()
+        rs = self._last_rubric_scores
 
-        return {
+        info = {
             "message": "Report submitted. Episode ended.",
             "final_score": self.reward,
             "findings_submitted": len(self.findings),
@@ -398,62 +527,130 @@ class MedRecordAuditEnv:
             "ground_truth_count": len(self.ground_truth),
         }
 
+        if rs is not None:
+            info["rubric_breakdown"] = {
+                "finding_accuracy": rs.finding_accuracy,
+                "evidence_validity": rs.evidence_validity,
+                "completeness": rs.completeness,
+                "efficiency": rs.efficiency,
+                "anti_hacking": rs.anti_hacking,
+            }
+            info["correct_findings"] = rs.correct_findings
+            info["false_positives"] = rs.false_positives
+            info["duplicate_flags"] = rs.duplicate_flags
+            info["unread_evidence_citations"] = rs.unread_evidence_citations
+            info["matches"] = rs.matches
+
+        return info
+
+    def _resolve_curriculum_difficulty(self, history: Optional[list]) -> str:
+        """
+        Pick a difficulty level from a reward-history window.
+
+        Phase 4 curriculum schedule:
+            avg(last N) <  0.35  → easy
+            0.35 <= avg <  0.55  → medium
+            avg >= 0.55          → hard
+
+        Empty / None history defaults to "easy" (cold start).
+        """
+        if not history:
+            return "easy"
+        recent = history[-self.CURRICULUM_HISTORY_WINDOW:]
+        avg = sum(recent) / len(recent)
+        if avg < self.CURRICULUM_THRESHOLD_EASY_TO_MEDIUM:
+            return "easy"
+        if avg < self.CURRICULUM_THRESHOLD_MEDIUM_TO_HARD:
+            return "medium"
+        return "hard"
+
+    # Per-step intermediate reward magnitudes (Phase 3)
+    STEP_REWARD_GT_RECORD_READ = 0.03   # first-time read of a ground-truth evidence record
+    STEP_REWARD_GT_QUERY_MATCH = 0.01   # cross_reference query matches a ground-truth term
+    STEP_REWARD_FLAG_ATTEMPT = 0.005    # successful (non-rejected) flag_issue
+    STEP_QUERY_MIN_LEN = 3              # ignore 1-2 char queries that match accidentally
+
+    def _compute_step_reward(self, action_type: str, action: dict) -> float:
+        """
+        Compute a small intermediate reward for the current action.
+
+        Uses self.ground_truth INTERNALLY to score, but never returns or
+        exposes any ground-truth identifiers. Only the numeric reward
+        value is returned — the agent learns "this kind of action is
+        valuable" without learning which specific records are answers.
+
+        Returns a float in [0.0, 0.05].
+        """
+        if not self.ground_truth:
+            return 0.0
+
+        if action_type == "read_record":
+            record_id = action.get("record_id")
+            if record_id is None:
+                return 0.0
+            # Aggregate every evidence_records list across all ground truth issues
+            for issue in self.ground_truth:
+                if record_id in issue.get("evidence_records", []):
+                    return self.STEP_REWARD_GT_RECORD_READ
+            return 0.0
+
+        if action_type == "cross_reference":
+            query = (action.get("query") or "").lower().strip()
+            if len(query) < self.STEP_QUERY_MIN_LEN:
+                return 0.0
+            for issue in self.ground_truth:
+                desc = (issue.get("description") or "").lower()
+                issue_type = (issue.get("type") or "").lower()
+                if query in desc or query in issue_type:
+                    return self.STEP_REWARD_GT_QUERY_MATCH
+            return 0.0
+
+        if action_type == "flag_issue":
+            return self.STEP_REWARD_FLAG_ATTEMPT
+
+        return 0.0
+
+    def _apply_step_reward(self, step_reward: float, info: dict) -> None:
+        """
+        Set self.reward to the current step's reward, accumulate the
+        cumulative trajectory reward, and always expose the numeric
+        step_reward in info so trainers can log it (even when 0.0).
+
+        The numeric value is the only signal — no information about
+        WHY it was rewarded (e.g. which records are GT) is included.
+        """
+        info["step_reward"] = round(step_reward, 4)
+        if step_reward != 0.0:
+            self.reward = step_reward
+            self._cumulative_step_reward += step_reward
+        else:
+            # Zero reward — leave self.reward at the dispatch-time reset (0.0)
+            # so step() returns the validator floor (0.01) for this step.
+            self.reward = 0.0
+
     def _compute_reward(self) -> float:
         """
-        Compute the reward (0.0 - 1.0) based on agent's findings vs ground truth.
-        Uses programmatic matching (type + evidence overlap).
+        Compute the reward via the composable rubric system (env/rubrics.py).
+
+        Five independent rubrics are scored separately and summed:
+            finding_accuracy   (max 0.40)
+            evidence_validity  (max 0.20)  — anti-hacking: cited records read?
+            completeness       (max 0.20)
+            efficiency         (max 0.10)
+            anti_hacking       (max 0.10)  — duplicates, stuffing
+
+        The full breakdown is stored on self._last_rubric_scores and
+        surfaced in submit_report info so training can log each component.
         """
-        # No findings submitted = minimal score (validator requires > 0)
-        if not self.findings:
-            return 0.01
-
-        if not self.ground_truth:
-            return 0.01
-
-        correct_findings = 0
-        findings_score = 0.0
-        matched_truths = set()
-
-        for finding in self.findings:
-            best_match = None
-            best_score = 0.0
-
-            for i, truth in enumerate(self.ground_truth):
-                if i in matched_truths:
-                    continue
-
-                score = self._match_finding(finding, truth)
-                if score > best_score:
-                    best_score = score
-                    best_match = i
-
-            if best_match is not None and best_score > 0.5:
-                matched_truths.add(best_match)
-                correct_findings += 1
-                severity = self.ground_truth[best_match].get("severity", "moderate")
-                if severity == "critical":
-                    findings_score += 0.25
-                elif severity == "moderate":
-                    findings_score += 0.15
-                else:
-                    findings_score += 0.10
-            else:
-                # False positive penalty
-                findings_score -= 0.10
-
-        # Cap findings score
-        findings_score = max(0.0, min(findings_score, 0.7))
-
-        # Efficiency bonus (reward for using fewer steps)
-        efficiency_bonus = (self.budget / self.total_budget) * 0.15 if self.total_budget > 0 else 0.0
-
-        # Completeness bonus
-        total_issues = len(self.ground_truth)
-        completeness_bonus = (correct_findings / total_issues) * 0.15 if total_issues > 0 else 0.0
-
-        total = findings_score + efficiency_bonus + completeness_bonus
-        # Clamp to (0.01, 0.99) — validator requires strictly between 0 and 1
-        return round(max(0.01, min(0.99, total)), 4)
+        rubric_scores = compute_rubric_scores(
+            findings=self.findings,
+            ground_truth=self.ground_truth or [],
+            reviewed_records=self.reviewed_records,
+            budget_remaining=self.budget,
+            total_budget=self.total_budget,
+        )
+        self._last_rubric_scores = rubric_scores
+        return rubric_scores.total
 
     def _match_finding(self, finding: dict, truth: dict) -> float:
         """
@@ -504,7 +701,12 @@ class MedRecordAuditEnv:
     def state(self) -> dict:
         """
         Return the current state visible to the agent.
+
         Ground truth issues are NEVER exposed.
+
+        All mutable fields (lists, dicts) are deep-copied so the agent
+        cannot mutate internal env state by holding a reference and
+        modifying the returned observation.
         """
         if self.case is None:
             return {"error": "No episode started. Call reset() first."}
@@ -512,11 +714,11 @@ class MedRecordAuditEnv:
         return {
             "case_id": self.case_id,
             "difficulty": self.difficulty,
-            "task": self.task,
-            "patient": self.patient,
+            "task": copy.deepcopy(self.task),
+            "patient": copy.deepcopy(self.patient),
             "records_available": len(self.records),
-            "records_reviewed": self.reviewed_records,
-            "findings": self.findings,
+            "records_reviewed": list(self.reviewed_records),
+            "findings": copy.deepcopy(self.findings),
             "steps_taken": self.steps_taken,
             "budget_remaining": self.budget,
             "done": self.done,
@@ -526,5 +728,5 @@ class MedRecordAuditEnv:
                 "flag_issue",
                 "submit_report",
             ],
-            "record_index": self.record_index,
+            "record_index": copy.deepcopy(self.record_index),
         }
