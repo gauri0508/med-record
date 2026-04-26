@@ -133,4 +133,4 @@ Everything is open:
 
 If you train this for longer, on a different base model, or with a richer curriculum — tag me. I'd genuinely like to see how far this env can go.
 
-— Gauri
+— Team Invicta
