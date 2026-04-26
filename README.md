@@ -34,6 +34,9 @@ This submission demonstrates a **complete RL pipeline** (env + composable rubric
 🤗 **Trained model:** https://huggingface.co/gauri0508/med-record-audit-qwen2.5-3b-grpo
 🛰 **HF Space (env):** https://huggingface.co/spaces/gauri0508/med-record-audit
 💻 **Source code:** https://github.com/gauri0508/med-record
+🎥 **Demo video (90s):** https://youtu.be/stKO4MCaSh0  ·  📝 **Full writeup:** [Blog.MD](Blog.MD)
+
+[![Watch the demo on YouTube](https://img.youtube.com/vi/stKO4MCaSh0/maxresdefault.jpg)](https://youtu.be/stKO4MCaSh0)
 
 ---
 
