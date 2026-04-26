@@ -4820,7 +4820,7 @@
       "completions/min_terminated_length": 104.0,
       "epoch": 0.92,
       "frac_reward_zero_std": 0.0,
-      "grad_norm": NaN,
+      "grad_norm": null,
       "kl": 0.022335965186357498,
       "learning_rate": 4.814814814814815e-07,
       "loss": -0.06944452971220016,
